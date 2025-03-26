@@ -1,0 +1,309 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+.missiri {
+  font-family: var(--font-el-messiri);
+}
+
+.epilogue {
+  font-family: var(--font-epilogue);
+}
+
+.embla_simple {
+  overflow: hidden;
+}
+
+.embla__container_simple {
+  display: flex;
+}
+
+/* media queries para .embla__slide */
+@media (max-width: 600px) {
+  .embla__slide_simple {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 601px) {
+  .embla__slide_simple {
+    flex: 0 0 33.3333%;
+  }
+}
+
+/* media queries para.embla__slide en tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .embla__slide_simple {
+    flex: 0 0 25%;
+  }
+}
+
+/* media queries para.embla__slide en escritorio */
+@media (min-width: 992px) {
+  .embla__slide_simple {
+    flex: 0 0 20%;
+  }
+}
+
+.embla {
+  position: relative;
+  padding: 20px 0;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  align-items: center;
+  height: 300px;
+}
+
+.embla__slide {
+  flex: 0 0 auto;
+  min-width: 0;
+  position: relative;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.scale-70 {
+  transform: scale(0.7);
+}
+
+.scale-60 {
+  transform: scale(0.6);
+}
+
+.embla__slide__inner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.embla__viewport.is-draggable {
+  cursor: grab;
+}
+
+.embla__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.embla__dot {
+  background-color: #d1d5db;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 8px;
+  margin-right: 6px;
+  margin-left: 6px;
+  padding: 0;
+  width: 8px;
+}
+
+.embla__dot--selected {
+  background-color: #0091fb;
+  transform: scale(1.5);
+}
+
+
+
+
+:root {
+  /* Colores base */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+
+  /* Colores de la paleta azul */
+  --blue-light: 199 100% 50%;
+  --blue-medium: 210 100% 50%;
+  --blue-primary: 204 100% 49%;
+  --blue-dark: 207 100% 36%;
+  --blue-navy: 240 100% 20%;
+
+  /* Colores de la paleta gris */
+  --gray-lightest: 0 0% 95%;
+  --gray-light: 0 0% 85%;
+  --gray-medium: 0 0% 60%;
+  --gray-dark: 0 0% 31%;
+  --gray-darkest: 0 0% 7%;
+  --gray-black: 0 0% 0%;
+
+  /* Colores de componentes */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 0%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 0%;
+
+  --primary: 204 100% 49%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 33% 96%;
+  --secondary-foreground: 0 0% 9%;
+
+  --muted: 210 33% 96%;
+  --muted-foreground: 0 0% 45%;
+
+  --accent: 210 33% 96%;
+  --accent-foreground: 0 0% 9%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 85%;
+  --input: 0 0% 85%;
+  --ring: 204 100% 49%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Colores base */
+  --background: 240 10% 10%;
+  --foreground: 0 0% 100%;
+
+  /* Colores de componentes */
+  --card: 240 10% 15%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 240 10% 15%;
+  --popover-foreground: 0 0% 100%;
+
+  --primary: 199 100% 50%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 240 10% 20%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 240 10% 20%;
+  --muted-foreground: 0 0% 85%;
+
+  --accent: 240 10% 20%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 10% 20%;
+  --input: 240 10% 20%;
+  --ring: 199 100% 50%;
+}
+
+/* Estilos para el scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--blue-dark));
+}
+
+/* Estilos base */
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Clases de utilidad para tipografía */
+.font-title {
+  font-family: var(--font-el-messiri);
+}
+
+.font-body {
+  font-family: var(--font-epilogue);
+}
+
+/* Clase para ocultar la barra scroll */
+.hide-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Asegurarnos de que el modo oscuro se aplique correctamente */
+.dark body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Estilos específicos para el modo oscuro */
+html.dark .bg-\[\#edf5fa\] {
+  background-color: #032561 !important;
+}
+
+html.dark .bg-\[\#ffffff\] {
+  background-color: #01013c !important;
+}
+
+html.dark .bg-\[\#e6f4ff\] {
+  background-color: #032561 !important;
+}
+
+html.dark .bg-\[\#ffff\] {
+  background-color: #032561 !important;
+}
+
+html.dark .text-\[\#000000\] {
+  color: white !important;
+}
+
+html.dark .text-\[\#101113\] {
+  color: #e2e2e5 !important;
+}
+
+html.dark .text-\[\#4f4c4c\] {
+  color: #e2e2e5 !important;
+}
+
+/* Texto para algunos titulos en modo oscuro */
+html.dark .text-\[\#0004a4\] {
+  color: #0b9ff0 !important;
+}
+
+html.dark .text-\[\#0091fb\] {
+  color: #0b9ff0 !important;
+}
+
+html.dark .border-\[\#0091fb\] {
+  border-color: #0b9ff0 !important;
+}
+
+html.dark .bg-\[\#0091fb\] {
+  background-color: #0b9ff0 !important;
+}
+
+html.dark .hover\:bg-\[\#0679b8\]:hover {
+  background-color: #0091fb !important;
+}
+
+html.dark .bg-\[\#f2f8fb\] {
+  background-color: #032561 !important;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  .profile-container {
+    margin-bottom: 1rem;
+  }
+}

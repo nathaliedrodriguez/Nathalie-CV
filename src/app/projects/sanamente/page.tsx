@@ -1,0 +1,227 @@
+"use client"
+
+import { useState } from "react"
+import { ChevronDown, ChevronLeft } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import DesktopSidebar from "@/components/desktop-sidebar"
+import Link from "next/link"
+import MobileMenuButton from "@/components/mobile-menu-button"
+import MobileMenu from "@/components/mobile-menu"
+
+export default function SanaMenteProject() {
+    const [sections, setSections] = useState({
+        about: true,
+        discover: false,
+        programs: false,
+        keyAreas: false,
+        uiDesign: false,
+    })
+
+    const toggleSection = (section: string) => {
+        setSections((prev) => ({
+            ...prev,
+            [section]: !prev[section as keyof typeof prev],
+        }))
+    }
+
+    return (
+        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body pt-8">
+            {/* Header */}
+            <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
+                <div className="grid grid-cols-3 grid-rows-3 min-h-32">
+                    {/* Fila 1: Enlaces de navegación alineados a la derecha */}
+                    <div className="col-span-3 flex justify-between items-start gap-6">
+                        <Link href="/projects">
+                            <Button variant="ghost" className="">
+                                <ChevronLeft className="h-10 w-10" />
+                            </Button>
+                        </Link>
+                        <div className="md:hidden flex gap-6 relative">
+                            <MobileMenu />
+                            <MobileMenuButton />
+                        </div>
+                        <div className="flex gap-6 max-md:hidden">
+                            <DesktopSidebar />
+                        </div>
+                    </div>
+
+                    {/* Fila 2: Vacía para mantener el espacio */}
+                    <div className="col-span-3"></div>
+
+                    {/* Fila 3: Texto alineado a la izquierda */}
+                    <div className="col-span-3 flex items-center gap-4 self-end">
+                        <h1 className="text-xl font-title font-bold">
+                            <span>Sana</span>
+                            <span className="text-[#0091fb] dark:text-[#0b9ff0]">Mente</span>
+                        </h1>
+                    </div>
+                </div>
+            </header>
+
+            {/* Main Content */}
+            <div className="container mx-auto px-4 py-6 max-w-7xl">
+                {/* About the Project */}
+                <div className="mb-6">
+                    <div
+                        className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
+                        onClick={() => toggleSection("about")}
+                    >
+                        <h2 className="text-[#0091fb] text-lg font-medium">About the Project</h2>
+                        <ChevronDown
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.about ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.about && (
+                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                            <p className="mb-6 leading-relaxed">
+                                A new anxiety management app with a neomorphism design aims to bring daily calm. It offers fresh perspectives on routines with an AI companion plus useful tools for relaxation activities.
+                            </p>
+
+                            <div className="flex justify-center mt-6">
+                                <img src="/sanamente/img-1.png" alt="Sanamente ui" />
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* Discover Phase */}
+                <div className="mb-6">
+                    <div
+                        className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
+                        onClick={() => toggleSection("discover")}
+                    >
+                        <h2 className="text-[#0091fb] text-lg font-medium">Discover Phase</h2>
+                        <ChevronDown
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.discover ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.discover && (
+                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                            <p className="mb-4 leading-relaxed">
+                                Usually, neomorphism designs are associated with tech projects like music players, financial dashboards, and smart home controls, thanks to their clean, elegant, and futuristic look. But what if we used it for something completely different? I decided to challenge myself by breaking away from the ordinary and opening up something different, with empathy.
+                            </p>
+                        </div>
+                    )}
+                </div>
+
+                {/* Programs Used */}
+                <div className="mb-6">
+                    <div
+                        className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
+                        onClick={() => toggleSection("programs")}
+                    >
+                        <h2 className="text-[#0091fb] text-lg font-medium">Programs Used</h2>
+                        <ChevronDown
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.programs ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.programs && (
+                        <div className="mt-3">
+                            <div className="flex flex-wrap gap-2 mb-6">
+                                <Badge
+                                    variant="outline"
+                                    className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                                >
+                                    Figma
+                                </Badge>
+                                <Badge
+                                    variant="outline"
+                                    className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                                >
+                                    Adobe Photoshop
+                                </Badge>
+                            </div>
+
+                            <div className="flex justify-center my-6">
+                                <div className="w-64 h-auto">
+                                    <img
+                                        src="/sanamente/img-2.png"
+                                        alt="SanaMente App Mockup"
+                                        className="w-full h-auto"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* Key Areas */}
+                <div className="mb-6">
+                    <div
+                        className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
+                        onClick={() => toggleSection("keyAreas")}
+                    >
+                        <h2 className="text-[#0091fb] text-lg font-medium">Key areas</h2>
+                        <ChevronDown
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.keyAreas ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.keyAreas && (
+                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                            <p className="mb-2">
+                                <span className="font-bold">Empowerment:</span> providing tools to enhance self-esteem and reduce daily
+                                stress levels.
+                            </p>
+                            <p className="mb-2">
+                                <span className="font-bold">Community:</span> featuring a Discussion Forum and Group Chats for thematic
+                                support.
+                            </p>
+                            <p className="mb-4">
+                                <span className="font-bold">Companion:</span> a virtual assistant offering personalized recommendations
+                                during anxiety crises using AI.
+                            </p>
+
+                            <div className="flex w-full justify-center">
+                                <img src="/sanamente/img-3.png" alt="Navigation Bar" className="" />
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* UI Design */}
+                <div className="mb-6">
+                    <div
+                        className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
+                        onClick={() => toggleSection("uiDesign")}
+                    >
+                        <h2 className="text-[#0091fb] text-lg font-medium">UI Design</h2>
+                        <ChevronDown
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.uiDesign && (
+                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                            <p className="mb-6 leading-relaxed">
+                                The app design goes beyond static visuals, incorporating smooth transitions and state changes to keep
+                                users engaged. This approach invites clear, dynamic, and intuitive interaction with suggested activities
+                                and exercises.
+                            </p>
+
+                            <div className="flex justify-center my-6">
+                                <div className="w-64 h-auto">
+                                    <img
+                                        src="/sanamente/img-4.png"
+                                        alt="Anxiety Relief Forum"
+                                        className="w-full h-auto"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            {/* Footer Image */}
+            <div className="w-full h-64 mt-12">
+                <img src="/sanamente/img-5.png" alt="Origami Pattern" className="w-full h-full object-cover" />
+            </div>
+        </div>
+    )
+}
+
