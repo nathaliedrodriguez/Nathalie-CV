@@ -68,7 +68,7 @@ export default function ContentCreatorPicks() {
                     {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
                     <div className="col-span-3 flex items-center gap-4 self-end">
                         <h1 className="text-xl font-title font-bold">
-                            Board Game <span className="text-[#0091fb] dark:text-[#0b9ff0]">Friends</span>
+                            Content Creator <span className="text-[#0091fb] dark:text-[#0b9ff0]">Picks</span>
                         </h1>
                     </div>
                 </div>
@@ -195,7 +195,7 @@ export default function ContentCreatorPicks() {
                 </div>
 
                 <div className="embla" ref={emblaRef}>
-                    <div className="flex w-full space-x-4 embla__container">
+                    <div className="flex w-full space-x-4 embla__container embla__dots">
                         {/* Video 1 */}
                         <div className="relative aspect-video bg-gray-800 rounded-lg overflow-hidden mb-2 embla__slide">
                             <ReactPlayer
