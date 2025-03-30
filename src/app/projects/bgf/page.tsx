@@ -7,6 +7,7 @@ import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
+import { useTheme } from 'next-themes'
 
 export default function BoardGameFriends() {
     const [sections, setSections] = useState({
@@ -28,10 +29,14 @@ export default function BoardGameFriends() {
         }))
     }
 
+    const { theme } = useTheme()
+
+    console.log(theme, "Este es el tema", typeof (theme))
+
     return (
-        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body pt-8">
+        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 ">
             {/* Header */}
-            <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
+            <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] rounded-3xl mx-auto max-w-7xl py-6 px-4">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
@@ -135,14 +140,26 @@ export default function BoardGameFriends() {
                                 </span>
                             </div>
 
-                            <div className="mt-6">
-                                <img src="/BGF/BGF-2-Desktop.png" alt="Example Programs" className="hidden lg:block" />
-                                <img src="/BGF/BGF-2-tablet.png" alt="Example Programs" className="hidden md:block lg:hidden" />
-                                <img src="/BGF/BGF-2-phone.png" alt="Example Programs" className="block md:hidden" />
-                            </div>
                         </div>
                     )}
                 </div>
+
+                {
+                    theme != "dark" &&
+                    <div className="mt-6 md:-mx-8 max-md:-mx-3">
+                        <img src="/BGF/BGF-2-Desktop.png" alt="Example Programs" className="hidden lg:block" />
+                        <img src="/BGF/BGF-2-tablet.png" alt="Example Programs" className="hidden md:block lg:hidden" />
+                        <img src="/BGF/BGF-2-phone.png" alt="Example Programs" className="block md:hidden" />
+                    </div>
+                }
+                {
+                    theme == "dark" &&
+                    <div className="mt-6 md:-mx-8 max-md:-mx-3">
+                        <img src="/BGF/BGF-2-Desktop-Dark.png" alt="Example Programs" className="hidden lg:block" />
+                        <img src="/BGF/BGF-2-tablet-Dark.png" alt="Example Programs" className="hidden md:block lg:hidden" />
+                        <img src="/BGF/BGF-2-phone-Dark.png" alt="Example Programs" className="block md:hidden" />
+                    </div>
+                }
 
                 {/* Discover Phase Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] dark:border-[#032561] pt-4">
@@ -192,7 +209,7 @@ export default function BoardGameFriends() {
                 </div>
             </div>
 
-            <div className="">
+            <div className="md:-mx-8 max-md:-mx-3">
                 <img src="/BGF/BGF-3-Desktop.png" alt="Example Goals" className="w-full" />
             </div>
 
@@ -251,9 +268,11 @@ export default function BoardGameFriends() {
 
                     {sections.livePrototype && (
                         <div className="mt-3 text-[#4f4c4c] dark:text-[#e2e2e5] text-sm">
-                            <p className="text-[#0091fb] dark:text-[#0b9ff0] underline">
-                                https://xd.adobe.com/view/08ffdb71-3370-46e1-a223-0c32ef51a0ab-5dac/?fullscreen
-                            </p>
+                            <iframe
+                                src="https://xd.adobe.com/view/08ffdb71-3370-46e1-a223-0c32ef51a0ab-5dac/screen/3e9c0696-7496-4c18-8fbd-5e41a6c5602d"
+                                width="100%"
+                                height="600px">
+                            </iframe>
                         </div>
                     )}
                 </div>
@@ -281,7 +300,7 @@ export default function BoardGameFriends() {
 
             </div>
             {/* Footer Images */}
-            <div className="flex w-full mx-0 mt-8">
+            <div className="mt-8 md:-mx-8 max-md:-mx-3">
                 <img src="/BGF/Footer.png" alt="Footer image" className="w-screen" />
             </div>
         </div >

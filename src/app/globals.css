@@ -110,8 +110,34 @@
   transform: scale(1.5);
 }
 
+.scroll-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
 
+/* Animación de scroll con pausas y movimiento alternado */
+@keyframes scroll {
+  0% {
+    transform: translateY(0); /* Inicio: parte superior */
+  }
+  45% {
+    transform: translateY(0); /* Pausa al inicio */
+  }
+  55% {
+    transform: translateY(calc(-100% + 570px)); /* Movimiento hacia el final */
+  }
+  100% {
+    transform: translateY(calc(-100% + 570px)); /* Pausa al final */
+  }
+}
 
+.scroll-image {
+  position: absolute;
+  top: 0;
+  animation: scroll 10s linear infinite alternate; /* Alternado para que suba y baje */
+}
 
 :root {
   /* Colores base */
@@ -260,8 +286,8 @@ html.dark .bg-\[\#ffff\] {
   background-color: #032561 !important;
 }
 
-html.dark .text-\[\#000000\] {
-  color: white !important;
+html.dark .text-\[\#000\] {
+  color: #e2e2e5 !important;
 }
 
 html.dark .text-\[\#101113\] {
@@ -307,3 +333,4 @@ html.dark .bg-\[\#f2f8fb\] {
     margin-bottom: 1rem;
   }
 }
+

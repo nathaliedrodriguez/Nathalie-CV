@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang="en" data-lt-installed="true" suppressHydrationWarning>
       <body className={`${elMessiri.variable} ${epilogue.variable} font-body`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          {children}
+            {children}
           <ScrollUp />
         </ThemeProvider>
       </body>

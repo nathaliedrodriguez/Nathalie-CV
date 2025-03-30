@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, ChevronLeft } from "lucide-react"
 import MobileMenu from "@/components/mobile-menu"
@@ -9,6 +9,7 @@ import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
 
 export default function YOPuedoProject() {
+    const contentRef = useRef<HTMLDivElement>(null)
     const [sections, setSections] = useState({
         about: true,
         programs: false,
@@ -29,7 +30,7 @@ export default function YOPuedoProject() {
     }
 
     return (
-        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body pt-8">
+        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body pt-3 md:pt-8 px-3 md:px-8">
             {/* Header */}
             <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
@@ -112,8 +113,39 @@ export default function YOPuedoProject() {
                                 </span>
                             </div>
 
-                            <div className="mt-6 flex justify-center">
-                                <img src="/YoPuedo/img-2.png" alt="Programs used image" />
+                            <div className="flex justify-center items-center my-8">
+                                <div className="relative">
+                                    {/* Marco del teléfono */}
+                                    <div className="relative w-[300px] h-[600px]">
+                                        {/* Contenido de la app con scroll manual */}
+                                        <div
+                                            ref={contentRef}
+                                            className="absolute top-[15px] left-[30px] w-[250px] h-[570px] overflow-auto rounded-[32px] hide-scroll"
+                                            style={{
+                                                // Aseguramos que el scrollbar esté oculto pero el scroll funcione
+                                                scrollbarWidth: "none",
+                                                msOverflowStyle: "none",
+                                            }}
+                                        >
+                                            <img
+                                                src="/YoPuedo/img.png"
+                                                alt="App content"
+                                                className="w-full object-cover"
+                                                style={{
+                                                    // Eliminamos la animación para permitir scroll manual
+                                                    position: "relative", // Cambiamos de absolute a relative
+                                                }}
+                                            />
+                                        </div>
+
+                                        {/* Marco del teléfono */}
+                                        <img
+                                            src="/YoPuedo/PhoneMark.png"
+                                            alt="Phone frame"
+                                            className="absolute top-0 left-0 z-10 pointer-events-none w-full h-full"
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -306,7 +338,7 @@ export default function YOPuedoProject() {
             </div>
 
             {/* Footer Images */}
-            <div className="flex w-full mx-0 mt-8">
+            <div className="-mx-3 md:-mx-8 mt-8">
                 <img src="/YoPuedo/img-8.png" alt="Footer image" className="w-screen" />
             </div>
         </div>

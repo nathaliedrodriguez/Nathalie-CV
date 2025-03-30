@@ -31,7 +31,7 @@ export default function NOUSLatamProject() {
     }
 
     return (
-        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body pt-8">
+        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3">
             {/* Header */}
             <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
@@ -81,7 +81,11 @@ export default function NOUSLatamProject() {
                             </p>
 
                             <div className="mt-6">
-                                <img src="/Nous/img-1.png" alt="Before and after" />
+                                <div className="flex w-full justify-around">
+                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">Before</p>
+                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">Ater</p>
+                                </div>
+                                <img src="/Nous/NOUS-Latam.gif" alt="Before and after" />
                             </div>
                         </div>
                     )}
@@ -155,6 +159,7 @@ export default function NOUSLatamProject() {
                             </ol>
 
                             <div className="mt-8 border-t border-[#e6e6e6] dark:border-[#032561] pt-4">
+                                <p className="text-lg text-center font-title font-bold text-[#000] dark:text-[#0b9ff0] mb-3">Clients hiring on Nous</p>
                                 <div className="embla_simple flex justify-between items-center" ref={emblaRef}>
                                     <div className=" embla__container_simple flex w-full md:gap-10">
                                         <img src="/Nous/carrousel/finpec.png" alt="Finpec" className="h-6 embla__slide_simple object-scale-down" />
@@ -305,7 +310,7 @@ export default function NOUSLatamProject() {
                 </div>
 
             </div>
-            <div className="flex w-full">
+            <div className="max-md:-mt-3 md:-mx-8">
                 <img src="/Nous/img-8.png" alt="footer image" className="w-full" />
             </div>
         </div>

@@ -26,7 +26,7 @@ export default function SanaMenteProject() {
     }
 
     return (
-        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body pt-8">
+        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body pt-3 md:pt-8 px-3 md:px-8">
             {/* Header */}
             <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
@@ -218,7 +218,7 @@ export default function SanaMenteProject() {
             </div>
 
             {/* Footer Image */}
-            <div className="w-full h-64 mt-12">
+            <div className="-mx-3 md:-mx-8 h-64 mt-12">
                 <img src="/sanamente/img-5.png" alt="Origami Pattern" className="w-full h-full object-cover" />
             </div>
         </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import ThemeToggle from "@/components/theme-toggle"
 import Footer from "@/components/footer"
@@ -11,25 +11,7 @@ import SimpleDialog from "@/components/simple-dialog"
 
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false)
-
   const [isDialogOpen, setIsDialogOpen] = useState(false)
-
-  // Esperamos a que el componente esté montado para acceder al tema
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  // Si no está montado, mostramos un placeholder para evitar saltos de UI
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-[#ffffff] dark:bg-[#101113]">
-        <div className="flex items-center justify-center min-h-screen">
-          <p>Cargando...</p>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] overflow-x-hidden">
@@ -74,7 +56,7 @@ export default function Home() {
                 <img src="/HomePage/icons/star.png" className="w-8 h-8 mb-3" alt="StarIcon" />
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 font-title">
+              <h1 className="text-3xl md:text-5xl lg:text-4xl font-bold mb-6 font-title">
                 I create <span className="text-[#0004a4] dark:text-[#0091fb]">UX strategies</span>
               </h1>
 
@@ -98,12 +80,12 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 flex md:flex-col items-center justify-center max-md:justify-between">
-              <div className="relative w-52 h-52 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-[#0091fb]">
-                <img src="/HomePage/profile.png" alt="Profile" className="object-fill w-full h-full" />
+            <div className="order-1 lg:order-2 flex md:flex-col items-center justify-center max-md:justify-between max-md:gap-1">
+              <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-[#0091fb]">
+                <img src="/HomePage/profile.png" alt="Profile" className="object-cover object-top w-full h-full" />
               </div>
               <div className="flex items-center gap-1 mb-4 md:hidden">
-                <p className="text-[#0004a4] dark:text-[#bd5555] font-medium max-sm:text-center">Hi! I&apos;m Naty!</p>
+                <p className="text-[#0004a4] dark:text-[#bd5555] font-medium max-sm:text-start ">Hi! I&apos;m Naty!</p>
                 <img src="/HomePage/icons/star.png" className="w-10 h-10 mb-3" alt="StarIcon" />
               </div>
               {/* About Me Link */}
@@ -123,55 +105,55 @@ export default function Home() {
       {/* Let's Work Together Section */}
       <section className="px-4 sm:px-8 md:px-16 lg:px-24 py-16">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 font-title">Let&apos;s work together!</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 font-title text-[#0004a4]">Let&apos;s work together!</h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center">
             {/* UX UI Designer Card */}
-            <div className="bg-[#f2f8fb] dark:bg-[#000068] p-8 rounded-xl">
+            <div className="bg-[#f2f8fb] dark:bg-[#000068] p-8 rounded-xl max-w-[358px] mx-auto">
               <div className="flex items-center gap-4 mb-6">
-                <img src="/HomePage/icons/touch.png" className="w-10 rounded-lg flex items-center justify-center" alt="TouchIcon" />
-                <h3 className="text-xl font-bold dark:text-[#0b9ff0] font-title">UX UI Designer</h3>
+              <img src="/HomePage/icons/touch.png" className="w-10 rounded-lg flex items-center justify-center" alt="TouchIcon" />
+              <h3 className="text-xl font-bold dark:text-[#0b9ff0] font-title">UX UI Designer</h3>
               </div>
 
               <p className="text-[#101113] dark:text-[#d9d9d9] mb-8">
-                I create functional and intuitive design solutions to enhance the user experience across platforms.
+              I create functional and intuitive design solutions to enhance the user experience across platforms.
               </p>
 
-              <div className="flex justify-center">
-                <Link href="/projects">
-                  <Button
-                    variant="outline"
-                    className="border-[#0091fb] dark:border-[#0b9ff0] text-[#0091fb] dark:text-[#0b9ff0] hover:bg-[#0091fb]/10 dark:hover:bg-[#0b9ff0]/10 rounded-full px-6"
-                  >
-                    Explore my Projects
-                  </Button>
-                </Link>
+              <div className="flex justify-center w-full">
+              <Link href="/projects" className="w-full flex justify-center items-center">
+                <Button
+                variant="outline"
+                className="border-[#0091fb] dark:border-[#0b9ff0] text-[#0091fb] dark:text-[#0b9ff0] hover:bg-[#0091fb]/10 dark:hover:bg-[#0b9ff0]/10 rounded-2xl px-6 w-full"
+                >
+                Explore my Projects
+                </Button>
+              </Link>
               </div>
             </div>
 
             {/* Content Creator Card */}
-            <div className="bg-[#f2f8fb] dark:bg-[#000068] p-8 rounded-xl">
+            <div className="bg-[#f2f8fb] dark:bg-[#000068] p-8 rounded-xl max-w-[358px] mx-auto">
               <div className="flex items-center gap-4 mb-6">
-                <img src="/HomePage/icons/Keyboard.png" className="w-10 flex items-center justify-center" alt="KeyboardIcon" />
-                <h3 className="text-xl font-bold dark:text-[#0b9ff0] font-title">Content Creator</h3>
+              <img src="/HomePage/icons/Keyboard.png" className="w-10 flex items-center justify-center" alt="KeyboardIcon" />
+              <h3 className="text-xl font-bold dark:text-[#0b9ff0] font-title">Content Creator</h3>
               </div>
 
               <p className="text-[#101113] dark:text-[#d9d9d9] mb-8">
-                I produce engaging and informative content to attract and retain targeted audiences.
+              I produce engaging and informative content to attract and retain targeted audiences.
               </p>
 
-              <div className="flex justify-center">
-                <Link href="/content-creator">
-                  <Button
-                    variant="outline"
-                    className="border-[#0091fb] dark:border-[#0b9ff0] text-[#0091fb] dark:text-[#0b9ff0] hover:bg-[#0091fb]/10 dark:hover:bg-[#0b9ff0]/10 rounded-full px-6"
-                  >
-                    View my Work
-                  </Button>
-                </Link>
+              <div className="flex justify-center w-full">
+              <Link href="/content-creator" className="w-full flex justify-center items-center">
+                <Button
+                variant="outline"
+                className="border-[#0091fb] dark:border-[#0b9ff0] text-[#0091fb] dark:text-[#0b9ff0] hover:bg-[#0091fb]/10 dark:hover:bg-[#0b9ff0]/10 rounded-2xl px-6 w-full"
+                >
+                View my Work
+                </Button>
+              </Link>
               </div>
             </div>
-          </div>
+            </div>
         </div>
       </section>
 

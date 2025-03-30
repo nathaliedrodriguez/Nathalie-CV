@@ -1,15 +1,122 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { ChevronLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import Link from "next/link"
+import Footer from "@/components/footer"
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [maxScroll, setMaxScroll] = useState(0)
+  const animationRef = useRef<number | null>(null)
+  const scrollSpeed = 0.5
+  const pauseAtEnds = 1000
+
+  // Calcular la altura máxima de scroll cuando el componente se monta
+  useEffect(() => {
+    if (!contentRef.current) return
+
+    const updateMaxScroll = () => {
+      if (contentRef.current) {
+        const contentHeight = contentRef.current.scrollHeight
+        const containerHeight = contentRef.current.clientHeight
+        setMaxScroll(contentHeight - containerHeight)
+      }
+    }
+
+    // Actualizar al montar y cuando la imagen se cargue
+    updateMaxScroll()
+
+    // Asegurarnos de que la imagen esté cargada
+    const images = contentRef.current.querySelectorAll("img")
+    if (images.length > 0) {
+      images.forEach((img) => {
+        if (!img.complete) {
+          img.onload = updateMaxScroll
+        }
+      })
+    }
+
+    // Actualizar cuando cambie el tamaño de la ventana
+    window.addEventListener("resize", updateMaxScroll)
+
+    return () => {
+      window.removeEventListener("resize", updateMaxScroll)
+    }
+  }, [])
+
+  // Efecto para manejar la animación automática
+  useEffect(() => {
+    if (!contentRef.current || maxScroll <= 0) return
+
+    let scrollingDown = true
+    let currentPosition = 0
+    let isPaused = false
+    let pauseTimeoutId: NodeJS.Timeout | null = null
+
+    const animate = () => {
+      if (!contentRef.current) return
+
+      if (isPaused) {
+        animationRef.current = requestAnimationFrame(animate)
+        return
+      }
+
+      if (scrollingDown) {
+        // Scroll hacia abajo
+        currentPosition = Math.min(currentPosition + scrollSpeed, maxScroll)
+        if (contentRef.current) {
+          contentRef.current.scrollTop = currentPosition
+        }
+
+        // Si llegamos al final, pausamos y luego cambiamos dirección
+        if (currentPosition >= maxScroll) {
+          isPaused = true
+          pauseTimeoutId = setTimeout(() => {
+            scrollingDown = false
+            isPaused = false
+          }, pauseAtEnds)
+        }
+      } else {
+        // Scroll hacia arriba
+        currentPosition = Math.max(currentPosition - scrollSpeed, 0)
+        if (contentRef.current) {
+          contentRef.current.scrollTop = currentPosition
+        }
+
+        // Si llegamos al inicio, pausamos y luego cambiamos dirección
+        if (currentPosition <= 0) {
+          isPaused = true
+          pauseTimeoutId = setTimeout(() => {
+            scrollingDown = true
+            isPaused = false
+          }, pauseAtEnds)
+        }
+      }
+
+      // Continuar la animación
+      animationRef.current = requestAnimationFrame(animate)
+    }
+
+    // Iniciar la animación
+    animationRef.current = requestAnimationFrame(animate)
+
+    // Limpiar al desmontar
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+      if (pauseTimeoutId) {
+        clearTimeout(pauseTimeoutId)
+      }
+    }
+  }, [maxScroll])
+
 
   // Importante: Necesitamos esperar a que el componente esté montado
   // para acceder al tema actual, ya que next-themes es hidratado en el cliente
@@ -29,9 +136,9 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-[#ffffff] dark:bg-[#2f2f3b] overflow-x-hidden">
+    <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
       {/* Header */}
-      <header className="bg-[#e6f4ff] dark:bg-[#2f3036] py-6 px-4 md:px-8 lg:px-16 rounded-3xl mx-4 md:mx-8 lg:mx-16 mt-8">
+      <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] rounded-3xl mx-auto max-w-7xl py-6 px-4">
         <div className="grid grid-cols-3 grid-rows-3 min-h-32">
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex max-lg:justify-between lg:justify-end items-start gap-6">
@@ -80,10 +187,10 @@ export default function Portfolio() {
       </header>
 
 
-      <main className="max-md:max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-12">
+      <main className="max-md:max-w-7xl mx-auto py-12">
         {/* Approach Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-title font-bold mb-8 text-[#000000] dark:text-white">
+        <section className="mb-16 container mx-auto max-w-7xl py-6">
+          <h2 className="text-2xl font-title font-bold mb-8 text-[#0004a4]">
             My Approach Across Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -121,7 +228,7 @@ export default function Portfolio() {
 
         {/* Portfolio Section */}
         <section>
-          <h2 className="text-2xl font-title font-bold mb-12 text-[#000000] dark:text-white">Explore my work</h2>
+          <h2 className="text-2xl font-title font-bold mb-12 text-[#0004a4]">Explore my work</h2>
 
           {/* Project 1 */}
           <div className="mb-16">
@@ -135,7 +242,7 @@ export default function Portfolio() {
               </div>
               <div className="order-1 md:order-2 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] dark:md:bg-[#2f3036] md:z-[-1] "></div>
-                <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-6 rounded-xl md:rounded-l-xl md:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
+                <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-10  rounded-xl md:rounded-l-xl md:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
                   <div>
                     <h3 className="text-xl font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">
                       Board Game Friends
@@ -172,7 +279,7 @@ export default function Portfolio() {
                   </div>
                   <div className="flex justify-center">
                     <Link href='projects/bgf'>
-                      <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white">
+                      <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white min-w-[200px] rounded-xl">
                         Dive In
                       </Button>
                     </Link>
@@ -186,12 +293,44 @@ export default function Portfolio() {
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:hidden">
-                <img src="/HomePage/YOPuedo-App.png" alt="YOPuedo App" className="mx-auto rounded-lg" />
+                {/* <img src="/HomePage/YOPuedo-App.png" alt="YOPuedo App" className="mx-auto rounded-lg" /> */}
+                {/* <video
+                  src="/YoPuedo/animate.mp4"
+                  className="mx-auto rounded-4xl w-1/4 h-auto"
+                  autoPlay
+                  muted
+                  loop
+                /> */}
+                <div className="flex justify-center items-center my-8">
+                  <div className="relative">
+                    {/* Marco del teléfono */}
+                    <div className="relative w-[300px] h-[600px]">
+                      {/* Contenido de la app con scroll animado */}
+                      <div
+                        ref={contentRef}
+                        className="absolute top-[15px] left-[30px] w-[250px] h-[570px] overflow-hidden rounded-[32px] hide-scroll"
+                      >
+                        <img
+                          src="/YoPuedo/img.png" // Asegúrate de que esta ruta sea correcta
+                          alt="App content"
+                          className="scroll-image w-full object-cover"
+                        />
+                      </div>
+
+                      {/* Marco del teléfono */}
+                      <img
+                        src="/YoPuedo/PhoneMark.png" // Asegúrate de que esta ruta sea correcta
+                        alt="Phone frame"
+                        className="absolute top-0 left-0 z-10 pointer-events-none w-full h-full"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="relative h-full">
                 <div className="relative h-full">
                   <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] dark:md:bg-[#2f3036] md:z-[-1]"></div>
-                  <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-6 rounded-xl md:rounded-r-xl md:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
+                  <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-10 lg:pl-20 rounded-xl md:rounded-r-xl md:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
                     <div>
                       <h3 className="text-xl font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">
                         YOPuedo app
@@ -241,7 +380,7 @@ export default function Portfolio() {
                     </div>
                     <div className="flex justify-center">
                       <Link href='/projects/yo-puedo'>
-                        <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white">
+                        <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white min-w-[200px] rounded-xl">
                           Find Out More
                         </Button>
                       </Link>
@@ -250,7 +389,39 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="max-lg:hidden">
-                <img src="/HomePage/YOPuedo-App.png" alt="YOPuedo App" className="mx-auto rounded-lg" />
+                {/* <img src="/HomePage/YOPuedo-App.png" alt="YOPuedo App" className="mx-auto rounded-lg" /> */}
+                {/* <video
+                  src="/YoPuedo/animate.mp4"
+                  className="mx-auto rounded-2xl w-1/4 h-auto"
+                  autoPlay
+                  muted
+                  loop
+                /> */}
+                <div className="flex justify-center items-center my-8">
+                  <div className="relative">
+                    {/* Marco del teléfono */}
+                    <div className="relative w-[240px] h-[480px]">
+                      {/* Contenido de la app con scroll animado */}
+                      <div
+                        ref={contentRef}
+                        className="absolute top-[15px] left-[21px] w-[200px] h-[456px] overflow-hidden rounded-[32px] hide-scroll"
+                      >
+                        <img
+                          src="/YoPuedo/img.png" // Asegúrate de que esta ruta sea correcta
+                          alt="App content"
+                          className="scroll-image w-full object-cover"
+                        />
+                      </div>
+
+                      {/* Marco del teléfono */}
+                      <img
+                        src="/YoPuedo/PhoneMark.png" // Asegúrate de que esta ruta sea correcta
+                        alt="Phone frame"
+                        className="absolute top-0 left-0 z-10 pointer-events-none w-full h-full"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -259,11 +430,15 @@ export default function Portfolio() {
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="order-1">
-                <img src="/HomePage/NOUS-Latam.png" alt="NOUS Latam" className="mx-auto rounded-lg" />
+                <div className="max-lg:p-10 lg:pr-16 lg:py-5 ">
+                  <p className="text-lg text-start font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">Current Design</p>
+                  <img src="/HomePage/NOUS-Latam.gif" alt="NOUS Latam" className="mx-auto rounded-lg" />
+                  <p className="text-lg text-end w-full font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mt-3">New Proposal</p>
+                </div>
               </div>
               <div className="order-1 md:order-2 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] dark:md:bg-[#2f3036] md:z-[-1]"></div>
-                <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-6 rounded-xl md:rounded-l-xl md:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
+                <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-10  rounded-xl md:rounded-l-xl md:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
                   <div className="">
                     <h3 className="text-xl font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">NOUS Latam</h3>
                     <p className="text-sm font-body mb-4 text-[#4f4c4c] dark:text-[#e2e2e5]">
@@ -287,7 +462,7 @@ export default function Portfolio() {
                   </div>
                   <div className="flex justify-center">
                     <Link href="/projects/nous">
-                      <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white">
+                      <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white text-white min-w-[200px] rounded-xl">
                         View Insights
                       </Button>
                     </Link>
@@ -301,12 +476,18 @@ export default function Portfolio() {
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:hidden">
-                <img src="/HomePage/SanaMente-App.png" alt="SanaMente App" className="mx-auto rounded-lg" />
+                <video
+                  src="/sanamente/sanamenteVideo.MP4"
+                  className="mx-auto rounded-xl md:rounded-3xl w-1/4 h-auto"
+                  autoPlay
+                  muted
+                  loop
+                />
               </div>
               <div className="relative h-full">
                 <div className="relative h-full">
                   <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] dark:md:bg-[#2f3036] md:z-[-1]"></div>
-                  <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-6 rounded-xl md:rounded-r-xl md:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
+                  <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-10 lg:pl-20 rounded-xl md:rounded-r-xl md:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
                     <div>
                       <h3 className="text-xl font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">SanaMente</h3>
                       <p className="text-sm font-body mb-4 text-[#4f4c4c] dark:text-[#e2e2e5]">
@@ -330,7 +511,7 @@ export default function Portfolio() {
                     </div>
                     <div className="flex justify-center">
                       <Link href="/projects/sanamente">
-                        <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white">
+                        <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white min-w-[200px] rounded-xl">
                           See More
                         </Button>
                       </Link>
@@ -338,8 +519,14 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
-              <div className="max-lg:hidden">
-                <img src="/HomePage/SanaMente-App.png" alt="SanaMente App" className="mx-auto rounded-lg" />
+              <div className="max-lg:hidden lg:py-5">
+                <video
+                  src="/sanamente/sanamenteVideo.MP4"
+                  className="mx-auto rounded-2xl w-1/4 h-auto"
+                  autoPlay
+                  muted
+                  loop
+                />
               </div>
             </div>
           </div>
@@ -347,20 +534,7 @@ export default function Portfolio() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#e6f4ff] dark:bg-[#2f3036] py-8 px-4 md:px-8 lg:px-16 mt-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pb-16">
-          <div className="flex flex-col items-center gap-4 mb-4 md:mb-0">
-            <img src="/HomePage/icons/star.png" className="w-24 h-24" alt="StarIcon" />
-            <div>
-              <h3 className="font-title font-bold text-lg text-[#0679B8]">Nathalie D. Rodriguez</h3>
-              <p className="font-body text-xs text-[#4f4c4c] dark:text-[#e2e2e5]">
-                UX / UI Designer - B.A. in Social Communication
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="w-full text-center font-body text-sm text-[#4f4c4c] dark:text-[#e2e2e5]">Copyright © 2024 nathalie</div>
-      </footer>
+      <Footer />
     </div>
   )
 }

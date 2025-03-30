@@ -42,7 +42,7 @@ export default function ContentCreatorPicks() {
     const ArticlesAndStoriesVideos = ["https://www.youtube.com/embed/G0194NiR1Ds?si=NDNCSSeqsWN3OQB2", "https://www.youtube.com/embed/pxTsfoOQcPA?si=3ZReIPaMfy1S_2GW", "https://www.youtube.com/embed/2azvHp5s_DY?si=WQcBRXsy8gZR3DRr&amp;start=25"]
 
     return (
-        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body pt-8">
+        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
             {/* Header */}
             <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
@@ -75,8 +75,8 @@ export default function ContentCreatorPicks() {
             </header>
 
             {/* What Guides My Work */}
-            <section className="container mx-auto px-4 py-6 max-w-7xl">
-                <h2 className="text-xl font-medium mb-6 missiri text-[#0004a4]">What Guides My Work</h2>
+            <section className="container mx-auto py-6 max-w-7xl">
+                <h2 className="text-xl font-medium mb-6 missiri text-[#0004a4] pl-4">What Guides My Work</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {/* Card 1 */}
