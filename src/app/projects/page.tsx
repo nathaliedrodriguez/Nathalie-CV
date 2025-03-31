@@ -136,9 +136,9 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
+    <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
       {/* Header */}
-      <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] rounded-3xl mx-auto max-w-7xl py-6 px-4">
+      <header className="container bg-[#e6f4ff] rounded-3xl mx-auto max-w-7xl py-6 px-4">
         <div className="grid grid-cols-3 grid-rows-3 min-h-32">
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex max-lg:justify-between lg:justify-end items-start gap-6">
@@ -155,7 +155,7 @@ export default function Portfolio() {
               <Link href="about-me">
                 <Button
                   variant="ghost"
-                  className="font-body text-[#0091fb] hover:text-[#0679b8] dark:text-[#0b9ff0] dark:hover:text-[#0091fb] p-0"
+                  className="font-body text-[#0091fb] hover:text-[#0679b8] p-0"
                 >
                   About Me
                 </Button>
@@ -163,7 +163,7 @@ export default function Portfolio() {
               <Link href="/content-creator">
                 <Button
                   variant="ghost"
-                  className="font-body text-[#0091fb] hover:text-[#0679b8] dark:text-[#0b9ff0] dark:hover:text-[#0091fb] p-0"
+                  className="font-body text-[#0091fb] hover:text-[#0679b8] p-0"
                 >
                   Content Creator
                 </Button>
@@ -180,7 +180,7 @@ export default function Portfolio() {
               <img src="/HomePage/profile.png" alt="Profile" sizes="64" className="object-cover" />
             </div>
             <h1 className="text-xl font-title font-bold">
-              My UX UI <span className="text-[#0091fb] dark:text-[#0b9ff0]">designs</span>
+              My UX UI <span className="text-[#0091fb]">designs</span>
             </h1>
           </div>
         </div>
@@ -194,32 +194,32 @@ export default function Portfolio() {
             My Approach Across Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-[#e6f4ff] dark:bg-[#2f3036] p-6 rounded-xl col-span-1 md:col-span-1 lg:col-span-1">
+            <div className="bg-[#e6f4ff] p-6 rounded-xl col-span-1 md:col-span-1 lg:col-span-1">
               <div className="flex items-center mb-4 gap-3">
                 <img src="/HomePage/icons/target.png" className="w-10 h-10 rounded-full flex items-center justify-center mb-4" alt="targetIcon" />
                 <h3 className="text-lg font-title font-bold mb-2">UX Research</h3>
               </div>
-              <p className="text-sm font-body text-[#4f4c4c] dark:text-[#e2e2e5]">
+              <p className="text-sm font-body text-[#4f4c4c]">
                 Understanding of user needs and behaviors, driving effective solutions.
               </p>
             </div>
 
-            <div className="bg-[#e6f4ff] dark:bg-[#2f3036] p-6 rounded-xl col-span-1 md:col-span-1 lg:col-span-1">
+            <div className="bg-[#e6f4ff] p-6 rounded-xl col-span-1 md:col-span-1 lg:col-span-1">
               <div className="flex items-center mb-4 gap-3">
                 <img src="/HomePage/icons/cards.png" className="w-10 h-10 flex items-center justify-center mb-4" alt="cardsIcon" />
                 <h3 className="text-lg font-title font-bold mb-2">UX Writing</h3>
               </div>
-              <p className="text-sm font-body text-[#4f4c4c] dark:text-[#e2e2e5]">
+              <p className="text-sm font-body text-[#4f4c4c]">
                 Creation of clear content to enhance the overall user experience.
               </p>
             </div>
 
-            <div className="bg-[#e6f4ff] dark:bg-[#2f3036] p-6 rounded-xl col-span-1 md:col-span-2 lg:col-span-1">
+            <div className="bg-[#e6f4ff] p-6 rounded-xl col-span-1 md:col-span-2 lg:col-span-1">
               <div className="flex items-center mb-4 gap-3">
                 <img src="/HomePage/icons/brush.png" className="w-10 h-10 flex items-center justify-center mb-4" alt="brushIcon" />
                 <h3 className="text-lg font-title font-bold mb-2">UI Design</h3>
               </div>
-              <p className="text-sm font-body text-[#4f4c4c] dark:text-[#e2e2e5]">
+              <p className="text-sm font-body text-[#4f4c4c]">
                 Prototyping of visual interfaces that are both engaging and functional.
               </p>
             </div>
@@ -241,37 +241,37 @@ export default function Portfolio() {
                 />
               </div>
               <div className="order-1 md:order-2 relative h-full">
-                <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] dark:md:bg-[#2f3036] md:z-[-1] "></div>
-                <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-10  rounded-xl md:rounded-l-xl md:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
+                <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
+                <div className="bg-[#f2f8fb] p-10  rounded-xl md:rounded-l-xl md:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
                   <div>
-                    <h3 className="text-xl font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">
+                    <h3 className="text-xl font-title font-bold text-[#0091fb] mb-3">
                       Board Game Friends
                     </h3>
-                    <p className="text-sm font-body mb-4 text-[#4f4c4c] dark:text-[#e2e2e5]">
+                    <p className="text-sm font-body mb-4 text-[#4f4c4c]">
                       An app that offers a seamless platform to create and join in-person board game meetings.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                       >
                         Adobe Xd
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                       >
                         Adobe Photoshop
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                       >
                         Whimsical
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                       >
                         Optimal Workshop
                       </Badge>
@@ -279,7 +279,7 @@ export default function Portfolio() {
                   </div>
                   <div className="flex justify-center">
                     <Link href='projects/bgf'>
-                      <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white min-w-[200px] rounded-xl">
+                      <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-xl">
                         Dive In
                       </Button>
                     </Link>
@@ -329,50 +329,50 @@ export default function Portfolio() {
               </div>
               <div className="relative h-full">
                 <div className="relative h-full">
-                  <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] dark:md:bg-[#2f3036] md:z-[-1]"></div>
-                  <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-10 lg:pl-20 rounded-xl md:rounded-r-xl md:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
+                  <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
+                  <div className="bg-[#f2f8fb] p-10 lg:pl-20 rounded-xl md:rounded-r-xl md:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
                     <div>
-                      <h3 className="text-xl font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">
+                      <h3 className="text-xl font-title font-bold text-[#0091fb] mb-3">
                         YOPuedo app
                       </h3>
-                      <p className="text-sm font-body mb-4 text-[#4f4c4c] dark:text-[#e2e2e5]">
+                      <p className="text-sm font-body mb-4 text-[#4f4c4c]">
                         Mobile/web design that enables the elderly to access remote assistance sessions provided by
                         volunteers in a simple way.
                       </p>
                       <div className="flex flex-wrap gap-2 mb-6">
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                         >
                           Figma
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                         >
                           Adobe Illustrator
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                         >
                           Adobe Photoshop
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                         >
                           Marvel
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                         >
                           Maze
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                         >
                           Optimal Workshop
                         </Badge>
@@ -380,7 +380,7 @@ export default function Portfolio() {
                     </div>
                     <div className="flex justify-center">
                       <Link href='/projects/yo-puedo'>
-                        <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white min-w-[200px] rounded-xl">
+                        <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-xl">
                           Find Out More
                         </Button>
                       </Link>
@@ -431,30 +431,30 @@ export default function Portfolio() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="order-1">
                 <div className="max-lg:p-10 lg:pr-16 lg:py-5 ">
-                  <p className="text-lg text-start font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">Current Design</p>
+                  <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">Current Design</p>
                   <img src="/HomePage/NOUS-Latam.gif" alt="NOUS Latam" className="mx-auto rounded-lg" />
-                  <p className="text-lg text-end w-full font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mt-3">New Proposal</p>
+                  <p className="text-lg text-end w-full font-title font-bold text-[#0091fb] mt-3">New Proposal</p>
                 </div>
               </div>
               <div className="order-1 md:order-2 relative h-full">
-                <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] dark:md:bg-[#2f3036] md:z-[-1]"></div>
-                <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-10  rounded-xl md:rounded-l-xl md:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
+                <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
+                <div className="bg-[#f2f8fb] p-10  rounded-xl md:rounded-l-xl md:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
                   <div className="">
-                    <h3 className="text-xl font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">NOUS Latam</h3>
-                    <p className="text-sm font-body mb-4 text-[#4f4c4c] dark:text-[#e2e2e5]">
+                    <h3 className="text-xl font-title font-bold text-[#0091fb] mb-3">NOUS Latam</h3>
+                    <p className="text-sm font-body mb-4 text-[#4f4c4c]">
                       Homepage redesign with a human-centered approach, featuring UI enhancements, animations, icons,
                       images and more.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                       >
                         Figma
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                       >
                         Adobe Illustrator
                       </Badge>
@@ -462,7 +462,7 @@ export default function Portfolio() {
                   </div>
                   <div className="flex justify-center">
                     <Link href="/projects/nous">
-                      <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white text-white min-w-[200px] rounded-xl">
+                      <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] text-white text-white min-w-[200px] rounded-xl">
                         View Insights
                       </Button>
                     </Link>
@@ -486,24 +486,24 @@ export default function Portfolio() {
               </div>
               <div className="relative h-full">
                 <div className="relative h-full">
-                  <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] dark:md:bg-[#2f3036] md:z-[-1]"></div>
-                  <div className="bg-[#f2f8fb] dark:bg-[#2f3036] p-10 lg:pl-20 rounded-xl md:rounded-r-xl md:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
+                  <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
+                  <div className="bg-[#f2f8fb] p-10 lg:pl-20 rounded-xl md:rounded-r-xl md:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
                     <div>
-                      <h3 className="text-xl font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">SanaMente</h3>
-                      <p className="text-sm font-body mb-4 text-[#4f4c4c] dark:text-[#e2e2e5]">
+                      <h3 className="text-xl font-title font-bold text-[#0091fb] mb-3">SanaMente</h3>
+                      <p className="text-sm font-body mb-4 text-[#4f4c4c]">
                         Anxiety app with a neomorphism design, featuring an AI companion, a forum and relaxation tools for
                         a calming experience.
                       </p>
                       <div className="flex flex-wrap gap-2 mb-6">
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                         >
                           Figma
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                         >
                           Adobe Photoshop
                         </Badge>
@@ -511,7 +511,7 @@ export default function Portfolio() {
                     </div>
                     <div className="flex justify-center">
                       <Link href="/projects/sanamente">
-                        <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] dark:bg-[#0b9ff0] dark:hover:bg-[#0091fb] text-white min-w-[200px] rounded-xl">
+                        <Button className="font-body bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-xl">
                           See More
                         </Button>
                       </Link>

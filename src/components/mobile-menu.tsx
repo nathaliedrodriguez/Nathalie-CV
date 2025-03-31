@@ -78,7 +78,7 @@ export default function MobileMenu() {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="h-full w-full max-w-[430px] mx-auto bg-[#edf5fa] dark:bg-[#000068] flex flex-col items-center justify-between py-12 px-8 rounded-r-3xl shadow-xl">
+      <div className="h-full w-full max-w-[430px] mx-auto bg-[#edf5fa]  flex flex-col items-center justify-between py-12 px-8 rounded-r-3xl shadow-xl">
         {/* Perfil */}
         <div className="flex flex-col items-start space-y-6 mt-8 -ml-8">
           <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white">
@@ -86,10 +86,10 @@ export default function MobileMenu() {
           </div>
 
           <div className="text-left">
-            <h1 className="text-[#0004a4] dark:text-[#0091fb] text-3xl font-bold font-title mb-1">
+            <h1 className="text-[#0004a4]  text-3xl font-bold font-title mb-1">
               Nathalie D. Rodriguez
             </h1>
-            <p className="text-[#101113] dark:text-[#d9d9d9] text-sm">
+            <p className="text-[#101113] text-sm">
               UX / UI Designer - B.A. in Social Communication
             </p>
           </div>
@@ -97,8 +97,8 @@ export default function MobileMenu() {
 
         {/* Enlaces */}
         <div className="flex flex-col items-start w-full space-y-8 my-12">
-          <Link href="/about-me" className="flex items-center text-[#0091fb] dark:text-[#0b9ff0] text-xl">
-            <img src="/HomePage/icons/star.png" className="w-6 h-6 mr-4 fill-[#0091fb] stroke-[#0091fb] dark:fill-[#0b9ff0] dark:stroke-[#0b9ff0]" alt="StarIcon" />
+          <Link href="/about-me" className="flex items-center text-[#0091fb] text-xl">
+            <img src="/HomePage/icons/star.png" className="w-6 h-6 mr-4 fill-[#0091fb] stroke-[#0091fb]" alt="StarIcon" />
             About Me
           </Link>
 
@@ -106,10 +106,10 @@ export default function MobileMenu() {
             href="https://www.behance.net/nathaliedrodriguez"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-[#0091fb] dark:text-[#0b9ff0] text-xl"
+            className="flex items-center text-[#0091fb] text-xl"
           >
             <div className="w-6 h-6 mr-4 flex items-center justify-center">
-              <img src="/HomePage/icons/behance-icon.png" className="w-6 h-6 fill-[#0091fb] stroke-[#0091fb] dark:fill-[#0b9ff0] dark:stroke-[#0b9ff0]" alt="BehanceIcon" />
+              <img src="/HomePage/icons/behance-icon.png" className="w-6 h-6 fill-[#0091fb] stroke-[#0091fb]" alt="BehanceIcon" />
             </div>
             Behance
           </Link>
@@ -118,15 +118,15 @@ export default function MobileMenu() {
             href="https://www.linkedin.com/in/nathaliedrodriguez/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-[#0091fb] dark:text-[#0b9ff0] text-xl"
+            className="flex items-center text-[#0091fb] text-xl"
           >
-            <img src="/HomePage/icons/linkedin-icon.png" className="w-6 h-6 fill-[#0091fb] mr-4 stroke-[#0091fb] dark:fill-[#0b9ff0] dark:stroke-[#0b9ff0]" alt="LinkedinIcon" />
+            <img src="/HomePage/icons/linkedin-icon.png" className="w-6 h-6 fill-[#0091fb] mr-4 stroke-[#0091fb]" alt="LinkedinIcon" />
             Linkedin
           </Link>
         </div>
 
         {/* Mensaje de agradecimiento */}
-        <div className="text-center text-[#101113] dark:text-[#d9d9d9] mt-auto mb-8">
+        <div className="text-center text-[#101113] mt-auto mb-8">
           Thanks for visiting my website!
         </div>
 

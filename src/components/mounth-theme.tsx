@@ -13,7 +13,7 @@ const MountTheme: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     // Si no está montado, mostramos un placeholder para evitar saltos de UI
     if (!mounted) {
         return (
-            <div className="min-h-screen bg-[#ffffff] dark:bg-[#101113]">
+            <div className="min-h-screen bg-[#ffffff]">
                 <div className="flex items-center justify-center min-h-screen">
                     <p>Loading...</p>
                 </div>

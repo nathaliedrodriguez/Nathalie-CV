@@ -42,9 +42,9 @@ export default function ContentCreatorPicks() {
     const ArticlesAndStoriesVideos = ["https://www.youtube.com/embed/G0194NiR1Ds?si=NDNCSSeqsWN3OQB2", "https://www.youtube.com/embed/pxTsfoOQcPA?si=3ZReIPaMfy1S_2GW", "https://www.youtube.com/embed/2azvHp5s_DY?si=WQcBRXsy8gZR3DRr&amp;start=25"]
 
     return (
-        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
+        <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
             {/* Header */}
-            <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
+            <header className="container bg-[#e6f4ff] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
@@ -68,7 +68,7 @@ export default function ContentCreatorPicks() {
                     {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
                     <div className="col-span-3 flex items-center gap-4 self-end">
                         <h1 className="text-xl font-title font-bold">
-                            Content Creator <span className="text-[#0091fb] dark:text-[#0b9ff0]">Picks</span>
+                            Content Creator <span className="text-[#0091fb]">Picks</span>
                         </h1>
                     </div>
                 </div>

@@ -26,9 +26,9 @@ export default function SanaMenteProject() {
     }
 
     return (
-        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body pt-3 md:pt-8 px-3 md:px-8">
+        <div className="min-h-screen bg-[#ffffff] font-body pt-3 md:pt-8 px-3 md:px-8">
             {/* Header */}
-            <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
+            <header className="container bg-[#e6f4ff] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
@@ -53,7 +53,7 @@ export default function SanaMenteProject() {
                     <div className="col-span-3 flex items-center gap-4 self-end">
                         <h1 className="text-xl font-title font-bold">
                             <span>Sana</span>
-                            <span className="text-[#0091fb] dark:text-[#0b9ff0]">Mente</span>
+                            <span className="text-[#0091fb]">Mente</span>
                         </h1>
                     </div>
                 </div>
@@ -80,7 +80,8 @@ export default function SanaMenteProject() {
                             </p>
 
                             <div className="flex justify-center mt-6">
-                                <img src="/sanamente/img-1.png" alt="Sanamente ui" />
+                            <iframe width="800" height="450" src="https://embed.figma.com/proto/92569bfJXS2JWaexfdtlXO/Nathalie-Proyect?page-id=0%3A1&node-id=1989-4383&viewport=-13973%2C-15297%2C0.6&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=324%3A3913&embed-host=share"></iframe>
+                                {/* <img src="/sanamente/img-1.png" alt="Sanamente ui" /> */}
                             </div>
                         </div>
                     )}
@@ -124,13 +125,13 @@ export default function SanaMenteProject() {
                             <div className="flex flex-wrap gap-2 mb-6">
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                                    className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                                 >
                                     Figma
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] dark:bg-[#2f3036] text-[#0091fb] dark:text-[#0b9ff0] border-[#0091fb] dark:border-[#0b9ff0]"
+                                    className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
                                 >
                                     Adobe Photoshop
                                 </Badge>

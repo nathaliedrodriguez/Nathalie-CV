@@ -47,7 +47,7 @@ export default function MobileMenuButton() {
       variant="ghost"
       onClick={toggleMenu}
     >
-      <Menu className="h-10 w-10 text-[#0091fb] dark:text-[#0b9ff0]" />
+      <Menu className="h-10 w-10 text-[#0091fb]" />
       <span className="sr-only">Toggle menu</span>
     </Button>
   )

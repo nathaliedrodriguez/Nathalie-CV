@@ -39,7 +39,7 @@ export default function DesktopSidebar() {
     <>
       {/* Botón para abrir la barra lateral */}
       <Button variant="ghost" className="z-50 md:flex hidden" onClick={() => setIsOpen(true)}>
-        <Menu className="h-10 w-10 text-[#0091fb] dark:text-[#0b9ff0]" />
+        <Menu className="h-10 w-10 text-[#0091fb]" />
       </Button>
 
       {/* Overlay oscuro cuando la barra lateral está abierta */}
@@ -50,7 +50,7 @@ export default function DesktopSidebar() {
       {/* Barra lateral */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 right-0 h-full w-[400px] bg-[#edf5fa] dark:bg-[#000068] z-50 transition-transform duration-300 shadow-xl md:block hidden ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 h-full w-[400px] bg-[#edf5fa] z-50 transition-transform duration-300 shadow-xl md:block hidden ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
 
@@ -62,10 +62,10 @@ export default function DesktopSidebar() {
             </div>
 
             <div className="text-left">
-              <h1 className="text-[#0004a4] dark:text-[#0091fb] text-3xl font-bold font-title mb-1">
+              <h1 className="text-[#0004a4] text-3xl font-bold font-title mb-1">
                 Nathalie D. Rodriguez
               </h1>
-              <p className="text-[#101113] dark:text-[#d9d9d9] text-sm">
+              <p className="text-[#101113] text-sm">
                 UX / UI Designer - B.A. in Social Communication
               </p>
             </div>
@@ -73,8 +73,8 @@ export default function DesktopSidebar() {
 
           {/* Enlaces */}
           <div className="flex flex-col items-start w-full space-y-8 my-12">
-            <Link href="/about-me" className="flex items-center text-[#0091fb] dark:text-[#0b9ff0] text-xl">
-              <img src="/HomePage/icons/star.png" className="w-6 h-6 mr-4 fill-[#0091fb] stroke-[#0091fb] dark:fill-[#0b9ff0] dark:stroke-[#0b9ff0]" alt="StarIcon" />
+            <Link href="/about-me" className="flex items-center text-[#0091fb] text-xl">
+              <img src="/HomePage/icons/star.png" className="w-6 h-6 mr-4 fill-[#0091fb] stroke-[#0091fb]" alt="StarIcon" />
               About Me
             </Link>
 
@@ -82,9 +82,9 @@ export default function DesktopSidebar() {
               href="https://www.behance.net/nathaliedrodriguez"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-[#0091fb] dark:text-[#0b9ff0] text-xl"
+              className="flex items-center text-[#0091fb] text-xl"
             >
-              <img src="/HomePage/icons/behance-icon.png" className="w-6 h-6 mr-4 fill-[#0091fb] stroke-[#0091fb] dark:fill-[#0b9ff0] dark:stroke-[#0b9ff0]" alt="BehanceIcon" />
+              <img src="/HomePage/icons/behance-icon.png" className="w-6 h-6 mr-4 fill-[#0091fb] stroke-[#0091fb]" alt="BehanceIcon" />
               Behance
             </Link>
 
@@ -92,15 +92,15 @@ export default function DesktopSidebar() {
               href="https://www.linkedin.com/in/nathaliedrodriguez/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-[#0091fb] dark:text-[#0b9ff0] text-xl"
+              className="flex items-center text-[#0091fb] text-xl"
             >
-              <img src="/HomePage/icons/linkedin-icon.png" className="w-6 h-6 fill-[#0091fb] mr-4 stroke-[#0091fb] dark:fill-[#0b9ff0] dark:stroke-[#0b9ff0]" alt="LinkedinIcon" />
+              <img src="/HomePage/icons/linkedin-icon.png" className="w-6 h-6 fill-[#0091fb] mr-4 stroke-[#0091fb]" alt="LinkedinIcon" />
               Linkedin
             </Link>
           </div>
 
           {/* Mensaje de agradecimiento */}
-          <div className="text-center text-[#101113] dark:text-[#d9d9d9] mt-auto mb-8">
+          <div className="text-center text-[#101113] mt-auto mb-8">
             Thanks for visiting my website!
           </div>
         </div>

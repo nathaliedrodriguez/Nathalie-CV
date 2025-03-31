@@ -31,9 +31,9 @@ export default function NOUSLatamProject() {
     }
 
     return (
-        <div className="min-h-screen bg-[#ffffff] dark:bg-[#000068] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3">
+        <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3">
             {/* Header */}
-            <header className="container bg-[#e6f4ff] dark:bg-[#2f3036] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
+            <header className="container bg-[#e6f4ff] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
@@ -57,7 +57,7 @@ export default function NOUSLatamProject() {
                     {/* Fila 3: Texto alineado a la izquierda */}
                     <div className="col-span-3 flex items-center gap-4 self-end">
                         <h1 className="text-xl font-title font-bold">
-                            <span>NOUS</span> <span className="text-[#0091fb] dark:text-[#0b9ff0]">Latam</span>
+                            <span>NOUS</span> <span className="text-[#0091fb]">Latam</span>
                         </h1>
                     </div>
                 </div>
@@ -68,22 +68,22 @@ export default function NOUSLatamProject() {
                 {/* About the Project */}
                 <div className="mb-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("about")}>
-                        <h2 className="text-[#0091fb] dark:text-white text-lg font-medium">About the Project</h2>
+                        <h2 className="text-[#0091fb] text-lg font-medium">About the Project</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] dark:text-[#0b9ff0] w-5 h-5 transition-transform ${sections.about ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.about ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.about && (
-                        <div className="mt-3 text-[#4f4c4c] dark:text-[#e2e2e5] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-sm">
                             <p className="mb-4 leading-relaxed">
                                 I redesigned the Home page of NOUS Latam to enhance the user experience while preserving its original sections and aesthetics as well as the architecture design. By making a few strategic adjustments, I improved the page&apos;s visual appeal and user engagement, effectively supporting its primary goal: connecting companies and professionals in the IT sector.
                             </p>
 
                             <div className="mt-6">
                                 <div className="flex w-full justify-around">
-                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">Before</p>
-                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] dark:text-[#0b9ff0] mb-3">Ater</p>
+                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">Before</p>
+                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">Ater</p>
                                 </div>
                                 <img src="/Nous/NOUS-Latam.gif" alt="Before and after" />
                             </div>
@@ -92,16 +92,16 @@ export default function NOUSLatamProject() {
                 </div>
 
                 {/* Discover Phase */}
-                <div className="mb-4 border-t border-[#e6e6e6] dark:border-[#032561] pt-4">
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("discover")}>
-                        <h2 className="text-[#0091fb] dark:text-white text-lg font-medium">Discover Phase</h2>
+                        <h2 className="text-[#0091fb] text-lg font-medium">Discover Phase</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] dark:text-[#0b9ff0] w-5 h-5 transition-transform ${sections.discover ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.discover ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.discover && (
-                        <div className="mt-3 text-[#4f4c4c] dark:text-[#e2e2e5] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-sm">
                             <p className="mb-4 leading-relaxed">
                                 Through analysis and exploration, I identified that the platform could benefit from:
                             </p>
@@ -115,21 +115,21 @@ export default function NOUSLatamProject() {
                 </div>
 
                 {/* Programs Used */}
-                <div className="mb-4 border-t border-[#e6e6e6] dark:border-[#032561] pt-4">
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("programs")}>
-                        <h2 className="text-[#0091fb] dark:text-white text-lg font-medium">Programs Used</h2>
+                        <h2 className="text-[#0091fb] text-lg font-medium">Programs Used</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] dark:text-[#0b9ff0] w-5 h-5 transition-transform ${sections.programs ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.programs ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.programs && (
                         <div className="mt-3">
                             <div className="flex flex-wrap gap-2 mb-6">
-                                <span className="bg-[#e6f4ff] dark:bg-[#032561] text-[#0091fb] dark:text-[#0b9ff0] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-[#e6f4ff] text-[#0091fb] text-xs px-3 py-1 rounded-full">
                                     Figma
                                 </span>
-                                <span className="bg-[#e6f4ff] dark:bg-[#032561] text-[#0091fb] dark:text-[#0b9ff0] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-[#e6f4ff] text-[#0091fb] text-xs px-3 py-1 rounded-full">
                                     Adobe Illustrator
                                 </span>
                             </div>
@@ -142,24 +142,24 @@ export default function NOUSLatamProject() {
                 </div>
 
                 {/* Goals */}
-                <div className="mb-4 border-t border-[#e6e6e6] dark:border-[#032561] pt-4">
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("goals")}>
-                        <h2 className="text-[#0091fb] dark:text-white text-lg font-medium">Goals</h2>
+                        <h2 className="text-[#0091fb] text-lg font-medium">Goals</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] dark:text-[#0b9ff0] w-5 h-5 transition-transform ${sections.goals ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.goals ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.goals && (
-                        <div className="mt-3 text-[#4f4c4c] dark:text-[#e2e2e5] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-sm">
                             <ol className="list-decimal pl-5 space-y-2 mb-4">
                                 <li>Enhance the visibility and usability of the platform.</li>
                                 <li>Create a more engaging and user-friendly experience.</li>
                                 <li>Increase client negotiations and organic growth.</li>
                             </ol>
 
-                            <div className="mt-8 border-t border-[#e6e6e6] dark:border-[#032561] pt-4">
-                                <p className="text-lg text-center font-title font-bold text-[#000] dark:text-[#0b9ff0] mb-3">Clients hiring on Nous</p>
+                            <div className="mt-8 border-t border-[#e6e6e6] pt-4">
+                                <p className="text-lg text-center font-title font-bold text-[#000] mb-3">Clients hiring on Nous</p>
                                 <div className="embla_simple flex justify-between items-center" ref={emblaRef}>
                                     <div className=" embla__container_simple flex w-full md:gap-10">
                                         <img src="/Nous/carrousel/finpec.png" alt="Finpec" className="h-6 embla__slide_simple object-scale-down" />
@@ -179,16 +179,16 @@ export default function NOUSLatamProject() {
                 </div>
 
                 {/* Challenges */}
-                <div className="mb-4 border-t border-[#e6e6e6] dark:border-[#032561] pt-4">
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("challenges")}>
-                        <h2 className="text-[#0091fb] dark:text-white text-lg font-medium">Challenges</h2>
+                        <h2 className="text-[#0091fb] text-lg font-medium">Challenges</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] dark:text-[#0b9ff0] w-5 h-5 transition-transform ${sections.challenges ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.challenges ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.challenges && (
-                        <div className="mt-3 text-[#4f4c4c] dark:text-[#e2e2e5] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-sm">
                             <ul className="list-disc pl-5 space-y-2 mb-4">
                                 <li>
                                     Modify the content layout and introduce new features in sections where the reading flow was disrupted.
@@ -206,16 +206,16 @@ export default function NOUSLatamProject() {
                 </div>
 
                 {/* UI Design Changes */}
-                <div className="mb-4 border-t border-[#e6e6e6] dark:border-[#032561] pt-4">
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("uiDesign")}>
-                        <h2 className="text-[#0091fb] dark:text-white text-lg font-medium">UI Design Changes</h2>
+                        <h2 className="text-[#0091fb] text-lg font-medium">UI Design Changes</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] dark:text-[#0b9ff0] w-5 h-5 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.uiDesign && (
-                        <div className="mt-3 text-[#4f4c4c] dark:text-[#e2e2e5] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-sm">
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <span>
@@ -261,16 +261,16 @@ export default function NOUSLatamProject() {
                 </div>
 
                 {/* A Fresh Look */}
-                <div className="mb-4 border-t border-[#e6e6e6] dark:border-[#032561] pt-4">
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("freshLook")}>
-                        <h2 className="text-[#0091fb] dark:text-white text-lg font-medium">A Fresh Look</h2>
+                        <h2 className="text-[#0091fb] text-lg font-medium">A Fresh Look</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] dark:text-[#0b9ff0] w-5 h-5 transition-transform ${sections.freshLook ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.freshLook ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.freshLook && (
-                        <div className="mt-3 text-[#4f4c4c] dark:text-[#e2e2e5] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-sm">
                             <p className="mb-4 leading-relaxed">
                                 After the redesign, the home page became more user-friendly and visually appealing, with a clearer layout and improved content organization. As a result, NOUS is now positioned to stand out in its field, attracting more registrations and views, fostering greater client engagement, and ultimately contributing to the company’s overall growth.
                             </p>
@@ -291,14 +291,14 @@ export default function NOUSLatamProject() {
                 </div>
 
                 {/* Live Prototype */}
-                <div className="mb-4 border-t border-[#e6e6e6] dark:border-[#032561] pt-4">
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div
                         className="flex items-center justify-between cursor-pointer"
                         onClick={() => toggleSection("livePrototype")}
                     >
-                        <h2 className="text-[#0091fb] dark:text-white text-lg font-medium">Live Prototype</h2>
+                        <h2 className="text-[#0091fb] text-lg font-medium">Live Prototype</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] dark:text-[#0b9ff0] w-5 h-5 transition-transform ${sections.livePrototype ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.livePrototype ? "rotate-180" : ""}`}
                         />
                     </div>
 
