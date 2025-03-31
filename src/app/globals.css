@@ -110,6 +110,30 @@
   transform: scale(1.5);
 }
 
+/* Ensure non-active videos can't be interacted with */
+.embla__slide:not(.active-slide) .react-player {
+  pointer-events: none;
+}
+
+/* Style for the overlay that blocks interactions */
+.embla__slide .overlay {
+  transition: background-color 0.3s ease;
+}
+
+.embla__slide:not(.active-slide) .overlay:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.embla__slide.active-slide {
+  z-index: 20;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Ensure iframe elements don't capture pointer events when not active */
+.embla__slide:not(.active-slide) iframe {
+  pointer-events: none !important;
+}
+
 .scroll-container {
   width: 100%;
   height: 400px;
@@ -126,10 +150,21 @@
     transform: translateY(0); /* Pausa al inicio */
   }
   55% {
-    transform: translateY(calc(-100% + 570px)); /* Movimiento hacia el final */
+    transform: translateY(calc(-100% + var(--scroll-distance))); /* Movimiento hacia el final */
   }
   100% {
-    transform: translateY(calc(-100% + 570px)); /* Pausa al final */
+    transform: translateY(calc(-100% + var(--scroll-distance))); /* Pausa al final */
+  }
+}
+
+/* Valores dinámicos para la distancia de scroll */
+:root {
+  --scroll-distance: 450px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --scroll-distance: 570px;
   }
 }
 
@@ -309,6 +344,10 @@ html.dark .text-\[\#0091fb\] {
 
 html.dark .border-\[\#0091fb\] {
   border-color: #0b9ff0 !important;
+}
+
+html.dark .border-\[\#F0F0F3\] {
+  border-color: #F0F0F3 !important;
 }
 
 html.dark .bg-\[\#0091fb\] {

@@ -1,0 +1,46 @@
+/* Text slide animations */
+.text-slide-enter {
+  animation: slideInFromTop 0.5s ease forwards;
+}
+
+.text-slide-exit {
+  animation: slideOutToBottom 0.5s ease forwards;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToBottom {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments for title alignment */
+@media (max-width: 640px) {
+  .text-slide-enter,
+  .text-slide-exit {
+    font-size: 0.95em;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .text-slide-enter,
+  .text-slide-exit {
+    font-size: 0.98em;
+  }
+}
+

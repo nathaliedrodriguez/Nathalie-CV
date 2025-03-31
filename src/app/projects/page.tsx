@@ -293,14 +293,6 @@ export default function Portfolio() {
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:hidden">
-                {/* <img src="/HomePage/YOPuedo-App.png" alt="YOPuedo App" className="mx-auto rounded-lg" /> */}
-                {/* <video
-                  src="/YoPuedo/animate.mp4"
-                  className="mx-auto rounded-4xl w-1/4 h-auto"
-                  autoPlay
-                  muted
-                  loop
-                /> */}
                 <div className="flex justify-center items-center my-8">
                   <div className="relative">
                     {/* Marco del teléfono */}

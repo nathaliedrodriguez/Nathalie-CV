@@ -8,6 +8,8 @@ import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import MobileMenu from "@/components/mobile-menu"
+import OrigamiAnimation from "@/components/sanamente/origami-animation"
+import AnimatedButtons from "@/components/sanamente/button-animation"
 
 export default function SanaMenteProject() {
     const [sections, setSections] = useState({
@@ -80,7 +82,7 @@ export default function SanaMenteProject() {
                             </p>
 
                             <div className="flex justify-center mt-6">
-                            <iframe width="800" height="450" src="https://embed.figma.com/proto/92569bfJXS2JWaexfdtlXO/Nathalie-Proyect?page-id=0%3A1&node-id=1989-4383&viewport=-13973%2C-15297%2C0.6&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=324%3A3913&embed-host=share"></iframe>
+                                <OrigamiAnimation />
                                 {/* <img src="/sanamente/img-1.png" alt="Sanamente ui" /> */}
                             </div>
                         </div>
@@ -139,10 +141,12 @@ export default function SanaMenteProject() {
 
                             <div className="flex justify-center my-6">
                                 <div className="w-64 h-auto">
-                                    <img
-                                        src="/sanamente/img-2.png"
-                                        alt="SanaMente App Mockup"
+                                    <video
+                                        src="/sanamente/sanamente.MP4"
                                         className="w-full h-auto"
+                                        autoPlay
+                                        muted
+                                        loop
                                     />
                                 </div>
                             </div>
@@ -177,13 +181,12 @@ export default function SanaMenteProject() {
                                 during anxiety crises using AI.
                             </p>
 
-                            <div className="flex w-full justify-center">
-                                <img src="/sanamente/img-3.png" alt="Navigation Bar" className="" />
-                            </div>
                         </div>
                     )}
                 </div>
 
+                <AnimatedButtons />
+                
                 {/* UI Design */}
                 <div className="mb-6">
                     <div
