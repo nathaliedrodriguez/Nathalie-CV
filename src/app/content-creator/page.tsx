@@ -12,6 +12,7 @@ import SimpleDialog from "@/components/simple-dialog"
 import { useState } from "react"
 import { EmblaCarousel } from "@/components/ui/embla-carousel"
 import CommonCarousel from "@/components/content-creator/CommonCarousel"
+import VideoCarousel from "@/components/content-creator/video-carousel"
 
 export default function ContentCreatorPicks() {
     const [isDialogOpen, setIsDialogOpen] = useState("")
@@ -36,15 +37,19 @@ export default function ContentCreatorPicks() {
         }))
     }
 
-    const videos = [
+    const videoUrls = [
         "https://www.youtube.com/watch?v=0Az2W1ocRsQ",
-        "https://www.youtube.com/embed/3IfcedSn-vc",
-        "https://www.youtube.com/embed/m0Sa_H8LTu4",
-        "https://www.youtube.com/embed/V_oEBKFBxJ8",
-        "https://www.youtube.com/embed/RwE6cHjFETU",
+        "https://www.youtube.com/watch?v=3IfcedSn-vc",
+        "https://www.youtube.com/watch?v=m0Sa_H8LTu4",
+        "https://www.youtube.com/watch?v=V_oEBKFBxJ8",
+        "https://www.youtube.com/watch?v=RwE6cHjFETU",
     ]
 
-    const ArticlesAndStoriesVideos = ["https://www.youtube.com/embed/G0194NiR1Ds?si=NDNCSSeqsWN3OQB2", "https://www.youtube.com/embed/pxTsfoOQcPA?si=3ZReIPaMfy1S_2GW", "https://www.youtube.com/embed/2azvHp5s_DY?si=WQcBRXsy8gZR3DRr&amp;start=25"]
+    const ArticlesAndStoriesVideos = [
+        "https://youtu.be/G0194NiR1Ds?t=1",
+        "https://www.youtube.com/watch?v=pxTsfoOQcPA&ab_channel=LouisMedina",
+        "https://youtu.be/2azvHp5s_DY?t=1"
+    ]
 
     return (
         <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
@@ -199,7 +204,7 @@ export default function ContentCreatorPicks() {
                     </p>
                 </div>
 
-                <CommonCarousel />
+                <CommonCarousel videos={videoUrls} showInstructions={false}/>
             </section>
 
             {/* Visual Narratives */}
@@ -225,7 +230,7 @@ export default function ContentCreatorPicks() {
                                 <img
                                     src="/content-creator/ArticlesAndStories/CountryLife.jpg"
                                     alt="Country Life visual narrative"
-                                    className="w-full h-auto rounded-md"
+                                    className={`w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "CountryLife" ? "md:w-full" : ""}`}
                                 />
                             </button>
                         )}
@@ -242,7 +247,7 @@ export default function ContentCreatorPicks() {
                                 <img
                                     src="/content-creator/ArticlesAndStories/Raffia.jpg"
                                     alt="Raffia visual narrative"
-                                    className="w-full h-auto rounded-md"
+                                    className={`w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Raffia" ? "md:w-full" : ""}`}
                                 />
                             </button>
                         )}
@@ -259,7 +264,7 @@ export default function ContentCreatorPicks() {
                                 <img
                                     src="/content-creator/ArticlesAndStories/Report.jpg"
                                     alt="Report visual narrative"
-                                    className="w-full h-auto rounded-md"
+                                    className={`w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Report" ? "md:w-full" : ""}`}
                                 />
                             </button>
                         )}
@@ -276,7 +281,7 @@ export default function ContentCreatorPicks() {
                                 <img
                                     src="/content-creator/ArticlesAndStories/Events.jpg"
                                     alt="Events visual narrative"
-                                    className="w-full h-auto rounded-md"
+                                    className={`w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Events" ? "md:w-full" : ""}`}
                                 />
                             </button>
                         )}
@@ -296,7 +301,7 @@ export default function ContentCreatorPicks() {
                                 <img
                                     src="/content-creator/ArticlesAndStories/Entrepreneurs.jpg"
                                     alt="Entrepreneurs visual narrative"
-                                    className="w-full h-auto rounded-md"
+                                    className={`w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Entrepreneurs" ? "md:w-full" : ""}`}
                                 />
                             </button>
                         )}
@@ -313,7 +318,7 @@ export default function ContentCreatorPicks() {
                                 <img
                                     src="/content-creator/ArticlesAndStories/Tourism.jpg"
                                     alt="Tourism visual narrative"
-                                    className="w-full h-auto rounded-md"
+                                    className={`w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Tourism" ? "md:w-full" : ""}`}
                                 />
                             </button>
                         )}
@@ -333,7 +338,7 @@ export default function ContentCreatorPicks() {
                                 <img
                                     src="/content-creator/ArticlesAndStories/Protagonists.jpg"
                                     alt="Protagonists visual narrative"
-                                    className="w-full h-auto rounded-md"
+                                    className={`w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Protagonists" ? "md:w-full" : ""}`}
                                 />
                             </button>
                         )}
@@ -351,7 +356,7 @@ export default function ContentCreatorPicks() {
                 </div>
 
                 <div className="py-4">
-                    <EmblaCarousel videos={ArticlesAndStoriesVideos} />
+                    <VideoCarousel videos={ArticlesAndStoriesVideos} showInstructions={false}/>
                 </div>
             </section>
 
@@ -416,7 +421,7 @@ export default function ContentCreatorPicks() {
                 </div>
             </SimpleDialog>
 
-            <SimpleDialog isOpen={isDialogOpen == "CountryLife"} onClose={closeDialog} title="Country Life">
+            {/* <SimpleDialog isOpen={isDialogOpen == "CountryLife"} onClose={closeDialog} title="Country Life">
                 <div className="">
                     <img src="/content-creator/ArticlesAndStories/CountryLife.jpg" alt="" />
                 </div>
@@ -450,7 +455,7 @@ export default function ContentCreatorPicks() {
                 <div className="">
                     <img src="/content-creator/ArticlesAndStories/Protagonists.jpg" alt="" />
                 </div>
-            </SimpleDialog>
+            </SimpleDialog> */}
         </div>
     )
 }

@@ -8,6 +8,7 @@ import MobileMenuButton from "@/components/mobile-menu-button"
 import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
 import { useTheme } from 'next-themes'
+import AdobeXDEmbed from "@/components/bgf/adobe-xd-embed"
 
 export default function BoardGameFriends() {
     const [sections, setSections] = useState({
@@ -268,11 +269,7 @@ export default function BoardGameFriends() {
 
                     {sections.livePrototype && (
                         <div className="mt-3 text-[#4f4c4c] text-sm">
-                            <iframe
-                                src="https://xd.adobe.com/view/08ffdb71-3370-46e1-a223-0c32ef51a0ab-5dac/screen/3e9c0696-7496-4c18-8fbd-5e41a6c5602d"
-                                width="100%"
-                                height="600px">
-                            </iframe>
+                            <AdobeXDEmbed/>
                         </div>
                     )}
                 </div>

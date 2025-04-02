@@ -1,8 +1,18 @@
+/* Contenedor principal */
+.embla-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
 /* Base carousel styles */
 .embla {
   position: relative;
-  padding: 20px 0;
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -10,54 +20,628 @@
 .embla__container {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .embla__slide {
+  position: relative;
   flex: 0 0 auto;
   min-width: 0;
+  padding: 0 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ajustes para diferentes tamaños de pantalla */
+@media (min-width: 640px) {
+  .embla__slide {
+    width: 90%;
+  }
+
+  .embla-container {
+    max-width: 95%;
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .embla__slide {
+    width: 80%;
+  }
+
+  .embla-container {
+    max-width: 90%;
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .embla__slide {
+    width: 70%;
+    max-width: 800px;
+  }
+
+  .embla-container {
+    max-width: 85%;
+    padding: 0 40px;
+  }
+}
+
+/* Contenedor del reproductor para mantener la relación de aspecto */
+.player-container {
   position: relative;
-  margin: 0 10px;
-  display: flex;
-  justify-content: center;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Active slide gets higher z-index */
-.embla__slide.active-slide {
-  z-index: 20;
-}
-
-/* Overlay for non-active slides */
-.embla__slide:not(.active-slide) .overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  width: 100%;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
   cursor: pointer;
+  /* Mejorar interacción táctil */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  /* Asegurar que el contenido no desborde */
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-/* Play button area in the center of non-active slides */
-.play-button-area {
-  width: 80px;
-  height: 80px;
-  z-index: 15;
+/* Player wrapper con relación de aspecto fija */
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Relación de aspecto 16:9 (9/16 = 0.5625) */
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Estilos para el reproductor de video */
+.react-player {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+}
+
+/* Estilos específicos para el reproductor activo */
+.react-player.active-player {
+  z-index: 2;
+}
+
+/* Asegurar que los iframes sean visibles */
+.react-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* Permitir interacciones con el iframe cuando está activo */
+.embla__slide.active-slide .react-player iframe {
+  pointer-events: auto !important;
+}
+
+/* Deshabilitar interacciones con el iframe cuando no está activo */
+.embla__slide:not(.active-slide) .react-player iframe {
+  pointer-events: none !important;
+}
+
+/* Estilos para el slide activo */
+.embla__slide.active-slide {
+  z-index: 2;
+}
+
+/* Interactive overlay for active slide */
+.interactive-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  /* Asegurar que el overlay no desborde */
+  overflow: hidden;
+}
+
+.interactive-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.interactive-overlay.playing {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.interactive-overlay.playing:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.interactive-overlay.playing:hover .play-pause-indicator,
+.interactive-overlay.playing:hover .nav-indicator {
+  opacity: 0.8;
+}
+
+.interactive-overlay.paused .play-pause-indicator {
+  opacity: 0.8;
+}
+
+.interactive-overlay.playing .play-pause-indicator,
+.interactive-overlay .nav-indicator {
+  opacity: 0;
+}
+
+.interactive-overlay.show-controls .play-pause-indicator,
+.interactive-overlay.show-controls .nav-indicator,
+.interactive-overlay.show-controls .custom-controls-bar {
+  opacity: 1;
+}
+
+/* Swipe visual feedback */
+.interactive-overlay.swiping-left .nav-zone-left .nav-indicator,
+.interactive-overlay.swiping-right .nav-zone-right .nav-indicator {
+  opacity: 1;
+  transform: scale(1.2);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Navigation zones */
+.nav-zone {
+  height: 100%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Asegurar que las zonas de navegación no desborden */
+  position: relative;
+  overflow: hidden;
 }
 
-/* Allow pointer events on the play button area */
-.embla__slide:not(.active-slide) .play-button-area {
+.nav-zone:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav-zone-left {
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.nav-zone-right {
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.nav-indicator {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
+}
+
+.nav-zone:hover .nav-indicator {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.nav-indicator svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+/* Play/pause zone */
+.play-pause-zone {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.play-pause-indicator {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.play-pause-zone:hover .play-pause-indicator {
+  transform: scale(1.1);
+}
+
+.play-pause-indicator svg {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+/* Custom controls bar */
+.custom-controls-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 15;
+  /* Asegurar que la barra de controles no desborde */
+  overflow: hidden;
+}
+
+.interactive-overlay:hover .custom-controls-bar,
+.interactive-overlay.paused .custom-controls-bar {
+  opacity: 1;
+}
+
+.control-button {
+  background: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 5px;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.control-button:hover {
+  transform: scale(1.1);
+}
+
+.control-button svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+/* Destacar el botón de pantalla completa */
+.fullscreen-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.fullscreen-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Volume control */
+.volume-control {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  outline: none;
+  margin-left: 8px;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: none;
+}
+
+/* Fullscreen styles */
+.interactive-overlay.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+/* Overlay para slides no activos */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  cursor: pointer;
+  /* Asegurar que el overlay capture todos los eventos de clic */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Área del botón de reproducción */
+.play-button-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  /* Asegurar que el botón capture todos los eventos de clic */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  /* Evitar que el botón se vea como un botón en dispositivos móviles */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Botón de reproducción */
+.play-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Asegurar que el botón capture todos los eventos de clic */
   pointer-events: auto;
 }
 
-/* Ensure ReactPlayer container doesn't block our overlay */
-.embla__slide:not(.active-slide) > div {
-  pointer-events: none;
+/* Icono de reproducción (triángulo) */
+.play-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent #ffffff;
+  margin-left: 4px;
 }
 
-/* But allow interaction with the active slide */
-.embla__slide.active-slide > div {
-  pointer-events: auto;
+/* Indicador de carga */
+.loading-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+/* Spinner de carga */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Indicadores de slide (dots) */
+.embla-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  gap: 8px;
+}
+
+.embla-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 0;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  /* Evitar comportamientos no deseados en dispositivos móviles */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.embla-dot--selected {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.2);
+}
+
+/* Instrucciones para móviles */
+.mobile-instructions {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  padding: 8px 0;
+  margin-top: 4px;
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 767px) {
+  /* Aumentar el tamaño de los controles en móviles */
+  .play-pause-indicator {
+    width: 70px;
+    height: 70px;
+  }
+
+  .play-pause-indicator svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .nav-indicator {
+    width: 50px;
+    height: 50px;
+  }
+
+  .nav-indicator svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Ajustar el espaciado para móviles */
+  .embla__slide {
+    padding: 0 5px;
+  }
+
+  /* Asegurar que los dots sean más fáciles de tocar */
+  .embla-dots {
+    padding: 15px 0;
+  }
+
+  .embla-dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+  }
+
+  /* Ajustar las zonas de navegación para móviles */
+  .nav-zone-left {
+    padding-left: 10px;
+  }
+
+  .nav-zone-right {
+    padding-right: 10px;
+  }
+
+  /* Ajustar el control de volumen para móviles */
+  .volume-control {
+    margin: 0 5px;
+  }
+
+  .volume-slider {
+    width: 60px;
+  }
+
+  /* Ajustar la barra de controles para móviles */
+  .custom-controls-bar {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .control-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .control-button svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Ajustes específicos para desktop */
+@media (min-width: 768px) {
+  /* Ajustar el tamaño del carrusel para desktop */
+  .embla-container {
+    max-width: 90%;
+    padding: 0 20px;
+  }
+
+  /* Asegurar que los controles estén dentro del contenedor */
+  .nav-zone-left {
+    padding-left: 10px;
+  }
+
+  .nav-zone-right {
+    padding-right: 10px;
+  }
+
+  /* Ajustar el tamaño de los controles para desktop */
+  .custom-controls-bar {
+    padding: 0 10px;
+  }
+
+  /* Ajustar el tamaño de los slides para desktop */
+  .embla__slide {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Reducir el tamaño de los indicadores de navegación */
+  .nav-indicator {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-indicator svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Ajustes para pantallas muy grandes */
+@media (min-width: 1440px) {
+  .embla-container {
+    max-width: 80%;
+  }
+
+  .embla__slide {
+    max-width: 1000px;
+  }
+}
+
+/* Ajustes para pantallas extra grandes */
+@media (min-width: 1920px) {
+  .embla-container {
+    max-width: 70%;
+  }
+
+  .embla__slide {
+    max-width: 1200px;
+  }
 }
 
