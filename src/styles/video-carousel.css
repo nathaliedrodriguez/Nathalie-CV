@@ -1,0 +1,52 @@
+/* Video carousel specific styles */
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.embla__slide {
+  position: relative;
+  min-width: 0;
+  padding: 0 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease, scale 0.3s ease;
+}
+
+/* Ensure video controls are accessible */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Style for the play button overlay */
+.play-button-overlay {
+  transition: background-color 0.2s ease;
+}
+
+.play-button-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Ensure proper pointer events for active vs inactive slides */
+.embla__slide.active-slide .video-container {
+  z-index: 30;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .embla__slide {
+    padding: 0 5px;
+  }
+
+  .embla__container {
+    height: 250px;
+  }
+}
+

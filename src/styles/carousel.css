@@ -1,0 +1,62 @@
+.embla {
+    position: relative;
+    padding: 20px 0;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.embla__viewport.is-draggable {
+    cursor: grab;
+}
+
+.embla__viewport.is-dragging {
+    cursor: grabbing;
+}
+
+.embla__dot {
+    background-color: #d1d5db;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 8px;
+    margin-right: 6px;
+    margin-left: 6px;
+    padding: 0;
+    width: 8px;
+}
+
+.embla__dot--selected {
+    background-color: #0091fb;
+    transform: scale(1.5);
+}
+
+/* Modified approach for video interactions */
+.embla__slide:not(.active-slide) .react-player {
+    pointer-events: none;
+}
+
+/* Play button overlay for non-active slides */
+.embla__slide:not(.active-slide) .play-button-overlay {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.embla__slide .overlay {
+    transition: background-color 0.3s ease;
+}
+
+.embla__slide:not(.active-slide) .overlay:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.embla__slide.active-slide {
+    z-index: 20;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Allow pointer events on the active slide */
+.embla__slide.active-slide iframe,
+.embla__slide.active-slide .react-player {
+    pointer-events: auto !important;
+}

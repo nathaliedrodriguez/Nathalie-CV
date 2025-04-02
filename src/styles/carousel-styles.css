@@ -1,0 +1,63 @@
+/* Base carousel styles */
+.embla {
+  position: relative;
+  padding: 20px 0;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  align-items: center;
+}
+
+.embla__slide {
+  flex: 0 0 auto;
+  min-width: 0;
+  position: relative;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Active slide gets higher z-index */
+.embla__slide.active-slide {
+  z-index: 20;
+}
+
+/* Overlay for non-active slides */
+.embla__slide:not(.active-slide) .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Play button area in the center of non-active slides */
+.play-button-area {
+  width: 80px;
+  height: 80px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Allow pointer events on the play button area */
+.embla__slide:not(.active-slide) .play-button-area {
+  pointer-events: auto;
+}
+
+/* Ensure ReactPlayer container doesn't block our overlay */
+.embla__slide:not(.active-slide) > div {
+  pointer-events: none;
+}
+
+/* But allow interaction with the active slide */
+.embla__slide.active-slide > div {
+  pointer-events: auto;
+}
+

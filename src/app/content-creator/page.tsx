@@ -10,17 +10,14 @@ import Footer from "@/components/footer"
 import { InstagramEmbed } from 'react-social-media-embed';
 import SimpleDialog from "@/components/simple-dialog"
 import { useState } from "react"
-import ReactPlayer from 'react-player'
-import useEmblaCarousel from 'embla-carousel-react'
 import { EmblaCarousel } from "@/components/ui/embla-carousel"
+import CommonCarousel from "@/components/content-creator/CommonCarousel"
 
 export default function ContentCreatorPicks() {
     const [isDialogOpen, setIsDialogOpen] = useState("")
 
     const openDialog = (dialog: string) => setIsDialogOpen(String(dialog))
     const closeDialog = () => setIsDialogOpen("")
-
-    const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true })
 
     const [sections, setSections] = useState({
         countryLife: false,
@@ -38,6 +35,14 @@ export default function ContentCreatorPicks() {
             [section]: !prev[section as keyof typeof prev],
         }))
     }
+
+    const videos = [
+        "https://www.youtube.com/watch?v=0Az2W1ocRsQ",
+        "https://www.youtube.com/embed/3IfcedSn-vc",
+        "https://www.youtube.com/embed/m0Sa_H8LTu4",
+        "https://www.youtube.com/embed/V_oEBKFBxJ8",
+        "https://www.youtube.com/embed/RwE6cHjFETU",
+    ]
 
     const ArticlesAndStoriesVideos = ["https://www.youtube.com/embed/G0194NiR1Ds?si=NDNCSSeqsWN3OQB2", "https://www.youtube.com/embed/pxTsfoOQcPA?si=3ZReIPaMfy1S_2GW", "https://www.youtube.com/embed/2azvHp5s_DY?si=WQcBRXsy8gZR3DRr&amp;start=25"]
 
@@ -194,84 +199,7 @@ export default function ContentCreatorPicks() {
                     </p>
                 </div>
 
-                <div className="embla" ref={emblaRef}>
-                    <div className="flex w-full space-x-4 embla__container embla__dots">
-                        {/* Video 1 */}
-                        <div className="relative aspect-video bg-gray-800 rounded-lg overflow-hidden mb-2 embla__slide">
-                            <ReactPlayer
-                                url="https://www.youtube.com/watch?v=0Az2W1ocRsQ&ab_channel=GobiernodelaProvinciadeC%C3%B3rdoba"
-                                width="100%"
-                                height="100%"
-                                controls={true}
-                            />
-                            {/* <p className="text-xs font-medium">Inauguración Espacio de las Artes Costeras</p>
-                        <div className="flex items-center">
-                            <div className="w-3 h-3 bg-red-600 rounded-full mr-1"></div>
-                            <span className="text-xs text-gray-500">YouTube</span>
-                        </div> */}
-                        </div>
-
-                        {/* Video 2 */}
-                        <div className="relative aspect-video bg-gray-800 rounded-lg overflow-hidden mb-2 embla__slide">
-                            <ReactPlayer
-                                url="https://www.youtube.com/embed/3IfcedSn-vc?si=GvHAbmppbVnMVXfZ"
-                                width="100%"
-                                height="100%"
-                                controls={true}
-                            />
-                            {/* <p className="text-xs font-medium">Fondo del área de mantenimiento de Sistemas</p>
-                        <div className="flex items-center">
-                            <div className="w-3 h-3 bg-red-600 rounded-full mr-1"></div>
-                            <span className="text-xs text-gray-500">YouTube</span>
-                        </div> */}
-                        </div>
-
-                        {/* Video 3 */}
-                        <div className="relative aspect-video bg-gray-800 rounded-lg overflow-hidden mb-2 embla__slide">
-                            <ReactPlayer
-                                url="https://www.youtube.com/embed/m0Sa_H8LTu4?si=tA7zFM4oTkHpTOcA"
-                                width="100%"
-                                height="100%"
-                                controls={true}
-                            />
-                            {/* <p className="text-xs font-medium">Hoy cierra inscripciones Policía Ambiental</p>
-                        <div className="flex items-center">
-                            <div className="w-3 h-3 bg-red-600 rounded-full mr-1"></div>
-                            <span className="text-xs text-gray-500">YouTube</span>
-                        </div> */}
-                        </div>
-
-                        {/* Video 4 */}
-                        <div className="relative aspect-video bg-gray-800 rounded-lg overflow-hidden mb-2 embla__slide">
-                            <ReactPlayer
-                                url="https://www.youtube.com/embed/V_oEBKFBxJ8?si=29VEYGzb1Qw8b_uE"
-                                width="100%"
-                                height="100%"
-                                controls={true}
-                            />
-                            {/* <p className="text-xs font-medium">Recorriendo junto con el productor para...</p>
-                        <div className="flex items-center">
-                            <div className="w-3 h-3 bg-red-600 rounded-full mr-1"></div>
-                            <span className="text-xs text-gray-500">YouTube</span>
-                        </div> */}
-                        </div>
-
-                        {/* Video 5 */}
-                        <div className="relative aspect-video bg-gray-800 rounded-lg overflow-hidden mb-2 embla__slide">
-                            <ReactPlayer
-                                url="https://www.youtube.com/embed/RwE6cHjFETU?si=WlaCS-j5kvHCqkEs"
-                                width="100%"
-                                height="100%"
-                                controls={true}
-                            />
-                            {/* <p className="text-xs font-medium">Recorriendo junto con el productor para...</p>
-                        <div className="flex items-center">
-                            <div className="w-3 h-3 bg-red-600 rounded-full mr-1"></div>
-                            <span className="text-xs text-gray-500">YouTube</span>
-                        </div> */}
-                        </div>
-                    </div>
-                </div>
+                <CommonCarousel />
             </section>
 
             {/* Visual Narratives */}
