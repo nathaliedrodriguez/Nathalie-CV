@@ -469,7 +469,7 @@ export default function Portfolio() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:hidden">
                 <video
-                  src="/sanamente/sanamenteVideo.MP4"
+                  src="/sanamente/sanamenteVideo.mp4"
                   className="mx-auto rounded-xl md:rounded-3xl w-1/4 h-auto"
                   autoPlay
                   muted
@@ -513,7 +513,7 @@ export default function Portfolio() {
               </div>
               <div className="max-lg:hidden lg:py-5">
                 <video
-                  src="/sanamente/sanamenteVideo.MP4"
+                  src="/sanamente/sanamenteVideo.mp4"
                   className="mx-auto rounded-2xl w-1/4 h-auto"
                   autoPlay
                   muted
