@@ -10,7 +10,6 @@ import Footer from "@/components/footer"
 import { InstagramEmbed } from 'react-social-media-embed';
 import SimpleDialog from "@/components/simple-dialog"
 import { useState } from "react"
-import { EmblaCarousel } from "@/components/ui/embla-carousel"
 import CommonCarousel from "@/components/content-creator/CommonCarousel"
 import VideoCarousel from "@/components/content-creator/video-carousel"
 

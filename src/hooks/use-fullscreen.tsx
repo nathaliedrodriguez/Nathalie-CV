@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client"
 
 import { useState, useEffect, useCallback, type RefObject } from "react"
@@ -83,3 +85,4 @@ export function useFullscreen(elementRef: RefObject<HTMLElement | null>) {
   return { isFullscreen, toggleFullscreen, forceExitFullscreenIfNeeded }
 }
 
+/* eslint-enable @typescript-eslint/no-explicit-any */
