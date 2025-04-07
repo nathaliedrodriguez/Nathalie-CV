@@ -9,6 +9,10 @@
   font-family: var(--font-epilogue);
 }
 
+p {
+  font-weight: lighter;
+}
+
 .embla_simple {
   overflow: hidden;
 }
@@ -276,6 +280,10 @@
 /* Estilos base */
 * {
   border-color: hsl(var(--border));
+}
+
+.border-0091fb {
+  border-color: hsl(var(--primary));
 }
 
 body {

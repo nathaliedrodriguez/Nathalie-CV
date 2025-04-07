@@ -29,7 +29,7 @@ export default function ThemeToggle() {
   return (
     <div
       onClick={toggleTheme}
-      className="relative h-8 w-16 rounded-full border border-[#0091fb] bg-[#ffff] cursor-pointer overflow-hidden"
+      className="relative h-7 w-16 rounded-full border border-[#0091fb] bg-transparent cursor-pointer overflow-hidden"
     >
       {/* Iconos estáticos */}
       <div className="absolute inset-0 flex items-center justify-between px-2">
@@ -40,15 +40,15 @@ export default function ThemeToggle() {
 
         {/* Icono derecho (sol) - visible solo en modo claro */}
         <div className={`transition-opacity duration-300 ${isDark ? "opacity-0" : "opacity-100"}`}>
-          <Sun className="h-4 w-4 text-[#0091fb]" />
+          <Sun className="h-4 w-4 text-[#0b9ff0]" />
         </div>
       </div>
 
       {/* Círculo indicador con transición CSS en lugar de framer-motion */}
       <div
         className={`
-          absolute top-1/2 -translate-y-1/2 h-6 w-6 rounded-full 
-          bg-gradient-to-br from-[#0091fb] to-[#0679b8]
+          absolute top-1/2 -translate-y-1/2 h-5 w-5 rounded-full 
+          bg-gradient-to-br from-[#89c3fe] to-[#0b9ff0]
           shadow-md transition-all duration-300 ease-in-out
           ${isDark ? "left-auto right-1" : "left-1 right-auto"}
         `}

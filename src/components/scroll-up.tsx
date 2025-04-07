@@ -22,10 +22,10 @@ function ScrollUp() {
             {scrolled && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-[#0091fb] text-white flex items-center justify-center shadow-lg transition-all hover:bg-[#0679b8]"
+                    className="fixed bottom-6 right-6 w-18 h-18 rounded-full border-1 border-0091fb text-white flex items-center justify-center shadow-lg transition-all hover:bg-[#0679b8] "
                     aria-label="Scroll to top"
                 >
-                    <ChevronUp size={20} />
+                    <ChevronUp size={20} className='text-[#0091fb]'/>
                 </button>
             )}</>
     )

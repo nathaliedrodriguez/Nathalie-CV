@@ -9,6 +9,7 @@ import MobileMenuButton from "@/components/mobile-menu-button"
 import Link from "next/link"
 import SimpleDialog from "@/components/simple-dialog"
 import '../styles/text-animations.css'
+import { useTheme } from "next-themes"
 
 const textOptions = [
   { text: "UX strategies", color: "#000068" },
@@ -22,6 +23,12 @@ export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
+  const { theme } = useTheme()
+  const [isClientSide, setIsClientSide] = useState(false)
+
+  useEffect(() => {
+    setIsClientSide(true)
+  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +39,7 @@ export default function Home() {
         setIsAnimating(false)
       }, 500)
 
-    }, 3000)
+    }, 1800)
 
     return () => clearInterval(interval)
   }, [])
@@ -40,7 +47,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#ffffff] overflow-x-hidden">
       {/* Hero Section */}
-      <section className="bg-[#f2f8fb] rounded-[40px] px-4 sm:px-8 md:px-16 lg:px-24 pt-8 max-md:pb-6 md:pb-16 lg:m-10 md:m-5 max-md:m-3">
+      <section className="bg-[#f2f8fb] rounded-[40px] px-4 sm:px-8 md:px-16 lg:px-24 pt-8 max-md:pb-6 md:pb-16 lg:m-10 md:m-5 max-md:m-3 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <header className="flex justify-end mb-12">
@@ -109,7 +116,7 @@ export default function Home() {
                   }, 5500);
                 }}
                 >
-                  <Button className="bg-[#0091fb] hover:bg-[#0679b8] text-white lg:px-6 md:p-6 max-md:w-full">
+                  <Button className="bg-[#0091fb] hover:bg-[#0679b8] text-white lg:px-6 md:p-6 max-md:w-full rounded-2xl">
                     Download my CV
                   </Button>
                 </a>
@@ -117,7 +124,7 @@ export default function Home() {
             </div>
 
             <div className="order-1 lg:order-2 flex md:flex-col items-center justify-center max-md:justify-between max-md:gap-1">
-              <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white">
+              <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-80 md:h-80 rounded-full overflow-hidden">
                 <img src="/HomePage/profile.png" alt="Profile" className="object-cover object-top w-full h-full" />
               </div>
               <div className="flex items-center gap-1 mb-4 md:hidden">
@@ -136,6 +143,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {(theme == "light" && isClientSide) && <img src="/HomePage/cloud.png" alt="Cloud" className="absolute z-1 left-10 right-auto -bottom-5" />}
+        {(theme == "dark" && isClientSide) && <img src="/HomePage/cloud-dark.png" alt="Cloud" className="absolute z-1 left-10 right-auto -bottom-5" />}
       </section>
 
       {/* Let's Work Together Section */}
@@ -145,7 +154,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center">
             {/* UX UI Designer Card */}
-            <div className="bg-[#f2f8fb] p-8 rounded-xl max-w-[358px] mx-auto">
+            <div className="bg-[#f2f8fb] p-8 rounded-4xl max-w-[358px] mx-auto">
               <div className="flex items-center gap-4 mb-6">
                 <img src="/HomePage/icons/touch.png" className="w-10 rounded-lg flex items-center justify-center" alt="TouchIcon" />
                 <h3 className="text-xl font-bold font-title">UX UI Designer</h3>
@@ -159,7 +168,7 @@ export default function Home() {
                 <Link href="/projects" className="w-full flex justify-center items-center">
                   <Button
                     variant="outline"
-                    className="border-[#0091fb] text-[#0091fb] hover:bg-[#0091fb]/10 rounded-2xl px-6 w-full"
+                    className="border-0091fb text-[#0091fb] hover:bg-[#0091fb]/10 rounded-2xl p-6 w-full text-xl font-normal"
                   >
                     Explore my Projects
                   </Button>
@@ -168,7 +177,7 @@ export default function Home() {
             </div>
 
             {/* Content Creator Card */}
-            <div className="bg-[#f2f8fb] p-8 rounded-xl max-w-[358px] mx-auto">
+            <div className="bg-[#f2f8fb] p-8 rounded-4xl max-w-[358px] mx-auto">
               <div className="flex items-center gap-4 mb-6">
                 <img src="/HomePage/icons/Keyboard.png" className="w-10 flex items-center justify-center" alt="KeyboardIcon" />
                 <h3 className="text-xl font-bold  font-title">Content Creator</h3>
@@ -182,7 +191,7 @@ export default function Home() {
                 <Link href="/content-creator" className="w-full flex justify-center items-center">
                   <Button
                     variant="outline"
-                    className="border-[#0091fb] text-[#0091fb] hover:bg-[#0091fb]/10 rounded-2xl px-6 w-full"
+                    className="border-0091fb text-[#0091fb] hover:bg-[#0091fb]/10 rounded-2xl p-6 w-full text-xl font-normal"
                   >
                     View my Work
                   </Button>
