@@ -478,7 +478,7 @@ export default function Portfolio() {
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-[92%] h-[94%] overflow-hidden rounded-[22px] mt-0">
                           <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-                            <source src="/sanamente/video-sanamente.mp4" type="video/mp4" />
+                            <source src="/sanamente/video-sanamente.MP4" type="video/mp4" />
                             Tu navegador no soporta videos HTML5.
                           </video>
                         </div>
