@@ -13,14 +13,14 @@ import AdobeXDEmbed from "@/components/bgf/adobe-xd-embed"
 export default function BoardGameFriends() {
     const [sections, setSections] = useState({
         about: true,
-        prototype: false,
-        programs: false,
-        discover: false,
-        goals: false,
-        challenges: false,
-        uiDesign: false,
-        livePrototype: false,
-        testing: false,
+        prototype: true,
+        programs: true,
+        discover: true,
+        goals: true,
+        challenges: true,
+        uiDesign: true,
+        livePrototype: true,
+        testing: true,
     })
 
     const toggleSection = (section: string) => {
@@ -37,13 +37,13 @@ export default function BoardGameFriends() {
     return (
         <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 ">
             {/* Header */}
-            <header className="container bg-[#e6f4ff] rounded-3xl mx-auto max-w-7xl py-6 px-4">
+            <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/projects">
                             <Button variant="ghost" className="">
-                                <ChevronLeft className="h-10 w-10" />
+                                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
                             </Button>
                         </Link>
                         <div className="md:hidden flex gap-6 relative">
@@ -60,7 +60,7 @@ export default function BoardGameFriends() {
 
                     {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
                     <div className="col-span-3 flex items-center gap-4 self-end">
-                        <h1 className="text-xl font-title font-bold">
+                        <h1 className="text-3xl font-title font-bold">
                             Board Game <span className="text-[#0091fb]">Friends</span>
                         </h1>
                     </div>
@@ -72,14 +72,14 @@ export default function BoardGameFriends() {
                 {/* About Section */}
                 <div className="mb-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("about")}>
-                        <h2 className="text-[#0091fb] text-lg font-medium">About the Project</h2>
+                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">About the Project</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.about ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.about && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <p className="mb-4">
                                 BGF is an app designed for board game enthusiasts, providing a seamless platform to create and join
                                 in-person board game meetings.
@@ -100,14 +100,14 @@ export default function BoardGameFriends() {
                 {/* Full Prototype Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("prototype")}>
-                        <h2 className="text-[#0091fb] text-lg font-medium">Full Prototype</h2>
+                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Full Prototype</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.prototype ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.prototype && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <p>
                                 I&apos;ve designed a complete prototype (not an MVP) with extensive interconnectivity between buttons, features, and workflows, and fully interconnected screens.
                             </p>
@@ -118,7 +118,7 @@ export default function BoardGameFriends() {
                 {/* Programs Used Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("programs")}>
-                        <h2 className="text-[#0091fb] text-lg font-medium">Programs I Used</h2>
+                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Programs I Used</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.programs ? "rotate-180" : ""}`}
                         />
@@ -127,16 +127,16 @@ export default function BoardGameFriends() {
                     {sections.programs && (
                         <div className="mt-3">
                             <div className="flex flex-wrap gap-2">
-                                <span className="bg-[#e6f4ff] text-[#0091fb] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full">
                                     Adobe XD
                                 </span>
-                                <span className="bg-[#e6f4ff] text-[#0091fb] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full">
                                     Adobe Photoshop
                                 </span>
-                                <span className="bg-[#e6f4ff] text-[#0091fb] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full">
                                     Whimsical
                                 </span>
-                                <span className="bg-[#e6f4ff] text-[#0091fb] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full">
                                     Optimal Workshop
                                 </span>
                             </div>
@@ -165,14 +165,14 @@ export default function BoardGameFriends() {
                 {/* Discover Phase Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("discover")}>
-                        <h2 className="text-[#0091fb] text-lg font-medium">Discover Phase</h2>
+                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Discover Phase</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.discover ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.discover && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <p>
                                 The research phase was particularly engaging, as it allowed me to gather and interpret valuable insights directly from board game players. Understanding their preferences, pain points, and behavior provided a solid foundation for designing the app’s features.
                             </p>
@@ -183,14 +183,14 @@ export default function BoardGameFriends() {
                 {/* Goals Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("goals")}>
-                        <h2 className="text-[#0091fb] text-lg font-medium">Goals</h2>
+                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Goals</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.goals ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.goals && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <ol className="list-decimal pl-5 space-y-2">
                                 <li>
                                     <span className="font-medium">Profile Customization:</span> Tailor user profiles to reflect
@@ -218,14 +218,14 @@ export default function BoardGameFriends() {
                 {/* Challenges Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("challenges")}>
-                        <h2 className="text-[#0091fb] text-lg font-medium">Challenges</h2>
+                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Challenges</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.challenges ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.challenges && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <p className="mb-4">
                                 The most difficult part about designing a completely functional app was planning the full logical roadmap, accounting for all possible user&apos;s choices, errors and conditional actions. For users participating in the same event, dynamic changes in the event conditions (e.g. the Host leaves, change in reserved seats) must be reflected in everyone&apos;s interface and trigger actions and notifications.
                             </p>
@@ -240,14 +240,14 @@ export default function BoardGameFriends() {
                 {/* UI Design Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("uiDesign")}>
-                        <h2 className="text-[#0091fb] text-lg font-medium">UI Design</h2>
+                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">UI Design</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.uiDesign && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <p>
                                 I use heuristic evaluation in my UI design because it&apos;s like knowing that my design is made under clear rules and standardized norms. It&apos;s quick, cost-effective, and catches big issues early. This analysis complements and accompanies the feedback received from real users, which is undoubtedly the most important.
                             </p>
@@ -261,14 +261,14 @@ export default function BoardGameFriends() {
                         className="flex items-center justify-between cursor-pointer"
                         onClick={() => toggleSection("livePrototype")}
                     >
-                        <h2 className="text-[#0091fb] text-lg font-medium">Live Prototype</h2>
+                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Live Prototype</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.livePrototype ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.livePrototype && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <AdobeXDEmbed/>
                         </div>
                     )}
@@ -277,14 +277,14 @@ export default function BoardGameFriends() {
                 {/* Testing and Feedback Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("testing")}>
-                        <h2 className="text-[#0091fb] text-lg font-medium">Testing and Feedback</h2>
+                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Testing and Feedback</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.testing ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.testing && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <ul className="list-disc pl-5 space-y-2">
                                 <li>All users were able to complete the assigned tasks.</li>
                                 <li>Everyone reached the end. (Some took detours while others took shortcuts).</li>
@@ -297,9 +297,9 @@ export default function BoardGameFriends() {
 
             </div>
             {/* Footer Images */}
-            <div className="mt-8 md:-mx-8 max-md:-mx-3">
+            <footer className="mt-8 md:-mx-8 max-md:-mx-3">
                 <img src="/BGF/Footer.png" alt="Footer image" className="w-screen" />
-            </div>
+            </footer>
         </div >
     )
 }

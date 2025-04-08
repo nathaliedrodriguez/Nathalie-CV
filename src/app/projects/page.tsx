@@ -8,6 +8,7 @@ import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import Link from "next/link"
 import Footer from "@/components/footer"
+import PhoneScrollComponent from "@/components/yo-puedo/phone-scroll-component"
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false)
@@ -138,13 +139,13 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
       {/* Header */}
-      <header className="container bg-[#f2f8fb] rounded-3xl mx-auto max-w-7xl py-6 px-4">
+      <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
         <div className="grid grid-cols-3 grid-rows-3 min-h-32">
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
-          <div className="col-span-3 flex max-lg:justify-between lg:justify-end items-start gap-6">
-            <Link href="/" className="lg:hidden">
+          <div className="col-span-3 flex justify-between items-start gap-6">
+            <Link href="/" className="">
               <Button variant="ghost">
-                <ChevronLeft className="h-10 w-10" />
+                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
               </Button>
             </Link>
             <div className="md:hidden flex gap-6 relative">
@@ -194,7 +195,7 @@ export default function Portfolio() {
             My Approach Across Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-[#f2f8fb] p-6 rounded-xl col-span-1 md:col-span-1 lg:col-span-1">
+            <div className="bg-[#edf5fa] p-6 rounded-xl col-span-1 md:col-span-1 lg:col-span-1">
               <div className="flex items-center mb-4 gap-3">
                 <img src="/HomePage/icons/target.png" className="w-10 h-10 rounded-full flex items-center justify-center mb-4" alt="targetIcon" />
                 <h3 className="text-lg font-title font-bold mb-2">UX Research</h3>
@@ -204,7 +205,7 @@ export default function Portfolio() {
               </p>
             </div>
 
-            <div className="bg-[#f2f8fb] p-6 rounded-xl col-span-1 md:col-span-1 lg:col-span-1">
+            <div className="bg-[#edf5fa] p-6 rounded-xl col-span-1 md:col-span-1 lg:col-span-1">
               <div className="flex items-center mb-4 gap-3">
                 <img src="/HomePage/icons/cards.png" className="w-10 h-10 flex items-center justify-center mb-4" alt="cardsIcon" />
                 <h3 className="text-lg font-title font-bold mb-2">UX Writing</h3>
@@ -214,7 +215,7 @@ export default function Portfolio() {
               </p>
             </div>
 
-            <div className="bg-[#f2f8fb] p-6 rounded-xl col-span-1 md:col-span-2 lg:col-span-1">
+            <div className="bg-[#edf5fa] p-6 rounded-xl col-span-1 md:col-span-2 lg:col-span-1">
               <div className="flex items-center mb-4 gap-3">
                 <img src="/HomePage/icons/brush.png" className="w-10 h-10 flex items-center justify-center mb-4" alt="brushIcon" />
                 <h3 className="text-lg font-title font-bold mb-2">UI Design</h3>
@@ -253,25 +254,25 @@ export default function Portfolio() {
                     <div className="flex flex-wrap gap-2 mb-6">
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                        className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                       >
                         Adobe Xd
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                        className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                       >
                         Adobe Photoshop
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                        className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                       >
                         Whimsical
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                        className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                       >
                         Optimal Workshop
                       </Badge>
@@ -293,31 +294,7 @@ export default function Portfolio() {
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:hidden">
-                <div className="flex justify-center items-center my-8">
-                  <div className="relative">
-                    {/* Marco del teléfono */}
-                    <div className="relative w-[300px] h-[600px]">
-                      {/* Contenido de la app con scroll animado */}
-                      <div
-                        ref={contentRef}
-                        className="absolute top-[15px] left-[30px] w-[250px] h-[570px] overflow-hidden rounded-[32px] hide-scroll"
-                      >
-                        <img
-                          src="/YoPuedo/img.png" // Asegúrate de que esta ruta sea correcta
-                          alt="App content"
-                          className="scroll-image w-full object-cover"
-                        />
-                      </div>
-
-                      {/* Marco del teléfono */}
-                      <img
-                        src="/YoPuedo/PhoneMark.png" // Asegúrate de que esta ruta sea correcta
-                        alt="Phone frame"
-                        className="absolute top-0 left-0 z-10 pointer-events-none w-full h-full"
-                      />
-                    </div>
-                  </div>
-                </div>
+                <PhoneScrollComponent />
               </div>
               <div className="relative h-full">
                 <div className="relative h-full">
@@ -334,37 +311,37 @@ export default function Portfolio() {
                       <div className="flex flex-wrap gap-2 mb-6">
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                          className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                         >
                           Figma
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                          className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                         >
                           Adobe Illustrator
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                          className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                         >
                           Adobe Photoshop
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                          className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                         >
                           Marvel
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                          className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                         >
                           Maze
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                          className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                         >
                           Optimal Workshop
                         </Badge>
@@ -381,39 +358,7 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="max-lg:hidden">
-                {/* <img src="/HomePage/YOPuedo-App.png" alt="YOPuedo App" className="mx-auto rounded-lg" /> */}
-                {/* <video
-                  src="/YoPuedo/animate.mp4"
-                  className="mx-auto rounded-2xl w-1/4 h-auto"
-                  autoPlay
-                  muted
-                  loop
-                /> */}
-                <div className="flex justify-center items-center my-8">
-                  <div className="relative">
-                    {/* Marco del teléfono */}
-                    <div className="relative w-[240px] h-[480px]">
-                      {/* Contenido de la app con scroll animado */}
-                      <div
-                        ref={contentRef}
-                        className="absolute top-[15px] left-[21px] w-[200px] h-[456px] overflow-hidden rounded-[32px] hide-scroll"
-                      >
-                        <img
-                          src="/YoPuedo/img.png" // Asegúrate de que esta ruta sea correcta
-                          alt="App content"
-                          className="scroll-image w-full object-cover"
-                        />
-                      </div>
-
-                      {/* Marco del teléfono */}
-                      <img
-                        src="/YoPuedo/PhoneMark.png" // Asegúrate de que esta ruta sea correcta
-                        alt="Phone frame"
-                        className="absolute top-0 left-0 z-10 pointer-events-none w-full h-full"
-                      />
-                    </div>
-                  </div>
-                </div>
+                <PhoneScrollComponent />
               </div>
             </div>
           </div>
@@ -440,13 +385,13 @@ export default function Portfolio() {
                     <div className="flex flex-wrap gap-2 mb-6">
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                        className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                       >
                         Figma
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                        className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                       >
                         Adobe Illustrator
                       </Badge>
@@ -500,13 +445,13 @@ export default function Portfolio() {
                       <div className="flex flex-wrap gap-2 mb-6">
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                          className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                         >
                           Figma
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb] rounded-4xl"
+                          className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                         >
                           Adobe Photoshop
                         </Badge>

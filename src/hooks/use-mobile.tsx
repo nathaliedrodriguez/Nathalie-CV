@@ -8,22 +8,25 @@ export function useMobile(): boolean {
   useEffect(() => {
     // Function to check if the device is mobile
     const checkMobile = () => {
-      const userAgent = typeof window.navigator === "undefined" ? "" : navigator.userAgent
+      const userAgent = typeof window !== "undefined" ? window.navigator.userAgent : ""
+
       const mobile = Boolean(userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i))
-      setIsMobile(mobile || window.innerWidth < 768)
+
+      // Also check screen width as a fallback
+      const isMobileWidth = window.innerWidth <= 768
+
+      setIsMobile(mobile || isMobileWidth)
     }
 
     // Check on mount
     checkMobile()
 
-    // Check on resize
+    // Add event listener for resize
     window.addEventListener("resize", checkMobile)
 
-    return () => {
-      window.removeEventListener("resize", checkMobile)
-    }
+    // Clean up
+    return () => window.removeEventListener("resize", checkMobile)
   }, [])
 
   return isMobile
 }
-

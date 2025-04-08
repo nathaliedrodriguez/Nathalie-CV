@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#ffffff] overflow-x-hidden">
       {/* Hero Section */}
-      <section className="bg-[#f2f8fb] rounded-[40px] px-4 sm:px-8 md:px-16 lg:px-24 pt-8 max-md:pb-6 md:pb-16 lg:m-10 md:m-5 max-md:m-3 relative z-10">
+      <section className="bg-[#edf5fa] rounded-[40px] px-4 sm:px-8 md:px-16 lg:px-24 pt-8 max-md:pb-6 md:pb-16 lg:m-10 md:m-5 max-md:m-3 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <header className="flex justify-end mb-12">
@@ -154,7 +154,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center">
             {/* UX UI Designer Card */}
-            <div className="bg-[#f2f8fb] p-8 rounded-4xl max-w-[358px] mx-auto">
+            <div className="bg-[#edf5fa] p-8 rounded-4xl max-w-[358px] mx-auto">
               <div className="flex items-center gap-4 mb-6">
                 <img src="/HomePage/icons/touch.png" className="w-10 rounded-lg flex items-center justify-center" alt="TouchIcon" />
                 <h3 className="text-xl font-bold font-title">UX UI Designer</h3>
@@ -177,7 +177,7 @@ export default function Home() {
             </div>
 
             {/* Content Creator Card */}
-            <div className="bg-[#f2f8fb] p-8 rounded-4xl max-w-[358px] mx-auto">
+            <div className="bg-[#edf5fa] p-8 rounded-4xl max-w-[358px] mx-auto">
               <div className="flex items-center gap-4 mb-6">
                 <img src="/HomePage/icons/Keyboard.png" className="w-10 flex items-center justify-center" alt="KeyboardIcon" />
                 <h3 className="text-xl font-bold  font-title">Content Creator</h3>

@@ -28,20 +28,16 @@ export default function AboutMe() {
         }))
     }
 
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-    }
-
     return (
         <div className="min-h-screen bg-[#ffffff] font-body pt-3 md:pt-8 px-3 md:px-8">
             {/* Header */}
-            <header className="container bg-[#e6f4ff] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
+            <header className="container bg-[#edf5fa] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/">
                             <Button variant="ghost" className="">
-                                <ChevronLeft className="h-10 w-10" />
+                                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
                             </Button>
                         </Link>
                         <div className="md:hidden flex gap-6 relative">
@@ -58,7 +54,7 @@ export default function AboutMe() {
 
                     {/* Fila 3: Texto alineado a la izquierda */}
                     <div className="col-span-3 flex items-center gap-4 self-end">
-                        <h1 className="text-xl font-title font-bold">
+                        <h1 className="text-3xl font-title font-bold">
                             About <span className="text-[#0091fb] missiri">me</span>
                         </h1>
                     </div>
@@ -69,11 +65,11 @@ export default function AboutMe() {
             <div className="container mx-auto px-4 py-6 max-w-7xl">
                 {/* My Career */}
                 <div className="mb-8">
-                    <h2 className="text-lg font-semibold text-[#0004a4] missiri mb-4">My Career</h2>
+                    <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">My Career</h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {/* Journey Card */}
-                        <div className="bg-[#e6f4ff] p-4 rounded-xl shadow-sm">
+                        <div className="bg-[#edf5fa] p-4 rounded-xl shadow-sm">
                             <div className="flex items-center mb-3">
                                 <div className="w-12 h-auto mr-2">
                                     <img src="/aboutMe/img-1.png" alt="Journey" className="w-12 h-auto" />
@@ -86,7 +82,7 @@ export default function AboutMe() {
                         </div>
 
                         {/* Methodology Card */}
-                        <div className="bg-[#e6f4ff] p-4 rounded-xl shadow-sm">
+                        <div className="bg-[#edf5fa] p-4 rounded-xl shadow-sm">
                             <div className="flex items-center mb-3">
                                 <div className="w-12 h-auto mr-2">
                                     <img src="/aboutMe/img-2.png" alt="Methodology" className="w-12 h-auto" />
@@ -99,7 +95,7 @@ export default function AboutMe() {
                         </div>
 
                         {/* Focus Card */}
-                        <div className="bg-[#e6f4ff] p-4 rounded-xl shadow-sm">
+                        <div className="bg-[#edf5fa] p-4 rounded-xl shadow-sm md:col-span-2 lg:col-span-1">
                             <div className="flex items-center mb-3">
                                 <div className="w-12 h-auto mr-2">
                                     <img src="/aboutMe/img-3.png" alt="Focus" className="w-12 h-auto" />
@@ -115,12 +111,12 @@ export default function AboutMe() {
 
                 {/* Skills */}
                 <div className="mb-8">
-                    <h2 className="text-lg font-semibold text-[#0004a4] missiri mb-4">Skills</h2>
+                    <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Skills</h2>
 
                     {/* Design */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("design")}>
-                            <h3 className="text-[#0091fb] missiri font-medium">Design:</h3>
+                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Design:</h3>
                             <ChevronUp
                                 className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.design ? "" : "rotate-180"}`}
                             />
@@ -130,37 +126,37 @@ export default function AboutMe() {
                             <div className="flex flex-wrap gap-2 mt-3">
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Product Design
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Interaction Design
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     User Interface
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Prototyping
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Visual Design
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Wireframing
                                 </Badge>
@@ -171,7 +167,7 @@ export default function AboutMe() {
                     {/* Research */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("research")}>
-                            <h3 className="text-[#0091fb] missiri font-medium">Research:</h3>
+                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Research:</h3>
                             <ChevronUp
                                 className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.research ? "" : "rotate-180"}`}
                             />
@@ -181,37 +177,37 @@ export default function AboutMe() {
                             <div className="flex flex-wrap gap-2 mt-3">
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     User Interviews
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     User Testing
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Information Architecture
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Journey Mapping
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Qualitative and Quantitative analysis
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     A/B Testing
                                 </Badge>
@@ -222,7 +218,7 @@ export default function AboutMe() {
                     {/* Software */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("software")}>
-                            <h3 className="text-[#0091fb] missiri font-medium">Software:</h3>
+                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Software:</h3>
                             <ChevronUp
                                 className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.software ? "" : "rotate-180"}`}
                             />
@@ -232,55 +228,55 @@ export default function AboutMe() {
                             <div className="flex flex-wrap gap-2 mt-3">
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Figma
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Adobe Ps, Ai, Id
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Whimsical
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Notion
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Miro
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Marvel
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Optimal Workshop
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Google Analytics
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] rounded-2xl border-[#e6e6e6]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Jira
                                 </Badge>
@@ -291,12 +287,12 @@ export default function AboutMe() {
 
                 {/* Education */}
                 <div className="mb-8">
-                    <h2 className="text-lg font-semibold text-[#0004a4] missiri mb-4">Education</h2>
+                    <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Education</h2>
 
                     {/* Courses and degrees */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("courses")}>
-                            <h3 className="text-[#0091fb] missiri font-medium">Courses and degrees:</h3>
+                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Courses and degrees:</h3>
                             <ChevronUp
                                 className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.courses ? "" : "rotate-180"}`}
                             />
@@ -330,12 +326,12 @@ export default function AboutMe() {
 
                 {/* Languages */}
                 <div className="mb-8">
-                    <h2 className="text-lg font-semibold text-[#0004a4] missiri mb-4">Languages</h2>
+                    <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Languages</h2>
 
                     {/* English */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("english")}>
-                            <h3 className="text-[#0091fb] missiri font-medium">English:</h3>
+                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">English:</h3>
                             <ChevronUp
                                 className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.english ? "" : "rotate-180"}`}
                             />
@@ -352,7 +348,7 @@ export default function AboutMe() {
                     {/* Spanish */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("spanish")}>
-                            <h3 className="text-[#0091fb] missiri font-medium">Spanish:</h3>
+                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Spanish:</h3>
                             <ChevronUp
                                 className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.spanish ? "" : "rotate-180"}`}
                             />
@@ -368,12 +364,12 @@ export default function AboutMe() {
 
                 {/* Awards */}
                 <div className="mb-8">
-                    <h2 className="text-lg font-semibold text-[#0004a4] missiri mb-4">Awards</h2>
+                    <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Awards</h2>
 
                     {/* Eikon Awards */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("eikon")}>
-                            <h3 className="text-[#0091fb] missiri font-medium">Eikon Awards:</h3>
+                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Eikon Awards:</h3>
                             <ChevronUp
                                 className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.eikon ? "" : "rotate-180"}`}
                             />
@@ -393,7 +389,7 @@ export default function AboutMe() {
 
                 {/* Explore My Projects */}
                 <div className="mb-12">
-                    <h2 className="text-lg font-semibold text-[#0004a4] missiri mb-4">Explore My Projects as</h2>
+                    <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Explore My Projects as</h2>
 
                     <div className="flex gap-4 justify-center">
                         <Link href="/projects">
@@ -410,24 +406,6 @@ export default function AboutMe() {
                             </Button>
                         </Link>
                     </div>
-                </div>
-
-                {/* Scroll to top button */}
-                <div className="fixed bottom-6 right-6">
-                    <Button
-                        onClick={scrollToTop}
-                        className="bg-[#e6f4ff] hover:bg-[#f5f5f5] w-10 h-10 rounded-full flex items-center justify-center shadow-md p-0"
-                    >
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 19V5M12 5L5 12M12 5L19 12"
-                                stroke="#0091fb"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
-                    </Button>
                 </div>
 
             </div>

@@ -14,10 +14,10 @@ import AnimatedButtons from "@/components/sanamente/button-animation"
 export default function SanaMenteProject() {
     const [sections, setSections] = useState({
         about: true,
-        discover: false,
-        programs: false,
-        keyAreas: false,
-        uiDesign: false,
+        discover: true,
+        programs: true,
+        keyAreas: true,
+        uiDesign: true,
     })
 
     const toggleSection = (section: string) => {
@@ -30,13 +30,13 @@ export default function SanaMenteProject() {
     return (
         <div className="min-h-screen bg-[#ffffff] font-body pt-3 md:pt-8 px-3 md:px-8">
             {/* Header */}
-            <header className="container bg-[#e6f4ff] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
+            <header className="container bg-[#edf5fa] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/projects">
                             <Button variant="ghost" className="">
-                                <ChevronLeft className="h-10 w-10" />
+                                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
                             </Button>
                         </Link>
                         <div className="md:hidden flex gap-6 relative">
@@ -53,7 +53,7 @@ export default function SanaMenteProject() {
 
                     {/* Fila 3: Texto alineado a la izquierda */}
                     <div className="col-span-3 flex items-center gap-4 self-end">
-                        <h1 className="text-xl font-title font-bold">
+                        <h1 className="text-3xl font-title font-bold">
                             <span>Sana</span>
                             <span className="text-[#0091fb]">Mente</span>
                         </h1>
@@ -69,14 +69,14 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("about")}
                     >
-                        <h2 className="text-[#0091fb] text-lg font-medium">About the Project</h2>
+                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">About the Project</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.about ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.about && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <p className="mb-6 leading-relaxed">
                                 A new anxiety management app with a neomorphism design aims to bring daily calm. It offers fresh perspectives on routines with an AI companion plus useful tools for relaxation activities.
                             </p>
@@ -95,14 +95,14 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("discover")}
                     >
-                        <h2 className="text-[#0091fb] text-lg font-medium">Discover Phase</h2>
+                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Discover Phase</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.discover ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.discover && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <p className="mb-4 leading-relaxed">
                                 Usually, neomorphism designs are associated with tech projects like music players, financial dashboards, and smart home controls, thanks to their clean, elegant, and futuristic look. But what if we used it for something completely different? I decided to challenge myself by breaking away from the ordinary and opening up something different, with empathy.
                             </p>
@@ -116,7 +116,7 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("programs")}
                     >
-                        <h2 className="text-[#0091fb] text-lg font-medium">Programs Used</h2>
+                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Programs Used</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.programs ? "rotate-180" : ""}`}
                         />
@@ -127,13 +127,13 @@ export default function SanaMenteProject() {
                             <div className="flex flex-wrap gap-2 mb-6">
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Figma
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="font-body bg-[#e6f4ff] text-[#0091fb] border-[#0091fb]"
+                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
                                 >
                                     Adobe Photoshop
                                 </Badge>
@@ -143,7 +143,7 @@ export default function SanaMenteProject() {
                                 <div className="w-64 h-auto">
                                     <video
                                         src="/sanamente/sanamente.MP4"
-                                        className="w-full h-auto"
+                                        className="w-full h-auto rounded-4xl"
                                         autoPlay
                                         muted
                                         loop
@@ -160,14 +160,14 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("keyAreas")}
                     >
-                        <h2 className="text-[#0091fb] text-lg font-medium">Key areas</h2>
+                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Key areas</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.keyAreas ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.keyAreas && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <p className="mb-2">
                                 <span className="font-bold">Empowerment:</span> providing tools to enhance self-esteem and reduce daily
                                 stress levels.
@@ -193,14 +193,14 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("uiDesign")}
                     >
-                        <h2 className="text-[#0091fb] text-lg font-medium">UI Design</h2>
+                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">UI Design</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.uiDesign && (
-                        <div className="mt-3 text-[#4f4c4c] text-sm">
+                        <div className="mt-3 text-[#4f4c4c] text-base">
                             <p className="mb-6 leading-relaxed">
                                 The app design goes beyond static visuals, incorporating smooth transitions and state changes to keep
                                 users engaged. This approach invites clear, dynamic, and intuitive interaction with suggested activities
@@ -222,9 +222,9 @@ export default function SanaMenteProject() {
             </div>
 
             {/* Footer Image */}
-            <div className="-mx-3 md:-mx-8 h-64 mt-12">
+            <footer className="-mx-3 md:-mx-8 h-64 mt-12">
                 <img src="/sanamente/img-5.png" alt="Origami Pattern" className="w-full h-full object-cover" />
-            </div>
+            </footer>
         </div>
     )
 }
