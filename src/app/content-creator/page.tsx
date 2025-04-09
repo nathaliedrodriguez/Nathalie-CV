@@ -10,9 +10,9 @@ import Footer from "@/components/footer"
 import { InstagramEmbed } from 'react-social-media-embed';
 import SimpleDialog from "@/components/simple-dialog"
 import { useState } from "react"
-import VideoCarousel from "@/components/content-creator/video-carousel"
 import { Carousel } from "@/components/content-creator/carousel"
 import { VideoPlayer } from "@/components/content-creator/video-player"
+import CentralCarousel from "@/components/content-creator/central-carousel"
 
 const videos = [
     {
@@ -74,12 +74,6 @@ export default function ContentCreatorPicks() {
             [section]: !prev[section as keyof typeof prev],
         }))
     }
-
-    const ArticlesAndStoriesVideos = [
-        "https://youtu.be/G0194NiR1Ds?t=1",
-        "https://www.youtube.com/watch?v=pxTsfoOQcPA&ab_channel=LouisMedina",
-        "https://youtu.be/2azvHp5s_DY?t=1"
-    ]
 
     const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null)
 
@@ -308,7 +302,6 @@ export default function ContentCreatorPicks() {
                         </div>
                     )}
                 />
-                {/* <CommonCarousel videos={videoUrls} showInstructions={false} /> */}
             </section>
 
             {/* Visual Narratives */}
@@ -467,7 +460,7 @@ export default function ContentCreatorPicks() {
                 </div>
 
                 <div className="py-4">
-                    <VideoCarousel videos={ArticlesAndStoriesVideos} showInstructions={false} />
+                    <CentralCarousel />
                 </div>
             </section>
 
@@ -531,42 +524,6 @@ export default function ContentCreatorPicks() {
                     <InstagramEmbed url="https://www.instagram.com/p/B7647WABecM/?utm_source=ig_web_copy_link" />
                 </div>
             </SimpleDialog>
-
-            {/* <SimpleDialog isOpen={isDialogOpen == "CountryLife"} onClose={closeDialog} title="Country Life">
-                <div className="">
-                    <img src="/content-creator/ArticlesAndStories/CountryLife.jpg" alt="" />
-                </div>
-            </SimpleDialog>
-            <SimpleDialog isOpen={isDialogOpen == "Raffia"} onClose={closeDialog} title="Report">
-                <div className="">
-                    <img src="/content-creator/ArticlesAndStories/Raffia.jpg" alt="" />
-                </div>
-            </SimpleDialog>
-            <SimpleDialog isOpen={isDialogOpen == "Report"} onClose={closeDialog} title="Report">
-                <div className="">
-                    <img src="/content-creator/ArticlesAndStories/Report.jpg" alt="" />
-                </div>
-            </SimpleDialog>
-            <SimpleDialog isOpen={isDialogOpen == "Events"} onClose={closeDialog} title="Events">
-                <div className="">
-                    <img src="/content-creator/ArticlesAndStories/Events.jpg" alt="" />
-                </div>
-            </SimpleDialog>
-            <SimpleDialog isOpen={isDialogOpen == "Entrepreneurs"} onClose={closeDialog} title="Entrepreneurs">
-                <div className="">
-                    <img src="/content-creator/ArticlesAndStories/Entrepreneurs.jpg" alt="" />
-                </div>
-            </SimpleDialog>
-            <SimpleDialog isOpen={isDialogOpen == "Tourism"} onClose={closeDialog} title="Tourism">
-                <div className="">
-                    <img src="/content-creator/ArticlesAndStories/Tourism.jpg" alt="" />
-                </div>
-            </SimpleDialog>
-            <SimpleDialog isOpen={isDialogOpen == "Protagonists"} onClose={closeDialog} title="Protagonists">
-                <div className="">
-                    <img src="/content-creator/ArticlesAndStories/Protagonists.jpg" alt="" />
-                </div>
-            </SimpleDialog> */}
         </div>
     )
 }

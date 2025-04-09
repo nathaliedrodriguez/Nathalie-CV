@@ -177,10 +177,10 @@ export default function Portfolio() {
 
           {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
           <div className="col-span-3 flex items-center gap-4 self-end">
-            <div className="relative w-16 h-16 rounded-full overflow-hidden">
+            {/* <div className="relative w-16 h-16 rounded-full overflow-hidden">
               <img src="/HomePage/profile.png" alt="Profile" sizes="64" className="object-cover" />
-            </div>
-            <h1 className="text-xl font-title font-bold">
+            </div> */}
+            <h1 className="text-3xl font-title font-bold">
               My UX UI <span className="text-[#0091fb]">designs</span>
             </h1>
           </div>

@@ -286,6 +286,10 @@ p {
   border-color: hsl(var(--primary));
 }
 
+.border-F0F0F3 {
+  border-color: #F0F0F3;
+}
+
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));

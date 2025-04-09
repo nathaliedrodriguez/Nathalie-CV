@@ -83,7 +83,6 @@ export default function SanaMenteProject() {
 
                             <div className="flex justify-center mt-6">
                                 <OrigamiAnimation />
-                                {/* <img src="/sanamente/img-1.png" alt="Sanamente ui" /> */}
                             </div>
                         </div>
                     )}
