@@ -1,15 +1,15 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown, ChevronLeft } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import MobileMenu from "@/components/mobile-menu"
 import OrigamiAnimation from "@/components/sanamente/origami-animation"
 import AnimatedButtons from "@/components/sanamente/button-animation"
+import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 
 export default function SanaMenteProject() {
     const [sections, setSections] = useState({
@@ -35,9 +35,7 @@ export default function SanaMenteProject() {
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/projects">
-                            <Button variant="ghost" className="">
-                                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
-                            </Button>
+                            <ChevronLeftRoute />
                         </Link>
                         <div className="md:hidden flex gap-6 relative">
                             <MobileMenu />
@@ -185,7 +183,7 @@ export default function SanaMenteProject() {
                 </div>
 
                 <AnimatedButtons />
-                
+
                 {/* UI Design */}
                 <div className="mb-6">
                     <div

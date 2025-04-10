@@ -39,7 +39,7 @@ export default function DesktopSidebar() {
     <>
       {/* Botón para abrir la barra lateral */}
       <Button variant="ghost" className="z-50 md:flex hidden" onClick={() => setIsOpen(true)}>
-        <Menu className="h-10 w-10 text-[#0091fb]" />
+        <Menu style={{ height: '30px', width: '30px' }} className="text-[#0091fb]" />
       </Button>
 
       {/* Overlay oscuro cuando la barra lateral está abierta */}

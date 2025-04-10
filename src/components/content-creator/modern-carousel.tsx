@@ -23,6 +23,9 @@ interface ModernCarouselProps<T> {
     mobile: number
   }
   gap?: number
+  activeIndex?: number
+  setActiveIndex?: (index: number) => void
+  isTransitioning?: boolean
 }
 
 export function ModernCarousel<T>({
@@ -37,8 +40,50 @@ export function ModernCarousel<T>({
   centerMode = true,
   visibleItems = { desktop: 3, tablet: 2, mobile: 1.2 },
   gap = 16,
+  activeIndex: externalActiveIndex,
+  setActiveIndex: externalSetActiveIndex,
+  isTransitioning = false,
 }: ModernCarouselProps<T>) {
-  const [activeIndex, setActiveIndex] = useState(initialIndex)
+  const [internalActiveIndex, setInternalActiveIndex] = useState(initialIndex)
+  const activeIndex = externalActiveIndex !== undefined ? externalActiveIndex : internalActiveIndex
+  const setActiveIndex = externalSetActiveIndex || setInternalActiveIndex
+
+  // Add this new useRef for tracking transition state
+  const transitionDisabledRef = useRef(false)
+  const prevItemsLengthRef = useRef(items.length)
+  const prevActiveIndexRef = useRef(activeIndex)
+
+  // Debug logging function
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  const logDebug = useCallback((message: string, data?: any) => {
+    if (process.env.NODE_ENV === "development") {
+      console.log(`[ModernCarousel] ${message}`, data || "")
+    }
+  }, [])
+
+  // Add this new function to handle smooth transitions
+  const disableTransitionTemporarily = useCallback(() => {
+    if (!containerRef.current) return
+
+    const container = containerRef.current.querySelector("div")
+    if (container) {
+      transitionDisabledRef.current = true
+      container.style.transition = "none"
+
+      // Force a reflow to apply the style change
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+      container.offsetHeight
+
+      // Re-enable transitions after a short delay
+      setTimeout(() => {
+        if (container) {
+          container.style.transition = "transform 300ms ease-out"
+          transitionDisabledRef.current = false
+        }
+      }, 50)
+    }
+  }, [])
+
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
@@ -54,13 +99,25 @@ export function ModernCarousel<T>({
   const containerRef = useRef<HTMLDivElement>(null)
   const isMobile = useMobile()
 
-  // Debug logging function
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const logDebug = (message: string, data?: any) => {
-    if (process.env.NODE_ENV === "development") {
-      console.log(`[Carousel] ${message}`, data || "")
+  // Track changes in items length to handle dynamic list changes
+  useEffect(() => {
+    // If the items length has changed, we need to handle the transition carefully
+    if (prevItemsLengthRef.current !== items.length && isInitialized) {
+      logDebug("Items length changed", {
+        previous: prevItemsLengthRef.current,
+        current: items.length,
+        activeIndex,
+      })
+
+      // Disable transitions temporarily if the list changed
+      if (!isTransitioning && !transitionDisabledRef.current) {
+        disableTransitionTemporarily()
+      }
     }
-  }
+
+    prevItemsLengthRef.current = items.length
+    prevActiveIndexRef.current = activeIndex
+  }, [items.length, activeIndex, isInitialized, isTransitioning, disableTransitionTemporarily, logDebug])
 
   // Calculate dimensions on mount and resize
   useEffect(() => {
@@ -73,8 +130,8 @@ export function ModernCarousel<T>({
       // Calculate items per view based on screen size
       let newItemsPerView: number
       if (window.innerWidth >= 1280) {
-        // Desktop: show specified number of items
-        newItemsPerView = visibleItems.desktop
+        // Desktop: ensure exactly 3 items are visible
+        newItemsPerView = 3
       } else if (window.innerWidth >= 768) {
         // Tablet: show specified number of items
         newItemsPerView = visibleItems.tablet
@@ -108,7 +165,7 @@ export function ModernCarousel<T>({
     return () => {
       window.removeEventListener("resize", updateDimensions)
     }
-  }, [visibleItems, gap, isInitialized])
+  }, [visibleItems, gap, isInitialized, logDebug])
 
   // Update translateX when activeIndex or dimensions change
   useEffect(() => {
@@ -122,10 +179,6 @@ export function ModernCarousel<T>({
       const itemCenter = itemWidth / 2
       const itemOffset = activeIndex * (itemWidth + gap)
       newTranslateX = containerCenter - (itemOffset + itemCenter)
-
-      // Limit translation to prevent empty space at the edges
-      const minTranslate = Math.min(0, containerWidth - (items.length * (itemWidth + gap) - gap))
-      newTranslateX = Math.max(minTranslate, Math.min(0, newTranslateX))
     } else {
       // Align to the left with pagination
       newTranslateX = -activeIndex * (itemWidth + gap)
@@ -138,32 +191,63 @@ export function ModernCarousel<T>({
       }
     }
 
+    // If we're in a transition (jumping between duplicate sections),
+    // disable the CSS transition temporarily
+    if (isTransitioning && !transitionDisabledRef.current) {
+      disableTransitionTemporarily()
+    }
+
     logDebug("Updating translateX", {
       activeIndex,
       newTranslateX,
       containerWidth,
       itemWidth,
+      isTransitioning,
     })
 
     setTranslateX(newTranslateX)
-  }, [activeIndex, containerWidth, itemWidth, centerMode, items.length, gap, itemsPerView, isInitialized])
+  }, [
+    activeIndex,
+    containerWidth,
+    itemWidth,
+    centerMode,
+    items.length,
+    gap,
+    itemsPerView,
+    isInitialized,
+    isTransitioning,
+    disableTransitionTemporarily,
+    logDebug,
+  ])
 
-  // Handle navigation
-  const handlePrev = useCallback(() => {
-    logDebug("Previous button clicked", { currentIndex: activeIndex })
+  // Handle smooth transitions for large position changes
+  useEffect(() => {
+    if (!isInitialized || !containerRef.current) return
 
-    if (itemsPerView >= 1 && !centerMode) {
-      // Move by page if not in center mode
-      const itemsPerPage = Math.floor(itemsPerView)
-      const currentPage = Math.floor(activeIndex / itemsPerPage)
-      const newIndex = Math.max(0, (currentPage - 1) * itemsPerPage)
-      setActiveIndex(newIndex)
-    } else {
-      // Move by single item
-      setActiveIndex((prev) => Math.max(0, prev - 1))
+    // For smooth looping, ensure transitions are smooth even when activeIndex changes drastically
+    if (Math.abs(translateX) > containerWidth * 2) {
+      logDebug("Large position change detected", { translateX })
+
+      // Temporarily disable transitions for the jump
+      const container = containerRef.current.querySelector("div")
+      if (container) {
+        container.style.transition = "none"
+
+        // Force a reflow to apply the style change
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        container.offsetHeight
+
+        // Re-enable transitions after a short delay
+        setTimeout(() => {
+          if (container) {
+            container.style.transition = "transform 300ms ease-out"
+          }
+        }, 50)
+      }
     }
-  }, [activeIndex, itemsPerView, centerMode])
+  }, [translateX, containerWidth, isInitialized, logDebug])
 
+  // Update the handleNext function to use the new activeIndex
   const handleNext = useCallback(() => {
     logDebug("Next button clicked", { currentIndex: activeIndex })
 
@@ -173,19 +257,42 @@ export function ModernCarousel<T>({
       const currentPage = Math.floor(activeIndex / itemsPerPage)
       const nextPageStart = (currentPage + 1) * itemsPerPage
 
-      // Check if there are more items to show
+      // Check if there are more items to show, if not loop to beginning
       if (nextPageStart < items.length) {
         setActiveIndex(nextPageStart)
+      } else {
+        setActiveIndex(0) // Loop to beginning
       }
     } else {
-      // Move by single item
-      if (activeIndex < items.length - 1) {
-        setActiveIndex((prev) => prev + 1)
-      }
+      // Move by single item with looping
+      setActiveIndex(activeIndex + 1)
     }
-  }, [activeIndex, items.length, itemsPerView, centerMode])
+  }, [activeIndex, items.length, itemsPerView, centerMode, setActiveIndex, logDebug])
 
-  // Handle item click
+  // Update the handlePrev function to use the new activeIndex
+  const handlePrev = useCallback(() => {
+    logDebug("Previous button clicked", { currentIndex: activeIndex })
+
+    if (itemsPerView >= 1 && !centerMode) {
+      // Move by page if not in center mode
+      const itemsPerPage = Math.floor(itemsPerView)
+      const currentPage = Math.floor(activeIndex / itemsPerPage)
+      const newIndex = Math.max(0, (currentPage - 1) * itemsPerPage)
+
+      if (currentPage > 0) {
+        setActiveIndex(newIndex)
+      } else {
+        // Loop to end
+        const lastPageStart = Math.floor((items.length - 1) / itemsPerPage) * itemsPerPage
+        setActiveIndex(lastPageStart)
+      }
+    } else {
+      // Move by single item with looping
+      setActiveIndex(activeIndex - 1)
+    }
+  }, [activeIndex, itemsPerView, centerMode, items.length, setActiveIndex, logDebug])
+
+  // Update the handleItemClick function to use the new activeIndex
   const handleItemClick = useCallback(
     (index: number) => {
       // Only trigger selection if we haven't dragged significantly
@@ -199,7 +306,7 @@ export function ModernCarousel<T>({
         }
       }
     },
-    [activeIndex, items, onItemSelect, dragDistance],
+    [activeIndex, items, onItemSelect, dragDistance, setActiveIndex, logDebug],
   )
 
   // Handle mouse/touch drag
@@ -215,7 +322,7 @@ export function ModernCarousel<T>({
 
       logDebug("Drag started", { clientX, translateX })
     },
-    [translateX],
+    [translateX, logDebug],
   )
 
   const handleDragMove = useCallback(
@@ -242,6 +349,7 @@ export function ModernCarousel<T>({
     [isDragging, startX, scrollLeft, containerWidth, itemWidth, items.length, gap],
   )
 
+  // Update the handleDragEnd function to use the new activeIndex
   const handleDragEnd = useCallback(() => {
     if (!isDragging) return
 
@@ -261,10 +369,10 @@ export function ModernCarousel<T>({
         // If we've moved more than 20% of an item's width, change the active index
         if (dragDistance > itemAndGapWidth * 0.2) {
           // Moved right
-          newIndex = Math.max(0, activeIndex - 1)
+          newIndex = activeIndex - 1
         } else if (dragDistance < -itemAndGapWidth * 0.2) {
           // Moved left
-          newIndex = Math.min(items.length - 1, activeIndex + 1)
+          newIndex = activeIndex + 1
         }
       } else {
         // For non-center mode, calculate based on position
@@ -299,22 +407,30 @@ export function ModernCarousel<T>({
 
     // Reset drag distance
     setDragDistance(0)
-  }, [isDragging, dragDistance, activeIndex, centerMode, itemWidth, gap, items.length, containerWidth, itemsPerView])
+  }, [
+    isDragging,
+    dragDistance,
+    activeIndex,
+    centerMode,
+    itemWidth,
+    gap,
+    items.length,
+    containerWidth,
+    itemsPerView,
+    setActiveIndex,
+    logDebug,
+  ])
 
-  // Auto scroll functionality
+  // Update the auto scroll functionality to use the new activeIndex
   useEffect(() => {
     if (!autoScroll || !isInitialized) return
 
     const interval = setInterval(() => {
-      if (activeIndex < items.length - 1) {
-        handleNext()
-      } else {
-        setActiveIndex(0)
-      }
+      setActiveIndex(activeIndex < items.length - 1 ? activeIndex + 1 : 0)
     }, autoScrollInterval)
 
     return () => clearInterval(interval)
-  }, [autoScroll, autoScrollInterval, activeIndex, items.length, handleNext, isInitialized])
+  }, [autoScroll, autoScrollInterval, activeIndex, items.length, isInitialized, setActiveIndex])
 
   // Show/hide arrows on desktop
   useEffect(() => {
@@ -338,12 +454,9 @@ export function ModernCarousel<T>({
     }
   }, [isMobile])
 
-  // Calculate if we're at the beginning or end for arrow disabling
-  const isAtStart = activeIndex === 0
-
-  // For center mode, we're at the end when we reach the last item
-  // For standard mode, we're at the end when the last visible item is the last item in the array
-  const isAtEnd = centerMode ? activeIndex >= items.length - 1 : activeIndex + Math.floor(itemsPerView) >= items.length
+  // For a continuous loop, we never disable the arrows
+  const isAtStart = false
+  const isAtEnd = false
 
   // Render nothing if no items
   if (items.length === 0) {
@@ -378,10 +491,10 @@ export function ModernCarousel<T>({
 
             return (
               <div
-                key={index}
+                key={`item-${index}`}
                 className={cn(
                   "flex-shrink-0 transition-all duration-300",
-                  isCentered ? "scale-100 z-10" : "scale-90 opacity-90 z-0",
+                  isCentered ? "scale-100 z-10" : "scale-95 opacity-95 z-0", // Reduced scale difference for better visibility
                   !isVisible && !centerMode ? "opacity-0" : "",
                 )}
                 style={{
@@ -403,7 +516,7 @@ export function ModernCarousel<T>({
             onClick={handlePrev}
             disabled={isAtStart}
             className={cn(
-              "absolute left-2 top-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md z-20",
+              "absolute left-2 top-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md z-[999]",
               "hover:bg-gray-100 transition-all duration-200",
               "focus:outline-none focus:ring-2 focus:ring-gray-300",
               isAtStart ? "opacity-50 cursor-not-allowed" : "opacity-100",
@@ -418,7 +531,7 @@ export function ModernCarousel<T>({
             onClick={handleNext}
             disabled={isAtEnd}
             className={cn(
-              "absolute right-2 top-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md z-20",
+              "absolute right-2 top-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md z-[999]",
               "hover:bg-gray-100 transition-all duration-200",
               "focus:outline-none focus:ring-2 focus:ring-gray-300",
               isAtEnd ? "opacity-50 cursor-not-allowed" : "opacity-100",
@@ -430,27 +543,6 @@ export function ModernCarousel<T>({
           </button>
         </>
       )}
-
-      {/* Pagination dots
-      {pageCount > 1 && (
-        <div className="flex justify-center mt-4 gap-2 overflow-x-auto pb-2 max-w-full">
-          {Array.from({ length: pageCount }).map((_, index) => (
-            <button
-              key={index}
-              className={cn(
-                "w-2.5 h-2.5 rounded-full transition-all duration-300 flex-shrink-0",
-                index === currentPage ? "bg-black w-5" : "bg-gray-300 hover:bg-gray-400",
-              )}
-              onClick={() => {
-                const newIndex = centerMode ? index : index * Math.floor(itemsPerView)
-                logDebug("Pagination dot clicked", { dotIndex: index, newActiveIndex: newIndex })
-                setActiveIndex(Math.min(items.length - 1, newIndex))
-              }}
-              aria-label={`Go to page ${index + 1}`}
-            />
-          ))}
-        </div>
-      )} */}
     </div>
   )
 }

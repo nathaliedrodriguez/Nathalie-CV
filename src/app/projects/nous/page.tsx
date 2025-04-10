@@ -1,14 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown, ChevronLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ChevronDown } from "lucide-react"
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import MobileMenu from "@/components/mobile-menu"
+import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 
 export default function NOUSLatamProject() {
     const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [Autoplay({ delay: 1000, stopOnLastSnap: false })])
@@ -38,9 +38,7 @@ export default function NOUSLatamProject() {
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/projects">
-                            <Button variant="ghost" className="">
-                                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
-                            </Button>
+                            <ChevronLeftRoute />
                         </Link>
                         <div className="md:hidden flex gap-6 relative">
                             <MobileMenu />
@@ -83,7 +81,7 @@ export default function NOUSLatamProject() {
                             <div className="mt-6">
                                 <div className="flex w-full justify-around">
                                     <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">Before</p>
-                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">Ater</p>
+                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">After</p>
                                 </div>
                                 <img src="/Nous/NOUS-Latam.gif" alt="Before and after" />
                             </div>

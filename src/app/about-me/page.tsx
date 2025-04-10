@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronLeft, ChevronUp } from "lucide-react"
+import {  ChevronUp } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -9,6 +9,7 @@ import DesktopSidebar from "@/components/desktop-sidebar"
 import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import Footer from "@/components/footer"
+import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 
 export default function AboutMe() {
     const [expandedSections, setExpandedSections] = useState({
@@ -31,14 +32,12 @@ export default function AboutMe() {
     return (
         <div className="min-h-screen bg-[#ffffff] font-body pt-3 md:pt-8 px-3 md:px-8">
             {/* Header */}
-            <header className="container bg-[#edf5fa] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
+            <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/">
-                            <Button variant="ghost" className="">
-                                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
-                            </Button>
+                            <ChevronLeftRoute />
                         </Link>
                         <div className="md:hidden flex gap-6 relative">
                             <MobileMenu />

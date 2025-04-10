@@ -192,7 +192,7 @@ function ScrollUp() {
         <button
           ref={buttonRef}
           onClick={scrollToTop}
-          className="z-50 w-18 h-18 rounded-full border-1 border-0091fb text-white flex items-center justify-center shadow-lg hover:bg-[#0679b8]"
+          className="z-50 w-18 h-18 rounded-full border-1 border-0091fb text-white flex items-center justify-center shadow-lg bg-[#ffff] hover:bg-[#0679b8]"
           style={buttonStyles}
           aria-label="Scroll to top"
         >

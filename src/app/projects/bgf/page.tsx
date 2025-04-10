@@ -1,14 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ChevronDown, ChevronLeft } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
 import { useTheme } from 'next-themes'
 import AdobeXDEmbed from "@/components/bgf/adobe-xd-embed"
+import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 
 export default function BoardGameFriends() {
     const [sections, setSections] = useState({
@@ -42,9 +42,7 @@ export default function BoardGameFriends() {
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/projects">
-                            <Button variant="ghost" className="">
-                                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
-                            </Button>
+                            <ChevronLeftRoute />
                         </Link>
                         <div className="md:hidden flex gap-6 relative">
                             <MobileMenu />
@@ -269,7 +267,7 @@ export default function BoardGameFriends() {
 
                     {sections.livePrototype && (
                         <div className="mt-3 text-[#4f4c4c] text-base">
-                            <AdobeXDEmbed/>
+                            <AdobeXDEmbed />
                         </div>
                     )}
                 </div>

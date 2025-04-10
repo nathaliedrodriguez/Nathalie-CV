@@ -29,7 +29,7 @@ export default function ThemeToggle() {
   return (
     <div
       onClick={toggleTheme}
-      className="relative h-7 w-16 rounded-full border border-[#0091fb] bg-transparent cursor-pointer overflow-hidden"
+      className="relative h-7 w-16 rounded-full border border-0091fb bg-transparent cursor-pointer overflow-hidden"
     >
       {/* Iconos estáticos */}
       <div className="absolute inset-0 flex items-center justify-between px-2">

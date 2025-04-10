@@ -1,12 +1,13 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ChevronDown, ChevronLeft } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
+import TestingResults from "@/components/yo-puedo/dynamic-height-component"
+import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 
 export default function YOPuedoProject() {
     const contentRef = useRef<HTMLDivElement>(null)
@@ -37,9 +38,7 @@ export default function YOPuedoProject() {
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/projects">
-                            <Button variant="ghost" className="">
-                                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
-                            </Button>
+                            <ChevronLeftRoute />
                         </Link>
                         <div className="md:hidden flex gap-6 relative">
                             <MobileMenu />
@@ -293,26 +292,7 @@ export default function YOPuedoProject() {
                                 </div>
                             </div>
 
-                            <div className="flex justify-around gap-3 font-light">
-                                <img src="/YoPuedo/img-7.png" alt="Phone Image" />
-                                <div className="p-4 rounded-lg">
-                                    <h3 className="font-bold mb-2">Search Bars:</h3>
-                                    <h4 className=" mb-2 text-[#0091fb]">By Name</h4>
-                                    <ul className="list-disc pl-5 space-y-1">
-                                        <li>Improves navigation</li>
-                                        <li>Saves time</li>
-                                        <li>Adapts to context</li>
-                                        <li>Enhances experience</li>
-                                    </ul>
-                                    <h4 className=" mb-2 text-[#0091fb]">By Categories</h4>
-                                    <ul className="list-disc pl-5 space-y-1">
-                                        <li>Organizes content</li>
-                                        <li>Filters efficiently</li>
-                                        <li>Reduces clutter</li>
-                                        <li>Supports themes</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <TestingResults />
                         </div>
                     )}
                 </div>

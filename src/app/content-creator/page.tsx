@@ -3,8 +3,7 @@
 import DesktopSidebar from "@/components/desktop-sidebar"
 import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
-import { Button } from "@/components/ui/button"
-import { ChevronLeft, MousePointerClick, Youtube, Play } from "lucide-react"
+import { MousePointerClick, Youtube, Play } from "lucide-react"
 import Link from "next/link"
 import Footer from "@/components/footer"
 import { InstagramEmbed } from 'react-social-media-embed';
@@ -13,6 +12,7 @@ import { useState } from "react"
 import { Carousel } from "@/components/content-creator/carousel"
 import { VideoPlayer } from "@/components/content-creator/video-player"
 import CentralCarousel from "@/components/content-creator/central-carousel"
+import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 
 const videos = [
     {
@@ -31,21 +31,21 @@ const videos = [
     },
     {
         id: 3,
-        title: "Vos sos un eslabón importante en esta cadena",
+        title: "Vos sos un eslabón importante en esta cadena ...",
         src: "https://www.youtube.com/watch?v=m0Sa_H8LTu4",
         thumbnail: "/content-creator/Carousel-1/3.png",
         source: "YouTube",
     },
     {
         id: 4,
-        title: "Trabajamos junto con el productor para mejorar",
+        title: "Trabajamos junto con el productor para mejorar ...",
         src: "https://www.youtube.com/watch?v=V_oEBKFBxJ8",
         thumbnail: "/content-creator/Carousel-1/4.png",
         source: "YouTube",
     },
     {
         id: 5,
-        title: "Desarrollo de infraestructura vial en la provincia",
+        title: "Firma Digital",
         src: "https://www.youtube.com/watch?v=RwE6cHjFETU&ab_channel=MinisteriodeInfraestructurayServiciosP%C3%BAblicos",
         thumbnail: "/content-creator/Carousel-1/5.png",
         source: "YouTube",
@@ -98,14 +98,12 @@ export default function ContentCreatorPicks() {
     return (
         <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
             {/* Header */}
-            <header className="container bg-[#edf5fa] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
+            <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/projects">
-                            <Button variant="ghost" className="">
-                                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
-                            </Button>
+                            <ChevronLeftRoute />
                         </Link>
                         <div className="md:hidden flex gap-6 relative">
                             <MobileMenu />
@@ -284,7 +282,7 @@ export default function ContentCreatorPicks() {
                                             >
                                                 <div className="w-12 h-12 rounded-full bg-white/70 flex items-center justify-center">
                                                     {/* <div className="w-0 h-0 border-y-[8px] border-y-transparent border-l-[12px] border-l-white ml-1"> */}
-                                                    <Play  className="text-black/80"/>
+                                                    <Play className="text-black/80" />
                                                 </div>
                                             </div>
                                         </div>

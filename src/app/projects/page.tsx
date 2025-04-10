@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { ChevronLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import MobileMenu from "@/components/mobile-menu"
@@ -9,6 +8,7 @@ import MobileMenuButton from "@/components/mobile-menu-button"
 import Link from "next/link"
 import Footer from "@/components/footer"
 import PhoneScrollComponent from "@/components/yo-puedo/phone-scroll-component"
+import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false)
@@ -144,9 +144,7 @@ export default function Portfolio() {
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex justify-between items-start gap-6">
             <Link href="/" className="">
-              <Button variant="ghost">
-                <ChevronLeft className="h-10 w-10 text-[#0B9FF0]" />
-              </Button>
+              <ChevronLeftRoute />
             </Link>
             <div className="md:hidden flex gap-6 relative">
               <MobileMenu />
