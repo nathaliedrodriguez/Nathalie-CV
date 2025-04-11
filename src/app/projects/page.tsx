@@ -154,7 +154,7 @@ export default function Portfolio() {
               <Link href="about-me">
                 <Button
                   variant="ghost"
-                  className="text-[20px] font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   About Me
                 </Button>
@@ -162,7 +162,7 @@ export default function Portfolio() {
               <Link href="/content-creator">
                 <Button
                   variant="ghost"
-                  className="text-[20px] font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   Content Creator
                 </Button>
