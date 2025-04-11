@@ -32,7 +32,6 @@ export default function AboutMe() {
     return (
         <div className="min-h-screen bg-[#ffffff] font-body pt-3 md:pt-8 px-3  md:px-8">
             {/* Header */}
-            <div className="max-md:px-4">
             <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
@@ -60,13 +59,12 @@ export default function AboutMe() {
                     </div>
                 </div>
             </header>
-            </div>
 
             {/* Main Content */}
             <div className="container mx-auto px-4 py-6 max-w-7xl">
                 {/* My Career */}
                 <div className="mb-8">
-                    <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4 max-md:pl-4">My Career</h2>
+                    <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">My Career</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {/* Journey Card */}
@@ -111,7 +109,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Skills */}
-                <div className="mb-8 max-md:mx-4">
+                <div className="mb-8">
                     <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Skills</h2>
 
                     {/* Design */}
@@ -287,7 +285,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Education */}
-                <div className="mb-8 max-md:mx-4">
+                <div className="mb-8">
                     <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Education</h2>
 
                     {/* Courses and degrees */}
@@ -326,7 +324,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Languages */}
-                <div className="mb-8 max-md:mx-4">
+                <div className="mb-8">
                     <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Languages</h2>
 
                     {/* English */}
@@ -364,7 +362,7 @@ export default function AboutMe() {
                 </div>
 
                 {/* Awards */}
-                <div className="mb-8 max-md:mx-4">
+                <div className="mb-8">
                     <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Awards</h2>
 
                     {/* Eikon Awards */}
@@ -390,7 +388,7 @@ export default function AboutMe() {
 
                 {/* Explore My Projects */}
                 <div className="mb-12">
-                    <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4 max-md:pl-4">Explore My Projects as</h2>
+                    <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Explore My Projects as</h2>
 
                     <div className="flex max-md:flex-col max-md:w-full gap-4 justify-center">
                         <Link href="/projects">
