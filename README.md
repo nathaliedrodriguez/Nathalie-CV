@@ -1,4 +1,4 @@
-Correcciones 11/4
+Cambios 11/4 v2
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
