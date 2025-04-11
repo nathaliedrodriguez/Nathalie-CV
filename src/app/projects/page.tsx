@@ -154,7 +154,7 @@ export default function Portfolio() {
               <Link href="about-me">
                 <Button
                   variant="ghost"
-                  className="font-body text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="text-[20px] font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   About Me
                 </Button>
@@ -162,7 +162,7 @@ export default function Portfolio() {
               <Link href="/content-creator">
                 <Button
                   variant="ghost"
-                  className="font-body text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="text-[20px] font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   Content Creator
                 </Button>
@@ -175,9 +175,6 @@ export default function Portfolio() {
 
           {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
           <div className="col-span-3 flex items-center gap-4 self-end">
-            {/* <div className="relative w-16 h-16 rounded-full overflow-hidden">
-              <img src="/HomePage/profile.png" alt="Profile" sizes="64" className="object-cover" />
-            </div> */}
             <h1 className="text-3xl font-title font-bold">
               My UX UI <span className="text-[#0091fb]">designs</span>
             </h1>

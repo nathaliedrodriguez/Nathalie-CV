@@ -73,7 +73,7 @@ export default function AboutMe() {
                                 <div className="w-12 h-auto mr-2">
                                     <img src="/aboutMe/img-1.png" alt="Journey" className="w-12 h-auto" />
                                 </div>
-                                <h3 className="font-semibold text-[#0004a4] missiri">Journey</h3>
+                                <h3 className="font-semibold missiri text-xl">Journey</h3>
                             </div>
                             <p className="text-sm text-[#4f4c4c]">
                                 I am a Jr. UX/UI designer and Sr. digital content creator with over 10 years of experience in digital communication.
@@ -86,7 +86,7 @@ export default function AboutMe() {
                                 <div className="w-12 h-auto mr-2">
                                     <img src="/aboutMe/img-2.png" alt="Methodology" className="w-12 h-auto" />
                                 </div>
-                                <h3 className="font-semibold text-[#0004a4] missiri">Methodology</h3>
+                                <h3 className="font-semibold missiri text-xl">Methodology</h3>
                             </div>
                             <p className="text-sm text-[#4f4c4c]">
                                 I enjoy applying my knowledge to provide user-centered design solutions that create meaningful experiences.
@@ -99,7 +99,7 @@ export default function AboutMe() {
                                 <div className="w-12 h-auto mr-2">
                                     <img src="/aboutMe/img-3.png" alt="Focus" className="w-12 h-auto" />
                                 </div>
-                                <h3 className="font-semibold text-[#0004a4] missiri">Focus</h3>
+                                <h3 className="font-semibold missiri text-xl">Focus</h3>
                             </div>
                             <p className="text-sm text-[#4f4c4c]">
                                 My approach is defined by attentive listening, interdisciplinary collaboration, and a commitment to continuous improvement.
