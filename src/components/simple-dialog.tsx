@@ -11,9 +11,10 @@ interface SimpleDialogProps {
   children: React.ReactNode
   title?: string
   rounded?: string
+  className?: string
 }
 
-export default function SimpleDialog({ isOpen, onClose, children, title, rounded = "lg" }: SimpleDialogProps) {
+export default function SimpleDialog({ isOpen, onClose, children, title, rounded = "lg", className }: SimpleDialogProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
 
   // Manejar clic fuera del diálogo para cerrarlo
@@ -42,7 +43,7 @@ export default function SimpleDialog({ isOpen, onClose, children, title, rounded
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 bg-opacity-50">
+    <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 bg-opacity-50 ${className}`}>
       <div ref={dialogRef} className={`bg-[#e6f4ff] rounded-${rounded} shadow-lg p-6 w-full max-w-md max-h-[90vh] overflow-auto hide-scroll`}>
         <div className="flex justify-between items-center mb-4">
           {title && <h2 className="text-xl font-semibold text-[#4f4c4c]">{title}</h2>}

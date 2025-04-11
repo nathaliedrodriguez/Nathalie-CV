@@ -116,7 +116,7 @@ export default function Home() {
                   }, 5500);
                 }}
                 >
-                  <Button className="bg-[#0091fb] hover:bg-[#0679b8] text-white lg:px-6 md:p-6 max-md:w-full rounded-2xl">
+                  <Button className="bg-[#0091fb] hover:bg-[#0679b8] text-white lg:px-6 md:p-6 max-md:w-full max-md:p-7 max-md:text-lg rounded-2xl">
                     Download my CV
                   </Button>
                 </a>
@@ -206,8 +206,8 @@ export default function Home() {
       <Footer />
 
       {/* Download Dialog */}
-      <SimpleDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} rounded="4xl">
-        <div className="flex flex-col items-center justify-center space-x-6 py-4 px-2">
+      <SimpleDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} rounded="4xl" className="max-md:p-2">
+        <div className="flex flex-col items-center justify-center space-x-6 py-4 px-2 ">
           <div className="flex justify-center items-center gap-3">
             <img src="/HomePage/icons/save.png" className="w-12 h-auto mb-4" alt="Save icon" />
             <h2 className="text-[28px] font-bold text-black mb-2 missiri">Download Done!</h2>
