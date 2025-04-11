@@ -213,7 +213,7 @@ export default function CentralCarousel() {
         showControls={true}
         centerMode={true}
         visibleItems={{ desktop: 3, tablet: 2, mobile: 1.2 }}
-        gap={16} // Increased gap for better spacing between videos
+        gap={0} // Increased gap for better spacing between videos
         onItemSelect={(_, index) => handleVideoSelect(index)}
         activeIndex={activeVideoIndex !== null ? activeVideoIndex : initialIndex}
         setActiveIndex={setActiveVideoIndex}

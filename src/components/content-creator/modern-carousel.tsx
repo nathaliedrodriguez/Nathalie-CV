@@ -494,7 +494,7 @@ export function ModernCarousel<T>({
                 key={`item-${index}`}
                 className={cn(
                   "flex-shrink-0 transition-all duration-300",
-                  isCentered ? "scale-100 z-10" : "scale-95 opacity-95 z-0", // Reduced scale difference for better visibility
+                  isCentered ? "scale-100 z-10" : "scale-[60%] opacity-95 z-0", // Reduced scale difference for better visibility
                   !isVisible && !centerMode ? "opacity-0" : "",
                 )}
                 style={{

@@ -123,7 +123,7 @@ export default function OrigamiAnimation() {
             {expanded ? (
               <div className="relative w-full h-full">
                 <img
-                  src="/sanamente/ButtonCircle.png"
+                  src="/sanamente/ButtonCircle.svg"
                   alt="Origami"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
