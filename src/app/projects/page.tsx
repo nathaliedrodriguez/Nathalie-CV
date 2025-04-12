@@ -224,7 +224,9 @@ export default function Portfolio() {
 
         {/* Portfolio Section */}
         <section>
-          <h2 className="text-2xl font-title font-bold mb-12 text-[#0004a4]">Explore my work</h2>
+          <div className="container mx-auto max-w-7xl">
+            <h2 className="text-2xl font-title font-bold mb-12 text-[#0004a4] mx-auto">Explore my work</h2>
+          </div>
 
           {/* Project 1 */}
           <div className="mb-16">
