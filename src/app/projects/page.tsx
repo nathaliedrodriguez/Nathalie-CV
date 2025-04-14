@@ -143,7 +143,7 @@ export default function Portfolio() {
         <div className="grid grid-cols-3 grid-rows-3 min-h-32">
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex justify-between items-start gap-6">
-            <Link href="/" className="">
+            <Link href="/about-me" className="">
               <ChevronLeftRoute />
             </Link>
             <div className="md:hidden flex gap-6 relative">
@@ -186,36 +186,36 @@ export default function Portfolio() {
       <main className="max-md:max-w-7xl mx-auto py-12">
         {/* Approach Section */}
         <section className="mb-16 container mx-auto max-w-7xl py-6">
-          <h2 className="text-2xl font-title font-bold mb-8 text-[#0004a4]">
+          <h2 className="text-2xl font-title font-bold mb-8 text-[#000068]">
             My Approach Across Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-[#edf5fa] p-6 rounded-xl col-span-1 md:col-span-1 lg:col-span-1">
-              <div className="flex items-center mb-4 gap-3">
-                <img src="/HomePage/icons/target.png" className="w-10 h-10 rounded-full flex items-center justify-center mb-4" alt="targetIcon" />
-                <h3 className="text-lg font-title font-bold mb-2">UX Research</h3>
+            <div className="bg-[#edf5fa] p-9 rounded-4xl col-span-1 md:col-span-1 lg:col-span-1">
+              <div className="flex items-center mb-4 gap-4">
+                <img src="/HomePage/icons/target.png" className="w-[46px] h-[42px] rounded-full flex items-center justify-center mb-4" alt="targetIcon" />
+                <h3 className="text-2xl font-title font-bold mb-2">UX Research</h3>
               </div>
-              <p className="text-sm font-body text-[#4f4c4c]">
+              <p className="text-base font-light text-[#101113]">
                 Understanding of user needs and behaviors, driving effective solutions.
               </p>
             </div>
 
-            <div className="bg-[#edf5fa] p-6 rounded-xl col-span-1 md:col-span-1 lg:col-span-1">
-              <div className="flex items-center mb-4 gap-3">
-                <img src="/HomePage/icons/cards.png" className="w-10 h-10 flex items-center justify-center mb-4" alt="cardsIcon" />
-                <h3 className="text-lg font-title font-bold mb-2">UX Writing</h3>
+            <div className="bg-[#edf5fa] p-9 rounded-4xl col-span-1 md:col-span-1 lg:col-span-1">
+              <div className="flex items-center mb-4 gap-4">
+                <img src="/HomePage/icons/cards.png" className="w-[46px] h-[42px] flex items-center justify-center mb-4" alt="cardsIcon" />
+                <h3 className="text-2xl font-title font-bold mb-2">UX Writing</h3>
               </div>
-              <p className="text-sm font-body text-[#4f4c4c]">
+              <p className="text-base font-light text-[#101113]">
                 Creation of clear content to enhance the overall user experience.
               </p>
             </div>
 
-            <div className="bg-[#edf5fa] p-6 rounded-xl col-span-1 md:col-span-2 lg:col-span-1">
-              <div className="flex items-center mb-4 gap-3">
-                <img src="/HomePage/icons/brush.png" className="w-10 h-10 flex items-center justify-center mb-4" alt="brushIcon" />
-                <h3 className="text-lg font-title font-bold mb-2">UI Design</h3>
+            <div className="bg-[#edf5fa] p-9 rounded-4xl col-span-1 md:col-span-2 lg:col-span-1">
+              <div className="flex items-center mb-4 gap-4">
+                <img src="/HomePage/icons/brush.png" className="w-[46px] h-[42px] flex items-center justify-center mb-4" alt="brushIcon" />
+                <h3 className="text-2xl font-title font-bold mb-2">UI Design</h3>
               </div>
-              <p className="text-sm font-body text-[#4f4c4c]">
+              <p className="text-base font-light text-[#101113]">
                 Prototyping of visual interfaces that are both engaging and functional.
               </p>
             </div>
@@ -225,7 +225,7 @@ export default function Portfolio() {
         {/* Portfolio Section */}
         <section>
           <div className="container mx-auto max-w-7xl">
-            <h2 className="text-2xl font-title font-bold mb-12 text-[#0004a4] mx-auto">Explore my work</h2>
+            <h2 className="text-2xl font-title font-bold mb-12 text-[#000068] mx-auto">Explore my work</h2>
           </div>
 
           {/* Project 1 */}
@@ -240,12 +240,12 @@ export default function Portfolio() {
               </div>
               <div className="order-1 md:order-2 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
-                <div className="bg-[#f2f8fb] p-10  rounded-xl md:rounded-l-xl md:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
+                <div className="bg-[#f2f8fb] p-10 rounded-b-4xl lg:rounded-l-4xl lg:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
                   <div>
-                    <h3 className="text-3xl font-title font-bold text-[#0091fb] mb-3">
+                    <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
                       Board Game Friends
                     </h3>
-                    <p className="text-base font-body mb-4 text-[#4f4c4c]">
+                    <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
                       An app that offers a seamless platform to create and join in-person board game meetings.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
@@ -275,9 +275,9 @@ export default function Portfolio() {
                       </Badge>
                     </div>
                   </div>
-                  <div className="flex justify-center">
-                    <Link href='projects/bgf'>
-                      <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl">
+                  <div className="flex justify-center max-md:w-full">
+                    <Link href='projects/bgf' className="max-md:w-full">
+                      <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
                         Dive In
                       </Button>
                     </Link>
@@ -296,12 +296,12 @@ export default function Portfolio() {
               <div className="relative h-full">
                 <div className="relative h-full">
                   <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
-                  <div className="bg-[#f2f8fb] p-10 lg:pl-20 rounded-xl md:rounded-r-xl md:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
+                  <div className="bg-[#f2f8fb] p-10 lg:pl-20 rounded-b-4xl lg:rounded-r-4xl lg:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
                     <div>
-                      <h3 className="text-3xl font-title font-bold text-[#0091fb] mb-3">
+                      <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
                         YOPuedo app
                       </h3>
-                      <p className="text-base font-body mb-4 text-[#4f4c4c]">
+                      <p className="text-base font-light mb-4 text-[#101113]">
                         Mobile/web design that enables the elderly to access remote assistance sessions provided by
                         volunteers in a simple way.
                       </p>
@@ -344,9 +344,9 @@ export default function Portfolio() {
                         </Badge>
                       </div>
                     </div>
-                    <div className="flex justify-center">
-                      <Link href='/projects/yo-puedo'>
-                        <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl">
+                    <div className="flex justify-center max-md:w-full">
+                      <Link href='/projects/yo-puedo' className="max-md:w-full">
+                        <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
                           Find Out More
                         </Button>
                       </Link>
@@ -372,10 +372,10 @@ export default function Portfolio() {
               </div>
               <div className="order-1 md:order-2 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
-                <div className="bg-[#f2f8fb] p-10  rounded-xl md:rounded-l-xl md:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
+                <div className="bg-[#f2f8fb] p-10 rounded-b-4xl lg:rounded-l-4xl lg:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
                   <div className="">
-                    <h3 className="text-3xl font-title font-bold text-[#0091fb] mb-3">NOUS Latam</h3>
-                    <p className="text-base font-body mb-4 text-[#4f4c4c]">
+                    <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">NOUS Latam</h3>
+                    <p className="text-base font-light mb-4 text-[#101113]">
                       Homepage redesign with a human-centered approach, featuring UI enhancements, animations, icons,
                       images and more.
                     </p>
@@ -394,9 +394,9 @@ export default function Portfolio() {
                       </Badge>
                     </div>
                   </div>
-                  <div className="flex justify-center">
-                    <Link href="/projects/nous">
-                      <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl">
+                  <div className="flex justify-center max-md:w-full">
+                    <Link href="/projects/nous" className="max-md:w-full">
+                      <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
                         View Insights
                       </Button>
                     </Link>
@@ -432,10 +432,10 @@ export default function Portfolio() {
               <div className="relative h-full">
                 <div className="relative h-full">
                   <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
-                  <div className="bg-[#f2f8fb] p-10 lg:pl-20 rounded-xl md:rounded-r-xl md:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
+                  <div className="bg-[#f2f8fb] p-10 lg:pl-20 rounded-b-4xl lg:rounded-r-4xl lg:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
                     <div>
-                      <h3 className="text-3xl font-title font-bold text-[#0091fb] mb-3">SanaMente</h3>
-                      <p className="text-base font-body mb-4 text-[#4f4c4c]">
+                      <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">SanaMente</h3>
+                      <p className="text-base font-light mb-4 text-[#101113]">
                         Anxiety app with a neomorphism design, featuring an AI companion, a forum and relaxation tools for
                         a calming experience.
                       </p>
@@ -454,9 +454,9 @@ export default function Portfolio() {
                         </Badge>
                       </div>
                     </div>
-                    <div className="flex justify-center">
-                      <Link href="/projects/sanamente">
-                        <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl">
+                    <div className="flex justify-center max-md:w-full">
+                      <Link href="/projects/sanamente" className="max-md:w-full">
+                        <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
                           See More
                         </Button>
                       </Link>

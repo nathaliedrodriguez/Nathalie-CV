@@ -66,15 +66,15 @@ export default function YOPuedoProject() {
                 {/* About Section */}
                 <div className="mb-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("about")}>
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">About the Project</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">About the Project</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.about ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.about ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.about && (
                         <div className="flex flex-col justify-center pt-8">
-                            <p>Mobile/web design that enables the elderly to access remote assistance sessions provided by volunteers in a simple way.</p>
+                            <p className="text-[#101113] font-light text-base">Mobile/web design that enables the elderly to access remote assistance sessions provided by volunteers in a simple way.</p>
                             <img src="/YoPuedo/img-1.png" alt="HeroBanner" />
                         </div>
                     )}
@@ -83,9 +83,9 @@ export default function YOPuedoProject() {
                 {/* Programs Used Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("programs")}>
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Programs Used</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Programs Used</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.programs ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.programs ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -153,15 +153,15 @@ export default function YOPuedoProject() {
                 {/* Discover Phase Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("discover")}>
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Discover Phase</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Discover Phase</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.discover ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.discover ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.discover && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
-                            <p className="mb-4">
+                        <div className="mt-3">
+                            <p className="mb-4 text-[#101113] font-light text-base">
                                 Going through this stage was a rewarding challenge. I delved into a world that demands a great deal of empathy and understanding. Considering the age and digital literacy level of the target users, it was essential to deeply research their consumption habits, routines, and the barriers or fears older adults face when using mobile devices. This provided incredibly valuable insights for designing an app that is extremely intuitive, easy to use, and meets the users&apos; needs.
                             </p>
 
@@ -175,14 +175,14 @@ export default function YOPuedoProject() {
                 {/* Goals Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("goals")}>
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Goals</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Goals</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.goals ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.goals ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.goals && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <ol className="list-decimal pl-5 space-y-2">
                                 <li>
                                     <span className="font-medium">Empowering Older Adults:</span> An easy-to-use app to build confidence and independence.
@@ -205,14 +205,14 @@ export default function YOPuedoProject() {
                 {/* Challenges Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("challenges")}>
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Challenges</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Challenges</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.challenges ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.challenges ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.challenges && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p className="mb-4">
                                 Designing an app to connect seniors with volunteer remote assistance brings unique challenges. To make it effective, I focused on keeping it simple and accessible, with intuitive, user-friendly features. That&apos;s why I chose large buttons, clear text, and a straightforward layout, which make it easier for elderly users, especially those who may struggle with technology. I also conducted extensive testing with seniors to ensure the app meets their needs and works effectively for them.
                             </p>
@@ -227,14 +227,14 @@ export default function YOPuedoProject() {
                 {/* UI Design Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("uiDesign")}>
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">UI Design</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">UI Design</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.uiDesign && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p>I choose specific fonts and color styles to enhance readability, establish visual hierarchies, and create an attractive and consistent experience. Additionally, these elements contribute to accessibility and facilitate the communication of states, promoting an emotional connection that leads to greater retention and participation.</p>
                         </div>
                     )}
@@ -243,14 +243,14 @@ export default function YOPuedoProject() {
                 {/* A/B Testing Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("abTesting")}>
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">A/B Testing</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">A/B Testing</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.abTesting ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.abTesting ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.abTesting && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p className="mb-4">
                                 I ran an A/B test in the YOPUEDO app to find the best way to improve the Assistance Sessions section, a key part of the app. I compared keeping the list of cards visible, which works well for older adults who prefer straightforward navigation, with two new options: adding a search bar feature by name and categories for quicker access and introducing a floating button to make things easier.
                             </p>
@@ -268,14 +268,14 @@ export default function YOPuedoProject() {
                         className="flex items-center justify-between cursor-pointer"
                         onClick={() => toggleSection("testingResults")}
                     >
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Testing Results</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Testing Results</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.testingResults ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.testingResults ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.testingResults && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p className="py-4">I added the search bars as tests showed they improve option selection for seniors, making it smoother and more user-friendly.</p>
                             <div className="flex justify-between items-center mb-8">
                                 <div className="text-center">
@@ -303,9 +303,9 @@ export default function YOPuedoProject() {
                         className="flex items-center justify-between cursor-pointer"
                         onClick={() => toggleSection("livePrototype")}
                     >
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Live Prototype</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Live Prototype</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.livePrototype ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.livePrototype ? "rotate-180" : ""}`}
                         />
                     </div>
 

@@ -3,7 +3,7 @@
 import DesktopSidebar from "@/components/desktop-sidebar"
 import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
-import { MousePointerClick, Youtube, Play } from "lucide-react"
+import { Youtube, Play } from "lucide-react"
 import Link from "next/link"
 import Footer from "@/components/footer"
 import { InstagramEmbed } from 'react-social-media-embed';
@@ -13,6 +13,7 @@ import { Carousel } from "@/components/content-creator/carousel"
 import { VideoPlayer } from "@/components/content-creator/video-player"
 import CentralCarousel from "@/components/content-creator/central-carousel"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
+import VisualNarrativesImages from "@/components/content-creator/visual-narratives"
 
 const videos = [
     {
@@ -58,23 +59,6 @@ export default function ContentCreatorPicks() {
     const openDialog = (dialog: string) => setIsDialogOpen(String(dialog))
     const closeDialog = () => setIsDialogOpen("")
 
-    const [sections, setSections] = useState({
-        countryLife: false,
-        raffia: false,
-        report: false,
-        events: false,
-        entrepreneurs: false,
-        tourism: false,
-        protagonists: false,
-    })
-
-    const toggleSection = (section: string) => {
-        setSections((prev) => ({
-            ...prev,
-            [section]: !prev[section as keyof typeof prev],
-        }))
-    }
-
     const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null)
 
     const handleVideoSelect = (index: number) => {
@@ -102,7 +86,7 @@ export default function ContentCreatorPicks() {
                 <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
-                        <Link href="/projects">
+                        <Link href="/about-me">
                             <ChevronLeftRoute />
                         </Link>
                         <div className="md:hidden flex gap-6 relative">
@@ -128,38 +112,38 @@ export default function ContentCreatorPicks() {
 
             {/* What Guides My Work */}
             <section className="container mx-auto py-6 max-w-7xl">
-                <h2 className="text-2xl font-medium mb-6 missiri text-[#0004a4] pl-4">What Guides My Work</h2>
+                <h2 className="text-2xl font-semibold mb-6 missiri text-[#000068] pl-4">What Guides My Work</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {/* Card 1 */}
-                    <div className="bg-[#edf5fa] p-4 rounded-xl">
+                    <div className="bg-[#edf5fa] p-9 rounded-4xl">
                         <div className="flex items-center mb-3">
-                            <img src="/content-creator/img-1.png" alt="audience First" className="w-[40px] h-auto mr-4" />
-                            <span className="font-medium missiri text-xl">Audience First</span>
+                            <img src="/content-creator/img-1.png" alt="audience First" className="w-[46px] h-[42px] mr-4" />
+                            <span className="font-semibold missiri text-2xl">Audience First</span>
                         </div>
-                        <p className="text-base text-[#4f4c4c]">
+                        <p className="text-[#101113] font-light text-base">
                             I start by listening the audience’s needs to craft relevant and meaningful content.
                         </p>
                     </div>
 
                     {/* Card 2 */}
-                    <div className="bg-[#edf5fa] p-4 rounded-xl">
+                    <div className="bg-[#edf5fa] p-9 rounded-4xl">
                         <div className="flex items-center mb-3">
-                            <img src="/content-creator/img-2.png" alt="Empathy Insights" className="w-[40px] h-auto mr-4" />
-                            <span className="font-medium missiri text-xl">Empathy Insights</span>
+                            <img src="/content-creator/img-2.png" alt="Empathy Insights" className="w-[46px] h-[42px] mr-4" />
+                            <span className="font-semibold missiri text-2xl">Empathy Insights</span>
                         </div>
-                        <p className="text-base text-[#4f4c4c]">
+                        <p className="text-[#101113] font-light text-base">
                             I focus on human emotions to create content that feels personal and relatable.
                         </p>
                     </div>
 
                     {/* Card 3 */}
-                    <div className="bg-[#edf5fa] p-4 rounded-xl md:col-span-2 lg:col-span-1">
+                    <div className="bg-[#edf5fa] p-9 rounded-4xl md:col-span-2 lg:col-span-1">
                         <div className="flex items-center mb-3">
-                            <img src="/content-creator/img-3.png" alt="Visual Storytelling" className="w-[40px] h-auto mr-4" />
-                            <span className="font-medium missiri text-xl">Visual Storytelling</span>
+                            <img src="/content-creator/img-3.png" alt="Visual Storytelling" className="w-[46px] h-[42px] mr-4" />
+                            <span className="font-semibold missiri text-2xl">Visual Storytelling</span>
                         </div>
-                        <p className="text-base text-[#4f4c4c]">
+                        <p className="text-[#101113] font-light text-base">
                             I turn insights into informative, engaging visuals that spark curiosity and action.
                         </p>
                     </div>
@@ -168,7 +152,7 @@ export default function ContentCreatorPicks() {
 
             {/* Explore My Work */}
             <section className="container mx-auto px-4 py-6 max-w-7xl">
-                <h2 className="text-2xl font-medium mb-6 missiri text-[#0004a4]">Explore My Work</h2>
+                <h2 className="text-2xl font-semibold mb-6 missiri text-[#000068]">Explore My Work</h2>
 
                 <div className="grid grid-cols-3 grid-rows-7 gap-1 mb-8 aspect-square md:h-[500px] mx-auto">
                     <button onClick={() => openDialog("Space")} className="col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
@@ -240,8 +224,8 @@ export default function ContentCreatorPicks() {
             {/* Social Media */}
             <section className="container mx-auto px-4 py-6 max-w-7xl">
                 <div className="bg-[#f2f8fb] p-4 rounded-xl mb-6">
-                    <h2 className="text-xl font-medium mb-2 missiri text-[#0091fb]">Social Media</h2>
-                    <p className="text-sm text-[#4f4c4c] mb-6">
+                    <h2 className="text-3xl font-semibold mb-2 missiri text-[#0679B8]">Social Media</h2>
+                    <p className="text-[#101113] font-light text-base mb-6">
                         Content designed to convey clear messages, strengthen visual identities, and drive engagement.
                     </p>
                 </div>
@@ -305,154 +289,20 @@ export default function ContentCreatorPicks() {
             {/* Visual Narratives */}
             <section className="container mx-auto px-4 py-6 max-w-7xl">
                 <div className="bg-[#f2f8fb] p-4 rounded-xl mb-6">
-                    <h2 className="text-xl font-medium mb-2 missiri text-[#0091fb]">Visual Narratives</h2>
-                    <p className="text-sm text-[#4f4c4c] mb-6">
+                    <h2 className="text-3xl font-semibold mb-2 missiri text-[#0679B8]">Visual Narratives</h2>
+                    <p className="text-[#101113] font-light text-base">
                         Concept and production of videos with a social focus, crafted to inform around key societal topics.
                     </p>
                 </div>
 
-                <div className="flex flex-col justify-center gap-4 my-8">
-                    {/* Country Life Section */}
-                    <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                        <div
-                            className="flex items-center justify-between cursor-pointer"
-                            onClick={() => toggleSection("countryLife")}
-                        >
-                            <h3 className="text-[#015F2B] text-base font-medium text-center w-full">Country Life</h3>
-                        </div>
-                        {sections.countryLife && (
-                            <button onClick={() => openDialog("CountryLife")} className="mt-3 flex w-full justify-center">
-                                <img
-                                    src="/content-creator/ArticlesAndStories/CountryLife.jpg"
-                                    alt="Country Life visual narrative"
-                                    className={`relative cursor-pointer w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "CountryLife" ? "md:w-full" : ""}`}
-                                />
-                                <MousePointerClick className="text-black/50" />
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Raffia Section */}
-                    <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                        <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("raffia")}>
-                            <h3 className="text-[#95272A] text-base font-medium text-center w-full">Raffia</h3>
-                        </div>
-
-                        {sections.raffia && (
-                            <button onClick={() => openDialog("Raffia")} className="mt-3 flex w-full justify-center">
-                                <img
-                                    src="/content-creator/ArticlesAndStories/Raffia.jpg"
-                                    alt="Raffia visual narrative"
-                                    className={`relative cursor-pointer w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Raffia" ? "md:w-full" : ""}`}
-                                />
-                                <MousePointerClick className="text-black/50" />
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Report Section */}
-                    <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                        <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("report")}>
-                            <h3 className="text-[#5D7D8C] text-base font-medium text-center w-full">Report</h3>
-                        </div>
-
-                        {sections.report && (
-                            <button onClick={() => openDialog("Report")} className="mt-3 flex w-full justify-center">
-                                <img
-                                    src="/content-creator/ArticlesAndStories/Report.jpg"
-                                    alt="Report visual narrative"
-                                    className={`relative cursor-pointer w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Report" ? "md:w-full" : ""}`}
-                                />
-                                <MousePointerClick className="text-black/50" />
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Events Section */}
-                    <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                        <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("events")}>
-                            <h3 className="text-[#F37022] text-base font-medium text-center w-full">Events</h3>
-                        </div>
-
-                        {sections.events && (
-                            <button onClick={() => openDialog("Events")} className="mt-3 flex w-full justify-center">
-                                <img
-                                    src="/content-creator/ArticlesAndStories/Events.jpg"
-                                    alt="Events visual narrative"
-                                    className={`relative cursor-pointer w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Events" ? "md:w-full" : ""}`}
-                                />
-                                <MousePointerClick className="text-black/50" />
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Entrepreneurs Section */}
-                    <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                        <div
-                            className="flex items-center justify-between cursor-pointer"
-                            onClick={() => toggleSection("entrepreneurs")}
-                        >
-                            <h3 className="text-[#51478C] text-base font-medium text-center w-full">Entrepreneurs</h3>
-                        </div>
-
-                        {sections.entrepreneurs && (
-                            <button onClick={() => openDialog("Entrepreneurs")} className="mt-3 flex w-full justify-center">
-                                <img
-                                    src="/content-creator/ArticlesAndStories/Entrepreneurs.jpg"
-                                    alt="Entrepreneurs visual narrative"
-                                    className={`relative cursor-pointer w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Entrepreneurs" ? "md:w-full" : ""}`}
-                                />
-                                <MousePointerClick className="text-black/50" />
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Tourism Section */}
-                    <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                        <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("tourism")}>
-                            <h3 className="text-[#0098D9] text-base font-medium text-center w-full">Tourism</h3>
-                        </div>
-
-                        {sections.tourism && (
-                            <button onClick={() => openDialog("Tourism")} className="mt-3 flex w-full justify-center">
-                                <img
-                                    src="/content-creator/ArticlesAndStories/Tourism.jpg"
-                                    alt="Tourism visual narrative"
-                                    className={`relative cursor-pointer w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Tourism" ? "md:w-full" : ""}`}
-                                />
-                                <MousePointerClick className="text-black/50" />
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Protagonists Section */}
-                    <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                        <div
-                            className="flex items-center justify-between cursor-pointer"
-                            onClick={() => toggleSection("protagonists")}
-                        >
-                            <h3 className="text-[#553064] text-base font-medium text-center w-full">Protagonists</h3>
-                        </div>
-
-                        {sections.protagonists && (
-                            <button onClick={() => openDialog("Protagonists")} className="mt-3 flex w-full justify-center">
-                                <img
-                                    src="/content-creator/ArticlesAndStories/Protagonists.jpg"
-                                    alt="Protagonists visual narrative"
-                                    className={`relative cursor-pointer w-full h-auto md:w-1/2 rounded-md ${isDialogOpen == "Protagonists" ? "md:w-full" : ""}`}
-                                />
-                                <MousePointerClick className="text-black/50" />
-                            </button>
-                        )}
-                    </div>
-                </div>
+                <VisualNarrativesImages />
             </section>
 
             {/* Articles & Stories */}
             <section className="container mx-auto px-4 py-6 max-w-7xl">
                 <div className="bg-[#f2f8fb] p-4 rounded-xl mb-6">
-                    <h2 className="text-xl font-medium mb-2 missiri text-[#0091fb]">Articles & Stories</h2>
-                    <p className="text-sm text-[#4f4c4c] mb-6">
+                    <h2 className="text-3xl font-semibold mb-2 missiri text-[#0679B8]">Articles & Stories</h2>
+                    <p className="text-[#101113] font-light text-base mb-6">
                         Research, and writing of publications designed to inform, inspire, and connect with readers.
                     </p>
                 </div>
@@ -465,8 +315,8 @@ export default function ContentCreatorPicks() {
             {/* Event Management */}
             <section className="container mx-auto px-4 py-6 max-w-7xl">
                 <div className="bg-[#f2f8fb] p-4 rounded-xl mb-6">
-                    <h2 className="text-xl font-medium mb-2 missiri text-[#0091fb]">Event Management</h2>
-                    <p className="text-sm text-[#4f4c4c] mb-6">
+                    <h2 className="text-3xl font-semibold mb-2 missiri text-[#0679B8]">Event Management</h2>
+                    <p className="text-[#101113] font-light text-base mb-6">
                         Innovative event organization with sensory installations and multimedia, fueling engagement and media
                         coverage.
                     </p>

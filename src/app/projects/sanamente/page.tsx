@@ -67,14 +67,14 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("about")}
                     >
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">About the Project</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">About the Project</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.about ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.about ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.about && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p className="mb-6 leading-relaxed">
                                 A new anxiety management app with a neomorphism design aims to bring daily calm. It offers fresh perspectives on routines with an AI companion plus useful tools for relaxation activities.
                             </p>
@@ -92,14 +92,14 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("discover")}
                     >
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Discover Phase</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Discover Phase</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.discover ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.discover ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.discover && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p className="mb-4 leading-relaxed">
                                 Usually, neomorphism designs are associated with tech projects like music players, financial dashboards, and smart home controls, thanks to their clean, elegant, and futuristic look. But what if we used it for something completely different? I decided to challenge myself by breaking away from the ordinary and opening up something different, with empathy.
                             </p>
@@ -113,9 +113,9 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("programs")}
                     >
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Programs Used</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Programs Used</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.programs ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.programs ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -141,6 +141,7 @@ export default function SanaMenteProject() {
                                     <video
                                         src="/sanamente/sanamente.MP4"
                                         className="w-full h-auto rounded-4xl"
+                                        controls={false}
                                         autoPlay
                                         muted
                                         loop
@@ -157,14 +158,14 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("keyAreas")}
                     >
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">Key areas</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Key areas</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.keyAreas ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.keyAreas ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.keyAreas && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p className="mb-2">
                                 <span className="font-bold">Empowerment:</span> providing tools to enhance self-esteem and reduce daily
                                 stress levels.
@@ -190,14 +191,14 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("uiDesign")}
                     >
-                        <h2 className="text-[#0091fb] text-2xl missiri font-medium">UI Design</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">UI Design</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.uiDesign && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p className="mb-6 leading-relaxed">
                                 The app design goes beyond static visuals, incorporating smooth transitions and state changes to keep
                                 users engaged. This approach invites clear, dynamic, and intuitive interaction with suggested activities

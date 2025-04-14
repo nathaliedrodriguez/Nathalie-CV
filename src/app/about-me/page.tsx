@@ -68,40 +68,40 @@ export default function AboutMe() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {/* Journey Card */}
-                        <div className="bg-[#edf5fa] p-4 rounded-xl shadow-sm">
+                        <div className="bg-[#edf5fa] p-9 rounded-4xl shadow-base">
                             <div className="flex items-center mb-3">
-                                <div className="w-12 h-auto mr-2">
-                                    <img src="/aboutMe/img-1.png" alt="Journey" className="w-12 h-auto" />
+                                <div className="w-[46px] h-[42px] mr-4">
+                                    <img src="/aboutMe/img-1.png" alt="Journey" className="w-[46px] h-[42px]" />
                                 </div>
-                                <h3 className="font-semibold missiri text-xl">Journey</h3>
+                                <h3 className="font-semibold missiri text-2xl">Journey</h3>
                             </div>
-                            <p className="text-sm text-[#4f4c4c]">
+                            <p className="text-[#101113] font-light text-base">
                                 I am a Jr. UX/UI designer and Sr. digital content creator with over 10 years of experience in digital communication.
                             </p>
                         </div>
 
                         {/* Methodology Card */}
-                        <div className="bg-[#edf5fa] p-4 rounded-xl shadow-sm">
+                        <div className="bg-[#edf5fa] p-9 rounded-4xl shadow-base">
                             <div className="flex items-center mb-3">
-                                <div className="w-12 h-auto mr-2">
-                                    <img src="/aboutMe/img-2.png" alt="Methodology" className="w-12 h-auto" />
+                                <div className="w-[46px] h-[42px] mr-4">
+                                    <img src="/aboutMe/img-2.png" alt="Methodology" className="w-[46px] h-[42px]" />
                                 </div>
-                                <h3 className="font-semibold missiri text-xl">Methodology</h3>
+                                <h3 className="font-semibold missiri text-2xl">Methodology</h3>
                             </div>
-                            <p className="text-sm text-[#4f4c4c]">
+                            <p className="text-[#101113] font-light text-base">
                                 I enjoy applying my knowledge to provide user-centered design solutions that create meaningful experiences.
                             </p>
                         </div>
 
                         {/* Focus Card */}
-                        <div className="bg-[#edf5fa] p-4 rounded-xl shadow-sm md:col-span-2 lg:col-span-1">
+                        <div className="bg-[#edf5fa] p-9 rounded-4xl shadow-base md:col-span-2 lg:col-span-1">
                             <div className="flex items-center mb-3">
-                                <div className="w-12 h-auto mr-2">
-                                    <img src="/aboutMe/img-3.png" alt="Focus" className="w-12 h-auto" />
+                                <div className="w-[46px] h-[42px] mr-4">
+                                    <img src="/aboutMe/img-3.png" alt="Focus" className="w-[46px] h-[42px]" />
                                 </div>
-                                <h3 className="font-semibold missiri text-xl">Focus</h3>
+                                <h3 className="font-semibold missiri text-2xl">Focus</h3>
                             </div>
-                            <p className="text-sm text-[#4f4c4c]">
+                            <p className="text-[#101113] font-light text-base">
                                 My approach is defined by attentive listening, interdisciplinary collaboration, and a commitment to continuous improvement.
                             </p>
                         </div>
@@ -117,7 +117,7 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("design")}>
                             <h3 className="text-[#0091fb] missiri font-medium text-2xl">Design:</h3>
                             <ChevronUp
-                                className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.design ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.design ? "" : "rotate-180"}`}
                             />
                         </div>
 
@@ -168,7 +168,7 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("research")}>
                             <h3 className="text-[#0091fb] missiri font-medium text-2xl">Research:</h3>
                             <ChevronUp
-                                className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.research ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.research ? "" : "rotate-180"}`}
                             />
                         </div>
 
@@ -219,7 +219,7 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("software")}>
                             <h3 className="text-[#0091fb] missiri font-medium text-2xl">Software:</h3>
                             <ChevronUp
-                                className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.software ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.software ? "" : "rotate-180"}`}
                             />
                         </div>
 
@@ -293,28 +293,28 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("courses")}>
                             <h3 className="text-[#0091fb] missiri font-medium text-2xl">Courses and degrees:</h3>
                             <ChevronUp
-                                className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.courses ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.courses ? "" : "rotate-180"}`}
                             />
                         </div>
 
                         {expandedSections.courses && (
                             <div className="mt-3">
-                                <ul className="list-disc pl-5 space-y-1 text-sm text-[#4f4c4c]">
-                                    <li>Advanced UX UI Design | Coder House</li>
-                                    <li>Prototyping | Coder House</li>
-                                    <li>User Interface Design | UTN BA</li>
+                                <ul className="list-disc pl-5 space-y-1 text-base text-[#101113]">
+                                    <li className="font-light"><span className="font-normal text-[#101113]">Advanced UX UI Design</span> | Coder House</li>
+                                    <li className="font-light"><span className="font-normal text-[#101113]">Prototyping</span> | Coder House</li>
+                                    <li className="font-light"><span className="font-normal text-[#101113]">User Interface Design</span> | UTN BA</li>
                                 </ul>
 
                                 <div className="mt-4">
-                                    <p className="font-medium text-[#4f4c4c] missiri"><b>Social Communication Bachelor&apos;s Degree</b></p>
-                                    <p className="text-sm text-[#4f4c4c]">
+                                    <p className="font-medium text-[#101113]"><b>Social Communication Bachelor&apos;s Degree</b></p>
+                                    <p className="text-base text-[#101113] font-light">
                                         Catholic University of Santiago del Estero, Argentina
                                     </p>
                                 </div>
 
                                 <div className="mt-4">
-                                    <p className="font-medium text-[#4f4c4c] missiri"><b>Professional Journalist</b></p>
-                                    <p className="text-sm text-[#4f4c4c]">
+                                    <p className="font-medium text-[#101113]"><b>Professional Journalist</b></p>
+                                    <p className="text-base text-[#101113] font-light">
                                         University College of Journalism Bishop Trejo and Sanabria, Córdoba, Argentina
                                     </p>
                                 </div>
@@ -332,14 +332,14 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("english")}>
                             <h3 className="text-[#0091fb] missiri font-medium text-2xl">English:</h3>
                             <ChevronUp
-                                className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.english ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.english ? "" : "rotate-180"}`}
                             />
                         </div>
 
                         {expandedSections.english && (
-                            <div className="mt-3 text-sm text-[#4f4c4c]">
-                                <p>C2 Proficient - 74/100</p>
-                                <p className="text-[#000]"><b>EF SET English Certificate</b></p>
+                            <div className="mt-3 text-base text-[#101113]">
+                                <p className="font-light">C2 Proficient - 74/100</p>
+                                <p className="text-[#101113]"><b>EF SET English Certificate</b></p>
                             </div>
                         )}
                     </div>
@@ -349,12 +349,12 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("spanish")}>
                             <h3 className="text-[#0091fb] missiri font-medium text-2xl">Spanish:</h3>
                             <ChevronUp
-                                className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.spanish ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.spanish ? "" : "rotate-180"}`}
                             />
                         </div>
 
                         {expandedSections.spanish && (
-                            <div className="mt-3 text-sm text-[#4f4c4c]">
+                            <div className="mt-3 text-base text-[#101113] font-bold">
                                 <p>Native</p>
                             </div>
                         )}
@@ -370,17 +370,17 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("eikon")}>
                             <h3 className="text-[#0091fb] missiri font-medium text-2xl">Eikon Awards:</h3>
                             <ChevronUp
-                                className={`h-5 w-5 text-[#0091fb] missiri transition-transform ${expandedSections.eikon ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.eikon ? "" : "rotate-180"}`}
                             />
                         </div>
 
                         {expandedSections.eikon && (
-                            <div className="mt-3 text-sm text-[#4f4c4c]">
+                            <div className="mt-3 text-base text-[#101113]">
                                 <p className="mb-2">2018 - 1st Place Category: Events.</p>
                                 <p className="mb-4">Case: Green Economy Summit.</p>
 
                                 <p className="mb-2">2019 - 2nd Place Category: General Institutional Communication Campaign.</p>
-                                <p>Case: Coverage of Provincial Gas Network Works</p>
+                                <p className="underline font-light">Case: Coverage of Provincial Gas Network Works</p>
                             </div>
                         )}
                     </div>

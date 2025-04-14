@@ -83,11 +83,11 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="order-2 lg:order-2">
               <div className="flex items-center gap-2 mb-4 max-md:hidden">
-                <p className="text-[#0004a4] font-medium">Hi! I&apos;m Naty!</p>
+                <p className="text-[#0004a4] font-medium text-xl">Hi! I&apos;m Naty!</p>
                 <img src="/HomePage/icons/star.png" className="w-8 h-8 mb-3" alt="StarIcon" />
               </div>
 
-                <h1 className="text-3xl md:text-5xl lg:text-4xl font-bold mb-6 font-title">
+                <h1 className="text-3xl md:text-5xl font-bold mb-6 font-title">
                 I create{" "}
                 <span className="inline-block overflow-hidden align-middle">
                   <span
@@ -103,7 +103,7 @@ export default function Home() {
                 </span>
                 </h1>
 
-              <p className="text-[#101113] mb-8 lg:max-w-lg">
+              <p className="text-[#101113] font-light text-xl mb-8">
                 With over 10 years in digital communication, I specialize in delivering user-centered design solutions
                 that create meaningful experiences.
               </p>
@@ -157,10 +157,10 @@ export default function Home() {
             <div className="bg-[#edf5fa] p-8 rounded-4xl max-w-[358px] mx-auto">
               <div className="flex items-center gap-4 mb-6">
                 <img src="/HomePage/icons/touch.png" className="w-10 rounded-lg flex items-center justify-center" alt="TouchIcon" />
-                <h3 className="text-xl font-bold font-title">UX UI Designer</h3>
+                <h3 className="font-semibold missiri text-2xl">UX UI Designer</h3>
               </div>
 
-              <p className="text-[#101113] mb-8">
+              <p className="text-[#101113] font-light text-base mb-8">
                 I create functional and intuitive design solutions to enhance the user experience across platforms.
               </p>
 
@@ -180,10 +180,10 @@ export default function Home() {
             <div className="bg-[#edf5fa] p-8 rounded-4xl max-w-[358px] mx-auto">
               <div className="flex items-center gap-4 mb-6">
                 <img src="/HomePage/icons/Keyboard.png" className="w-10 flex items-center justify-center" alt="KeyboardIcon" />
-                <h3 className="text-xl font-bold  font-title">Content Creator</h3>
+                <h3 className="font-semibold missiri text-2xl">Content Creator</h3>
               </div>
 
-              <p className="text-[#101113] mb-8">
+              <p className="text-[#101113] font-light text-base mb-8">
                 I produce engaging and informative content to attract and retain targeted audiences.
               </p>
 

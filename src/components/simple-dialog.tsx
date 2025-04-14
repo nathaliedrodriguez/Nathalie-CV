@@ -46,7 +46,7 @@ export default function SimpleDialog({ isOpen, onClose, children, title, rounded
     <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 bg-opacity-50 ${className}`}>
       <div ref={dialogRef} className={`bg-[#e6f4ff] rounded-${rounded} shadow-lg p-6 w-full max-w-md max-h-[90vh] overflow-auto hide-scroll`}>
         <div className="flex justify-between items-center mb-4">
-          {title && <h2 className="text-xl font-semibold text-[#4f4c4c]">{title}</h2>}
+          {title && <h2 className="text-xl font-semibold text-[#101113]">{title}</h2>}
           <button onClick={onClose} className="p-1 rounded-full hover:bg-gray-100" aria-label="Close">
             <X className="h-5 w-5" />
           </button>

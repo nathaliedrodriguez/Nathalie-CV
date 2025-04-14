@@ -70,15 +70,15 @@ export default function BoardGameFriends() {
                 {/* About Section */}
                 <div className="mb-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("about")}>
-                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">About the Project</h2>
+                        <h2 className="text-[#0679B8] text-2xl font-semibold missiri">About the Project</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.about ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.about ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.about && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
-                            <p className="mb-4">
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            <p className="mb-4 font-light">
                                 BGF is an app designed for board game enthusiasts, providing a seamless platform to create and join
                                 in-person board game meetings.
                             </p>
@@ -98,14 +98,14 @@ export default function BoardGameFriends() {
                 {/* Full Prototype Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("prototype")}>
-                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Full Prototype</h2>
+                        <h2 className="text-[#0679B8] text-2xl font-semibold missiri">Full Prototype</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.prototype ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.prototype ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.prototype && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p>
                                 I&apos;ve designed a complete prototype (not an MVP) with extensive interconnectivity between buttons, features, and workflows, and fully interconnected screens.
                             </p>
@@ -116,9 +116,9 @@ export default function BoardGameFriends() {
                 {/* Programs Used Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("programs")}>
-                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Programs I Used</h2>
+                        <h2 className="text-[#0679B8] text-2xl font-semibold missiri">Programs I Used</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.programs ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.programs ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -163,14 +163,14 @@ export default function BoardGameFriends() {
                 {/* Discover Phase Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("discover")}>
-                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Discover Phase</h2>
+                        <h2 className="text-[#0679B8] text-2xl font-semibold missiri">Discover Phase</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.discover ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.discover ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.discover && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p>
                                 The research phase was particularly engaging, as it allowed me to gather and interpret valuable insights directly from board game players. Understanding their preferences, pain points, and behavior provided a solid foundation for designing the app’s features.
                             </p>
@@ -181,14 +181,14 @@ export default function BoardGameFriends() {
                 {/* Goals Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("goals")}>
-                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Goals</h2>
+                        <h2 className="text-[#0679B8] text-2xl font-semibold missiri">Goals</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.goals ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.goals ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.goals && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <ol className="list-decimal pl-5 space-y-2">
                                 <li>
                                     <span className="font-medium">Profile Customization:</span> Tailor user profiles to reflect
@@ -216,15 +216,15 @@ export default function BoardGameFriends() {
                 {/* Challenges Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("challenges")}>
-                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Challenges</h2>
+                        <h2 className="text-[#0679B8] text-2xl font-semibold missiri">Challenges</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.challenges ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.challenges ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.challenges && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
-                            <p className="mb-4">
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            <p className="mb-4 font-light">
                                 The most difficult part about designing a completely functional app was planning the full logical roadmap, accounting for all possible user&apos;s choices, errors and conditional actions. For users participating in the same event, dynamic changes in the event conditions (e.g. the Host leaves, change in reserved seats) must be reflected in everyone&apos;s interface and trigger actions and notifications.
                             </p>
 
@@ -238,14 +238,14 @@ export default function BoardGameFriends() {
                 {/* UI Design Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("uiDesign")}>
-                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">UI Design</h2>
+                        <h2 className="text-[#0679B8] text-2xl font-semibold missiri">UI Design</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.uiDesign && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <p>
                                 I use heuristic evaluation in my UI design because it&apos;s like knowing that my design is made under clear rules and standardized norms. It&apos;s quick, cost-effective, and catches big issues early. This analysis complements and accompanies the feedback received from real users, which is undoubtedly the most important.
                             </p>
@@ -259,14 +259,14 @@ export default function BoardGameFriends() {
                         className="flex items-center justify-between cursor-pointer"
                         onClick={() => toggleSection("livePrototype")}
                     >
-                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Live Prototype</h2>
+                        <h2 className="text-[#0679B8] text-2xl font-semibold missiri">Live Prototype</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.livePrototype ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.livePrototype ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.livePrototype && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <AdobeXDEmbed />
                         </div>
                     )}
@@ -275,14 +275,14 @@ export default function BoardGameFriends() {
                 {/* Testing and Feedback Section */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("testing")}>
-                        <h2 className="text-[#0091fb] text-2xl font-medium missiri">Testing and Feedback</h2>
+                        <h2 className="text-[#0679B8] text-2xl font-semibold missiri">Testing and Feedback</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-5 h-5 transition-transform ${sections.testing ? "rotate-180" : ""}`}
+                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.testing ? "rotate-180" : ""}`}
                         />
                     </div>
 
                     {sections.testing && (
-                        <div className="mt-3 text-[#4f4c4c] text-base">
+                        <div className="mt-3 text-[#101113] font-light text-base">
                             <ul className="list-disc pl-5 space-y-2">
                                 <li>All users were able to complete the assigned tasks.</li>
                                 <li>Everyone reached the end. (Some took detours while others took shortcuts).</li>
