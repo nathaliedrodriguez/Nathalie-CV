@@ -115,7 +115,7 @@ export default function AboutMe() {
                     {/* Design */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("design")}>
-                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Design:</h3>
+                            <h3 className="text-[#0679B8] missiri font-medium text-2xl">Design:</h3>
                             <ChevronUp
                                 className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.design ? "" : "rotate-180"}`}
                             />
@@ -125,37 +125,37 @@ export default function AboutMe() {
                             <div className="flex flex-wrap gap-2 mt-3">
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Product Design
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Interaction Design
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     User Interface
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Prototyping
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Visual Design
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Wireframing
                                 </Badge>
@@ -166,7 +166,7 @@ export default function AboutMe() {
                     {/* Research */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("research")}>
-                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Research:</h3>
+                            <h3 className="text-[#0679B8] missiri font-medium text-2xl">Research:</h3>
                             <ChevronUp
                                 className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.research ? "" : "rotate-180"}`}
                             />
@@ -176,37 +176,37 @@ export default function AboutMe() {
                             <div className="flex flex-wrap gap-2 mt-3">
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     User Interviews
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     User Testing
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Information Architecture
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Journey Mapping
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Qualitative and Quantitative analysis
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     A/B Testing
                                 </Badge>
@@ -217,7 +217,7 @@ export default function AboutMe() {
                     {/* Software */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("software")}>
-                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Software:</h3>
+                            <h3 className="text-[#0679B8] missiri font-medium text-2xl">Software:</h3>
                             <ChevronUp
                                 className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.software ? "" : "rotate-180"}`}
                             />
@@ -227,55 +227,55 @@ export default function AboutMe() {
                             <div className="flex flex-wrap gap-2 mt-3">
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Figma
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Adobe Ps, Ai, Id
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Whimsical
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Notion
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Maze
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Marvel
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Optimal Workshop
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Google Analytics
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Jira
                                 </Badge>
@@ -291,7 +291,7 @@ export default function AboutMe() {
                     {/* Courses and degrees */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("courses")}>
-                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Courses and degrees:</h3>
+                            <h3 className="text-[#0679B8] missiri font-medium text-2xl">Courses and degrees:</h3>
                             <ChevronUp
                                 className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.courses ? "" : "rotate-180"}`}
                             />
@@ -330,7 +330,7 @@ export default function AboutMe() {
                     {/* English */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("english")}>
-                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">English:</h3>
+                            <h3 className="text-[#0679B8] missiri font-medium text-2xl">English:</h3>
                             <ChevronUp
                                 className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.english ? "" : "rotate-180"}`}
                             />
@@ -347,7 +347,7 @@ export default function AboutMe() {
                     {/* Spanish */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("spanish")}>
-                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Spanish:</h3>
+                            <h3 className="text-[#0679B8] missiri font-medium text-2xl">Spanish:</h3>
                             <ChevronUp
                                 className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.spanish ? "" : "rotate-180"}`}
                             />
@@ -368,7 +368,7 @@ export default function AboutMe() {
                     {/* Eikon Awards */}
                     <div className="mb-4 border-b border-[#e6e6e6] pb-4">
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("eikon")}>
-                            <h3 className="text-[#0091fb] missiri font-medium text-2xl">Eikon Awards:</h3>
+                            <h3 className="text-[#0679B8] missiri font-medium text-2xl">Eikon Awards:</h3>
                             <ChevronUp
                                 className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.eikon ? "" : "rotate-180"}`}
                             />

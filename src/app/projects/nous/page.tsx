@@ -124,10 +124,10 @@ export default function NOUSLatamProject() {
                     {sections.programs && (
                         <div className="mt-3">
                             <div className="flex flex-wrap gap-2 mb-6">
-                                <span className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full">
                                     Figma
                                 </span>
-                                <span className="bg-transparent border-1 border-0091fb text-[#0091fb] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full">
                                     Adobe Illustrator
                                 </span>
                             </div>
