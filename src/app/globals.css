@@ -290,6 +290,10 @@ p {
   border-color: #F0F0F3;
 }
 
+.border-0679B8 {
+  border-color: #0679b8;
+}
+
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
@@ -367,6 +371,10 @@ html.dark .text-\[\#0679B8\] {
 }
 
 html.dark .border-\[\#0091fb\] {
+  border-color: #0b9ff0 !important;
+}
+
+html.dark .border-\[\#0679b8\] {
   border-color: #0b9ff0 !important;
 }
 

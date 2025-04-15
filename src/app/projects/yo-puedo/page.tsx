@@ -92,22 +92,22 @@ export default function YOPuedoProject() {
                     {sections.programs && (
                         <div className="mt-3">
                             <div className="flex flex-wrap gap-2">
-                                <span className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full">
                                     Adobe Xd
                                 </span>
-                                <span className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full">
                                     Adobe Photoshop
                                 </span>
-                                <span className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full">
                                     Whimsical
                                 </span>
-                                <span className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full">
                                     Optimal Workshop
                                 </span>
-                                <span className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full">
                                     Marvel
                                 </span>
-                                <span className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full">
+                                <span className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full">
                                     Maze
                                 </span>
                             </div>

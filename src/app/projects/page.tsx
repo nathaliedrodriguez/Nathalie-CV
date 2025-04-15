@@ -251,25 +251,25 @@ export default function Portfolio() {
                     <div className="flex flex-wrap gap-2 mb-6">
                       <Badge
                         variant="outline"
-                        className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
                         Adobe Xd
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
                         Adobe Photoshop
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
                         Whimsical
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
                         Optimal Workshop
                       </Badge>
@@ -308,37 +308,37 @@ export default function Portfolio() {
                       <div className="flex flex-wrap gap-2 mb-6">
                         <Badge
                           variant="outline"
-                          className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                          className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
                           Figma
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                          className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
                           Adobe Illustrator
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                          className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
                           Adobe Photoshop
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                          className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
                           Marvel
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                          className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
                           Maze
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                          className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
                           Optimal Workshop
                         </Badge>
@@ -382,13 +382,13 @@ export default function Portfolio() {
                     <div className="flex flex-wrap gap-2 mb-6">
                       <Badge
                         variant="outline"
-                        className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
                         Figma
                       </Badge>
                       <Badge
                         variant="outline"
-                        className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
                         Adobe Illustrator
                       </Badge>
@@ -442,13 +442,13 @@ export default function Portfolio() {
                       <div className="flex flex-wrap gap-2 mb-6">
                         <Badge
                           variant="outline"
-                          className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                          className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
                           Figma
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                          className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
                           Adobe Photoshop
                         </Badge>

@@ -125,37 +125,37 @@ export default function AboutMe() {
                             <div className="flex flex-wrap gap-2 mt-3">
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Product Design
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Interaction Design
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     User Interface
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Prototyping
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Visual Design
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Wireframing
                                 </Badge>
@@ -176,37 +176,37 @@ export default function AboutMe() {
                             <div className="flex flex-wrap gap-2 mt-3">
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     User Interviews
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     User Testing
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Information Architecture
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Journey Mapping
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Qualitative and Quantitative analysis
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     A/B Testing
                                 </Badge>
@@ -227,55 +227,55 @@ export default function AboutMe() {
                             <div className="flex flex-wrap gap-2 mt-3">
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Figma
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Adobe Ps, Ai, Id
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Whimsical
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Notion
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Maze
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Marvel
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Optimal Workshop
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Google Analytics
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Jira
                                 </Badge>

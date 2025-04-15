@@ -124,13 +124,13 @@ export default function SanaMenteProject() {
                             <div className="flex flex-wrap gap-2 mb-6">
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Figma
                                 </Badge>
                                 <Badge
                                     variant="outline"
-                                    className="bg-transparent border-1 border-0091fb text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
                                     Adobe Photoshop
                                 </Badge>
