@@ -8,6 +8,18 @@ export default function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
+  //Show only if is desktop
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    //Show only if is desktop
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth > 1024)
+    }
+    checkIsDesktop()
+    window.addEventListener('resize', checkIsDesktop)
+  }, [])
+
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -27,10 +39,11 @@ export default function ThemeToggle() {
   const isDark = resolvedTheme === "dark"
 
   return (
-    <div
-      onClick={toggleTheme}
-      className="relative h-7 w-16 rounded-full border border-0091fb bg-transparent cursor-pointer overflow-hidden"
-    >
+    isDesktop && (
+      <div
+        onClick={toggleTheme}
+        className="relative h-7 w-16 rounded-full border border-0091fb bg-transparent cursor-pointer overflow-hidden"
+      >
       {/* Iconos estáticos */}
       <div className="absolute inset-0 flex items-center justify-between px-2">
         {/* Icono izquierdo (luna) - visible solo en modo oscuro */}
@@ -54,6 +67,7 @@ export default function ThemeToggle() {
         `}
       />
     </div>
+    )
   )
 }
 

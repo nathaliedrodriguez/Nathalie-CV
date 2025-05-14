@@ -409,3 +409,11 @@ html.dark .bg-\[\#f2f8fb\] {
   }
 }
 
+/* Drawer navigation: alinea a la izquierda cuando el ancho es mayor a 430px */
+@media (min-width: 431px) {
+  .drawer-left {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+}
+

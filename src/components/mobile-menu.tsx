@@ -31,7 +31,7 @@ export default function MobileMenu() {
   // Solo mostrar en dispositivos móviles
   useEffect(() => {
     const checkMobile = () => {
-      setIsVisible(window.innerWidth < 768);
+      setIsVisible(window.innerWidth < 1024);
     };
 
     checkMobile();
@@ -117,7 +117,7 @@ export default function MobileMenu() {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="h-full w-full max-w-[430px] mx-auto bg-[#edf5fa]  flex flex-col items-center justify-between py-12 px-8 rounded-r-3xl shadow-xl">
+      <div className="relative h-full w-full max-w-[430px] mx-auto bg-[#edf5fa]  flex flex-col items-center justify-between py-12 px-8 rounded-r-3xl shadow-xl drawer-left">
         <div className="flex items-center justify-end w-full">
           <ThemeToggle />
         </div>

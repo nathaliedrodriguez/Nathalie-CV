@@ -51,12 +51,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <header className="flex justify-end mb-12">
-            <div className="hidden max-md:flex w-full items-center justify-between gap-6 relative">
+            <div className="flex sm:flex md:flex lg:hidden w-full items-center justify-between gap-6 relative">
               <MobileMenu />
               <MobileMenuButton />
-              <ThemeToggle />
             </div>
-            <div className="flex items-center gap-6 max-md:hidden">
+            <div className="flex items-center gap-6 max-lg:hidden">
               <Link
                 href="/about-me"
                 className="text-[#0091fb] hover:text-[#0679b8] transition-colors lg:hidden"
