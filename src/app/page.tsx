@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#ffffff] overflow-x-hidden">
       {/* Hero Section */}
-      <section className="bg-[#edf5fa] rounded-[40px] px-4 sm:px-8 md:px-16 lg:px-24 pt-8 max-md:pb-6 md:pb-16 lg:m-10 md:m-5 max-md:m-3 relative z-10">
+      <section className="bg-[#edf5fa] rounded-[40px] px-4 sm:px-8 md:px-16 lg:px-24 pt-8 max-md:pb-6 md:pb-16 lg:m-10 md:m-5 max-md:m-3 relative z-10 mx-auto max-w-[1140px] 2xl:mx-auto">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <header className="flex justify-end mb-12">
@@ -57,22 +57,22 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-6 max-lg:hidden">
               <Link
-                href="/about-me"
-                className="text-[#0091fb] hover:text-[#0679b8] transition-colors lg:hidden"
+                href="/projects"
+                className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
+              >
+                UX UI Designs
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/nathaliedrodriguez/"
+                className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
               >
                 About me
               </Link>
               <Link
-                href="https://www.linkedin.com/in/nathaliedrodriguez/"
-                className="text-[#0091fb] hover:text-[#0679b8] transition-colors"
-              >
-                Linkedin
-              </Link>
-              <Link
                 href="https://www.behance.net/nathaliedrodriguez"
-                className="text-[#0091fb] hover:text-[#0679b8] transition-colors"
+                className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
               >
-                Behance
+                Content Creator
               </Link>
               <ThemeToggle />
             </div>
@@ -108,14 +108,14 @@ export default function Home() {
               </p>
 
               <div className="flex w-full md:justify-end lg:justify-start">
-                <a href="/NathalieDRodriguez.pdf" download className="flex w-full md:justify-end lg:justify-start" onClick={() => {
+                <a href="/NathalieDRodriguez.pdf" download className="flex w-full md:justify-end lg:justify-start cursor-pointer" onClick={() => {
                   setIsDialogOpen(true)
                   setTimeout(() => {
                     setIsDialogOpen(false)
                   }, 5500);
                 }}
                 >
-                  <Button className="bg-[#0091fb] hover:bg-[#0679b8] text-white lg:px-6 md:p-6 max-md:w-full max-md:p-7 max-md:text-lg rounded-2xl">
+                  <Button className="bg-[#0091fb] hover:bg-[#0679b8] text-white lg:px-6 md:p-6 max-md:w-full max-md:p-7 max-md:text-lg rounded-2xl cursor-pointer">
                     Download my CV
                   </Button>
                 </a>
@@ -131,12 +131,18 @@ export default function Home() {
                 <img src="/HomePage/icons/star.png" className="w-10 h-10 mb-3" alt="StarIcon" />
               </div>
               {/* About Me Link */}
-              <div className="flex justify-end px-4 sm:px-8 md:px-16 lg:px-24 py-4 max-lg:hidden">
+              <div className="flex justify-end px-4 sm:px-8 md:px-16 lg:px-24 max-lg:hidden gap-25 mt-10">
                 <Link
-                  href="/about-me"
-                  className="text-[#0091fb] hover:text-[#0679b8] transition-colors"
+                  href="https://www.linkedin.com/in/nathaliedrodriguez/"
+                  className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
                 >
-                  About me
+                  LinkedIn
+                </Link>
+                <Link
+                  href="https://www.behance.net/nathaliedrodriguez"
+                  className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
+                >
+                  Behance
                 </Link>
               </div>
             </div>
@@ -164,10 +170,10 @@ export default function Home() {
               </p>
 
               <div className="flex justify-center w-full">
-                <Link href="/projects" className="w-full flex justify-center items-center">
+                <Link href="/projects" className="w-full flex justify-center items-center cursor-pointer">
                   <Button
                     variant="outline"
-                    className="border-0091fb text-[#0091fb] hover:bg-[#0091fb]/10 rounded-2xl p-6 w-full text-xl font-normal"
+                    className="border-0091fb text-[#0091fb] hover:bg-[#0091fb]/10 rounded-2xl p-6 w-full text-xl font-normal cursor-pointer"
                   >
                     Explore my Projects
                   </Button>
@@ -178,7 +184,7 @@ export default function Home() {
             {/* Content Creator Card */}
             <div className="bg-[#edf5fa] p-8 rounded-4xl max-w-[358px] mx-auto">
               <div className="flex items-center gap-4 mb-6">
-                <img src="/HomePage/icons/Keyboard.png" className="w-10 flex items-center justify-center" alt="KeyboardIcon" />
+                <img src="/HomePage/icons/keyboard.svg" className="w-10 h-12 flex items-center justify-center" alt="KeyboardIcon" />
                 <h3 className="font-semibold missiri text-2xl">Content Creator</h3>
               </div>
 
@@ -187,10 +193,10 @@ export default function Home() {
               </p>
 
               <div className="flex justify-center w-full">
-                <Link href="/content-creator" className="w-full flex justify-center items-center">
+                <Link href="/content-creator" className="w-full flex justify-center items-center cursor-pointer">
                   <Button
                     variant="outline"
-                    className="border-0091fb text-[#0091fb] hover:bg-[#0091fb]/10 rounded-2xl p-6 w-full text-xl font-normal"
+                    className="border-0091fb text-[#0091fb] hover:bg-[#0091fb]/10 rounded-2xl p-6 w-full text-xl font-normal cursor-pointer"
                   >
                     View my Work
                   </Button>
