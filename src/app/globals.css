@@ -1,5 +1,9 @@
 @import "tailwindcss";
+
+@tailwind base;
 @tailwind utilities;
+
+
 
 .missiri {
   font-family: var(--font-el-messiri);
@@ -220,7 +224,7 @@ p {
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 0 0% 85%;
+  --border: 100 100% 100%;
   --input: 0 0% 85%;
   --ring: 204 100% 49%;
 
