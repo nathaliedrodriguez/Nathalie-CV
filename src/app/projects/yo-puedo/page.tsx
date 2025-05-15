@@ -471,7 +471,7 @@ export default function YOPuedoProject() {
               </p>
               <div className="flex justify-between items-center mb-8">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-[#0004A4] missiri">
+                  <div className="text-4xl font-bold text-[#0004A4] dark:text-[#0F15FF] missiri">
                     60%
                   </div>
                   <div className="text-xs">
