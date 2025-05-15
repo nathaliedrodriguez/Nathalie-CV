@@ -559,10 +559,10 @@ export default function BoardGameFriends() {
               </p>
 
               {/* Video Section */}
-              <div className="flex justify-center mt-6">
-                <div className="w-full max-w-xl rounded-lg overflow-hidden shadow-lg">
+              <div className="flex justify-center mt-6 py-8">
+                <div className="w-full max-w-4xl rounded-lg overflow-hidden shadow-lg">
                   <video controls className="w-full h-auto">
-                    <source src="/sanamente/sanamente.mp4" type="video/mp4" />
+                    <source src="/camelot/animacion_home_Trim.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
