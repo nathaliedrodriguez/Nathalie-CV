@@ -344,7 +344,7 @@ export default function NOUSLatamProject() {
                     {sections.freshLook && (
                         <div className="mt-3 text-[#101113] font-light text-base">
                             <p className="mb-4 leading-relaxed">
-                                After the redesign, the home page became more user-friendly and visually appealing, with a clearer layout and improved content organization. As a result, NOUS is now positioned to stand out in its field, attracting more registrations and views, fostering greater client engagement, and ultimately contributing to the company's overall growth.
+                                After the redesign, the home page became more user-friendly and visually appealing, with a clearer layout and improved content organization. As a result, NOUS is now positioned to stand out in its field, attracting more registrations and views, fostering greater client engagement, and ultimately contributing to the company&apos;s overall growth.
                             </p>
 
                             <div className="flex justify-center space-x-8 mt-8">

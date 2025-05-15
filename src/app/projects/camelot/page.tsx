@@ -254,7 +254,7 @@ export default function BoardGameFriends() {
                     lineHeight: "24px",
                     letterSpacing: "0px",
                     verticalAlign: "middle",
-                    // @ts-ignore
+                    // @ts-expect-error
                     leadingTrim: "cap-height"
                   }}
                 >
@@ -283,7 +283,7 @@ export default function BoardGameFriends() {
                     lineHeight: "24px",
                     letterSpacing: "0px",
                     verticalAlign: "middle",
-                    // @ts-ignore
+                    // @ts-expect-error
                     leadingTrim: "cap-height"
                   }}
                 >
@@ -313,7 +313,7 @@ export default function BoardGameFriends() {
                     lineHeight: "24px",
                     letterSpacing: "0px",
                     verticalAlign: "middle",
-                    // @ts-ignore
+                    // @ts-expect-error
                     leadingTrim: "cap-height"
                   }}
                 >
@@ -344,7 +344,7 @@ export default function BoardGameFriends() {
                     lineHeight: "24px",
                     letterSpacing: "0px",
                     verticalAlign: "middle",
-                    // @ts-ignore
+                    // @ts-expect-error
                     leadingTrim: "cap-height"
                   }}
                 >
@@ -602,8 +602,8 @@ export default function BoardGameFriends() {
                 visually engaging interface. I replaced the previous brown and
                 black color scheme with a range of greens to evoke a sense of
                 trust, growth and renewal—values that resonate more strongly
-                with today's insurance clients. Consistent use of color,
-                typography, and layout helped strengthen the brand's presence
+                with today&apos;s insurance clients. Consistent use of color,
+                typography, and layout helped strengthen the brand&apos;s presence
                 across the site.
               </p>
             </div>
@@ -728,10 +728,10 @@ export default function BoardGameFriends() {
             <div className="mt-3 text-[#101113] font-light text-base">
               <p className="mb-4 font-light">
                 As part of this website redesign, I also led the modernization
-                of the brand's visual identity. This involved refining the
+                of the brand&apos;s visual identity. This involved refining the
                 original logo while preserving its core elements to ensure
-                continuity with the brand's heritage. The updated design brought
-                a more polished and cohesive look, aligning with the website's
+                continuity with the brand&apos;s heritage. The updated design brought
+                a more polished and cohesive look, aligning with the website&apos;s
                 modern interface and resonating with a more contemporary
                 audience.
               </p>
@@ -796,7 +796,7 @@ export default function BoardGameFriends() {
                 >
                   camelot-insurance.com
                 </a>
-                . I'm excited to share my work with you!
+                . I&apos;m excited to share my work with you!
               </p>
             </div>
           )}

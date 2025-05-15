@@ -276,7 +276,7 @@ export default function SanaMenteProject() {
                                         lineHeight: "24px",
                                         letterSpacing: "0px",
                                         verticalAlign: "middle",
-                                        // @ts-ignore
+                                        // @ts-expect-error
                                         leadingTrim: "cap-height",
                                     }}
                                 >
@@ -305,7 +305,7 @@ export default function SanaMenteProject() {
                                         lineHeight: "24px",
                                         letterSpacing: "0px",
                                         verticalAlign: "middle",
-                                        // @ts-ignore
+                                        // @ts-expect-error
                                         leadingTrim: "cap-height",
                                     }}
                                 >
@@ -334,7 +334,7 @@ export default function SanaMenteProject() {
                                         lineHeight: "24px",
                                         letterSpacing: "0px",
                                         verticalAlign: "middle",
-                                        // @ts-ignore
+                                        // @ts-expect-error
                                         leadingTrim: "cap-height",
                                     }}
                                 >

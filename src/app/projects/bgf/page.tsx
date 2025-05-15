@@ -314,7 +314,7 @@ export default function BoardGameFriends() {
                 The research phase was particularly engaging, as it allowed me
                 to gather and interpret valuable insights directly from board
                 game players. Understanding their preferences, pain points, and
-                behavior provided a solid foundation for designing the app's
+                behavior provided a solid foundation for designing the app&apos;s
                 features.
               </p>
             </div>
@@ -388,10 +388,10 @@ export default function BoardGameFriends() {
               <p className="mb-4 font-light">
                 The most difficult part about designing a completely functional
                 app was planning the full logical roadmap, accounting for all
-                possible user's choices, errors and conditional actions. For
+                possible user&apos;s choices, errors and conditional actions. For
                 users participating in the same event, dynamic changes in the
                 event conditions (e.g. the Host leaves, change in reserved
-                seats) must be reflected in everyone's interface and trigger
+                seats) must be reflected in everyone&apos;s interface and trigger
                 actions and notifications.
               </p>
 
@@ -421,9 +421,9 @@ export default function BoardGameFriends() {
           {sections.uiDesign && (
             <div className="mt-3 text-[#101113] font-light text-base">
               <p>
-                I use heuristic evaluation in my UI design because it's like
+                I use heuristic evaluation in my UI design because it&apos;s like
                 knowing that my design is made under clear rules and
-                standardized norms. It's quick, cost-effective, and catches big
+                standardized norms. It&apos;s quick, cost-effective, and catches big
                 issues early. This analysis complements and accompanies the
                 feedback received from real users, which is undoubtedly the most
                 important.

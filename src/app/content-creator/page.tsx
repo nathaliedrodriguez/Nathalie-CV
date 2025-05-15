@@ -211,7 +211,7 @@ export default function ContentCreatorPicks() {
                             <span className="font-semibold missiri text-2xl">Audience First</span>
                         </div>
                         <p className="text-[#101113] font-light text-base">
-                            I start by listening the audience's needs to craft relevant and meaningful content.
+                            I start by listening the audience&apos;s needs to craft relevant and meaningful content.
                         </p>
                     </div>
 
