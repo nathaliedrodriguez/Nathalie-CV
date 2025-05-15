@@ -2,10 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import { ChevronDown } from "lucide-react"
-import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
-import MobileMenuButton from "@/components/mobile-menu-button"
-import MobileMenu from "@/components/mobile-menu"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 import { Button } from "@/components/ui/button"
 import ThemeToggle from "@/components/theme-toggle"
@@ -239,8 +236,8 @@ export default function NOUSLatamProject() {
                                 <li>Increase client negotiations and organic growth.</li>
                             </ol>
 
-                            <div className="mt-8 border-t border-[#e6e6e6] pt-4">
-                                <p className="text-lg text-center font-title font-bold text-[#000] mb-3">Clients hiring on Nous</p>
+                            <div className="mt-4 border-t border-[#e6e6e6] py-2 flex flex-col justify-center">
+                                <p className="text-base text-center font-title font-bold text-[#000] mb-2">Clients hiring on Nous</p>
                                 <EmblaLogosCarousel />
                             </div>
                         </div>
@@ -372,13 +369,14 @@ export default function NOUSLatamProject() {
                     </div>
 
                     {sections.livePrototype && (
-                        <div className="mt-3 flex w-full justify-center">
-                            <iframe className="h-[600px] w-full" src="https://embed.figma.com/proto/fcL4iJHz6dtgpcgtWacJih/NOUS-Borrador?content-scaling=fixed&kind=proto&node-id=2-3&page-id=0%3A1&scaling=min-zoom&starting-point-node-id=2%3A3&embed-host=share"></iframe>
-                        </div>
+                        <>
+                        </>
                     )}
                 </div>
-
             </div>
+            {sections.livePrototype && (
+                <iframe className="h-[600px] w-full" src="https://embed.figma.com/proto/fcL4iJHz6dtgpcgtWacJih/NOUS-Borrador?content-scaling=fixed&kind=proto&node-id=2-3&page-id=0%3A1&scaling=min-zoom&starting-point-node-id=2%3A3&embed-host=share"></iframe>
+            )}
             <footer className="max-md:-mt-3 md:-mx-8">
                 <img src="/Nous/img-8.png" alt="footer image" className="w-full" />
             </footer>
