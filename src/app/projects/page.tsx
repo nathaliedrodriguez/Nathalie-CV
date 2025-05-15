@@ -11,6 +11,7 @@ import PhoneScrollComponent from "@/components/yo-puedo/phone-scroll-component"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 import { ChevronDown } from "lucide-react"
 import ThemeToggle from "@/components/theme-toggle";
+import { useRouter } from "next/navigation"
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false)
@@ -19,6 +20,7 @@ export default function Portfolio() {
   const animationRef = useRef<number | null>(null)
   const scrollSpeed = 0.5
   const pauseAtEnds = 1000
+  const router = useRouter();
 
   // Calcular la altura máxima de scroll cuando el componente se monta
   useEffect(() => {
@@ -149,9 +151,7 @@ export default function Portfolio() {
         <div className="grid grid-cols-3 grid-rows-3 min-h-32 px-4">
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex justify-between items-start gap-6">
-            <Link href="javascript:history.back()" className="">
-              <ChevronLeftRoute />
-            </Link>
+            <ChevronLeftRoute onClick={() => router.back()} />
             <div className="md:hidden flex gap-6 relative">
               <MobileMenu />
               <MobileMenuButton />

@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import ChevronLeftRoute from "@/components/ChevronLeftRoute";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/theme-toggle";
+import { useRouter } from "next/navigation";
 
 export default function BoardGameFriends() {
   const [sections, setSections] = useState({
@@ -58,6 +59,7 @@ export default function BoardGameFriends() {
   };
 
   const { theme } = useTheme();
+  const router = useRouter();
 
   console.log(theme, "Este es el tema", typeof theme);
 
@@ -68,9 +70,7 @@ export default function BoardGameFriends() {
         <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex justify-between items-start gap-6">
-            <Link href="/projects">
-              <ChevronLeftRoute />
-            </Link>
+            <ChevronLeftRoute onClick={() => router.back()} />
             <div className="flex gap-6 max-md:hidden px-10">
               <Link href="/">
                 <Button
