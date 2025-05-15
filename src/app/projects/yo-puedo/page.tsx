@@ -11,6 +11,7 @@ import ChevronLeftRoute from "@/components/ChevronLeftRoute";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/theme-toggle";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
 
 export default function YOPuedoProject() {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -62,6 +63,7 @@ export default function YOPuedoProject() {
   };
 
   const { theme } = useTheme();
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 ">
@@ -70,9 +72,7 @@ export default function YOPuedoProject() {
         <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex justify-between items-start gap-6">
-            <Link href="/projects">
-              <ChevronLeftRoute />
-            </Link>
+            <ChevronLeftRoute onClick={() => router.back()} />
             <div className="flex gap-6 max-md:hidden px-10">
               <Link href="/">
                 <Button

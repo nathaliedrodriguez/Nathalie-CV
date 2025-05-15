@@ -11,6 +11,8 @@ import PhoneScrollComponent from "@/components/yo-puedo/phone-scroll-component"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 import { ChevronDown } from "lucide-react"
 import ThemeToggle from "@/components/theme-toggle";
+import { useRouter } from "next/navigation"
+import { useTheme } from "next-themes"
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false)
@@ -19,6 +21,36 @@ export default function Portfolio() {
   const animationRef = useRef<number | null>(null)
   const scrollSpeed = 0.5
   const pauseAtEnds = 1000
+  const router = useRouter();
+  const { theme } = useTheme();
+
+  // Dropdown de proyectos (solo desktop)
+  const [showProjects, setShowProjects] = useState(false);
+  const projectsDropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!showProjects) return;
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        projectsDropdownRef.current &&
+        !projectsDropdownRef.current.contains(event.target as Node)
+      ) {
+        setShowProjects(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showProjects]);
+
+  const projects = [
+    { name: "• Camelot Insurance", href: "/projects/camelot" },
+    { name: "• Board Game Friends", href: "/projects/bgf" },
+    { name: "• YOPuedo app", href: "/projects/yo-puedo" },
+    { name: "• NOUS Latam", href: "/projects/nous" },
+    { name: "• Sanamente", href: "/projects/sanamente" }
+  ];
 
   // Calcular la altura máxima de scroll cuando el componente se monta
   useEffect(() => {
@@ -146,18 +178,12 @@ export default function Portfolio() {
         md:max-w-[calc(100vw-60px)]
         lg:max-w-[calc(100vw-300px)]
         py-6 px-0">
-        <div className="grid grid-cols-3 grid-rows-3 min-h-32 px-4">
+        <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex justify-between items-start gap-6">
-            <Link href="javascript:history.back()" className="">
-              <ChevronLeftRoute />
-            </Link>
-            <div className="md:hidden flex gap-6 relative">
-              <MobileMenu />
-              <MobileMenuButton />
-            </div>
+            <ChevronLeftRoute onClick={() => router.back()} />
             <div className="flex gap-6 max-md:hidden px-10">
-            <Link href="/">
+              <Link href="/">
                 <Button
                   variant="ghost"
                   className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
@@ -165,15 +191,37 @@ export default function Portfolio() {
                   Home
                 </Button>
               </Link>
-              <Link href="/projects">
+              <div className="relative">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2 px-4"
+                  onClick={() => setShowProjects(!showProjects)}
+                  aria-expanded={showProjects}
+                  aria-haspopup="true"
                 >
                   UX UI Designs
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      showProjects ? "rotate-180" : ""
+                    }`}
+                  />
                 </Button>
-              </Link>
+                {showProjects && (
+                  <div className="col-span-3">
+                    <div className="flex flex-col gap-2">
+                      {projects.map((project) => (
+                        <Link
+                          key={project.href}
+                          href={project.href}
+                          className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                        >
+                          {project.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
               <Link href="/about-me">
                 <Button
                   variant="ghost"
@@ -195,10 +243,10 @@ export default function Portfolio() {
           </div>
 
           {/* Fila 2: Vacía para mantener el espacio */}
-          <div className="col-span-3"></div>
+          {!showProjects && <div className="col-span-3"></div>}
 
           {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
-          <div className="col-span-3 flex items-center gap-4 self-end pb-10 max-md:pl-0 md:pl-10">
+          <div className="col-span-3 flex items-center gap-4 pb-5 pl-10">
             <h1 className="text-3xl font-title font-bold">
               My UX UI <span className="text-[#0091fb]">designs</span>
             </h1>
