@@ -276,7 +276,7 @@ export default function SanaMenteProject() {
                                         lineHeight: "24px",
                                         letterSpacing: "0px",
                                         verticalAlign: "middle",
-                                        // @ts-expect-error
+                                        // @ts-expect-error leadingTrim is not a standard CSS property
                                         leadingTrim: "cap-height",
                                     }}
                                 >
@@ -305,7 +305,7 @@ export default function SanaMenteProject() {
                                         lineHeight: "24px",
                                         letterSpacing: "0px",
                                         verticalAlign: "middle",
-                                        // @ts-expect-error
+                                        // @ts-expect-error leadingTrim is not a standard CSS property
                                         leadingTrim: "cap-height",
                                     }}
                                 >
@@ -334,7 +334,7 @@ export default function SanaMenteProject() {
                                         lineHeight: "24px",
                                         letterSpacing: "0px",
                                         verticalAlign: "middle",
-                                        // @ts-expect-error
+                                        // @ts-expect-error leadingTrim is not a standard CSS property
                                         leadingTrim: "cap-height",
                                     }}
                                 >
