@@ -97,7 +97,7 @@ export default function Home() {
                     className="absolute left-0 mt-2 bg-[#edf5fa] rounded-2xl shadow-lg py-3 px-6 z-50 min-w-[200px] border border-[#e6e6e6]"
                   >
                     <a
-                      href="/projects/bgf"
+                      href="/projects/camelot"
                       className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
                     >
                       • Camelot Insurance
