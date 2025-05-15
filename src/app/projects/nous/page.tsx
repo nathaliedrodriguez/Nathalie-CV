@@ -1,17 +1,18 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { ChevronDown } from "lucide-react"
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
 import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import MobileMenu from "@/components/mobile-menu"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
+import { Button } from "@/components/ui/button"
+import ThemeToggle from "@/components/theme-toggle"
+import { useTheme } from "next-themes"
+import EmblaLogosCarousel from '@/components/ui/embla-logos-carousel'
 
 export default function NOUSLatamProject() {
-    const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [Autoplay({ delay: 1000, stopOnLastSnap: false })])
     const [sections, setSections] = useState({
         about: true,
         discover: true,
@@ -23,6 +24,36 @@ export default function NOUSLatamProject() {
         livePrototype: true,
     })
 
+    // Dropdown de proyectos (solo desktop)
+    const [showProjects, setShowProjects] = useState(false)
+    const projectsDropdownRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        if (!showProjects) return
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                projectsDropdownRef.current &&
+                !projectsDropdownRef.current.contains(event.target as Node)
+            ) {
+                setShowProjects(false)
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [showProjects])
+
+    const projects = [
+        { name: "• Camelot Insurance", href: "/projects/camelot" },
+        { name: "• Board Game Friends", href: "/projects/bgf" },
+        { name: "• YOPuedo app", href: "/projects/yo-puedo" },
+        { name: "• NOUS Latam", href: "/projects/nous" },
+        { name: "• Sanamente", href: "/projects/sanamente" }
+    ]
+
+    const { theme } = useTheme()
+
     const toggleSection = (section: string) => {
         setSections((prev) => ({
             ...prev,
@@ -33,29 +64,81 @@ export default function NOUSLatamProject() {
     return (
         <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3">
             {/* Header */}
-            <header className="container bg-[#edf5fa] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
-                <div className="grid grid-cols-3 grid-rows-3 min-h-32">
+            <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
+                <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/projects">
                             <ChevronLeftRoute />
                         </Link>
-                        <div className="md:hidden flex gap-6 relative">
-                            <MobileMenu />
-                            <MobileMenuButton />
-                        </div>
-                        <div className="flex gap-6 max-md:hidden">
-                            <DesktopSidebar />
+                        <div className="flex gap-6 max-md:hidden px-10">
+                            <Link href="/">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    Home
+                                </Button>
+                            </Link>
+                            <div className="relative">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                                    onClick={() => setShowProjects(!showProjects)}
+                                    aria-expanded={showProjects}
+                                    aria-haspopup="true"
+                                >
+                                    UX UI Designs
+                                    <ChevronDown
+                                        className={`w-4 h-4 transition-transform ${
+                                            showProjects ? "rotate-180" : ""
+                                        }`}
+                                    />
+                                </Button>
+
+                                {showProjects && (
+                                    <div className="col-span-3">
+                                        <div className="flex flex-col gap-2">
+                                            {projects.map((project) => (
+                                                <Link
+                                                    key={project.href}
+                                                    href={project.href}
+                                                    className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                                                >
+                                                    {project.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                            <Link href="/about-me">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    About Me
+                                </Button>
+                            </Link>
+                            <Link href="/content-creator">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    Content Creator
+                                </Button>
+                            </Link>
+                            <ThemeToggle />
                         </div>
                     </div>
 
                     {/* Fila 2: Vacía para mantener el espacio */}
-                    <div className="col-span-3"></div>
+                    {!showProjects && <div className="col-span-3"></div>}
 
-                    {/* Fila 3: Texto alineado a la izquierda */}
-                    <div className="col-span-3 flex items-center gap-4 self-end">
+                    {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
+                    <div className="col-span-3 flex items-center gap-4 pb-5">
                         <h1 className="text-3xl font-title font-bold">
-                            <span>NOUS</span> <span className="text-[#0091fb]">Latam</span>
+                            NOUS <span className="text-[#0091fb]">Latam</span>
                         </h1>
                     </div>
                 </div>
@@ -158,19 +241,7 @@ export default function NOUSLatamProject() {
 
                             <div className="mt-8 border-t border-[#e6e6e6] pt-4">
                                 <p className="text-lg text-center font-title font-bold text-[#000] mb-3">Clients hiring on Nous</p>
-                                <div className="embla_simple flex justify-between items-center" ref={emblaRef}>
-                                    <div className="embla__container_simple flex w-full md:gap-10">
-                                        <img src="/Nous/carrousel/finpec.png" alt="Finpec" className="h-6 embla__slide_simple object-scale-down" />
-                                        <img src="/Nous/carrousel/bitcoindepot.png" alt="bitcoindepot" className="h-6 embla__slide_simple object-scale-down" />
-                                        <img src="/Nous/carrousel/cesla.png" alt="cesla" className="h-6 embla__slide_simple object-scale-down" />
-                                        <img src="/Nous/carrousel/hightouch.png" alt="hightouch" className="h-6 embla__slide_simple object-scale-down" />
-                                        <img src="/Nous/carrousel/lumiq.png" alt="lumiq" className="h-6 embla__slide_simple object-scale-down" />
-                                        <img src="/Nous/carrousel/metamundo.png" alt="metamundo" className="h-6 embla__slide_simple object-scale-down" />
-                                        <img src="/Nous/carrousel/redpanda.png" alt="redpanda" className="h-6 embla__slide_simple object-scale-down" />
-                                        <img src="/Nous/carrousel/zazmic.png" alt="zazmic" className="h-6 embla__slide_simple object-scale-down" />
-                                        <img src="/Nous/carrousel/zilliqa.png" alt="zilliqa" className="h-6 embla__slide_simple object-scale-down" />
-                                    </div>
-                                </div>
+                                <EmblaLogosCarousel />
                             </div>
                         </div>
                     )}
@@ -270,7 +341,7 @@ export default function NOUSLatamProject() {
                     {sections.freshLook && (
                         <div className="mt-3 text-[#101113] font-light text-base">
                             <p className="mb-4 leading-relaxed">
-                                After the redesign, the home page became more user-friendly and visually appealing, with a clearer layout and improved content organization. As a result, NOUS is now positioned to stand out in its field, attracting more registrations and views, fostering greater client engagement, and ultimately contributing to the company’s overall growth.
+                                After the redesign, the home page became more user-friendly and visually appealing, with a clearer layout and improved content organization. As a result, NOUS is now positioned to stand out in its field, attracting more registrations and views, fostering greater client engagement, and ultimately contributing to the company's overall growth.
                             </p>
 
                             <div className="flex justify-center space-x-8 mt-8">
