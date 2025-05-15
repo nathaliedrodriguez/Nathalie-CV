@@ -176,7 +176,7 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("discover")}
                     >
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Discover Phase</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Discovery Phase</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.discover ? "rotate-180" : ""}`}
                         />
@@ -251,19 +251,93 @@ export default function SanaMenteProject() {
 
                     {sections.keyAreas && (
                         <div className="mt-3 text-[#101113] font-light text-base">
-                            <p className="mb-2">
-                                <span className="font-bold">Empowerment:</span> providing tools to enhance self-esteem and reduce daily
-                                stress levels.
+                            <p className="mb-2 text-[#101113]">
+                                <span
+                                    className="font-bold"
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 400,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                    }}
+                                >
+                                    Empowerment:
+                                </span>{" "}
+                                <span
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 300,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                        // @ts-ignore
+                                        leadingTrim: "cap-height",
+                                    }}
+                                >
+                                    providing tools to enhance self-esteem and reduce daily stress levels.
+                                </span>
                             </p>
-                            <p className="mb-2">
-                                <span className="font-bold">Community:</span> featuring a Discussion Forum and Group Chats for thematic
-                                support.
+                            <p className="mb-2 text-[#101113]">
+                                <span
+                                    className="font-bold"
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 400,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                    }}
+                                >
+                                    Community:
+                                </span>{" "}
+                                <span
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 300,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                        // @ts-ignore
+                                        leadingTrim: "cap-height",
+                                    }}
+                                >
+                                    featuring a Discussion Forum and Group Chats for thematic support.
+                                </span>
                             </p>
-                            <p className="mb-4">
-                                <span className="font-bold">Companion:</span> a virtual assistant offering personalized recommendations
-                                during anxiety crises using AI.
+                            <p className="mb-4 text-[#101113]">
+                                <span
+                                    className="font-bold"
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 400,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                    }}
+                                >
+                                    Companion:
+                                </span>{" "}
+                                <span
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 300,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                        // @ts-ignore
+                                        leadingTrim: "cap-height",
+                                    }}
+                                >
+                                    a virtual assistant offering personalized recommendations during anxiety crises using AI.
+                                </span>
                             </p>
-
                         </div>
                     )}
                 </div>
