@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import {  ChevronUp } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
+import {  ChevronUp, ChevronDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -10,6 +10,8 @@ import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import Footer from "@/components/footer"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
+import ThemeToggle from "@/components/theme-toggle"
+import { useTheme } from "next-themes"
 
 export default function AboutMe() {
     const [expandedSections, setExpandedSections] = useState({
@@ -29,30 +31,112 @@ export default function AboutMe() {
         }))
     }
 
+    // Dropdown de proyectos (solo desktop)
+    const [showProjects, setShowProjects] = useState(false);
+    const projectsDropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!showProjects) return;
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                projectsDropdownRef.current &&
+                !projectsDropdownRef.current.contains(event.target as Node)
+            ) {
+                setShowProjects(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [showProjects]);
+
+    const projects = [
+        { name: "• Camelot Insurance", href: "/projects/camelot" },
+        { name: "• Board Game Friends", href: "/projects/bgf" },
+        { name: "• YOPuedo app", href: "/projects/yo-puedo" },
+        { name: "• NOUS Latam", href: "/projects/nous" },
+        { name: "• Sanamente", href: "/projects/sanamente" }
+    ];
+
+    const { theme } = useTheme();
+
     return (
-        <div className="min-h-screen bg-[#ffffff] font-body pt-3 md:pt-8 px-3  md:px-8">
+        <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3">
             {/* Header */}
             <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
-                <div className="grid grid-cols-3 grid-rows-3 min-h-32">
+                <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/">
                             <ChevronLeftRoute />
                         </Link>
-                        <div className="md:hidden flex gap-6 relative">
-                            <MobileMenu />
-                            <MobileMenuButton />
-                        </div>
-                        <div className="flex gap-6 max-md:hidden">
-                            <DesktopSidebar />
+                        <div className="flex gap-6 max-md:hidden px-10">
+                            <Link href="/">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    Home
+                                </Button>
+                            </Link>
+                            <div className="relative">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                                    onClick={() => setShowProjects(!showProjects)}
+                                    aria-expanded={showProjects}
+                                    aria-haspopup="true"
+                                >
+                                    UX UI Designs
+                                    <ChevronDown
+                                        className={`w-4 h-4 transition-transform ${
+                                            showProjects ? "rotate-180" : ""
+                                        }`}
+                                    />
+                                </Button>
+
+                                {showProjects && (
+                                    <div className="col-span-3">
+                                        <div className="flex flex-col gap-2">
+                                            {projects.map((project) => (
+                                                <Link
+                                                    key={project.href}
+                                                    href={project.href}
+                                                    className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                                                >
+                                                    {project.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                            <Link href="/about-me">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    About Me
+                                </Button>
+                            </Link>
+                            <Link href="/content-creator">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    Content Creator
+                                </Button>
+                            </Link>
+                            <ThemeToggle />
                         </div>
                     </div>
 
                     {/* Fila 2: Vacía para mantener el espacio */}
-                    <div className="col-span-3"></div>
+                    {!showProjects && <div className="col-span-3"></div>}
 
-                    {/* Fila 3: Texto alineado a la izquierda */}
-                    <div className="col-span-3 flex items-center gap-4 self-end">
+                    {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
+                    <div className="col-span-3 flex items-center gap-4 pb-5">
                         <h1 className="text-3xl font-title font-bold">
                             About <span className="text-[#0091fb] missiri">me</span>
                         </h1>
@@ -308,7 +392,7 @@ export default function AboutMe() {
                                 <div className="mt-4">
                                     <p className="font-medium text-[#101113]"><b>Social Communication Bachelor&apos;s Degree</b></p>
                                     <p className="text-base text-[#101113] font-light">
-                                        Catholic University of Santiago del Estero, Argentina
+                                        Catholic University of Santiago del Estero, Santiago del Estero, Argentina
                                     </p>
                                 </div>
 
@@ -377,10 +461,14 @@ export default function AboutMe() {
                         {expandedSections.eikon && (
                             <div className="mt-3 text-base text-[#101113]">
                                 <p className="mb-2">2018 - 1st Place Category: Events.</p>
-                                <p className="mb-4">Case: Green Economy Summit.</p>
+                                <p className="mb-4">
+                                    Case: <a href="https://cordoba.premioseikon.com/2018-cordoba-2/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#0679b8]">Green Economy Summit</a>.
+                                </p>
 
                                 <p className="mb-2">2019 - 2nd Place Category: General Institutional Communication Campaign.</p>
-                                <p className="underline font-light">Case: Coverage of Provincial Gas Network Works</p>
+                                <p className="font-light">
+                                    Case: <a href="https://cordoba.premioseikon.com/2019-cordoba/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#0679b8]">Coverage of Provincial Gas Network Works</a>
+                                </p>
                             </div>
                         )}
                     </div>

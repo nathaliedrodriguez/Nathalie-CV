@@ -9,6 +9,8 @@ import Link from "next/link"
 import Footer from "@/components/footer"
 import PhoneScrollComponent from "@/components/yo-puedo/phone-scroll-component"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
+import { ChevronDown } from "lucide-react"
+import ThemeToggle from "@/components/theme-toggle";
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false)
@@ -139,19 +141,40 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
       {/* Header */}
-      <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
-        <div className="grid grid-cols-3 grid-rows-3 min-h-32">
+      <header className="bg-[#edf5fa] rounded-3xl mx-auto
+        max-w-[calc(100vw-40px)]
+        md:max-w-[calc(100vw-60px)]
+        lg:max-w-[calc(100vw-300px)]
+        py-6 px-0">
+        <div className="grid grid-cols-3 grid-rows-3 min-h-32 px-4">
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex justify-between items-start gap-6">
-            <Link href="/about-me" className="">
+            <Link href="javascript:history.back()" className="">
               <ChevronLeftRoute />
             </Link>
             <div className="md:hidden flex gap-6 relative">
               <MobileMenu />
               <MobileMenuButton />
             </div>
-            <div className="flex gap-6 max-md:hidden">
-              <Link href="about-me">
+            <div className="flex gap-6 max-md:hidden px-10">
+            <Link href="/">
+                <Button
+                  variant="ghost"
+                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                >
+                  Home
+                </Button>
+              </Link>
+              <Link href="/projects">
+                <Button
+                  variant="ghost"
+                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                >
+                  UX UI Designs
+                  <ChevronDown className="w-4 h-4" />
+                </Button>
+              </Link>
+              <Link href="/about-me">
                 <Button
                   variant="ghost"
                   className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
@@ -167,6 +190,7 @@ export default function Portfolio() {
                   Content Creator
                 </Button>
               </Link>
+              <ThemeToggle />
             </div>
           </div>
 
@@ -174,7 +198,7 @@ export default function Portfolio() {
           <div className="col-span-3"></div>
 
           {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
-          <div className="col-span-3 flex items-center gap-4 self-end">
+          <div className="col-span-3 flex items-center gap-4 self-end pb-10 max-md:pl-0 md:pl-10">
             <h1 className="text-3xl font-title font-bold">
               My UX UI <span className="text-[#0091fb]">designs</span>
             </h1>
@@ -183,52 +207,100 @@ export default function Portfolio() {
       </header>
 
 
-      <main className="max-md:max-w-7xl mx-auto py-12">
+      <main className="mx-auto py-12 max-w-[calc(100vw-40px)] md:max-w-[calc(100vw-60px)] lg:max-w-[calc(100vw-300px)]">
         {/* Approach Section */}
-        <section className="mb-16 container mx-auto max-w-7xl py-6">
+        <section className="mb-16 mx-auto py-6 max-w-[calc(100vw-40px)] md:max-w-[calc(100vw-60px)] lg:max-w-[calc(100vw-300px)] px-4">
           <h2 className="text-2xl font-title font-bold mb-8 text-[#000068]">
             My Approach Across Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-[#edf5fa] p-9 rounded-4xl col-span-1 md:col-span-1 lg:col-span-1">
               <div className="flex items-center mb-4 gap-4">
-                <img src="/HomePage/icons/target.png" className="w-[46px] h-[42px] rounded-full flex items-center justify-center mb-4" alt="targetIcon" />
-                <h3 className="text-2xl font-title font-bold mb-2">UX Research</h3>
+                <img src="/HomePage/icons/target.png" className="w-[40px] h-[40px] rounded-full flex items-center justify-center mb-4" alt="targetIcon" />
+                <h3 className="text-[24px] font-['El_Messiri'] font-semibold leading-[36px] tracking-[0px] align-middle mb-2">UX Research</h3>
               </div>
-              <p className="text-base font-light text-[#101113]">
+              <p className="font-['Epilogue'] font-[300] text-[16px] leading-[24px] tracking-[0px] text-[#101113]">
                 Understanding of user needs and behaviors, driving effective solutions.
               </p>
             </div>
 
             <div className="bg-[#edf5fa] p-9 rounded-4xl col-span-1 md:col-span-1 lg:col-span-1">
               <div className="flex items-center mb-4 gap-4">
-                <img src="/HomePage/icons/cards.png" className="w-[46px] h-[42px] flex items-center justify-center mb-4" alt="cardsIcon" />
-                <h3 className="text-2xl font-title font-bold mb-2">UX Writing</h3>
+                <img src="/HomePage/icons/cards.png" className="w-[40px] h-[40px] flex items-center justify-center mb-4" alt="cardsIcon" />
+                <h3 className="text-[24px] font-['El_Messiri'] font-semibold leading-[36px] tracking-[0px] align-middle mb-2">UX Writing</h3>
               </div>
-              <p className="text-base font-light text-[#101113]">
+              <p className="font-['Epilogue'] font-[300] text-[16px] leading-[24px] tracking-[0px] text-[#101113]">
                 Creation of clear content to enhance the overall user experience.
               </p>
             </div>
 
             <div className="bg-[#edf5fa] p-9 rounded-4xl col-span-1 md:col-span-2 lg:col-span-1">
               <div className="flex items-center mb-4 gap-4">
-                <img src="/HomePage/icons/brush.png" className="w-[46px] h-[42px] flex items-center justify-center mb-4" alt="brushIcon" />
-                <h3 className="text-2xl font-title font-bold mb-2">UI Design</h3>
+                <img src="/HomePage/icons/brush.png" className="w-[40px] h-[40px] flex items-center justify-center mb-4" alt="brushIcon" />
+                <h3 className="text-[24px] font-['El_Messiri'] font-semibold leading-[36px] tracking-[0px] align-middle mb-2">UI Design</h3>
               </div>
-              <p className="text-base font-light text-[#101113]">
+              <p className="font-['Epilogue'] font-[300] text-[16px] leading-[24px] tracking-[0px] text-[#101113]">
                 Prototyping of visual interfaces that are both engaging and functional.
               </p>
             </div>
           </div>
         </section>
 
+        {/* Portfolio Title */}
+        <div className="px-4">
+          <h2 className="text-2xl font-title font-bold mb-12 text-[#000068]">Explore my work</h2>
+        </div>
+
         {/* Portfolio Section */}
-        <section>
-          <div className="container mx-auto max-w-7xl">
-            <h2 className="text-2xl font-title font-bold mb-12 text-[#000068] mx-auto">Explore my work</h2>
+        <section className="mx-auto max-w-[calc(100vw-40px)] md:max-w-[calc(100vw-60px)] lg:max-w-[calc(100vw-300px)] px-20">
+          {/* Project 1 */}
+          <div className="mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="order-2 lg:order-1 relative h-full">
+                <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
+                <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
+                  <div>
+                    <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                      Camelot Insurance
+                    </h3>
+                    <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
+                      Responsive redesign of this outdated website to improve usability and showcase company information effectively.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Figma
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Adobe Illustrator
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex justify-center max-md:w-full">
+                    <Link href='projects/bgf' className="max-md:w-full">
+                      <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                        Explore
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <img
+                  src="/HomePage/camelot-insurance.png"
+                  alt="Board Game Friends App"
+                  className="mx-auto rounded-lg"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* Project 1 */}
+          {/* Project 2 */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
               <div className="order 1">
@@ -240,7 +312,7 @@ export default function Portfolio() {
               </div>
               <div className="order-1 md:order-2 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
-                <div className="bg-[#f2f8fb] p-10 rounded-b-4xl lg:rounded-l-4xl lg:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
+                <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
                   <div>
                     <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
                       Board Game Friends
@@ -287,7 +359,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Project 2 */}
+          {/* Project 3 */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:hidden">
@@ -296,7 +368,7 @@ export default function Portfolio() {
               <div className="relative h-full">
                 <div className="relative h-full">
                   <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
-                  <div className="bg-[#f2f8fb] p-10 lg:pl-20 rounded-b-4xl lg:rounded-r-4xl lg:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
+                  <div className="bg-[#f2f8fb] p-10 lg:pl-20 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
                     <div>
                       <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
                         YOPuedo app
@@ -360,7 +432,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Project 3 */}
+          {/* Project 4 */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="order-1">
@@ -406,7 +478,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Project 4 */}
+          {/* Project 5 */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:hidden">
@@ -476,7 +548,7 @@ export default function Portfolio() {
                         <div className="w-[92%] h-[94%] overflow-hidden rounded-[22px] mt-0">
                           <video autoPlay loop muted playsInline className="w-full h-full object-cover">
                             <source src="/sanamente/video-sanamente.MP4" type="video/mp4" />
-                            Tu navegador no soporta videos HTML5.
+                            Your browser does not support videos HTML5.
                           </video>
                         </div>
                       </div>

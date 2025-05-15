@@ -11,7 +11,7 @@ export default function MobileMenuButton() {
   // Solo mostrar en dispositivos móviles
   useEffect(() => {
     const checkMobile = () => {
-      setIsVisible(window.innerWidth < 768)
+      setIsVisible(window.innerWidth < 1024)
     }
 
     checkMobile()

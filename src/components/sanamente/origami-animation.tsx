@@ -66,7 +66,7 @@ export default function OrigamiAnimation() {
           className={`
             relative overflow-hidden bounce-transition
             transition-all duration-800
-            bg-[#e4e4e4] border-8 border-F0F0F3 rounded-2xl shadow-xl
+            bg-[#AEAEC033] border-8 border-white rounded-2xl shadow-xl
             ${expanded ? "h-44 z-10" : "h-[85px]"}
             w-full
           `}
@@ -76,7 +76,7 @@ export default function OrigamiAnimation() {
             className={`
               absolute bounce-transition
               transition-all duration-700
-              ${expanded ? "left-1/2 -translate-x-1/2 top-4 text-blue-600/90" : "left-10 top-5 text-gray-600"}
+              ${expanded ? "left-1/2 -translate-x-1/2 top-4 text-[#3A619B] font-jost font-medium text-[22px] leading-[28px] tracking-[0px]" : "left-10 top-5 text-[#9FA3A9] font-jost font-medium text-[22px] leading-[28px] tracking-[0px]"}
               font-medium text-[22px]
             `}
           >
@@ -102,7 +102,7 @@ export default function OrigamiAnimation() {
           className={`
             absolute bounce-transition
             transition-all duration-700
-            ${expanded ? "left-1/2 -translate-x-1/2 -top-10 w-[73px] h-[73px] z-1" : "-left-8 top-2 w-[73px] h-[73px] z-10"}
+            ${expanded ? "left-1/2 -translate-x-1/2 -top-10 w-[73px] h-[73px] z-20" : "-left-8 top-2 w-[73px] h-[73px] z-10"}
           `}
         >
           <div className="w-full h-full rounded-full overflow-hidden">
@@ -119,18 +119,33 @@ export default function OrigamiAnimation() {
             ${expanded ? "-bottom-2 -right-2 translate-x-2 translate-y-2" : "top-4 right-4"}
           `}
         >
-          <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-sm">
+          <div
+            className="flex items-center justify-center w-12 h-12 rounded-full"
+            // style={{
+            //   border: "none",
+            //   boxShadow: "0 2px 8px 0 rgba(60, 100, 180, 0.10), 0 1.5px 4px 0 rgba(60, 100, 180, 0.10)",
+            //   background: "transparent",
+            // }}
+          >
             {expanded ? (
               <div className="relative w-full h-full">
                 <img
                   src="/sanamente/ButtonCircle.svg"
                   alt="Origami"
                   className="absolute inset-0 w-full h-full object-cover"
+                  style={{ border: "none", background: "transparent" }}
+                  draggable={false}
                 />
                 <Plus className="absolute inset-0 m-auto w-5 h-5 text-[#3a619b]" />
               </div>
             ) : (
-              <img src="/sanamente/ChevronDown.png" alt="Origami" className="w-full h-full object-cover" />
+              <img
+                src="/sanamente/ChevronDown.png"
+                alt="Origami"
+                className="w-full h-full object-cover"
+                style={{ border: "none", background: "transparent" }}
+                draggable={false}
+              />
             )}
           </div>
         </div>

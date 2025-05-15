@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { ChevronDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import DesktopSidebar from "@/components/desktop-sidebar"
@@ -10,6 +10,9 @@ import MobileMenu from "@/components/mobile-menu"
 import OrigamiAnimation from "@/components/sanamente/origami-animation"
 import AnimatedButtons from "@/components/sanamente/button-animation"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
+import { Button } from "@/components/ui/button"
+import ThemeToggle from "@/components/theme-toggle"
+import { useTheme } from "next-themes"
 
 export default function SanaMenteProject() {
     const [sections, setSections] = useState({
@@ -20,6 +23,36 @@ export default function SanaMenteProject() {
         uiDesign: true,
     })
 
+    // Dropdown de proyectos (solo desktop)
+    const [showProjects, setShowProjects] = useState(false)
+    const projectsDropdownRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        if (!showProjects) return
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                projectsDropdownRef.current &&
+                !projectsDropdownRef.current.contains(event.target as Node)
+            ) {
+                setShowProjects(false)
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [showProjects])
+
+    const projects = [
+        { name: "• Camelot Insurance", href: "/projects/camelot" },
+        { name: "• Board Game Friends", href: "/projects/bgf" },
+        { name: "• YOPuedo app", href: "/projects/yo-puedo" },
+        { name: "• NOUS Latam", href: "/projects/nous" },
+        { name: "• Sanamente", href: "/projects/sanamente" }
+    ]
+
+    const { theme } = useTheme()
+
     const toggleSection = (section: string) => {
         setSections((prev) => ({
             ...prev,
@@ -28,32 +61,83 @@ export default function SanaMenteProject() {
     }
 
     return (
-        <div className="min-h-screen bg-[#ffffff] font-body pt-3 md:pt-8 px-3 md:px-8">
+        <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3">
             {/* Header */}
-            <header className="container bg-[#edf5fa] py-6 px-4 md:px-8 rounded-3xl mx-auto max-w-7xl">
-                <div className="grid grid-cols-3 grid-rows-3 min-h-32">
+            <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
+                <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/projects">
                             <ChevronLeftRoute />
                         </Link>
-                        <div className="md:hidden flex gap-6 relative">
-                            <MobileMenu />
-                            <MobileMenuButton />
-                        </div>
-                        <div className="flex gap-6 max-md:hidden">
-                            <DesktopSidebar />
+                        <div className="flex gap-6 max-md:hidden px-10">
+                            <Link href="/">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    Home
+                                </Button>
+                            </Link>
+                            <div className="relative">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                                    onClick={() => setShowProjects(!showProjects)}
+                                    aria-expanded={showProjects}
+                                    aria-haspopup="true"
+                                >
+                                    UX UI Designs
+                                    <ChevronDown
+                                        className={`w-4 h-4 transition-transform ${
+                                            showProjects ? "rotate-180" : ""
+                                        }`}
+                                    />
+                                </Button>
+
+                                {showProjects && (
+                                    <div className="col-span-3">
+                                        <div className="flex flex-col gap-2">
+                                            {projects.map((project) => (
+                                                <Link
+                                                    key={project.href}
+                                                    href={project.href}
+                                                    className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                                                >
+                                                    {project.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                            <Link href="/about-me">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    About Me
+                                </Button>
+                            </Link>
+                            <Link href="/content-creator">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    Content Creator
+                                </Button>
+                            </Link>
+                            <ThemeToggle />
                         </div>
                     </div>
 
                     {/* Fila 2: Vacía para mantener el espacio */}
-                    <div className="col-span-3"></div>
+                    {!showProjects && <div className="col-span-3"></div>}
 
-                    {/* Fila 3: Texto alineado a la izquierda */}
-                    <div className="col-span-3 flex items-center gap-4 self-end">
+                    {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
+                    <div className="col-span-3 flex items-center gap-4 pb-5">
                         <h1 className="text-3xl font-title font-bold">
-                            <span>Sana</span>
-                            <span className="text-[#0091fb]">Mente</span>
+                            Sana <span className="text-[#0091fb]">Mente</span>
                         </h1>
                     </div>
                 </div>
@@ -92,7 +176,7 @@ export default function SanaMenteProject() {
                         className="flex items-center justify-between cursor-pointer border-b border-[#e6e6e6] pb-2"
                         onClick={() => toggleSection("discover")}
                     >
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Discover Phase</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Discovery Phase</h2>
                         <ChevronDown
                             className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.discover ? "rotate-180" : ""}`}
                         />
@@ -137,14 +221,15 @@ export default function SanaMenteProject() {
                             </div>
 
                             <div className="flex justify-center my-6">
-                                <div className="w-64 h-auto">
+                                <div className="w-64 h-auto relative overflow-hidden rounded-4xl">
                                     <video
                                         src="/sanamente/sanamente.MP4"
-                                        className="w-full h-auto rounded-4xl"
+                                        className="w-full h-auto pointer-events-none"
                                         controls={false}
                                         autoPlay
                                         muted
                                         loop
+                                        playsInline
                                     />
                                 </div>
                             </div>
@@ -166,19 +251,93 @@ export default function SanaMenteProject() {
 
                     {sections.keyAreas && (
                         <div className="mt-3 text-[#101113] font-light text-base">
-                            <p className="mb-2">
-                                <span className="font-bold">Empowerment:</span> providing tools to enhance self-esteem and reduce daily
-                                stress levels.
+                            <p className="mb-2 text-[#101113]">
+                                <span
+                                    className="font-bold"
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 400,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                    }}
+                                >
+                                    Empowerment:
+                                </span>{" "}
+                                <span
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 300,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                        // @ts-ignore
+                                        leadingTrim: "cap-height",
+                                    }}
+                                >
+                                    providing tools to enhance self-esteem and reduce daily stress levels.
+                                </span>
                             </p>
-                            <p className="mb-2">
-                                <span className="font-bold">Community:</span> featuring a Discussion Forum and Group Chats for thematic
-                                support.
+                            <p className="mb-2 text-[#101113]">
+                                <span
+                                    className="font-bold"
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 400,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                    }}
+                                >
+                                    Community:
+                                </span>{" "}
+                                <span
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 300,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                        // @ts-ignore
+                                        leadingTrim: "cap-height",
+                                    }}
+                                >
+                                    featuring a Discussion Forum and Group Chats for thematic support.
+                                </span>
                             </p>
-                            <p className="mb-4">
-                                <span className="font-bold">Companion:</span> a virtual assistant offering personalized recommendations
-                                during anxiety crises using AI.
+                            <p className="mb-4 text-[#101113]">
+                                <span
+                                    className="font-bold"
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 400,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                    }}
+                                >
+                                    Companion:
+                                </span>{" "}
+                                <span
+                                    style={{
+                                        fontFamily: "Epilogue",
+                                        fontWeight: 300,
+                                        fontSize: "16px",
+                                        lineHeight: "24px",
+                                        letterSpacing: "0px",
+                                        verticalAlign: "middle",
+                                        // @ts-ignore
+                                        leadingTrim: "cap-height",
+                                    }}
+                                >
+                                    a virtual assistant offering personalized recommendations during anxiety crises using AI.
+                                </span>
                             </p>
-
                         </div>
                     )}
                 </div>
