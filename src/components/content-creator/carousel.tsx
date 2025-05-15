@@ -32,13 +32,22 @@ export function Carousel<T>({
   showIndicators = true,
   itemsToShow = 4,
 }: CarouselProps<T>) {
-  const [activeIndex, setActiveIndex] = useState(initialIndex)
+  const [visibleItems, setVisibleItems] = useState(itemsToShow)
+  const [activeIndex, setActiveIndex] = useState(initialIndex + items.length) // Start at first real item
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
-  const [visibleItems, setVisibleItems] = useState(itemsToShow)
   const carouselRef = useRef<HTMLDivElement>(null)
   const itemsContainerRef = useRef<HTMLDivElement>(null)
+
+  // Infinite: clone items at start and end
+  const extendedItems = [
+    ...items.slice(-visibleItems),
+    ...items,
+    ...items.slice(0, visibleItems),
+  ]
+  const realItemsStart = visibleItems
+  const realItemsEnd = visibleItems + items.length
 
   // Update visible items based on screen size
   useEffect(() => {
@@ -59,44 +68,43 @@ export function Carousel<T>({
     return () => window.removeEventListener("resize", updateVisibleItems)
   }, [itemsToShow])
 
-  const handlePrev = useCallback(() => {
-    setActiveIndex((prev) => {
-      const newIndex = prev - visibleItems
-      return newIndex < 0 ? 0 : newIndex
-    })
-  }, [visibleItems])
-
-  const handleNext = useCallback(() => {
-    setActiveIndex((prev) => {
-      const newIndex = prev + visibleItems
-      return newIndex >= items.length ? items.length - visibleItems : newIndex
-    })
-  }, [items.length, visibleItems])
-
-  // Auto scroll functionality
-  useEffect(() => {
-    if (!autoScroll) return
-
-    const interval = setInterval(() => {
-      handleNext()
-    }, autoScrollInterval)
-
-    return () => clearInterval(interval)
-  }, [autoScroll, autoScrollInterval, handleNext])
-
-  // Scroll to active item
+  // Scroll to active item (infinite)
   useEffect(() => {
     if (!itemsContainerRef.current) return
 
     const container = itemsContainerRef.current
-    const itemWidth = container.scrollWidth / items.length
+    const itemWidth = container.scrollWidth / extendedItems.length
     const scrollPosition = activeIndex * itemWidth
 
     container.scrollTo({
       left: scrollPosition,
-      behavior: "smooth",
+      behavior: isDragging ? "auto" : "smooth",
     })
-  }, [activeIndex, items.length])
+  }, [activeIndex, extendedItems.length, isDragging])
+
+  // Handle infinite jump when reaching clones (for drag/scroll)
+  const handleScroll = useCallback(() => {
+    if (!itemsContainerRef.current) return
+
+    const container = itemsContainerRef.current
+    const itemWidth = container.scrollWidth / extendedItems.length
+    const scrollPosition = container.scrollLeft
+    const closestIndex = Math.round(scrollPosition / itemWidth)
+    // Si estamos en clones, saltar instantáneamente al real
+    if (closestIndex < realItemsStart) {
+      setActiveIndex(realItemsEnd - 1)
+      container.scrollTo({
+        left: (realItemsEnd - 1) * itemWidth,
+        behavior: "auto",
+      })
+    } else if (closestIndex >= realItemsEnd) {
+      setActiveIndex(realItemsStart)
+      container.scrollTo({
+        left: realItemsStart * itemWidth,
+        behavior: "auto",
+      })
+    }
+  }, [extendedItems.length, realItemsStart, realItemsEnd])
 
   // Mouse/touch drag functionality
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -157,15 +165,45 @@ export function Carousel<T>({
 
     // Find the closest item to the current scroll position
     const container = itemsContainerRef.current
-    const itemWidth = container.scrollWidth / items.length
+    const itemWidth = container.scrollWidth / extendedItems.length
     const scrollPosition = container.scrollLeft
 
     // Calculate the closest index based on scroll position
     const closestIndex = Math.round(scrollPosition / itemWidth)
-    const boundedIndex = Math.max(0, Math.min(closestIndex, items.length - 1))
+    const boundedIndex = Math.max(0, Math.min(closestIndex, extendedItems.length - 1))
 
     setActiveIndex(boundedIndex)
+    // Si estamos en clones, saltar instantáneamente al real
+    setTimeout(() => handleScroll(), 10)
   }
+
+  // También escuchar el scroll manual (ej: con mouse wheel)
+  useEffect(() => {
+    const container = itemsContainerRef.current
+    if (!container) return
+    container.addEventListener("scroll", handleScroll, { passive: true })
+    return () => container.removeEventListener("scroll", handleScroll)
+  }, [handleScroll])
+
+  // Prev/Next (infinite)
+  const handlePrev = useCallback(() => {
+    setActiveIndex((prev) => prev - visibleItems)
+  }, [visibleItems])
+
+  const handleNext = useCallback(() => {
+    setActiveIndex((prev) => prev + visibleItems)
+  }, [visibleItems])
+
+  // Auto scroll functionality
+  useEffect(() => {
+    if (!autoScroll) return
+
+    const interval = setInterval(() => {
+      handleNext()
+    }, autoScrollInterval)
+
+    return () => clearInterval(interval)
+  }, [autoScroll, autoScrollInterval, handleNext])
 
   return (
     <div className={cn("relative w-full", className)} ref={carouselRef} >
@@ -174,7 +212,7 @@ export function Carousel<T>({
           ref={itemsContainerRef}
           className={cn("flex overflow-x-auto hide-scroll", isDragging ? "cursor-grabbing" : "cursor-grab")}
           style={{
-            gridTemplateColumns: `repeat(${items.length}, ${100 / visibleItems}%)`,
+            gridTemplateColumns: `repeat(${extendedItems.length}, ${100 / visibleItems}%)`,
           }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
@@ -184,7 +222,7 @@ export function Carousel<T>({
           onTouchMove={handleTouchMove}
           onTouchEnd={handleDragEnd}
         >
-          {items.map((item, index) => (
+          {extendedItems.map((item, index) => (
             <div
               key={index}
               className={cn(
@@ -193,7 +231,7 @@ export function Carousel<T>({
                 "transition-all duration-300",
               )}
             >
-              {renderItem(item, index, index === activeIndex)}
+              {renderItem(item, (index - realItemsStart + items.length) % items.length, index === activeIndex)}
             </div>
           ))}
         </div>
@@ -205,7 +243,7 @@ export function Carousel<T>({
             onClick={handlePrev}
             className="absolute left-2 top-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2 hover:bg-gray-100 transition-colors z-[999] shadow-md"
             aria-label="Previous items"
-            disabled={activeIndex === 0}
+            disabled={activeIndex === realItemsStart}
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
@@ -214,7 +252,7 @@ export function Carousel<T>({
             onClick={handleNext}
             className="absolute right-2 top-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2 hover:bg-gray-100 transition-colors z-[999] shadow-md"
             aria-label="Next items"
-            disabled={activeIndex >= items.length - visibleItems}
+            disabled={activeIndex === realItemsEnd - 1}
           >
             <ChevronRight className="h-6 w-6" />
           </button>
@@ -223,7 +261,7 @@ export function Carousel<T>({
 
       {showIndicators && (
         <div className="flex justify-center mt-4 gap-2">
-          {Array.from({ length: Math.ceil(items.length / visibleItems) }).map((_, index) => {
+          {Array.from({ length: Math.ceil(extendedItems.length / visibleItems) }).map((_, index) => {
             const isActive = activeIndex >= index * visibleItems && activeIndex < (index + 1) * visibleItems
 
             return (

@@ -8,12 +8,16 @@ import Link from "next/link"
 import Footer from "@/components/footer"
 import { InstagramEmbed } from 'react-social-media-embed';
 import SimpleDialog from "@/components/simple-dialog"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Carousel } from "@/components/content-creator/carousel"
 import { VideoPlayer } from "@/components/content-creator/video-player"
 import CentralCarousel from "@/components/content-creator/central-carousel"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 import VisualNarrativesImages from "@/components/content-creator/visual-narratives"
+import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/theme-toggle";
+import { useTheme } from "next-themes";
+import { ChevronDown } from "lucide-react";
 
 const videos = [
     {
@@ -79,30 +83,112 @@ export default function ContentCreatorPicks() {
         }
     }
 
+    // Dropdown de proyectos (solo desktop)
+    const [showProjects, setShowProjects] = useState(false);
+    const projectsDropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!showProjects) return;
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                projectsDropdownRef.current &&
+                !projectsDropdownRef.current.contains(event.target as Node)
+            ) {
+                setShowProjects(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [showProjects]);
+
+    const projects = [
+        { name: "• Camelot Insurance", href: "/projects/camelot" },
+        { name: "• Board Game Friends", href: "/projects/bgf" },
+        { name: "• YOPuedo app", href: "/projects/yo-puedo" },
+        { name: "• NOUS Latam", href: "/projects/nous" },
+        { name: "• Sanamente", href: "/projects/sanamente" }
+    ];
+
+    const { theme } = useTheme();
+
     return (
         <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
             {/* Header */}
             <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
-                <div className="grid grid-cols-3 grid-rows-3 min-h-32">
+                <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <Link href="/about-me">
                             <ChevronLeftRoute />
                         </Link>
-                        <div className="md:hidden flex gap-6 relative">
-                            <MobileMenu />
-                            <MobileMenuButton />
-                        </div>
-                        <div className="flex gap-6 max-md:hidden">
-                            <DesktopSidebar />
+                        <div className="flex gap-6 max-md:hidden px-10">
+                            <Link href="/">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    Home
+                                </Button>
+                            </Link>
+                            <div className="relative">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                                    onClick={() => setShowProjects(!showProjects)}
+                                    aria-expanded={showProjects}
+                                    aria-haspopup="true"
+                                >
+                                    UX UI Designs
+                                    <ChevronDown
+                                        className={`w-4 h-4 transition-transform ${
+                                            showProjects ? "rotate-180" : ""
+                                        }`}
+                                    />
+                                </Button>
+
+                                {showProjects && (
+                                    <div className="col-span-3">
+                                        <div className="flex flex-col gap-2">
+                                            {projects.map((project) => (
+                                                <Link
+                                                    key={project.href}
+                                                    href={project.href}
+                                                    className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                                                >
+                                                    {project.name}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                            <Link href="/about-me">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    About Me
+                                </Button>
+                            </Link>
+                            <Link href="/content-creator">
+                                <Button
+                                    variant="ghost"
+                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    Content Creator
+                                </Button>
+                            </Link>
+                            <ThemeToggle />
                         </div>
                     </div>
 
                     {/* Fila 2: Vacía para mantener el espacio */}
-                    <div className="col-span-3"></div>
+                    {!showProjects && <div className="col-span-3"></div>}
 
                     {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
-                    <div className="col-span-3 flex items-center gap-4 self-end">
+                    <div className="col-span-3 flex items-center gap-4 pb-5">
                         <h1 className="text-3xl font-title font-bold">
                             Content Creator <span className="text-[#0091fb]">Picks</span>
                         </h1>
@@ -122,7 +208,7 @@ export default function ContentCreatorPicks() {
                             <span className="font-semibold missiri text-2xl">Audience First</span>
                         </div>
                         <p className="text-[#101113] font-light text-base">
-                            I start by listening the audience’s needs to craft relevant and meaningful content.
+                            I start by listening the audience's needs to craft relevant and meaningful content.
                         </p>
                     </div>
 
@@ -154,7 +240,7 @@ export default function ContentCreatorPicks() {
             <section className="container mx-auto px-4 py-6 max-w-7xl">
                 <h2 className="text-2xl font-semibold mb-6 missiri text-[#000068]">Explore My Work</h2>
 
-                <div className="grid grid-cols-3 grid-rows-7 gap-1 mb-8 aspect-square md:h-[500px] mx-auto">
+                <div className="grid grid-cols-3 grid-rows-8 gap-1 mb-8 aspect-[3/4] md:h-[700px] mx-auto">
                     <button onClick={() => openDialog("Space")} className="col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
                         <img
                             src="/content-creator/SocialMedia/1.png"
@@ -218,6 +304,19 @@ export default function ContentCreatorPicks() {
                             className="w-full h-full object-center"
                         />
                     </button>
+                    {/* Icono de la mano o mouse pegado al grid */}
+                    <div className="col-start-3 row-start-8 flex items-end justify-end p-0">
+                        <img
+                            src="/content-creator/hand.svg"
+                            alt="Side visual hand"
+                            className="w-10 h-auto block lg:hidden"
+                        />
+                        <img
+                            src="/content-creator/mouse.svg"
+                            alt="Side visual mouse"
+                            className="w-10 h-auto hidden lg:block"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -234,7 +333,7 @@ export default function ContentCreatorPicks() {
                     items={videos}
                     initialIndex={0}
                     preventDragWhenActive={activeVideoIndex !== null}
-                    showControls={true}
+                    showControls={false}
                     showIndicators={false}
                     itemsToShow={4}
                     renderItem={(video, index) => (
