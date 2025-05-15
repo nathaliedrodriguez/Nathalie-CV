@@ -210,7 +210,7 @@ export default function CentralCarousel() {
         key={`carousel-alt-${carouselKey}`}
         items={videos}
         initialIndex={initialIndex}
-        showControls={true}
+        showControls={false}
         centerMode={true}
         visibleItems={{ desktop: 3, tablet: 2, mobile: 1.2 }}
         gap={0} // Increased gap for better spacing between videos
@@ -256,9 +256,9 @@ export default function CentralCarousel() {
                       </div>
                     </div>
                   </div>
-                  <div className="p-3">
-                    <h3 className="text-sm font-medium text-gray-900 line-clamp-2 h-10">{video.title}</h3>
-                    <div className="flex items-center mt-2">
+                  <div className="p-3 select-none" onClick={e => e.stopPropagation()}>
+                    <h3 className="text-sm font-medium text-gray-900 line-clamp-2 h-10 pointer-events-none">{video.title}</h3>
+                    <div className="flex items-center mt-2 pointer-events-none">
                       <Youtube className="h-4 w-4 text-red-600 mr-1" />
                       <span className="text-xs text-gray-500">{video.source}</span>
                     </div>

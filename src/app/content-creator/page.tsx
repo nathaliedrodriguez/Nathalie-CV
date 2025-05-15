@@ -204,7 +204,7 @@ export default function ContentCreatorPicks() {
                     {/* Card 1 */}
                     <div className="bg-[#edf5fa] p-9 rounded-4xl">
                         <div className="flex items-center mb-3">
-                            <img src="/content-creator/img-1.png" alt="audience First" className="w-[46px] h-[42px] mr-4" />
+                            <img src="/content-creator/repeat.svg" alt="audience First" className="w-[46px] h-[42px] mr-4" />
                             <span className="font-semibold missiri text-2xl">Audience First</span>
                         </div>
                         <p className="text-[#101113] font-light text-base">
@@ -226,7 +226,7 @@ export default function ContentCreatorPicks() {
                     {/* Card 3 */}
                     <div className="bg-[#edf5fa] p-9 rounded-4xl md:col-span-2 lg:col-span-1">
                         <div className="flex items-center mb-3">
-                            <img src="/content-creator/img-3.png" alt="Visual Storytelling" className="w-[46px] h-[42px] mr-4" />
+                            <img src="/content-creator/img-3.png" alt="Visual Storytelling" className="w-[32px] h-[32px] mr-4" />
                             <span className="font-semibold missiri text-2xl">Visual Storytelling</span>
                         </div>
                         <p className="text-[#101113] font-light text-base">
@@ -402,7 +402,7 @@ export default function ContentCreatorPicks() {
                 <div className="bg-[#f2f8fb] p-4 rounded-xl mb-6">
                     <h2 className="text-3xl font-semibold mb-2 missiri text-[#0679B8]">Articles & Stories</h2>
                     <p className="text-[#101113] font-light text-base mb-6">
-                        Research, and writing of publications designed to inform, inspire, and connect with readers.
+                        Research and writing of publications designed to inform, inspire, and connect with readers.
                     </p>
                 </div>
 
