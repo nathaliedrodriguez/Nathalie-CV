@@ -25,8 +25,8 @@ export default function EmblaLogosCarousel() {
   )
 
   return (
-    <div className="embla" ref={emblaRef}>
-      <div className="embla__container flex items-center gap-4">
+    <div className="embla dark:bg-white bg-transparent transition-colors duration-300 rounded-md py-4" ref={emblaRef}>
+      <div className="flex items-center gap-4">
         {allLogos.map((src, i) => (
           <img
             key={i}
