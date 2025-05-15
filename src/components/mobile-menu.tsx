@@ -18,9 +18,9 @@ export default function MobileMenu() {
 
   // Nuevo estado para controlar la visibilidad de la lista de UX UI Designs
   const [isUxUiOpen, setIsUxUiOpen] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('isUxUiOpen');
-      return stored === 'true';
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("isUxUiOpen");
+      return stored === "true";
     }
     return false;
   });
@@ -96,8 +96,8 @@ export default function MobileMenu() {
     alt: string;
     scale?: string;
   }
-  
-  const Icon: FC<IconProps> = ({ src, alt, scale = 'scale-150' }) => (
+
+  const Icon: FC<IconProps> = ({ src, alt, scale = "scale-150" }) => (
     <span className="relative w-6 h-6 mr-4 flex-shrink-0 overflow-visible">
       <img
         src={src}
@@ -148,7 +148,11 @@ export default function MobileMenu() {
             className="flex items-center text-[#0091fb] font-epilogue font-normal text-[20px] leading-[1.2] tracking-[0px] align-bottom"
             onClick={() => setIsOpen(false)}
           >
-            <Icon src="/HomePage/icons/home.svg" alt="HomeIcon" scale="scale-175" />
+            <Icon
+              src="/HomePage/icons/home.svg"
+              alt="HomeIcon"
+              scale="scale-175"
+            />
             Home
           </Link>
 
@@ -156,7 +160,11 @@ export default function MobileMenu() {
             href="/about-me"
             className="flex items-center text-[#0091fb] font-epilogue font-normal text-[20px] leading-[1.2] tracking-[0px] align-bottom"
           >
-            <Icon src="/HomePage/icons/star.png" alt="StarIcon" scale="scale-120" />
+            <Icon
+              src="/HomePage/icons/star.png"
+              alt="StarIcon"
+              scale="scale-120"
+            />
             About Me
           </Link>
 
@@ -166,13 +174,17 @@ export default function MobileMenu() {
               className="flex items-center justify-between text-[#0091fb] font-epilogue font-normal text-[20px] leading-[1.2] tracking-[0px] align-bottom w-full focus:outline-none"
               onClick={() => {
                 setIsUxUiOpen((prev) => {
-                  localStorage.setItem('isUxUiOpen', (!prev).toString());
+                  localStorage.setItem("isUxUiOpen", (!prev).toString());
                   return !prev;
                 });
               }}
             >
               <div className="flex items-center">
-                <Icon src="/HomePage/icons/touch.svg" alt="StarIcon" scale="scale-140" />
+                <Icon
+                  src="/HomePage/icons/touch.svg"
+                  alt="StarIcon"
+                  scale="scale-140"
+                />
                 UX UI Designs
               </div>
               <div className="ml-4">
@@ -185,27 +197,53 @@ export default function MobileMenu() {
             </button>
             {isUxUiOpen && (
               <div className="mt-2 space-y-2 ml-auto mr-8 w-fit">
-                <Link 
-                  href="/projects/bgf" 
-                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${pathname === '/projects/bgf' ? 'text-[#0091fb] font-bold' : 'text-[#101113]'}`}
+                <Link
+                  href="/projects/bgf"
+                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                    pathname === "/projects/bgf"
+                      ? "text-[#0091fb] font-bold"
+                      : "text-[#101113]"
+                  }`}
                 >
                   • Camelot Insurance
                 </Link>
-                <Link 
-                  href="/projects/yo-puedo" 
-                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${pathname === '/projects/yo-puedo' ? 'text-[#0B9FF0] font-bold' : 'text-[#101113]'}`}
+                <Link
+                  href="/projects/bgf"
+                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                    pathname === "/projects/bgf"
+                      ? "text-[#0091fb] font-bold"
+                      : "text-[#101113]"
+                  }`}
+                >
+                  • Board Game Friends
+                </Link>
+                <Link
+                  href="/projects/yo-puedo"
+                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                    pathname === "/projects/yo-puedo"
+                      ? "text-[#0B9FF0] font-bold"
+                      : "text-[#101113]"
+                  }`}
                 >
                   • YOPuedo app
                 </Link>
-                <Link 
-                  href="/projects/nous" 
-                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${pathname === '/projects/nous' ? 'text-[#0B9FF0] font-bold' : 'text-[#101113]'}`}
+                <Link
+                  href="/projects/nous"
+                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                    pathname === "/projects/nous"
+                      ? "text-[#0B9FF0] font-bold"
+                      : "text-[#101113]"
+                  }`}
                 >
                   • NOUS Latam
                 </Link>
-                <Link 
-                  href="/projects/sanamente" 
-                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${pathname === '/projects/sanamente' ? 'text-[#0B9FF0] font-bold' : 'text-[#101113]'}`}
+                <Link
+                  href="/projects/sanamente"
+                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                    pathname === "/projects/sanamente"
+                      ? "text-[#0B9FF0] font-bold"
+                      : "text-[#101113]"
+                  }`}
                 >
                   • Sanamente
                 </Link>
@@ -217,31 +255,43 @@ export default function MobileMenu() {
             href="/about-me"
             className="flex items-center text-[#0091fb] font-epilogue font-normal text-[20px] leading-[1.2] tracking-[0px] align-bottom"
           >
-            <Icon src="/HomePage/icons/keyboard.svg" alt="KeyboardIcon" scale="scale-140" />
+            <Icon
+              src="/HomePage/icons/keyboard.svg"
+              alt="KeyboardIcon"
+              scale="scale-140"
+            />
             Content Creator
           </Link>
 
-         <div className="flex flex-col pt-10 gap-5">
-         <Link
-            href="https://www.behance.net/nathaliedrodriguez"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-[#0091fb] text-xl"
-          >
-            <Icon src="/HomePage/icons/behance-icon.png" alt="BehanceIcon" scale="scale-80" />
-            Behance
-          </Link>
+          <div className="flex flex-col pt-10 gap-5">
+            <Link
+              href="https://www.behance.net/nathaliedrodriguez"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-[#0091fb] text-xl"
+            >
+              <Icon
+                src="/HomePage/icons/behance-icon.png"
+                alt="BehanceIcon"
+                scale="scale-80"
+              />
+              Behance
+            </Link>
 
-          <Link
-            href="https://www.linkedin.com/in/nathaliedrodriguez/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-[#0091fb] text-xl"
-          >
-            <Icon src="/HomePage/icons/linkedin-icon.png" alt="LinkedinIcon" scale="scale-80" />
-            Linkedin
-          </Link>
-         </div>
+            <Link
+              href="https://www.linkedin.com/in/nathaliedrodriguez/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-[#0091fb] text-xl"
+            >
+              <Icon
+                src="/HomePage/icons/linkedin-icon.png"
+                alt="LinkedinIcon"
+                scale="scale-80"
+              />
+              Linkedin
+            </Link>
+          </div>
         </div>
 
         {/* Mensaje de agradecimiento */}
@@ -251,8 +301,8 @@ export default function MobileMenu() {
 
         {/* Elemento decorativo e indicador de deslizamiento */}
         <div className="absolute bottom-40 right-0 flex items-center">
-          <img 
-            src="/HomePage/icons/chevron-swipe.png" 
+          <img
+            src="/HomePage/icons/chevron-swipe.png"
             alt="SwipeChevron"
             className="h-20"
           />

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import ThemeToggle from "@/components/theme-toggle"
 import Footer from "@/components/footer"
@@ -10,7 +10,7 @@ import Link from "next/link"
 import SimpleDialog from "@/components/simple-dialog"
 import '../styles/text-animations.css'
 import { useTheme } from "next-themes"
-
+import { ChevronDown, ChevronUp } from "lucide-react"
 const textOptions = [
   { text: "UX strategies", color: "#000068" },
   { text: "UI designs", color: "#0004a4" },
@@ -25,6 +25,9 @@ export default function Home() {
   const [isAnimating, setIsAnimating] = useState(false)
   const { theme } = useTheme()
   const [isClientSide, setIsClientSide] = useState(false)
+  const [isUxUiOpen, setIsUxUiOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const uxUiButtonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     setIsClientSide(true)
@@ -44,6 +47,27 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        uxUiButtonRef.current &&
+        !uxUiButtonRef.current.contains(event.target as Node)
+      ) {
+        setIsUxUiOpen(false)
+      }
+    }
+    if (isUxUiOpen) {
+      document.addEventListener("mousedown", handleClickOutside)
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [isUxUiOpen])
+
   return (
     <div className="min-h-screen bg-[#ffffff] overflow-x-hidden">
       {/* Hero Section */}
@@ -55,13 +79,57 @@ export default function Home() {
               <MobileMenu />
               <MobileMenuButton />
             </div>
-            <div className="flex items-center gap-6 max-lg:hidden">
-              <Link
-                href="/projects"
-                className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
-              >
-                UX UI Designs
-              </Link>
+            <div className="flex items-center gap-6 max-lg:hidden relative">
+              {/* UX UI Designs Dropdown */}
+              <div className="relative">
+                <button
+                  type="button"
+                  className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer flex items-center gap-1 font-epilogue font-normal text-base focus:outline-none"
+                  onClick={() => setIsUxUiOpen((prev) => !prev)}
+                  ref={uxUiButtonRef}
+                >
+                  UX UI Designs
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isUxUiOpen ? "rotate-180" : ""}`} />
+                </button>
+                {isUxUiOpen && (
+                  <div
+                    ref={dropdownRef}
+                    className="absolute left-0 mt-2 bg-[#edf5fa] rounded-2xl shadow-lg py-3 px-6 z-50 min-w-[200px] border border-[#e6e6e6]"
+                  >
+                    <a
+                      href="/projects/bgf"
+                      className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
+                    >
+                      • Camelot Insurance
+                    </a>
+                    <a
+                      href="/projects/bgf"
+                      className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
+                    >
+                      • Board Game Friends
+                    </a>
+                    <a
+                      href="/projects/yo-puedo"
+                      className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
+                    >
+                      • YOPuedo app
+                    </a>
+                    <a
+                      href="/projects/nous"
+                      className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
+                    >
+                      • NOUS Latam
+                    </a>
+                    <a
+                      href="/projects/sanamente"
+                      className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
+                    >
+                      • Sanamente
+                    </a>
+                  </div>
+                )}
+              </div>
+              {/* Fin UX UI Designs Dropdown */}
               <Link
                 href="https://www.linkedin.com/in/nathaliedrodriguez/"
                 className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
