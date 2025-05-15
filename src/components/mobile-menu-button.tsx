@@ -40,7 +40,7 @@ export default function MobileMenuButton() {
     window.dispatchEvent(event)
   }
 
-  if (!isVisible) return null
+  if (!isVisible || isMenuOpen) return null
 
   return (
     <Button

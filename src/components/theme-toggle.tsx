@@ -4,7 +4,7 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ forceShow = false }: { forceShow?: boolean } = {}) {
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -38,12 +38,13 @@ export default function ThemeToggle() {
 
   const isDark = resolvedTheme === "dark"
 
+  if (!forceShow && !isDesktop) return null;
+
   return (
-    isDesktop && (
-      <div
-        onClick={toggleTheme}
-        className="relative h-7 w-16 rounded-full border border-0091fb bg-transparent cursor-pointer overflow-hidden"
-      >
+    <div
+      onClick={toggleTheme}
+      className="relative h-7 w-16 rounded-full border border-0091fb bg-transparent cursor-pointer overflow-hidden"
+    >
       {/* Iconos estáticos */}
       <div className="absolute inset-0 flex items-center justify-between px-2">
         {/* Icono izquierdo (luna) - visible solo en modo oscuro */}
@@ -67,7 +68,6 @@ export default function ThemeToggle() {
         `}
       />
     </div>
-    )
   )
 }
 

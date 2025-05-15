@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from "react"
 import { ChevronDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import DesktopSidebar from "@/components/desktop-sidebar"
 import Link from "next/link"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import MobileMenu from "@/components/mobile-menu"
@@ -12,7 +11,6 @@ import AnimatedButtons from "@/components/sanamente/button-animation"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 import { Button } from "@/components/ui/button"
 import ThemeToggle from "@/components/theme-toggle"
-import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
 
 export default function SanaMenteProject() {
@@ -52,7 +50,6 @@ export default function SanaMenteProject() {
         { name: "• Sanamente", href: "/projects/sanamente" }
     ]
 
-    const { theme } = useTheme()
     const router = useRouter();
 
     const toggleSection = (section: string) => {
@@ -64,8 +61,14 @@ export default function SanaMenteProject() {
 
     return (
         <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3">
+            {/* Mobile Menu Overlay */}
+            <MobileMenu />
             {/* Header */}
-            <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
+            <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4 relative">
+                {/* MobileMenuButton: top right, only on mobile/tablet */}
+                <div className="absolute right-6 top-6 lg:hidden z-50">
+                    <MobileMenuButton />
+                </div>
                 <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">

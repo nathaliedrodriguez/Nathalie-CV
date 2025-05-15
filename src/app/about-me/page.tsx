@@ -5,13 +5,10 @@ import {  ChevronUp, ChevronDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import DesktopSidebar from "@/components/desktop-sidebar"
 import MobileMenu from "@/components/mobile-menu"
-import MobileMenuButton from "@/components/mobile-menu-button"
 import Footer from "@/components/footer"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 import ThemeToggle from "@/components/theme-toggle"
-import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
 
 export default function AboutMe() {
@@ -60,13 +57,14 @@ export default function AboutMe() {
         { name: "• Sanamente", href: "/projects/sanamente" }
     ];
 
-    const { theme } = useTheme();
     const router = useRouter();
 
     return (
         <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3">
+            {/* Mobile Menu Overlay */}
+            <MobileMenu />
             {/* Header */}
-            <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4">
+            <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4 relative">
                 <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">

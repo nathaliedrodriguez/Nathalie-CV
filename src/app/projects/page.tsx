@@ -12,7 +12,6 @@ import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 import { ChevronDown } from "lucide-react"
 import ThemeToggle from "@/components/theme-toggle";
 import { useRouter } from "next/navigation"
-import { useTheme } from "next-themes"
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false)
@@ -22,7 +21,6 @@ export default function Portfolio() {
   const scrollSpeed = 0.5
   const pauseAtEnds = 1000
   const router = useRouter();
-  const { theme } = useTheme();
 
   // Dropdown de proyectos (solo desktop)
   const [showProjects, setShowProjects] = useState(false);
@@ -172,17 +170,20 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 overflow-x-hidden">
+      {/* Mobile Menu Overlay */}
+      <MobileMenu />
       {/* Header */}
-      <header className="bg-[#edf5fa] rounded-3xl mx-auto
-        max-w-[calc(100vw-40px)]
-        md:max-w-[calc(100vw-60px)]
-        lg:max-w-[calc(100vw-300px)]
-        py-6 px-0">
+      <header className="bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4 relative">
+        {/* MobileMenuButton: top right, only on mobile/tablet */}
+        <div className="absolute right-6 top-6 lg:hidden z-50">
+          <MobileMenuButton />
+        </div>
         <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex justify-between items-start gap-6">
             <ChevronLeftRoute onClick={() => router.back()} />
-            <div className="flex gap-6 max-md:hidden px-10">
+            {/* Solo mostrar navegación en lg o mayor */}
+            <div className="hidden lg:flex gap-6 px-10">
               <Link href="/">
                 <Button
                   variant="ghost"
@@ -255,9 +256,9 @@ export default function Portfolio() {
       </header>
 
 
-      <main className="mx-auto py-12 max-w-[calc(100vw-40px)] md:max-w-[calc(100vw-60px)] lg:max-w-[calc(100vw-300px)]">
+      <main className="mx-auto py-12 max-w-7xl px-4">
         {/* Approach Section */}
-        <section className="mb-16 mx-auto py-6 max-w-[calc(100vw-40px)] md:max-w-[calc(100vw-60px)] lg:max-w-[calc(100vw-300px)] px-4">
+        <section className="mb-16 mx-auto py-6 max-w-7xl px-4">
           <h2 className="text-2xl font-title font-bold mb-8 text-[#000068]">
             My Approach Across Projects
           </h2>
@@ -295,12 +296,12 @@ export default function Portfolio() {
         </section>
 
         {/* Portfolio Title */}
-        <div className="px-4">
+        <div className="px-4 max-w-7xl mx-auto">
           <h2 className="text-2xl font-title font-bold mb-12 text-[#000068]">Explore my work</h2>
         </div>
 
         {/* Portfolio Section */}
-        <section className="mx-auto max-w-[calc(100vw-40px)] md:max-w-[calc(100vw-60px)] lg:max-w-[calc(100vw-300px)] px-20">
+        <section className="mx-auto max-w-6xl px-4">
           {/* Project 1 */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -330,7 +331,7 @@ export default function Portfolio() {
                     </div>
                   </div>
                   <div className="flex justify-center max-md:w-full">
-                    <Link href='projects/bgf' className="max-md:w-full">
+                    <Link href='/projects/camelot' className="max-md:w-full">
                       <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
                         Explore
                       </Button>

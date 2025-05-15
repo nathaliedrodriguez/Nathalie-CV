@@ -65,6 +65,18 @@ export default function MobileMenu() {
     window.dispatchEvent(event);
   }, [isOpen]);
 
+  // Evitar scroll del body cuando el menú está abierto
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   // Manejadores de eventos táctiles para el gesto de deslizamiento
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -116,10 +128,11 @@ export default function MobileMenu() {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      style={{ touchAction: 'none', overscrollBehavior: 'contain' }}
     >
-      <div className="relative h-full w-full max-w-[430px] mx-auto bg-[#edf5fa]  flex flex-col items-center justify-between py-12 px-8 rounded-r-3xl shadow-xl drawer-left">
+      <div className="relative h-full w-full max-w-[430px] mx-auto bg-[#edf5fa] flex flex-col items-center justify-between py-12 px-8 rounded-r-3xl shadow-xl drawer-left overflow-y-auto min-h-screen">
         <div className="flex items-center justify-end w-full">
-          <ThemeToggle />
+          <ThemeToggle forceShow />
         </div>
         {/* Perfil */}
         <div className="flex flex-col items-start space-y-6 mt-8 -ml-8">
@@ -198,9 +211,9 @@ export default function MobileMenu() {
             {isUxUiOpen && (
               <div className="mt-2 space-y-2 ml-auto mr-8 w-fit">
                 <Link
-                  href="/projects/bgf"
+                  href="/projects/camelot"
                   className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
-                    pathname === "/projects/bgf"
+                    pathname === "/projects/camelot"
                       ? "text-[#0091fb] font-bold"
                       : "text-[#101113]"
                   }`}
@@ -252,7 +265,7 @@ export default function MobileMenu() {
           </div>
 
           <Link
-            href="/about-me"
+            href="/content-creator"
             className="flex items-center text-[#0091fb] font-epilogue font-normal text-[20px] leading-[1.2] tracking-[0px] align-bottom"
           >
             <Icon

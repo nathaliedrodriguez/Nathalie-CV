@@ -10,7 +10,7 @@ import Link from "next/link"
 import SimpleDialog from "@/components/simple-dialog"
 import '../styles/text-animations.css'
 import { useTheme } from "next-themes"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 const textOptions = [
   { text: "UX strategies", color: "#000068" },
   { text: "UI designs", color: "#0004a4" },
