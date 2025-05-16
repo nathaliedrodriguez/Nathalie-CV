@@ -160,7 +160,11 @@ export default function Home() {
                   <span
                   className={`inline-block ${isAnimating ? "text-slide-exit" : "text-slide-enter"}`}
                   style={{
-                    color: theme === "light" ? textOptions[currentTextIndex].color : textOptions[currentTextIndex].darkColor,
+                    color: isClientSide
+                      ? theme === "light"
+                        ? textOptions[currentTextIndex].color
+                        : textOptions[currentTextIndex].darkColor
+                      : textOptions[0].color, // fallback to a static color on SSR
                     display: "inline-block",
                     verticalAlign: "middle",
                   }}

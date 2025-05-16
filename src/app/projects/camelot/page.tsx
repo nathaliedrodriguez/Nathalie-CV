@@ -168,7 +168,7 @@ export default function BoardGameFriends() {
               About the Project
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.about ? "rotate-180" : ""
               }`}
             />
@@ -228,7 +228,7 @@ export default function BoardGameFriends() {
               Why this version works better
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.whyThisVersionWorksBetter ? "rotate-180" : ""
               }`}
             />
@@ -368,7 +368,7 @@ export default function BoardGameFriends() {
               Programs Used
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.programs ? "rotate-180" : ""
               }`}
             />
@@ -408,7 +408,7 @@ export default function BoardGameFriends() {
               SEO Improvements
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.seoImprovements ? "rotate-180" : ""
               }`}
             />
@@ -556,7 +556,7 @@ export default function BoardGameFriends() {
               Challenges
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.challenges ? "rotate-180" : ""
               }`}
             />
@@ -922,13 +922,6 @@ export default function BoardGameFriends() {
       </div>
 
       {/* Footer Images */}
-      {/* <footer className="mt-8 md:-mx-8 max-md:-mx-3">
-        <img
-          src="/camelot/footer_image.svg"
-          alt="Footer image"
-          className="w-screen"
-        />
-      </footer> */}
       <footer className="max-md:-mt-3 md:-mx-8">
         <img
           src="/camelot/footer_image.svg"

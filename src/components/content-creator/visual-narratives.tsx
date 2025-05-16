@@ -32,7 +32,7 @@ function VisualNarrativesImages() {
     return (
         <div className="flex flex-col justify-center gap-0 my-4">
             {/* Country Life Section */}
-            <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+            <div className="mb-4 border-t border-[#e6e6e6] pt-4 w-1/2 mx-auto" style={{ boxShadow: '0px -1px 2px 0px #0679B826 inset' }}>
                 <div
                     className="flex items-center justify-between cursor-pointer"
                     onClick={() => toggleSection("countryLife")}
@@ -68,7 +68,7 @@ function VisualNarrativesImages() {
             </div>
 
             {/* Raffia Section */}
-            <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+            <div className="mb-4 border-t border-[#e6e6e6] pt-4 w-1/2 mx-auto" style={{ boxShadow: '0px -1px 2px 0px #0679B826 inset' }}>
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("raffia")}>
                     <p
                         className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#95272A] dark:text-[#CD1116]"
@@ -99,7 +99,7 @@ function VisualNarrativesImages() {
             </div>
 
             {/* Report Section */}
-            <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+            <div className="mb-4 border-t border-[#e6e6e6] pt-4 w-1/2 mx-auto" style={{ boxShadow: '0px -1px 2px 0px #0679B826 inset' }}>
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("report")}>
                     <p
                         className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#5D7D8C]"
@@ -130,7 +130,7 @@ function VisualNarrativesImages() {
             </div>
 
             {/* Events Section */}
-            <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+            <div className="mb-4 border-t border-[#e6e6e6] pt-4 w-1/2 mx-auto" style={{ boxShadow: '0px -1px 2px 0px #0679B826 inset' }}>
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("events")}>
                     <p
                         className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#F37022] dark:text-[#F37022]"
@@ -161,7 +161,7 @@ function VisualNarrativesImages() {
             </div>
 
             {/* Entrepreneurs Section */}
-            <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+            <div className="mb-4 border-t border-[#e6e6e6] pt-4 w-1/2 mx-auto" style={{ boxShadow: '0px -1px 2px 0px #0679B826 inset' }}>
                 <div
                     className="flex items-center justify-between cursor-pointer"
                     onClick={() => toggleSection("entrepreneurs")}
@@ -195,7 +195,7 @@ function VisualNarrativesImages() {
             </div>
 
             {/* Tourism Section */}
-            <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+            <div className="mb-4 border-t border-[#e6e6e6] pt-4 w-1/2 mx-auto" style={{ boxShadow: '0px -1px 2px 0px #0679B826 inset' }}>
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("tourism")}>
                     <p
                         className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#0098D9] dark:text-[#0098D9]"
@@ -226,7 +226,7 @@ function VisualNarrativesImages() {
             </div>
 
             {/* Protagonists Section */}
-            <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+            <div className="mb-4 border-t border-[#e6e6e6] pt-4 w-1/2 mx-auto" style={{ boxShadow: '0px -1px 2px 0px #0679B826 inset' }}>
                 <div
                     className="flex items-center justify-between cursor-pointer"
                     onClick={() => toggleSection("protagonists")}

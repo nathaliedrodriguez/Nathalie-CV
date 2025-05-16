@@ -42,7 +42,6 @@ export default function AnimatedButtons() {
     <div
       className="flex justify-center items-center p-2 mt-1"
       style={{
-        background: "linear-gradient(to bottom, transparent, rgba(243, 242, 243, 0.4))",
         borderTopLeftRadius: "100px",
         borderTopRightRadius: "100px",
       }}

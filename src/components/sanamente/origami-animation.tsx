@@ -70,7 +70,7 @@ export default function OrigamiAnimation() {
             ${expanded ? "h-44 z-10" : "h-[85px]"}
             w-full
           `}
-          style={{ borderColor: '#fff' }}
+          style={{ borderColor: '#fff', backgroundColor: '#E4E4E4' }}
         >
           {/* Title */}
           <div

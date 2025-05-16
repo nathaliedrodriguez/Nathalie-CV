@@ -209,7 +209,7 @@ export default function MobileMenu() {
               </div>
             </button>
             {isUxUiOpen && (
-              <div className="mt-2 space-y-4 ml-auto mr-8 w-fit">
+              <div className="mt-2 space-y-8 ml-auto mr-8 w-fit">
                 <Link
                   href="/projects/camelot"
                   className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
