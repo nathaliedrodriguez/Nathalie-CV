@@ -77,7 +77,7 @@ export default function SanaMenteProject() {
                             <Link href="/">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     Home
                                 </Button>
@@ -85,7 +85,7 @@ export default function SanaMenteProject() {
                             <div className="relative">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
                                     onClick={() => setShowProjects(!showProjects)}
                                     aria-expanded={showProjects}
                                     aria-haspopup="true"
@@ -105,7 +105,7 @@ export default function SanaMenteProject() {
                                                 <Link
                                                     key={project.href}
                                                     href={project.href}
-                                                    className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                                                    className="cursor-pointer px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
                                                 >
                                                     {project.name}
                                                 </Link>
@@ -117,7 +117,7 @@ export default function SanaMenteProject() {
                             <Link href="/about-me">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     About Me
                                 </Button>
@@ -125,7 +125,7 @@ export default function SanaMenteProject() {
                             <Link href="/content-creator">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     Content Creator
                                 </Button>
@@ -156,7 +156,7 @@ export default function SanaMenteProject() {
                     >
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">About the Project</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.about ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.about ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -181,7 +181,7 @@ export default function SanaMenteProject() {
                     >
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Discovery Phase</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.discover ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.discover ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -202,7 +202,7 @@ export default function SanaMenteProject() {
                     >
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Programs Used</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.programs ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.programs ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -248,7 +248,7 @@ export default function SanaMenteProject() {
                     >
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Key areas</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.keyAreas ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.keyAreas ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -345,7 +345,9 @@ export default function SanaMenteProject() {
                     )}
                 </div>
 
-                <AnimatedButtons />
+                {sections.keyAreas && (
+                    <AnimatedButtons />
+                )}
 
                 {/* UI Design */}
                 <div className="mb-6">
@@ -355,7 +357,7 @@ export default function SanaMenteProject() {
                     >
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">UI Design</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
                         />
                     </div>
 

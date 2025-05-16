@@ -187,7 +187,7 @@ export default function Portfolio() {
               <Link href="/">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   Home
                 </Button>
@@ -195,7 +195,7 @@ export default function Portfolio() {
               <div className="relative">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2 px-4"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2 px-4"
                   onClick={() => setShowProjects(!showProjects)}
                   aria-expanded={showProjects}
                   aria-haspopup="true"
@@ -214,7 +214,7 @@ export default function Portfolio() {
                         <Link
                           key={project.href}
                           href={project.href}
-                          className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                          className="cursor-pointer px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
                         >
                           {project.name}
                         </Link>
@@ -226,7 +226,7 @@ export default function Portfolio() {
               <Link href="/about-me">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   About Me
                 </Button>
@@ -234,7 +234,7 @@ export default function Portfolio() {
               <Link href="/content-creator">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   Content Creator
                 </Button>
@@ -331,8 +331,8 @@ export default function Portfolio() {
                     </div>
                   </div>
                   <div className="flex justify-center max-md:w-full">
-                    <Link href='/projects/camelot' className="max-md:w-full">
-                      <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                    <Link href='/projects/camelot' className="cursor-pointer max-md:w-full">
+                      <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
                         Explore
                       </Button>
                     </Link>
@@ -397,8 +397,8 @@ export default function Portfolio() {
                     </div>
                   </div>
                   <div className="flex justify-center max-md:w-full">
-                    <Link href='projects/bgf' className="max-md:w-full">
-                      <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                    <Link href='projects/bgf' className="cursor-pointer max-md:w-full">
+                      <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
                         Dive In
                       </Button>
                     </Link>
@@ -417,7 +417,7 @@ export default function Portfolio() {
               <div className="relative h-full">
                 <div className="relative h-full">
                   <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
-                  <div className="bg-[#f2f8fb] p-10 lg:pl-20 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
+                  <div className="bg-[#f2f8fb] p-10 rounded-4xl h-full flex flex-col justify-around">
                     <div>
                       <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
                         YOPuedo app
@@ -466,8 +466,8 @@ export default function Portfolio() {
                       </div>
                     </div>
                     <div className="flex justify-center max-md:w-full">
-                      <Link href='/projects/yo-puedo' className="max-md:w-full">
-                        <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                      <Link href='/projects/yo-puedo' className="cursor-pointer max-md:w-full">
+                        <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
                           Find Out More
                         </Button>
                       </Link>
@@ -493,7 +493,7 @@ export default function Portfolio() {
               </div>
               <div className="order-1 md:order-2 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
-                <div className="bg-[#f2f8fb] p-10 rounded-b-4xl lg:rounded-l-4xl lg:rounded-r-none lg:-mx-16 h-full flex flex-col justify-around">
+                <div className="bg-[#f2f8fb] p-10 rounded-4xl h-full flex flex-col justify-around">
                   <div className="">
                     <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">NOUS Latam</h3>
                     <p className="text-base font-light mb-4 text-[#101113]">
@@ -516,8 +516,8 @@ export default function Portfolio() {
                     </div>
                   </div>
                   <div className="flex justify-center max-md:w-full">
-                    <Link href="/projects/nous" className="max-md:w-full">
-                      <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                    <Link href="/projects/nous" className="cursor-pointer max-md:w-full">
+                      <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
                         View Insights
                       </Button>
                     </Link>
@@ -553,7 +553,7 @@ export default function Portfolio() {
               <div className="relative h-full">
                 <div className="relative h-full">
                   <div className="md:absolute md:top-0 md:bottom-0 md:right-0 md:left-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
-                  <div className="bg-[#f2f8fb] p-10 lg:pl-20 rounded-b-4xl lg:rounded-r-4xl lg:rounded-l-none lg:-mx-16 h-full flex flex-col justify-around">
+                  <div className="bg-[#f2f8fb] p-10 rounded-4xl h-full flex flex-col justify-around">
                     <div>
                       <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">SanaMente</h3>
                       <p className="text-base font-light mb-4 text-[#101113]">
@@ -576,8 +576,8 @@ export default function Portfolio() {
                       </div>
                     </div>
                     <div className="flex justify-center max-md:w-full">
-                      <Link href="/projects/sanamente" className="max-md:w-full">
-                        <Button className="font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                      <Link href="/projects/sanamente" className="cursor-pointer max-md:w-full">
+                        <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
                           See More
                         </Button>
                       </Link>

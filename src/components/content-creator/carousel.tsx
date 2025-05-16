@@ -39,6 +39,7 @@ export function Carousel<T>({
   const [scrollLeft, setScrollLeft] = useState(0)
   const carouselRef = useRef<HTMLDivElement>(null)
   const itemsContainerRef = useRef<HTMLDivElement>(null)
+  const [isLargeScreen, setIsLargeScreen] = useState(false)
 
   // Infinite: clone items at start and end
   const extendedItems = [
@@ -46,20 +47,25 @@ export function Carousel<T>({
     ...items,
     ...items.slice(0, visibleItems),
   ]
+
   const realItemsStart = visibleItems
   const realItemsEnd = visibleItems + items.length
 
-  // Update visible items based on screen size
+  // Update visible items and isLargeScreen based on screen size
   useEffect(() => {
     const updateVisibleItems = () => {
       if (window.innerWidth < 640) {
         setVisibleItems(1)
+        setIsLargeScreen(false)
       } else if (window.innerWidth < 768) {
         setVisibleItems(2)
+        setIsLargeScreen(false)
       } else if (window.innerWidth < 1024) {
         setVisibleItems(3)
+        setIsLargeScreen(false)
       } else {
         setVisibleItems(itemsToShow)
+        setIsLargeScreen(true)
       }
     }
 
@@ -213,6 +219,7 @@ export function Carousel<T>({
           className={cn("flex overflow-x-auto hide-scroll", isDragging ? "cursor-grabbing" : "cursor-grab")}
           style={{
             gridTemplateColumns: `repeat(${extendedItems.length}, ${100 / visibleItems}%)`,
+            paddingRight: isLargeScreen && visibleItems % 1 !== 0 ? `calc(${100 / visibleItems / 2}% + 80px)` : undefined,
           }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
@@ -226,10 +233,14 @@ export function Carousel<T>({
             <div
               key={index}
               className={cn(
-                "flex-shrink-0",
-                `w-full sm:w-1/2 md:w-1/3 lg:w-1/${visibleItems}`,
-                "transition-all duration-300",
+                "flex-shrink-0 transition-all duration-300",
+                !isLargeScreen && [
+                  visibleItems === 1 && "w-full",
+                  visibleItems === 2 && "sm:w-1/2",
+                  visibleItems === 3 && "md:w-1/3",
+                ]
               )}
+              style={isLargeScreen ? { width: `${120 / visibleItems}%` } : undefined}
             >
               {renderItem(item, (index - realItemsStart + items.length) % items.length, index === activeIndex)}
             </div>

@@ -130,7 +130,7 @@ export default function ContentCreatorPicks() {
                             <Link href="/">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     Home
                                 </Button>
@@ -138,7 +138,7 @@ export default function ContentCreatorPicks() {
                             <div className="relative">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
                                     onClick={() => setShowProjects(!showProjects)}
                                     aria-expanded={showProjects}
                                     aria-haspopup="true"
@@ -158,7 +158,7 @@ export default function ContentCreatorPicks() {
                                                 <Link
                                                     key={project.href}
                                                     href={project.href}
-                                                    className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                                                    className="cursor-pointer px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
                                                 >
                                                     {project.name}
                                                 </Link>
@@ -170,7 +170,7 @@ export default function ContentCreatorPicks() {
                             <Link href="/about-me">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     About Me
                                 </Button>
@@ -178,7 +178,7 @@ export default function ContentCreatorPicks() {
                             <Link href="/content-creator">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     Content Creator
                                 </Button>
@@ -244,63 +244,63 @@ export default function ContentCreatorPicks() {
                 <h2 className="text-2xl font-semibold mb-6 missiri text-[#000068]">Explore My Work</h2>
 
                 <div className="grid grid-cols-3 grid-rows-8 gap-1 mb-8 aspect-[3/4] md:h-[700px] mx-auto">
-                    <button onClick={() => openDialog("Space")} className="col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
+                    <button onClick={() => openDialog("Space")} className="cursor-pointer col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
                         <img
                             src="/content-creator/SocialMedia/1.png"
                             alt="Work sample 1"
                             className="w-full h-full object-center"
                         />
                     </button>
-                    <button onClick={() => openDialog("Summer")} className="col-span-1 row-span-3 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
+                    <button onClick={() => openDialog("Summer")} className="cursor-pointer col-span-1 row-span-3 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
                         <img
                             src="/content-creator/SocialMedia/2.png"
                             alt="Work sample 2"
                             className="w-full h-full object-center"
                         />
                     </button>
-                    <button onClick={() => openDialog("Energy")} className="col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
+                    <button onClick={() => openDialog("Energy")} className="cursor-pointer col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
                         <img
                             src="/content-creator/SocialMedia/3.png"
                             alt="Work sample 3"
                             className="w-full h-full object-center"
                         />
                     </button>
-                    <button onClick={() => openDialog("Dog")} className="col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
+                    <button onClick={() => openDialog("Dog")} className="cursor-pointer col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
                         <img
                             src="/content-creator/SocialMedia/4.png"
                             alt="Work sample 4"
                             className="w-full h-full object-center"
                         />
                     </button>
-                    <button onClick={() => openDialog("Grandma")} className="col-span-1 row-span-3 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
+                    <button onClick={() => openDialog("Grandma")} className="cursor-pointer col-span-1 row-span-3 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
                         <img
                             src="/content-creator/SocialMedia/6.png"
                             alt="Work sample 6"
                             className="w-full h-full object-center"
                         />
                     </button>
-                    <button onClick={() => openDialog("Eagle")} className="col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
+                    <button onClick={() => openDialog("Eagle")} className="cursor-pointer col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
                         <img
                             src="/content-creator/SocialMedia/5.png"
                             alt="Work sample 5"
                             className="w-full h-full object-center"
                         />
                     </button>
-                    <button onClick={() => openDialog("Pool")} className="col-span-1 row-span-3 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
+                    <button onClick={() => openDialog("Pool")} className="cursor-pointer col-span-1 row-span-3 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
                         <img
                             src="/content-creator/SocialMedia/7.png"
                             alt="Work sample 7"
                             className="w-full h-full object-center"
                         />
                     </button>
-                    <button onClick={() => openDialog("Cave")} className="col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
+                    <button onClick={() => openDialog("Cave")} className="cursor-pointer col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
                         <img
                             src="/content-creator/SocialMedia/8.png"
                             alt="Work sample 8"
                             className="w-full h-full object-center"
                         />
                     </button>
-                    <button onClick={() => openDialog("Googles")} className="col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
+                    <button onClick={() => openDialog("Googles")} className="cursor-pointer col-span-1 row-span-2 bg-gray-200 overflow-hidden relative transition-transform duration-300 hover:scale-110 hover:z-50 inset-0">
                         <img
                             src="/content-creator/SocialMedia/9.png"
                             alt="Work sample 9"
@@ -363,7 +363,7 @@ export default function ContentCreatorPicks() {
                                                 className="w-full aspect-video object-cover"
                                             />
                                             <div
-                                                className="absolute inset-0 flex items-center justify-center"
+                                                className="absolute inset-0 flex items-center justify-center cursor-pointer"
                                                 onClick={() => handleVideoSelect(index)}
                                             >
                                                 <div className="w-12 h-12 rounded-full bg-white/70 flex items-center justify-center">

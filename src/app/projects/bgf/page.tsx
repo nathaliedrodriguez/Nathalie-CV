@@ -83,7 +83,7 @@ export default function BoardGameFriends() {
               <Link href="/">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   Home
                 </Button>
@@ -91,7 +91,7 @@ export default function BoardGameFriends() {
               <div className="relative">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
                   onClick={() => setShowProjects(!showProjects)}
                   aria-expanded={showProjects}
                   aria-haspopup="true"
@@ -111,7 +111,7 @@ export default function BoardGameFriends() {
                         <Link
                           key={project.href}
                           href={project.href}
-                          className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                          className="cursor-pointer px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
                         >
                           {project.name}
                         </Link>
@@ -123,7 +123,7 @@ export default function BoardGameFriends() {
               <Link href="/about-me">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   About Me
                 </Button>
@@ -131,7 +131,7 @@ export default function BoardGameFriends() {
               <Link href="/content-creator">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   Content Creator
                 </Button>

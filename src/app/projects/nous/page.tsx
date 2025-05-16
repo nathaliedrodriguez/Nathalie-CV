@@ -78,7 +78,7 @@ export default function NOUSLatamProject() {
                             <Link href="/">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     Home
                                 </Button>
@@ -86,7 +86,7 @@ export default function NOUSLatamProject() {
                             <div className="relative">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
                                     onClick={() => setShowProjects(!showProjects)}
                                     aria-expanded={showProjects}
                                     aria-haspopup="true"
@@ -106,7 +106,7 @@ export default function NOUSLatamProject() {
                                                 <Link
                                                     key={project.href}
                                                     href={project.href}
-                                                    className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                                                    className="cursor-pointer px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
                                                 >
                                                     {project.name}
                                                 </Link>
@@ -118,7 +118,7 @@ export default function NOUSLatamProject() {
                             <Link href="/about-me">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     About Me
                                 </Button>
@@ -126,7 +126,7 @@ export default function NOUSLatamProject() {
                             <Link href="/content-creator">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     Content Creator
                                 </Button>
@@ -154,7 +154,7 @@ export default function NOUSLatamProject() {
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("about")}>
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">About the Project</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.about ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.about ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -180,7 +180,7 @@ export default function NOUSLatamProject() {
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("discover")}>
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Discover Phase</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.discover ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.discover ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -203,7 +203,7 @@ export default function NOUSLatamProject() {
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("programs")}>
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Programs Used</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.programs ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.programs ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -230,7 +230,7 @@ export default function NOUSLatamProject() {
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("goals")}>
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Goals</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.goals ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.goals ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -255,7 +255,7 @@ export default function NOUSLatamProject() {
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("challenges")}>
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Challenges</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.challenges ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.challenges ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -282,7 +282,7 @@ export default function NOUSLatamProject() {
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("uiDesign")}>
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">UI Design Changes</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.uiDesign ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -337,7 +337,7 @@ export default function NOUSLatamProject() {
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("freshLook")}>
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">A Fresh Look</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.freshLook ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.freshLook ? "rotate-180" : ""}`}
                         />
                     </div>
 
@@ -370,7 +370,7 @@ export default function NOUSLatamProject() {
                     >
                         <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Live Prototype</h2>
                         <ChevronDown
-                            className={`text-[#0091fb] w-8 h-8 transition-transform ${sections.livePrototype ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.livePrototype ? "rotate-180" : ""}`}
                         />
                     </div>
 

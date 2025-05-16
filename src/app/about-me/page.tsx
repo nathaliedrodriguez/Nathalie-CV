@@ -73,7 +73,7 @@ export default function AboutMe() {
                             <Link href="/">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     Home
                                 </Button>
@@ -81,7 +81,7 @@ export default function AboutMe() {
                             <div className="relative">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
                                     onClick={() => setShowProjects(!showProjects)}
                                     aria-expanded={showProjects}
                                     aria-haspopup="true"
@@ -101,7 +101,7 @@ export default function AboutMe() {
                                                 <Link
                                                     key={project.href}
                                                     href={project.href}
-                                                    className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                                                    className="cursor-pointer px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
                                                 >
                                                     {project.name}
                                                 </Link>
@@ -113,7 +113,7 @@ export default function AboutMe() {
                             <Link href="/about-me">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     About Me
                                 </Button>
@@ -121,7 +121,7 @@ export default function AboutMe() {
                             <Link href="/content-creator">
                                 <Button
                                     variant="ghost"
-                                    className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                                 >
                                     Content Creator
                                 </Button>
@@ -199,7 +199,7 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("design")}>
                             <h3 className="text-[#0679B8] missiri font-medium text-2xl">Design:</h3>
                             <ChevronUp
-                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.design ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0679B8] missiri transition-transform ${expandedSections.design ? "" : "rotate-180"}`}
                             />
                         </div>
 
@@ -250,7 +250,7 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("research")}>
                             <h3 className="text-[#0679B8] missiri font-medium text-2xl">Research:</h3>
                             <ChevronUp
-                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.research ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0679B8] missiri transition-transform ${expandedSections.research ? "" : "rotate-180"}`}
                             />
                         </div>
 
@@ -301,7 +301,7 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("software")}>
                             <h3 className="text-[#0679B8] missiri font-medium text-2xl">Software:</h3>
                             <ChevronUp
-                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.software ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0679B8] missiri transition-transform ${expandedSections.software ? "" : "rotate-180"}`}
                             />
                         </div>
 
@@ -375,7 +375,7 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("courses")}>
                             <h3 className="text-[#0679B8] missiri font-medium text-2xl">Courses and degrees:</h3>
                             <ChevronUp
-                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.courses ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0679B8] missiri transition-transform ${expandedSections.courses ? "" : "rotate-180"}`}
                             />
                         </div>
 
@@ -414,7 +414,7 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("english")}>
                             <h3 className="text-[#0679B8] missiri font-medium text-2xl">English:</h3>
                             <ChevronUp
-                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.english ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0679B8] missiri transition-transform ${expandedSections.english ? "" : "rotate-180"}`}
                             />
                         </div>
 
@@ -431,7 +431,7 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("spanish")}>
                             <h3 className="text-[#0679B8] missiri font-medium text-2xl">Spanish:</h3>
                             <ChevronUp
-                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.spanish ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0679B8] missiri transition-transform ${expandedSections.spanish ? "" : "rotate-180"}`}
                             />
                         </div>
 
@@ -452,7 +452,7 @@ export default function AboutMe() {
                         <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleSection("eikon")}>
                             <h3 className="text-[#0679B8] missiri font-medium text-2xl">Eikon Awards:</h3>
                             <ChevronUp
-                                className={`h-8 w-8 text-[#0091fb] missiri transition-transform ${expandedSections.eikon ? "" : "rotate-180"}`}
+                                className={`h-8 w-8 text-[#0679B8] missiri transition-transform ${expandedSections.eikon ? "" : "rotate-180"}`}
                             />
                         </div>
 
@@ -478,14 +478,14 @@ export default function AboutMe() {
 
                     <div className="flex max-md:flex-col max-md:w-full gap-4 justify-center">
                         <Link href="/projects">
-                            <Button className="bg-[#0091fb] hover:bg-[#0679b8] max-md:w-full text-white px-6 py-2 rounded-2xl p-6 text-lg">
+                            <Button className="cursor-pointer bg-[#0091fb] hover:bg-[#0679b8] max-md:w-full text-white px-6 py-2 rounded-2xl p-6 text-lg">
                                 UX UI Designer
                             </Button>
                         </Link>
                         <Link href="/content-creator">
                             <Button
                                 variant="outline"
-                                className="border border-0091fb text-[#0091fb] max-md:w-full hover:bg-[#e6f4ff] px-6 py-2 rounded-2xl p-6 text-lg"
+                                className="cursor-pointer border border-0091fb text-[#0091fb] max-md:w-full hover:bg-[#e6f4ff] px-6 py-2 rounded-2xl p-6 text-lg"
                             >
                                 Content Creator
                             </Button>

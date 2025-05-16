@@ -80,7 +80,7 @@ export default function YOPuedoProject() {
               <Link href="/">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   Home
                 </Button>
@@ -88,7 +88,7 @@ export default function YOPuedoProject() {
               <div className="relative">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
                   onClick={() => setShowProjects(!showProjects)}
                   aria-expanded={showProjects}
                   aria-haspopup="true"
@@ -108,7 +108,7 @@ export default function YOPuedoProject() {
                         <Link
                           key={project.href}
                           href={project.href}
-                          className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                          className="cursor-pointer px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
                         >
                           {project.name}
                         </Link>
@@ -120,7 +120,7 @@ export default function YOPuedoProject() {
               <Link href="/about-me">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   About Me
                 </Button>
@@ -128,7 +128,7 @@ export default function YOPuedoProject() {
               <Link href="/content-creator">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   Content Creator
                 </Button>
@@ -161,7 +161,7 @@ export default function YOPuedoProject() {
               About the Project
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.about ? "rotate-180" : ""
               }`}
             />
@@ -188,7 +188,7 @@ export default function YOPuedoProject() {
               Programs Used
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.programs ? "rotate-180" : ""
               }`}
             />
@@ -278,7 +278,7 @@ export default function YOPuedoProject() {
               Discover Phase
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.discover ? "rotate-180" : ""
               }`}
             />
@@ -314,7 +314,7 @@ export default function YOPuedoProject() {
               Goals
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.goals ? "rotate-180" : ""
               }`}
             />
@@ -358,7 +358,7 @@ export default function YOPuedoProject() {
               Challenges
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.challenges ? "rotate-180" : ""
               }`}
             />
@@ -394,7 +394,7 @@ export default function YOPuedoProject() {
               UI Design
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.uiDesign ? "rotate-180" : ""
               }`}
             />
@@ -424,7 +424,7 @@ export default function YOPuedoProject() {
               A/B Testing
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.abTesting ? "rotate-180" : ""
               }`}
             />
@@ -459,7 +459,7 @@ export default function YOPuedoProject() {
               Testing Results
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.testingResults ? "rotate-180" : ""
               }`}
             />
@@ -510,7 +510,7 @@ export default function YOPuedoProject() {
               Live Prototype
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.livePrototype ? "rotate-180" : ""
               }`}
             />

@@ -53,7 +53,7 @@ export default function Component() {
           <li className="font-epilogue font-[300] text-base leading-[24px] tracking-[0px] align-middle text-[#101113]">Adapts to context</li>
           <li className="font-epilogue font-[300] text-base leading-[24px] tracking-[0px] align-middle text-[#101113]">Enhances experience</li>
         </ul>
-        <h4 className="mb-2 text-[#0091fb] font-epilogue font-[300] text-base leading-[24px] tracking-[0px] align-middle">By Categories</h4>
+        <h4 className="mb-2 text-[#0091fb] font-epilogue font-[300] text-base leading-[24px] tracking-[0px] align-middle mt-2">By Categories</h4>
         <ul className="list-disc pl-5 space-y-1">
           <li className="font-epilogue font-[300] text-base leading-[24px] tracking-[0px] align-middle text-[#101113]">Organizes content</li>
           <li className="font-epilogue font-[300] text-base leading-[24px] tracking-[0px] align-middle text-[#101113]">Filters efficiently</li>

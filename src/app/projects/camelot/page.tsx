@@ -75,7 +75,11 @@ export default function BoardGameFriends() {
         <div className="absolute right-6 top-6 lg:hidden z-50">
           <MobileMenuButton />
         </div>
-        <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
+        <div
+          className={`grid grid-cols-3 ${
+            showProjects ? "grid-rows-2" : "grid-rows-3"
+          } min-h-32`}
+        >
           {/* Fila 1: Enlaces de navegación alineados a la derecha */}
           <div className="col-span-3 flex justify-between items-start gap-6">
             <ChevronLeftRoute onClick={() => router.back()} />
@@ -83,7 +87,7 @@ export default function BoardGameFriends() {
               <Link href="/">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   Home
                 </Button>
@@ -91,7 +95,7 @@ export default function BoardGameFriends() {
               <div className="relative">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
                   onClick={() => setShowProjects(!showProjects)}
                   aria-expanded={showProjects}
                   aria-haspopup="true"
@@ -111,7 +115,7 @@ export default function BoardGameFriends() {
                         <Link
                           key={project.href}
                           href={project.href}
-                          className="px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
+                          className="cursor-pointer px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
                         >
                           {project.name}
                         </Link>
@@ -123,7 +127,7 @@ export default function BoardGameFriends() {
               <Link href="/about-me">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   About Me
                 </Button>
@@ -131,7 +135,7 @@ export default function BoardGameFriends() {
               <Link href="/content-creator">
                 <Button
                   variant="ghost"
-                  className="text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
                 >
                   Content Creator
                 </Button>
@@ -386,13 +390,15 @@ export default function BoardGameFriends() {
           )}
         </div>
 
-        <div className="mt-6 md:-mx-8 max-md:-mx-3 flex justify-center">
-          <img
-            src="/camelot/programs_used.svg"
-            alt="Programs Used"
-            className="block w-[70vw] max-w-[520px] md:w-[60vw] md:max-w-[380px] lg:w-[80vw] lg:max-w-[600px]"
-          />
-        </div>
+        {sections.programs && (
+          <div className="mt-6 md:-mx-8 max-md:-mx-3 flex justify-center">
+            <img
+              src="/camelot/programs_used.svg"
+              alt="Programs Used"
+              className="block w-[70vw] max-w-[520px] md:w-[60vw] md:max-w-[380px] lg:w-[80vw] lg:max-w-[600px]"
+            />
+          </div>
+        )}
 
         {/* SEO Improvements Section */}
         <div className="mb-4 border-t border-[#e6e6e6] pt-4">
@@ -531,13 +537,15 @@ export default function BoardGameFriends() {
           )}
         </div>
 
-        <div className="mt-6 md:-mx-8 max-md:-mx-3 flex justify-center">
-          <img
-            src="/camelot/seo_improvements.svg"
-            alt="SEO Improvements"
-            className="block w-[70vw] max-w-[520px] md:w-[60vw] md:max-w-[380px] lg:w-[80vw] lg:max-w-[600px]"
-          />
-        </div>
+        {sections.seoImprovements && (
+          <div className="mt-6 md:-mx-8 max-md:-mx-3 flex justify-center">
+            <img
+              src="/camelot/seo_improvements.svg"
+              alt="SEO Improvements"
+              className="block w-[70vw] max-w-[520px] md:w-[60vw] md:max-w-[380px] lg:w-[80vw] lg:max-w-[600px]"
+            />
+          </div>
+        )}
 
         {/* Challenges Section */}
         <div className="mb-4 border-t border-[#e6e6e6] pt-4">
@@ -570,7 +578,10 @@ export default function BoardGameFriends() {
               <div className="flex justify-center mt-6 py-8">
                 <div className="w-full max-w-4xl rounded-lg overflow-hidden shadow-lg">
                   <video controls className="w-full h-auto">
-                    <source src="/camelot/animacion_home_Trim.mp4" type="video/mp4" />
+                    <source
+                      src="/camelot/animacion_home_Trim.mp4"
+                      type="video/mp4"
+                    />
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -589,7 +600,7 @@ export default function BoardGameFriends() {
               UI Design
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.uiDesign ? "rotate-180" : ""
               }`}
             />
@@ -603,8 +614,8 @@ export default function BoardGameFriends() {
                 black color scheme with a range of greens to evoke a sense of
                 trust, growth and renewal—values that resonate more strongly
                 with today&apos;s insurance clients. Consistent use of color,
-                typography, and layout helped strengthen the brand&apos;s presence
-                across the site.
+                typography, and layout helped strengthen the brand&apos;s
+                presence across the site.
               </p>
             </div>
           )}
@@ -718,7 +729,7 @@ export default function BoardGameFriends() {
               Logo Redesign
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.logoRedesign ? "rotate-180" : ""
               }`}
             />
@@ -730,10 +741,10 @@ export default function BoardGameFriends() {
                 As part of this website redesign, I also led the modernization
                 of the brand&apos;s visual identity. This involved refining the
                 original logo while preserving its core elements to ensure
-                continuity with the brand&apos;s heritage. The updated design brought
-                a more polished and cohesive look, aligning with the website&apos;s
-                modern interface and resonating with a more contemporary
-                audience.
+                continuity with the brand&apos;s heritage. The updated design
+                brought a more polished and cohesive look, aligning with the
+                website&apos;s modern interface and resonating with a more
+                contemporary audience.
               </p>
             </div>
           )}
@@ -778,7 +789,7 @@ export default function BoardGameFriends() {
               Visit the website
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.visitTheWebsite ? "rotate-180" : ""
               }`}
             />
@@ -812,7 +823,7 @@ export default function BoardGameFriends() {
               SEO Improvements
             </h2>
             <ChevronDown
-              className={`text-[#0091fb] w-8 h-8 transition-transform ${
+              className={`text-[#0679B8] w-8 h-8 transition-transform ${
                 sections.seoImprovements ? "rotate-180" : ""
               }`}
             />

@@ -37,9 +37,20 @@ function VisualNarrativesImages() {
                     className="flex items-center justify-between cursor-pointer"
                     onClick={() => toggleSection("countryLife")}
                 >
-                    <h3 className="text-[#015F2B] dark:text-[#0EA853] text-base font-medium text-center w-full">
+                    <p
+                        className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#015F2B] dark:text-[#0EA853]"
+                        style={{
+                            fontFamily: 'var(--font-epilogue)',
+                            fontWeight: 400,
+                            fontSize: '16px',
+                            lineHeight: '36px',
+                            letterSpacing: '0px',
+                            textAlign: 'center',
+                            verticalAlign: 'middle',
+                        }}
+                    >
                         Country Life
-                    </h3>
+                    </p>
                 </div>
                 {sections.countryLife && (
                     <button
@@ -59,7 +70,20 @@ function VisualNarrativesImages() {
             {/* Raffia Section */}
             <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("raffia")}>
-                    <h3 className="text-[#95272A] dark:text-[#CD1116] text-base font-medium text-center w-full">Raffia</h3>
+                    <p
+                        className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#95272A] dark:text-[#CD1116]"
+                        style={{
+                            fontFamily: 'var(--font-epilogue)',
+                            fontWeight: 400,
+                            fontSize: '16px',
+                            lineHeight: '36px',
+                            letterSpacing: '0px',
+                            textAlign: 'center',
+                            verticalAlign: 'middle',
+                        }}
+                    >
+                        Raffle
+                    </p>
                 </div>
 
                 {sections.raffia && (
@@ -77,7 +101,20 @@ function VisualNarrativesImages() {
             {/* Report Section */}
             <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("report")}>
-                    <h3 className="text-[#5D7D8C] text-base font-medium text-center w-full">Report</h3>
+                    <p
+                        className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#5D7D8C]"
+                        style={{
+                            fontFamily: 'var(--font-epilogue)',
+                            fontWeight: 400,
+                            fontSize: '16px',
+                            lineHeight: '36px',
+                            letterSpacing: '0px',
+                            textAlign: 'center',
+                            verticalAlign: 'middle',
+                        }}
+                    >
+                        Report
+                    </p>
                 </div>
 
                 {sections.report && (
@@ -95,7 +132,20 @@ function VisualNarrativesImages() {
             {/* Events Section */}
             <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("events")}>
-                    <h3 className="text-[#F37022] dark:text-[#F37022] text-base font-medium text-center w-full">Events</h3>
+                    <p
+                        className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#F37022] dark:text-[#F37022]"
+                        style={{
+                            fontFamily: 'var(--font-epilogue)',
+                            fontWeight: 400,
+                            fontSize: '16px',
+                            lineHeight: '36px',
+                            letterSpacing: '0px',
+                            textAlign: 'center',
+                            verticalAlign: 'middle',
+                        }}
+                    >
+                        Events
+                    </p>
                 </div>
 
                 {sections.events && (
@@ -116,7 +166,20 @@ function VisualNarrativesImages() {
                     className="flex items-center justify-between cursor-pointer"
                     onClick={() => toggleSection("entrepreneurs")}
                 >
-                    <h3 className="text-[#51478C] dark:text-[#9B8BFF] text-base font-medium text-center w-full">Entrepreneurs</h3>
+                    <p
+                        className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#51478C] dark:text-[#9B8BFF]"
+                        style={{
+                            fontFamily: 'var(--font-epilogue)',
+                            fontWeight: 400,
+                            fontSize: '16px',
+                            lineHeight: '36px',
+                            letterSpacing: '0px',
+                            textAlign: 'center',
+                            verticalAlign: 'middle',
+                        }}
+                    >
+                        Entrepreneurs
+                    </p>
                 </div>
 
                 {sections.entrepreneurs && (
@@ -134,7 +197,20 @@ function VisualNarrativesImages() {
             {/* Tourism Section */}
             <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("tourism")}>
-                    <h3 className="text-[#0098D9] text-base font-medium text-center w-full">Tourism</h3>
+                    <p
+                        className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#0098D9] dark:text-[#0098D9]"
+                        style={{
+                            fontFamily: 'var(--font-epilogue)',
+                            fontWeight: 400,
+                            fontSize: '16px',
+                            lineHeight: '36px',
+                            letterSpacing: '0px',
+                            textAlign: 'center',
+                            verticalAlign: 'middle',
+                        }}
+                    >
+                        Tourism
+                    </p>
                 </div>
 
                 {sections.tourism && (
@@ -155,9 +231,20 @@ function VisualNarrativesImages() {
                     className="flex items-center justify-between cursor-pointer"
                     onClick={() => toggleSection("protagonists")}
                 >
-                    <h3 className="text-base font-medium text-center w-full text-[#553064] dark:text-[#B1B719]">
+                    <p
+                        className="font-epilogue font-normal text-[16px] leading-[36px] tracking-[0px] text-center align-middle w-full text-[#553064] dark:text-[#B1B719]"
+                        style={{
+                            fontFamily: 'var(--font-epilogue)',
+                            fontWeight: 400,
+                            fontSize: '16px',
+                            lineHeight: '36px',
+                            letterSpacing: '0px',
+                            textAlign: 'center',
+                            verticalAlign: 'middle',
+                        }}
+                    >
                         Protagonists
-                    </h3>
+                    </p>
                 </div>
 
                 {sections.protagonists && (
