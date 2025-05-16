@@ -190,26 +190,26 @@ export default function BoardGameFriends() {
                 all devices.
               </p>
 
-              <div className="mt-6">
+              <div className="mt-20">
                 <div className="flex w-full flex-col md:flex-row md:items-start gap-8">
                   <div className="flex flex-col items-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%] mb-4 md:mb-0">
-                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">
+                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-10">
                       Before
                     </p>
                     <img
                       src="/camelot/before.svg"
                       alt="before"
-                      className="w-full max-w-2xl"
+                      className="w-full max-w-xl max-h-[500px]"
                     />
                   </div>
                   <div className="flex flex-col items-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%]">
-                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">
+                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-10">
                       After
                     </p>
                     <img
                       src="/camelot/after.svg"
                       alt="after"
-                      className="w-full max-w-2xl"
+                      className="w-full max-w-xl max-h-[500px]"
                     />
                   </div>
                 </div>
@@ -291,8 +291,7 @@ export default function BoardGameFriends() {
                     leadingTrim: "cap-height"
                   }}
                 >
-                  featuring a Discussion Forum and Group Chats for thematic
-                  support.
+                  Encourages action with direct phrases.
                 </span>
               </p>
               <p className="mb-4 text-[#101113]">
@@ -321,8 +320,7 @@ export default function BoardGameFriends() {
                     leadingTrim: "cap-height"
                   }}
                 >
-                  a virtual assistant offering personalized recommendations
-                  during anxiety crises using AI.
+                  More reassuring and customer-focused.
                 </span>
               </p>
 
@@ -519,6 +517,7 @@ export default function BoardGameFriends() {
                     User Interaction:
                   </span>{" "}
                   <span
+                    className="font-epilogue font-[400] text-base leading-[24px] tracking-[0px] align-middle text-[#101113]"
                     style={{
                       fontFamily: "Epilogue, sans-serif",
                       fontWeight: 300,
@@ -631,14 +630,14 @@ export default function BoardGameFriends() {
                       className="w-8 h-8"
                     />
                     <span
+                      className="text-[#101113] dark:text-[#e2e2e5]"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 300,
                         fontSize: "16px",
                         lineHeight: "148%",
                         letterSpacing: "0px",
-                        verticalAlign: "middle",
-                        color: "#281D1B"
+                        verticalAlign: "middle"
                       }}
                     >
                       Clear Information Hierarchy
@@ -651,14 +650,14 @@ export default function BoardGameFriends() {
                       className="w-8 h-8"
                     />
                     <span
+                      className="text-[#101113] dark:text-[#e2e2e5]"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 300,
                         fontSize: "16px",
                         lineHeight: "148%",
                         letterSpacing: "0px",
-                        verticalAlign: "middle",
-                        color: "#281D1B"
+                        verticalAlign: "middle"
                       }}
                     >
                       Responsive Design
@@ -672,14 +671,14 @@ export default function BoardGameFriends() {
                       className="w-8 h-8"
                     />
                     <span
+                      className="text-[#101113] dark:text-[#e2e2e5]"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 300,
                         fontSize: "16px",
                         lineHeight: "148%",
                         letterSpacing: "0px",
-                        verticalAlign: "middle",
-                        color: "#281D1B"
+                        verticalAlign: "middle"
                       }}
                     >
                       Intuitive Navigation
@@ -693,14 +692,14 @@ export default function BoardGameFriends() {
                       className="w-8 h-8"
                     />
                     <span
+                      className="text-[#101113] dark:text-[#e2e2e5]"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 300,
                         fontSize: "16px",
                         lineHeight: "148%",
                         letterSpacing: "0px",
-                        verticalAlign: "middle",
-                        color: "#281D1B"
+                        verticalAlign: "middle"
                       }}
                     >
                       Interactive Elements
