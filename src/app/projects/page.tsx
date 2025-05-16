@@ -520,7 +520,7 @@ export default function Portfolio() {
 
           {/* Project 4 */}
           <div className="mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-1">
                 <div className="max-lg:p-10 lg:pr-16 lg:py-5 ">
                   <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">
@@ -536,6 +536,7 @@ export default function Portfolio() {
                   </p>
                 </div>
               </div>
+
               <div className="order-1 md:order-2 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
                 <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">

@@ -59,14 +59,14 @@ export default function PhoneScrollComponent() {
       <div className="relative">
         {/* Marco del teléfono */}
         <div
-          className="relative w-[240px] h-[480px]"
+          className="relative w-[240px] h-[460px]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Contenido de la app con scroll manual */}
           <div
             ref={contentRef}
-            className="absolute top-[15px] left-[21px] w-[200px] h-[456px] overflow-y-auto rounded-[32px] no-scrollbar"
+            className="absolute top-[15px] left-[21px] w-[200px] h-[436px] overflow-y-auto rounded-[32px] no-scrollbar"
             style={{
               scrollbarWidth: "none" /* Firefox */,
               msOverflowStyle: "none" /* IE and Edge */,
