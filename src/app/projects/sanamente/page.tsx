@@ -384,13 +384,16 @@ export default function SanaMenteProject() {
             </div>
 
             {/* Footer Image */}
-            <footer className="-mx-3 md:-mx-8 h-64 mt-12 overflow-hidden relative">
+            {/* <footer className="-mx-3 md:-mx-8 h-64 mt-12 overflow-hidden relative">
                 <img
                     src="/sanamente/img-5.svg"
                     alt="Origami Pattern"
                     className="w-full h-full object-cover scale-100 sm:scale-100 transition-transform"
                     style={{ transformOrigin: 'left' }}
                 />
+            </footer> */}
+            <footer className="max-md:-mt-3 md:-mx-8 w-screen">
+                <img src="/sanamente/img-5.svg" alt="footer image" className="w-full scale-100" />
             </footer>
         </div>
     )

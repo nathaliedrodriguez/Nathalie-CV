@@ -133,12 +133,16 @@ export default function Home() {
               <Link
                 href="https://www.linkedin.com/in/nathaliedrodriguez/"
                 className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 About me
               </Link>
               <Link
                 href="https://www.behance.net/nathaliedrodriguez"
                 className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Content Creator
               </Link>
@@ -203,12 +207,16 @@ export default function Home() {
                 <Link
                   href="https://www.linkedin.com/in/nathaliedrodriguez/"
                   className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   LinkedIn
                 </Link>
                 <Link
                   href="https://www.behance.net/nathaliedrodriguez"
                   className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Behance
                 </Link>
@@ -283,7 +291,12 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center space-x-6 py-4 px-2 ">
           <div className="flex justify-center items-center gap-3">
             <img src="/HomePage/icons/save.png" className="w-12 h-auto mb-4" alt="Save icon" />
-            <h2 className="text-[28px] font-bold text-black mb-2 missiri">Download Done!</h2>
+            <h2
+              className="text-[28px] font-bold mb-2 missiri"
+              style={{ color: theme === "dark" ? "#0091FB" : "#000" }}
+            >
+              Download Done!
+            </h2>
           </div>
           <div>
             <p className="text-[18px] text-[#101113]">

@@ -209,7 +209,7 @@ export default function BoardGameFriends() {
                     <img
                       src="/camelot/after.svg"
                       alt="after"
-                      className="w-full max-w-xl max-h-[500px]"
+                      className="w-full max-w-2xl max-h-[500px]"
                     />
                   </div>
                 </div>
@@ -622,7 +622,7 @@ export default function BoardGameFriends() {
           {sections.uiDesign && (
             <>
               <div className="mt-6 flex justify-center pt-15 pb-15">
-                <div className="grid grid-cols-2 grid-rows-2 gap-x-40 gap-y-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-x-40 gap-y-8">
                   <div className="flex items-center space-x-4">
                     <img
                       src="/camelot/group.svg"
@@ -630,7 +630,7 @@ export default function BoardGameFriends() {
                       className="w-8 h-8"
                     />
                     <span
-                      className="text-[#101113] dark:text-[#e2e2e5]"
+                      className="text-[#101113] font-light"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 300,
@@ -650,7 +650,7 @@ export default function BoardGameFriends() {
                       className="w-8 h-8"
                     />
                     <span
-                      className="text-[#101113] dark:text-[#e2e2e5]"
+                      className="text-[#101113] font-light"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 300,
@@ -671,7 +671,7 @@ export default function BoardGameFriends() {
                       className="w-8 h-8"
                     />
                     <span
-                      className="text-[#101113] dark:text-[#e2e2e5]"
+                      className="text-[#101113] font-light"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 300,
@@ -692,7 +692,7 @@ export default function BoardGameFriends() {
                       className="w-8 h-8"
                     />
                     <span
-                      className="text-[#101113] dark:text-[#e2e2e5]"
+                      className="text-[#101113] font-light"
                       style={{
                         fontFamily: "Epilogue, sans-serif",
                         fontWeight: 300,
@@ -922,11 +922,18 @@ export default function BoardGameFriends() {
       </div>
 
       {/* Footer Images */}
-      <footer className="mt-8 md:-mx-8 max-md:-mx-3">
+      {/* <footer className="mt-8 md:-mx-8 max-md:-mx-3">
         <img
           src="/camelot/footer_image.svg"
           alt="Footer image"
           className="w-screen"
+        />
+      </footer> */}
+      <footer className="max-md:-mt-3 md:-mx-8">
+        <img
+          src="/camelot/footer_image.svg"
+          alt="footer image"
+          className="w-full"
         />
       </footer>
     </div>
