@@ -218,12 +218,13 @@ export default function CentralCarousel() {
         activeIndex={activeVideoIndex !== null ? activeVideoIndex : initialIndex}
         setActiveIndex={setActiveVideoIndex}
         isTransitioning={isTransitioning}
+        disableDrag={true}
         renderItem={(video, index, isActive, isCentered) => (
-          <div className="w-full h-full transition-all duration-300">
+          <div className="w-full h-full transition-all duration-700 ease-in-out">
             <div
               className={`
                 relative rounded-lg overflow-hidden cursor-pointer bg-white shadow-md
-                transition-all duration-300
+                transition-all duration-1000 ease-in-out
                 ${isCentered ? "shadow-xl" : "shadow-md"}
               `}
             >

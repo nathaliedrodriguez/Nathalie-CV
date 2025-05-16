@@ -26,6 +26,7 @@ interface ModernCarouselProps<T> {
   activeIndex?: number
   setActiveIndex?: (index: number) => void
   isTransitioning?: boolean
+  disableDrag?: boolean
 }
 
 export function ModernCarousel<T>({
@@ -43,6 +44,7 @@ export function ModernCarousel<T>({
   activeIndex: externalActiveIndex,
   setActiveIndex: externalSetActiveIndex,
   isTransitioning = false,
+  disableDrag = false,
 }: ModernCarouselProps<T>) {
   const [internalActiveIndex, setInternalActiveIndex] = useState(initialIndex)
   const activeIndex = externalActiveIndex !== undefined ? externalActiveIndex : internalActiveIndex
@@ -468,7 +470,7 @@ export function ModernCarousel<T>({
       <div ref={containerRef} className="relative w-full overflow-hidden">
         <div
           className={cn(
-            "flex transition-transform duration-300 ease-out",
+            "flex transition-transform duration-700 ease-in-out",
             isDragging ? "transition-none cursor-grabbing" : "cursor-grab",
           )}
           style={{
@@ -476,13 +478,15 @@ export function ModernCarousel<T>({
             gap: `${gap}px`,
             touchAction: "pan-y",
           }}
-          onMouseDown={handleDragStart}
-          onMouseMove={handleDragMove}
-          onMouseUp={handleDragEnd}
-          onMouseLeave={handleDragEnd}
-          onTouchStart={handleDragStart}
-          onTouchMove={handleDragMove}
-          onTouchEnd={handleDragEnd}
+          {...(!disableDrag ? {
+            onMouseDown: handleDragStart,
+            onMouseMove: handleDragMove,
+            onMouseUp: handleDragEnd,
+            onMouseLeave: handleDragEnd,
+            onTouchStart: handleDragStart,
+            onTouchMove: handleDragMove,
+            onTouchEnd: handleDragEnd,
+          } : {})}
         >
           {items.map((item, index) => {
             const isActive = index === activeIndex
