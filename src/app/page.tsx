@@ -131,18 +131,14 @@ export default function Home() {
               </div>
               {/* Fin UX UI Designs Dropdown */}
               <Link
-                href="https://www.linkedin.com/in/nathaliedrodriguez/"
+                href="/about-me"
                 className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 About me
               </Link>
               <Link
-                href="https://www.behance.net/nathaliedrodriguez"
+                href="/content-creator"
                 className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Content Creator
               </Link>
@@ -205,18 +201,14 @@ export default function Home() {
               {/* About Me Link */}
               <div className="flex justify-end px-4 sm:px-8 md:px-16 lg:px-24 max-lg:hidden gap-25 mt-10">
                 <Link
-                  href="https://www.linkedin.com/in/nathaliedrodriguez/"
+                  href="/about-me"
                   className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   LinkedIn
                 </Link>
                 <Link
-                  href="https://www.behance.net/nathaliedrodriguez"
+                  href="/content-creator"
                   className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Behance
                 </Link>
