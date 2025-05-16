@@ -66,10 +66,11 @@ export default function OrigamiAnimation() {
           className={`
             relative overflow-hidden bounce-transition
             transition-all duration-800
-            bg-[#AEAEC033] border-8 border-white rounded-2xl shadow-xl
+            bg-[#AEAEC033] border-8 border-white dark:border-white rounded-2xl shadow-xl
             ${expanded ? "h-44 z-10" : "h-[85px]"}
             w-full
           `}
+          style={{ borderColor: '#fff' }}
         >
           {/* Title */}
           <div
