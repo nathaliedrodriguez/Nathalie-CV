@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useRef, useCallback, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -9,7 +8,6 @@ import { cn } from "@/lib/utils"
 interface CarouselProps<T> {
   items: T[]
   renderItem: (item: T, index: number, isActive: boolean) => React.ReactNode
-  onItemSelect?: (item: T, index: number) => void
   className?: string
   autoScroll?: boolean
   autoScrollInterval?: number
@@ -33,216 +31,164 @@ export function Carousel<T>({
   itemsToShow = 4,
 }: CarouselProps<T>) {
   const [visibleItems, setVisibleItems] = useState(itemsToShow)
-  const [activeIndex, setActiveIndex] = useState(initialIndex + items.length) // Start at first real item
+  const [activeIndex, setActiveIndex] = useState(initialIndex + items.length)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
-  const [scrollLeft, setScrollLeft] = useState(0)
-  const carouselRef = useRef<HTMLDivElement>(null)
-  const itemsContainerRef = useRef<HTMLDivElement>(null)
+  const [scrollLeftStart, setScrollLeftStart] = useState(0)
   const [isLargeScreen, setIsLargeScreen] = useState(false)
 
-  // Infinite: clone items at start and end
+  const [isProgrammaticScroll, setIsProgrammaticScroll] = useState(false)
+
+  const itemsContainerRef = useRef<HTMLDivElement>(null)
+
   const extendedItems = [
     ...items.slice(-visibleItems),
     ...items,
     ...items.slice(0, visibleItems),
   ]
+  const realStart = visibleItems
+  const realEnd = visibleItems + items.length
 
-  const realItemsStart = visibleItems
-  const realItemsEnd = visibleItems + items.length
-
-  // Update visible items and isLargeScreen based on screen size
   useEffect(() => {
-    const updateVisibleItems = () => {
-      if (window.innerWidth < 640) {
-        setVisibleItems(1)
-        setIsLargeScreen(false)
-      } else if (window.innerWidth < 768) {
-        setVisibleItems(2)
-        setIsLargeScreen(false)
-      } else if (window.innerWidth < 1024) {
-        setVisibleItems(3)
-        setIsLargeScreen(false)
-      } else {
-        setVisibleItems(itemsToShow)
-        setIsLargeScreen(true)
-      }
+    const updateVisible = () => {
+      if (innerWidth < 640) { setVisibleItems(1); setIsLargeScreen(false) }
+      else if (innerWidth < 768) { setVisibleItems(2); setIsLargeScreen(false) }
+      else if (innerWidth < 1024) { setVisibleItems(3); setIsLargeScreen(false) }
+      else { setVisibleItems(itemsToShow); setIsLargeScreen(true) }
     }
-
-    updateVisibleItems()
-    window.addEventListener("resize", updateVisibleItems)
-    return () => window.removeEventListener("resize", updateVisibleItems)
+    updateVisible()
+    addEventListener("resize", updateVisible)
+    return () => removeEventListener("resize", updateVisible)
   }, [itemsToShow])
 
-  // Scroll to active item (infinite)
   useEffect(() => {
-    if (!itemsContainerRef.current) return
-
+    if (!isProgrammaticScroll || !itemsContainerRef.current) return
     const container = itemsContainerRef.current
     const itemWidth = container.scrollWidth / extendedItems.length
-    const scrollPosition = activeIndex * itemWidth
+    container.scrollTo({ left: activeIndex * itemWidth, behavior: "smooth" })
+    setIsProgrammaticScroll(false) // restablecemos flag
+  }, [activeIndex, extendedItems.length, isProgrammaticScroll])
 
-    container.scrollTo({
-      left: scrollPosition,
-      behavior: isDragging ? "auto" : "smooth",
-    })
-  }, [activeIndex, extendedItems.length, isDragging])
+  const repositionIfClone = useCallback(() => {
+    if (!itemsContainerRef.current) return
+    const container = itemsContainerRef.current
+    const itemWidth = container.scrollWidth / extendedItems.length
+    const totalRealWidth = items.length * itemWidth
 
-  // Handle infinite jump when reaching clones (for drag/scroll)
+    let newScroll = container.scrollLeft
+
+    if (newScroll < realStart * itemWidth) {
+      newScroll += totalRealWidth
+    } else if (newScroll >= realEnd * itemWidth) {
+      newScroll -= totalRealWidth
+    }
+
+    if (newScroll !== container.scrollLeft) {
+      container.scrollLeft = newScroll // instantáneo, no se percibe
+    }
+  }, [extendedItems.length, items.length, realStart, realEnd])
+
   const handleScroll = useCallback(() => {
     if (!itemsContainerRef.current) return
-
     const container = itemsContainerRef.current
     const itemWidth = container.scrollWidth / extendedItems.length
-    const scrollPosition = container.scrollLeft
-    const closestIndex = Math.round(scrollPosition / itemWidth)
-    // Si estamos en clones, saltar instantáneamente al real
-    if (closestIndex < realItemsStart) {
-      setActiveIndex(realItemsEnd - 1)
-      container.scrollTo({
-        left: (realItemsEnd - 1) * itemWidth,
-        behavior: "auto",
-      })
-    } else if (closestIndex >= realItemsEnd) {
-      setActiveIndex(realItemsStart)
-      container.scrollTo({
-        left: realItemsStart * itemWidth,
-        behavior: "auto",
-      })
-    }
-  }, [extendedItems.length, realItemsStart, realItemsEnd])
 
-  // Mouse/touch drag functionality
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!itemsContainerRef.current) return
+    const rawIndex = container.scrollLeft / itemWidth
+    setActiveIndex(Math.round(rawIndex))
 
-    // If the click is on the active item and preventDragWhenActive is true, don't start dragging
-    if (preventDragWhenActive) {
-      const target = e.target as HTMLElement
-      const activeItem = itemsContainerRef.current.children[activeIndex] as HTMLElement
-      if (activeItem && activeItem.contains(target)) {
-        return
-      }
-    }
+    if (!isDragging) repositionIfClone()
+  }, [extendedItems.length, isDragging, repositionIfClone])
 
+  const canStartDrag = (target: HTMLElement) =>
+    !(
+      preventDragWhenActive &&
+      itemsContainerRef.current?.children[activeIndex]?.contains(target)
+    )
+
+  const handlePointerDown = (clientX: number, target: HTMLElement) => {
+    if (!itemsContainerRef.current || !canStartDrag(target)) return
     setIsDragging(true)
-    setStartX(e.pageX - itemsContainerRef.current.offsetLeft)
-    setScrollLeft(itemsContainerRef.current.scrollLeft)
+    setStartX(clientX - itemsContainerRef.current.offsetLeft)
+    setScrollLeftStart(itemsContainerRef.current.scrollLeft)
   }
 
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!itemsContainerRef.current) return
-
-    // If the touch is on the active item and preventDragWhenActive is true, don't start dragging
-    if (preventDragWhenActive) {
-      const target = e.target as HTMLElement
-      const activeItem = itemsContainerRef.current.children[activeIndex] as HTMLElement
-      if (activeItem && activeItem.contains(target)) {
-        return
-      }
-    }
-
-    setIsDragging(true)
-    setStartX(e.touches[0].pageX - itemsContainerRef.current.offsetLeft)
-    setScrollLeft(itemsContainerRef.current.scrollLeft)
-  }
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handlePointerMove = (clientX: number) => {
     if (!isDragging || !itemsContainerRef.current) return
-
-    e.preventDefault()
-    const x = e.pageX - itemsContainerRef.current.offsetLeft
-    const walk = (x - startX) * 2 // Scroll speed multiplier
-    itemsContainerRef.current.scrollLeft = scrollLeft - walk
-  }
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!isDragging || !itemsContainerRef.current) return
-
-    const x = e.touches[0].pageX - itemsContainerRef.current.offsetLeft
-    const walk = (x - startX) * 2
-    itemsContainerRef.current.scrollLeft = scrollLeft - walk
+    const x = clientX - itemsContainerRef.current.offsetLeft
+    itemsContainerRef.current.scrollLeft = scrollLeftStart - (x - startX)
   }
 
   const handleDragEnd = () => {
     setIsDragging(false)
-
-    if (!itemsContainerRef.current) return
-
-    // Find the closest item to the current scroll position
-    const container = itemsContainerRef.current
-    const itemWidth = container.scrollWidth / extendedItems.length
-    const scrollPosition = container.scrollLeft
-
-    // Calculate the closest index based on scroll position
-    const closestIndex = Math.round(scrollPosition / itemWidth)
-    const boundedIndex = Math.max(0, Math.min(closestIndex, extendedItems.length - 1))
-
-    setActiveIndex(boundedIndex)
-    // Si estamos en clones, saltar instantáneamente al real
-    setTimeout(() => handleScroll(), 10)
+    repositionIfClone() // ajuste final sin salto
   }
 
-  // También escuchar el scroll manual (ej: con mouse wheel)
   useEffect(() => {
-    const container = itemsContainerRef.current
-    if (!container) return
-    container.addEventListener("scroll", handleScroll, { passive: true })
-    return () => container.removeEventListener("scroll", handleScroll)
+    const c = itemsContainerRef.current
+    if (!c) return
+    c.addEventListener("scroll", handleScroll, { passive: true })
+    return () => c.removeEventListener("scroll", handleScroll)
   }, [handleScroll])
 
-  // Prev/Next (infinite)
-  const handlePrev = useCallback(() => {
-    setActiveIndex((prev) => prev - visibleItems)
-  }, [visibleItems])
+  const scrollByItems = (dir: 1 | -1) => {
+    if (!itemsContainerRef.current) return
+    const container = itemsContainerRef.current
+    const itemWidth = container.scrollWidth / extendedItems.length
+    setIsProgrammaticScroll(true)
+    setActiveIndex((prev) => prev + dir * visibleItems)
+    container.scrollBy({ left: dir * visibleItems * itemWidth, behavior: "smooth" })
+  }
 
-  const handleNext = useCallback(() => {
-    setActiveIndex((prev) => prev + visibleItems)
-  }, [visibleItems])
-
-  // Auto scroll functionality
   useEffect(() => {
     if (!autoScroll) return
-
-    const interval = setInterval(() => {
-      handleNext()
-    }, autoScrollInterval)
-
-    return () => clearInterval(interval)
-  }, [autoScroll, autoScrollInterval, handleNext])
+    const id = setInterval(() => scrollByItems(1), autoScrollInterval)
+    return () => clearInterval(id)
+  }, [autoScroll, autoScrollInterval, visibleItems])
 
   return (
-    <div className={cn("relative w-full", className)} ref={carouselRef} >
-      <div className="relative overflow-hidden" onMouseLeave={() => setIsDragging(false)}>
+    <div className={cn("relative w-full select-none", className)}>
+      <div className="relative overflow-hidden">
         <div
           ref={itemsContainerRef}
-          className={cn("flex overflow-x-auto hide-scroll", isDragging ? "cursor-grabbing" : "cursor-grab")}
+          className={cn(
+            "flex overflow-x-auto hide-scroll",
+            isDragging ? "cursor-grabbing" : "cursor-grab",
+          )}
           style={{
-            gridTemplateColumns: `repeat(${extendedItems.length}, ${100 / visibleItems}%)`,
-            paddingRight: isLargeScreen && visibleItems % 1 !== 0 ? `calc(${100 / visibleItems / 2}% + 80px)` : undefined,
+            gridTemplateColumns: `repeat(${extendedItems.length}, ${
+              100 / visibleItems
+            }%)`,
           }}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
+          /* mouse */
+          onMouseDown={(e) => handlePointerDown(e.pageX, e.target as HTMLElement)}
+          onMouseMove={(e) => handlePointerMove(e.pageX)}
           onMouseUp={handleDragEnd}
           onMouseLeave={handleDragEnd}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
+          /* touch */
+          onTouchStart={(e) =>
+            handlePointerDown(e.touches[0].pageX, e.target as HTMLElement)
+          }
+          onTouchMove={(e) => handlePointerMove(e.touches[0].pageX)}
           onTouchEnd={handleDragEnd}
         >
-          {extendedItems.map((item, index) => (
+          {extendedItems.map((item, idx) => (
             <div
-              key={index}
+              key={idx}
               className={cn(
-                "flex-shrink-0 transition-all duration-300",
+                "flex-shrink-0 transition-transform duration-300",
                 !isLargeScreen && [
                   visibleItems === 1 && "w-full",
                   visibleItems === 2 && "sm:w-1/2",
                   visibleItems === 3 && "md:w-1/3",
-                ]
+                ],
               )}
               style={isLargeScreen ? { width: `${120 / visibleItems}%` } : undefined}
             >
-              {renderItem(item, (index - realItemsStart + items.length) % items.length, index === activeIndex)}
+              {renderItem(
+                item,
+                (idx - realStart + items.length) % items.length,
+                idx === activeIndex,
+              )}
             </div>
           ))}
         </div>
@@ -251,19 +197,16 @@ export function Carousel<T>({
       {showControls && (
         <>
           <button
-            onClick={handlePrev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2 hover:bg-gray-100 transition-colors z-[999] shadow-md"
-            aria-label="Previous items"
-            disabled={activeIndex === realItemsStart}
+            onClick={() => scrollByItems(-1)}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2 hover:bg-gray-100 z-[999] shadow-md"
+            aria-label="Anterior"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
-
           <button
-            onClick={handleNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2 hover:bg-gray-100 transition-colors z-[999] shadow-md"
-            aria-label="Next items"
-            disabled={activeIndex === realItemsEnd - 1}
+            onClick={() => scrollByItems(1)}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white text-black rounded-full p-2 hover:bg-gray-100 z-[999] shadow-md"
+            aria-label="Siguiente"
           >
             <ChevronRight className="h-6 w-6" />
           </button>
@@ -272,21 +215,34 @@ export function Carousel<T>({
 
       {showIndicators && (
         <div className="flex justify-center mt-4 gap-2">
-          {Array.from({ length: Math.ceil(extendedItems.length / visibleItems) }).map((_, index) => {
-            const isActive = activeIndex >= index * visibleItems && activeIndex < (index + 1) * visibleItems
-
-            return (
-              <button
-                key={index}
-                className={cn(
-                  "w-2.5 h-2.5 rounded-full transition-all",
-                  isActive ? "bg-black w-5" : "bg-gray-300 hover:bg-gray-400",
-                )}
-                onClick={() => setActiveIndex(index * visibleItems)}
-                aria-label={`Go to group ${index + 1}`}
-              />
-            )
-          })}
+          {Array.from({ length: Math.ceil(items.length / visibleItems) }).map(
+            (_, i) => {
+              const first = realStart + i * visibleItems
+              const active =
+                activeIndex >= first && activeIndex < first + visibleItems
+              return (
+                <button
+                  key={i}
+                  className={cn(
+                    "w-2.5 h-2.5 rounded-full transition-all",
+                    active ? "bg-black w-5" : "bg-gray-300 hover:bg-gray-400",
+                  )}
+                  aria-label={`Ir al grupo ${i + 1}`}
+                  onClick={() => {
+                    if (!itemsContainerRef.current) return
+                    const w =
+                      itemsContainerRef.current.scrollWidth / extendedItems.length
+                    setIsProgrammaticScroll(true)
+                    setActiveIndex(first)
+                    itemsContainerRef.current.scrollTo({
+                      left: first * w,
+                      behavior: "smooth",
+                    })
+                  }}
+                />
+              )
+            },
+          )}
         </div>
       )}
     </div>
