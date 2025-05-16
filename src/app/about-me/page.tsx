@@ -10,6 +10,7 @@ import Footer from "@/components/footer"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 import ThemeToggle from "@/components/theme-toggle"
 import { useRouter } from "next/navigation"
+import MobileMenuButton from "@/components/mobile-menu-button"
 
 export default function AboutMe() {
     const [expandedSections, setExpandedSections] = useState({
@@ -65,6 +66,10 @@ export default function AboutMe() {
             <MobileMenu />
             {/* Header */}
             <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4 relative">
+                {/* MobileMenuButton: top right, only on mobile/tablet */}
+                <div className="absolute right-6 top-6 lg:hidden z-50">
+                    <MobileMenuButton />
+                </div>
                 <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
