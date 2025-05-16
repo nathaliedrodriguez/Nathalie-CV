@@ -163,7 +163,7 @@ export default function AboutMe() {
                                 <h3 className="font-semibold missiri text-2xl">Journey</h3>
                             </div>
                             <p className="text-[#101113] font-light text-base">
-                                I am a Jr. UX/UI designer and Sr. digital content creator with over 10 years of experience in digital communication.
+                                I am a UX/UI designer and Sr. digital content creator with over 10 years of experience in digital communication.
                             </p>
                         </div>
 
@@ -189,7 +189,7 @@ export default function AboutMe() {
                                 <h3 className="font-semibold missiri text-2xl">Focus</h3>
                             </div>
                             <p className="text-[#101113] font-light text-base">
-                                My approach is defined by attentive listening, interdisciplinary collaboration, and a commitment to continuous improvement.
+                                My approach is defined by attentive listening, interdisciplinary collaboration and a commitment to continuous improvement.
                             </p>
                         </div>
                     </div>
