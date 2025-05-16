@@ -12,10 +12,10 @@ import '../styles/text-animations.css'
 import { useTheme } from "next-themes"
 import { ChevronDown } from "lucide-react"
 const textOptions = [
-  { text: "UX strategies", color: "#000068" },
-  { text: "UI designs", color: "#0004a4" },
-  { text: "UX content", color: "#004af5" },
-  { text: "UX solutions", color: "#0091fb" }
+  { text: "UX strategies", color: "#000068", darkColor: "#89C3FE" },
+  { text: "UI designs", color: "#0004a4", darkColor: "#0B9FF0" },
+  { text: "UX content", color: "#004af5", darkColor: "#0384CA" },
+  { text: "UX solutions", color: "#0091fb", darkColor: "#004AF5" }
 ]
 
 
@@ -160,7 +160,7 @@ export default function Home() {
                   <span
                   className={`inline-block ${isAnimating ? "text-slide-exit" : "text-slide-enter"}`}
                   style={{
-                    color: textOptions[currentTextIndex].color,
+                    color: theme === "light" ? textOptions[currentTextIndex].color : textOptions[currentTextIndex].darkColor,
                     display: "inline-block",
                     verticalAlign: "middle",
                   }}
