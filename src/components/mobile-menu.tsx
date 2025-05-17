@@ -212,7 +212,7 @@ export default function MobileMenu() {
               <div className="mt-2 space-y-8 ml-auto mr-8 w-fit">
                 <Link
                   href="/projects"
-                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                  className={`font-epilogue font-normal text-[14px] leading-[100%] tracking-[0px] text-left block ${
                     pathname === "/projects"
                       ? "text-[#0091fb] font-bold"
                       : "text-[#101113]"
@@ -222,7 +222,7 @@ export default function MobileMenu() {
                 </Link>
                 <Link
                   href="/projects/camelot"
-                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                  className={`font-epilogue font-normal text-[14px] leading-[100%] tracking-[0px] text-left block ${
                     pathname === "/projects/camelot"
                       ? "text-[#0091fb] font-bold"
                       : "text-[#101113]"
@@ -232,7 +232,7 @@ export default function MobileMenu() {
                 </Link>
                 <Link
                   href="/projects/bgf"
-                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                  className={`font-epilogue font-normal text-[14px] leading-[100%] tracking-[0px] text-left block ${
                     pathname === "/projects/bgf"
                       ? "text-[#0091fb] font-bold"
                       : "text-[#101113]"
@@ -242,7 +242,7 @@ export default function MobileMenu() {
                 </Link>
                 <Link
                   href="/projects/yo-puedo"
-                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                  className={`font-epilogue font-normal text-[14px] leading-[100%] tracking-[0px] text-left block ${
                     pathname === "/projects/yo-puedo"
                       ? "text-[#0B9FF0] font-bold"
                       : "text-[#101113]"
@@ -252,7 +252,7 @@ export default function MobileMenu() {
                 </Link>
                 <Link
                   href="/projects/nous"
-                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                  className={`font-epilogue font-normal text-[14px] leading-[100%] tracking-[0px] text-left block ${
                     pathname === "/projects/nous"
                       ? "text-[#0B9FF0] font-bold"
                       : "text-[#101113]"
@@ -262,7 +262,7 @@ export default function MobileMenu() {
                 </Link>
                 <Link
                   href="/projects/sanamente"
-                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                  className={`font-epilogue font-normal text-[14px] leading-[100%] tracking-[0px] text-left block ${
                     pathname === "/projects/sanamente"
                       ? "text-[#0B9FF0] font-bold"
                       : "text-[#101113]"
