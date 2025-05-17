@@ -51,7 +51,7 @@ export default function AboutMe() {
     }, [showProjects]);
 
     const projects = [
-        { name: "• My projects", href: "/projects" }
+        { name: "• My projects", href: "/projects" },
         { name: "• Camelot Insurance", href: "/projects/camelot" },
         { name: "• Board Game Friends", href: "/projects/bgf" },
         { name: "• YOPuedo app", href: "/projects/yo-puedo" },
