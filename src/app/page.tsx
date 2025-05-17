@@ -100,7 +100,7 @@ export default function Home() {
                       href="/projects"
                       className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
                     >
-                      • My UX/UI projects
+                      • My projects
                     </a>
                     <a
                       href="/projects/camelot"
