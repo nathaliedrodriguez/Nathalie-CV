@@ -211,6 +211,16 @@ export default function MobileMenu() {
             {isUxUiOpen && (
               <div className="mt-2 space-y-8 ml-auto mr-8 w-fit">
                 <Link
+                  href="/projects"
+                  className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
+                    pathname === "/projects"
+                      ? "text-[#0091fb] font-bold"
+                      : "text-[#101113]"
+                  }`}
+                >
+                  • My projects
+                </Link>
+                <Link
                   href="/projects/camelot"
                   className={`font-epilogue font-normal text-[12px] leading-[100%] tracking-[0px] text-left block ${
                     pathname === "/projects/camelot"
