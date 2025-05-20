@@ -5,6 +5,21 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import ScrollUp from "@/components/scroll-up"
 
+import { GoogleAnalytics } from '@next/third-parties/google'
+ 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+      <GoogleAnalytics gaId="G-YLPPP5YFRY" />
+    </html>
+  )
+}
+
 const elMessiri = El_Messiri({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
