@@ -210,6 +210,24 @@ export default function Home() {
               </div>
               {/* About Me Link */}
               <div className="flex justify-end px-4 sm:px-8 md:px-16 lg:px-24 max-lg:hidden gap-25 mt-10">
+                <a
+                  href="https://www.linkedin.com/in/nathaliedrodriguez/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://www.behance.net/nathaliedrodriguez"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
+                >
+                  Behance
+                </a>
+              </div>
+{/*               <div className="flex justify-end px-4 sm:px-8 md:px-16 lg:px-24 max-lg:hidden gap-25 mt-10">
                 <Link
                   href="https://www.linkedin.com/in/nathaliedrodriguez/"
                   className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
@@ -222,7 +240,7 @@ export default function Home() {
                 >
                   Behance
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
