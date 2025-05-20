@@ -211,13 +211,13 @@ export default function Home() {
               {/* About Me Link */}
               <div className="flex justify-end px-4 sm:px-8 md:px-16 lg:px-24 max-lg:hidden gap-25 mt-10">
                 <Link
-                  href="/about-me"
+                  href="https://www.linkedin.com/in/nathaliedrodriguez/"
                   className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
                 >
                   LinkedIn
                 </Link>
                 <Link
-                  href="/content-creator"
+                  href="https://www.behance.net/nathaliedrodriguez"
                   className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
                 >
                   Behance
