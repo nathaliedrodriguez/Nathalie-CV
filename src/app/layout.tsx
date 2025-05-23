@@ -46,6 +46,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-lt-installed="true" suppressHydrationWarning>
+      {/* Add the Google Analytics scripts here */}
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-ZNL7CJN1XE"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ZNL7CJN1XE');
+        `}
+      </Script>
       <body className={`${elMessiri.variable} ${epilogue.variable} font-body`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             {children}
