@@ -392,7 +392,7 @@ export default function BoardGameFriends() {
         {sections.programs && (
           <div className="mt-6 md:-mx-8 max-md:-mx-3 flex justify-center">
             <img
-              src="/camelot/programs_used.svg"
+              src="/camelot/programs_used.png"
               alt="Programs Used"
               className="block w-[70vw] max-w-[520px] md:w-[60vw] md:max-w-[380px] lg:w-[80vw] lg:max-w-[600px]"
             />
