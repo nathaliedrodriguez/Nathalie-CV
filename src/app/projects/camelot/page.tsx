@@ -10,6 +10,7 @@ import ThemeToggle from "@/components/theme-toggle";
 import { useRouter } from "next/navigation";
 import MobileMenu from "@/components/mobile-menu";
 import MobileMenuButton from "@/components/mobile-menu-button";
+import Footer from "@/components/footer";
 
 export default function BoardGameFriends() {
   const [sections, setSections] = useState({
@@ -923,13 +924,13 @@ export default function BoardGameFriends() {
       </div>
 
       {/* Footer Images */}
-      <footer className="max-md:-mt-3 md:-mx-8">
+      {/* <footer className="max-md:-mt-3 md:-mx-8">
         <img
           src="/camelot/footer_image.svg"
           alt="footer image"
           className="w-full"
         />
-      </footer>
+      </footer> */}
     </div>
   );
 }
