@@ -540,7 +540,7 @@ export default function BoardGameFriends() {
         {sections.seoImprovements && (
           <div className="mt-6 md:-mx-8 max-md:-mx-3 flex justify-center">
             <img
-              src="/camelot/seo_improvements.svg"
+              src="/camelot/seo_improvements.png"
               alt="SEO Improvements"
               className="block w-[70vw] max-w-[520px] md:w-[60vw] md:max-w-[380px] lg:w-[80vw] lg:max-w-[600px]"
             />
@@ -710,7 +710,7 @@ export default function BoardGameFriends() {
               </div>
               <div className="mt-6 md:-mx-8 max-md:-mx-3 flex justify-center">
                 <img
-                  src="/camelot/ui_design.svg"
+                  src="/camelot/ui_design.png"
                   alt="UI Design"
                   className="block w-[70vw] max-w-[520px] md:w-[60vw] md:max-w-[380px] lg:w-[80vw] lg:max-w-[600px]"
                 />
