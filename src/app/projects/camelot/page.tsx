@@ -931,6 +931,8 @@ export default function BoardGameFriends() {
           className="w-full"
         />
       </footer> */}
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
