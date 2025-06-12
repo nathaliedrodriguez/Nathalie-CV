@@ -12,6 +12,7 @@ import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 import { Button } from "@/components/ui/button"
 import ThemeToggle from "@/components/theme-toggle"
 import { useRouter } from "next/navigation"
+import Footer from "@/components/footer"
 
 export default function SanaMenteProject() {
     const [sections, setSections] = useState({
@@ -384,10 +385,13 @@ export default function SanaMenteProject() {
                 </div>
             </div>
 
-            {/* Footer Image */}
-            <footer className="max-md:-mt-3 md:-mx-8 w-screen">
+            {/* Old Footer Image */}
+            {/* <footer className="max-md:-mt-3 md:-mx-8 w-screen">
                 <img src="/sanamente/img-5.svg" alt="footer image" className="w-full scale-100" />
-            </footer>
+            </footer> */}
+
+            {/* Footer */}
+            <Footer />
         </div>
     )
 }

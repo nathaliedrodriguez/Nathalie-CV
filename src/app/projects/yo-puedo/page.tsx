@@ -10,6 +10,7 @@ import ChevronLeftRoute from "@/components/ChevronLeftRoute";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/theme-toggle";
 import { useRouter } from "next/navigation";
+import Footer from "@/components/footer";
 
 export default function YOPuedoProject() {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -529,10 +530,14 @@ export default function YOPuedoProject() {
         </div>
       </div>
 
-      {/* Footer Images */}
-      <footer className="-mx-3 md:-mx-8 mt-8">
+      {/* Old Footer Images */}
+      {/* <footer className="-mx-3 md:-mx-8 mt-8">
         <img src="/YoPuedo/img-8.png" alt="Footer image" className="w-screen" />
-      </footer>
+      </footer> */}
+
+      {/* Footer */}
+      <Footer />
+
     </div>
   );
 }

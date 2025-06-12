@@ -10,6 +10,7 @@ import EmblaLogosCarousel from '@/components/ui/embla-logos-carousel'
 import { useRouter } from "next/navigation"
 import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
+import Footer from "@/components/footer"
 
 export default function NOUSLatamProject() {
     const [sections, setSections] = useState({
@@ -384,9 +385,15 @@ export default function NOUSLatamProject() {
             {sections.livePrototype && (
                 <iframe className="h-[600px] w-full" src="https://embed.figma.com/proto/fcL4iJHz6dtgpcgtWacJih/NOUS-Borrador?content-scaling=fixed&kind=proto&node-id=2-3&page-id=0%3A1&scaling=min-zoom&starting-point-node-id=2%3A3&embed-host=share"></iframe>
             )}
-            <footer className="max-md:-mt-3 md:-mx-8">
+
+            {/* Old Footer Images */}
+            {/* <footer className="max-md:-mt-3 md:-mx-8">
                 <img src="/Nous/img-8.png" alt="footer image" className="w-full" />
-            </footer>
+            </footer> */}
+
+            {/* Footer */}
+            <Footer />
+
         </div>
     )
 }

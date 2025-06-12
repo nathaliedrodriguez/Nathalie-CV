@@ -923,7 +923,7 @@ export default function BoardGameFriends() {
         </div>
       </div>
 
-      {/* Footer Images */}
+      {/* Old Footer Images */}
       {/* <footer className="max-md:-mt-3 md:-mx-8">
         <img
           src="/camelot/footer_image.svg"
@@ -931,6 +931,7 @@ export default function BoardGameFriends() {
           className="w-full"
         />
       </footer> */}
+      
       {/* Footer */}
       <Footer />
     </div>

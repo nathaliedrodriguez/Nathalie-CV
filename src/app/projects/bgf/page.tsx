@@ -11,6 +11,7 @@ import ChevronLeftRoute from "@/components/ChevronLeftRoute";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/theme-toggle";
 import { useRouter } from "next/navigation";
+import Footer from "@/components/footer";
 
 export default function BoardGameFriends() {
   const [sections, setSections] = useState({
@@ -493,10 +494,14 @@ export default function BoardGameFriends() {
           )}
         </div>
       </div>
-      {/* Footer Images */}
-      <footer className="mt-8 md:-mx-8 max-md:-mx-3">
+
+      {/* Old Footer Images */}
+      {/* <footer className="mt-8 md:-mx-8 max-md:-mx-3">
         <img src="/BGF/Footer.png" alt="Footer image" className="w-screen" />
-      </footer>
+      </footer> */}
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
