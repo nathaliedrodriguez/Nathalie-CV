@@ -252,7 +252,7 @@ export default function ReputationArm() {
                         <div className="mt-3">
                             <div className="flex flex-wrap gap-2 mb-6">
                                 <span className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full">
-                                    Figm.a
+                                    Figma
                                 </span>
                                 <span className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full">
                                     Adobe Illustrator
