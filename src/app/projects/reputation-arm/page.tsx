@@ -25,6 +25,7 @@ export default function ReputationArm() {
         step5: true,
         step6: true,
         finalResults: true,
+        visitWebsite2: true,
     })
 
     // Dropdown de proyectos (solo desktop)
@@ -211,7 +212,7 @@ export default function ReputationArm() {
                                     Before
                                     </p>
                                     <img
-                                    src="/camelot/before.svg"
+                                    src="/tbc.jpg"
                                     alt="before"
                                     className="w-full max-w-xl max-h-[500px]"
                                     />
@@ -221,7 +222,7 @@ export default function ReputationArm() {
                                     After
                                     </p>
                                     <img
-                                    src="/camelot/after.svg"
+                                    src="/tbc.jpg"
                                     alt="after"
                                     className="w-full max-w-2xl max-h-[500px]"
                                     />
@@ -315,11 +316,319 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/Nous/img-3.png" alt="Before and after" className="hidden lg:block" />
+                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
                             </div>
                         </div>
                     )}
                 </div>
+
+                {/* Step 2 */}
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step2")}>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 2: TBU</h2>
+                        <ChevronDown
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step2 ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.step2 && (
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            {/* Description */}
+                            <p className="mb-4 leading-relaxed">
+                                TBU:
+                            </p>
+                        </div>
+                    )}
+                </div>
+
+                {/* Step 3 */}
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step3")}>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 3: TBU</h2>
+                        <ChevronDown
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step3 ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.step3 && (
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            {/* Description */}
+                            <p className="mb-4 leading-relaxed">
+                                <span className="font-bold">TBU:</span>
+                            </p>
+
+                            {/* Substep 3.1 */}
+                            <p className="mb-4 leading-relaxed text-[#067bb6]">
+                                &nbsp;&nbsp;1. TBU.
+                            </p>
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            {/* Image */}
+                            <div className="mt-6">
+                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                            </div>
+
+                            {/* Substep 3.2 */}
+                            <p className="mb-4 leading-relaxed text-[#067bb6]">
+                                &nbsp;&nbsp;2. TBU.
+                            </p>
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            <ul className="list-disc pl-5 space-y-2 mb-4">
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                            </ul>
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            {/* Image */}
+                            <div className="mt-6">
+                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                            </div>
+
+                            {/* Substep 3.3 */}
+                            <p className="mb-4 leading-relaxed text-[#067bb6]">
+                                &nbsp;&nbsp;3. TBU.
+                            </p>
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            <ul className="list-disc pl-5 space-y-4 mb-4">
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                            </ul>
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            <ul className="list-disc pl-5 space-y-2 mb-4">
+                                <li><span className="font-bold">TBU:</span> TBU.</li>
+                            </ul>
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            <ul className="list-disc pl-5 space-y-2 mb-4">
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                            </ul>
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            {/* Image */}
+                            <div className="mt-6">
+                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* Why this version works better */}
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("whyThisVersion")}>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Why this version works better</h2>
+                        <ChevronDown
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.whyThisVersion ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.whyThisVersion && (
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            {/* Description */}
+                            <ul className="list-disc pl-5 space-y-4 mb-4">
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                            </ul>
+                        </div>
+                    )}
+                </div>
+
+                {/* Step 4 */}
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step4")}>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 4: TBU</h2>
+                        <ChevronDown
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step4 ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.step4 && (
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            {/* Description */}
+                            <p className="mb-4 leading-relaxed">
+                                TBU:
+                            </p>
+                            <p className="mb-4 leading-relaxed">
+                                <span className="font-bold">TBU:</span> TBU.
+                            </p>
+                            <p className="mb-4 leading-relaxed">
+                                <span className="font-bold">TBU:</span> TBU.
+                            </p>
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            {/* Image */}
+                            <div className="mt-6">
+                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* Step 5 */}
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step5")}>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 5: TBU</h2>
+                        <ChevronDown
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step5 ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.step5 && (
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            {/* Description */}
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            <ul className="list-disc pl-5 space-y-4 mb-4">
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                            </ul>
+                            <p className="mb-4 leading-relaxed">
+                                <span className="font-bold">TBU:</span> TBU.
+                            </p>
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            {/* Image */}
+                            <div className="mt-6">
+                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* Step 6 */}
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step6")}>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 6: TBU</h2>
+                        <ChevronDown
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step6 ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.step6 && (
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            {/* Description */}
+                            <p className="mb-4 leading-relaxed">
+                                TBU:
+                            </p>
+                            <ul className="list-disc pl-5 space-y-2 mb-4">
+                                <li><span className="font-bold">TBU:</span> TBU.</li>
+                                <li><span className="font-bold">TBU:</span> TBU.</li>
+                                <li><span className="font-bold">TBU:</span> TBU.</li>
+                            </ul>
+                            <p className="mb-4 leading-relaxed">
+                                TBU.
+                            </p>
+                            {/* Image 1*/}
+                            <div className="mt-20">
+                                <div className="flex flex-col items-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%] mb-4 md:mb-0">
+                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-10">
+                                        Icons
+                                    </p>
+                                    <img
+                                        src="/tbc.jpg"
+                                        alt="icons"
+                                        className="max-w-none max-h-[500px]"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Image 2*/}
+                            <div className="mt-20">
+                                <div className="flex flex-col items-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%] mb-4 md:mb-0">
+                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-10">
+                                        Responsive Dashboard View
+                                    </p>
+                                    <img
+                                        src="/tbc.jpg"
+                                        alt="Responsive Dashboard View"
+                                        className="max-w-none max-h-[500px]"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* Final Results */}
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("finalResults")}>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Final Results</h2>
+                        <ChevronDown
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.finalResults ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.finalResults && (
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            {/* Description */}
+                            <p className="mb-4 leading-relaxed">
+                                TBU:
+                            </p>
+                            <ul className="list-disc pl-5 space-y-4 mb-4">
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                                <li> TBU.</li>
+                            </ul>
+                        </div>
+                    )}
+                </div>
+
+                {/* Visit the website Section, 2 (again)*/}
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+                    <div
+                        className="flex items-center justify-between cursor-pointer"
+                        onClick={() => toggleSection("visitWebsite2")}
+                    >
+                        <h2 className="text-[#0679B8] text-2xl font-semibold missiri">
+                        Visit the Website
+                        </h2>
+                        <ChevronDown
+                        className={`text-[#0679B8] w-8 h-8 transition-transform ${
+                            sections.visitWebsite2 ? "rotate-180" : ""
+                        }`}
+                        />
+                    </div>
+
+                    {sections.visitWebsite2 && (
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            {/* Description */}
+                            <p className="mb-4 leading-relaxed">
+                                Feel free to check out{" "}
+                                <a
+                                href="https://reputationarm.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline"
+                                >
+                                reputationarm.com
+                                </a>
+                                .
+                            </p>
+                        </div>
+                    )}
+                </div>  
+
             </div>
 
             {/* Old Footer Images */}
