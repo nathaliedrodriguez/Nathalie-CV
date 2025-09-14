@@ -103,6 +103,12 @@ export default function Home() {
                       • My projects
                     </a>
                     <a
+                      href="/projects/reputation-arm"
+                      className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
+                    >
+                      • Reputation Arm
+                    </a>
+                    <a
                       href="/projects/camelot"
                       className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
                     >

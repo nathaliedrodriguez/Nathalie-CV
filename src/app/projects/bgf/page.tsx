@@ -47,12 +47,13 @@ export default function BoardGameFriends() {
   }, [showProjects]);
 
   const projects = [
-    { name: "• My projects", href: "/projects" },
-    { name: "• Camelot Insurance", href: "/projects/camelot" },
-    { name: "• Board Game Friends", href: "/projects/bgf" },
-    { name: "• YOPuedo app", href: "/projects/yo-puedo" },
-    { name: "• NOUS Latam", href: "/projects/nous" },
-    { name: "• Sanamente", href: "/projects/sanamente" }
+      { name: "• My projects", href: "/projects" },
+      { name: "• Reputation Arm", href: "/projects/reputation-arm" },
+      { name: "• Camelot Insurance", href: "/projects/camelot" },
+      { name: "• Board Game Friends", href: "/projects/bgf" },
+      { name: "• YOPuedo app", href: "/projects/yo-puedo" },
+      { name: "• NOUS Latam", href: "/projects/nous" },
+      { name: "• Sanamente", href: "/projects/sanamente" }
   ];
 
   const toggleSection = (section: string) => {

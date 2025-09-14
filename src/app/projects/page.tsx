@@ -328,6 +328,58 @@ export default function Portfolio() {
 
         {/* Portfolio Section */}
         <section className="mx-auto max-w-6xl px-4">
+
+          {/* Project 0 */}
+          <div className="mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+              <div className="order 1">
+                <img
+                  src="/HomePage/Reputation-Arm.png"
+                  alt="Reputation Arm"
+                  className="mx-auto rounded-lg"
+                />
+              </div>
+              <div className="order-1 md:order-2 relative h-full">
+                <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
+                <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
+                  <div>
+                    <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                      Reputation Arm
+                    </h3>
+                    <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
+                      A SaaS platform and responsive website for managing reviews and SEO, redesigned with clear, user-friendly UX/UI for effortless navigation.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Figma
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Adobe Illustrator
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex justify-center max-md:w-full">
+                    <Link
+                      href="projects/reputation-arm"
+                      className="cursor-pointer max-md:w-full"
+                    >
+                      <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                        Discover
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           {/* Project 1 */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
