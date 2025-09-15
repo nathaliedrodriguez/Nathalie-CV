@@ -212,9 +212,9 @@ export default function ReputationArm() {
                                     Before
                                     </p>
                                     <img
-                                    src="/tbc.jpg"
+                                    src="/ReputationArm/ra_olddashboard.png"
                                     alt="before"
-                                    className="w-full max-w-xl max-h-[500px]"
+                                    className="w-full max-w-xl"
                                     />
                                 </div>
                                 <div className="flex flex-col items-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%]">
@@ -222,9 +222,9 @@ export default function ReputationArm() {
                                     After
                                     </p>
                                     <img
-                                    src="/tbc.jpg"
+                                    src="/ReputationArm/ra_newdashboard.png"
                                     alt="after"
-                                    className="w-full max-w-2xl max-h-[500px]"
+                                    className="w-full max-w-2xl"
                                     />
                                 </div>
                                 </div>
@@ -316,7 +316,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm/ra_productexploration.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -366,7 +366,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm/ra_reviewsdashboard.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
 
                             {/* Substep 3.2 */}
@@ -386,7 +386,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm/ra_dashboardnps.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
 
                             {/* Substep 3.3 */}
@@ -420,7 +420,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm/ra_dashboardlocations.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -474,7 +474,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm/ra_userflows.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -509,7 +509,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm/ra_newtemplate.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -538,32 +538,28 @@ export default function ReputationArm() {
                             <p className="mb-4 leading-relaxed">
                                 TBU.
                             </p>
-                            {/* Image 1*/}
-                            <div className="mt-20">
-                                <div className="flex flex-col items-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%] mb-4 md:mb-0">
-                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-10">
-                                        Icons
-                                    </p>
-                                    <img
-                                        src="/tbc.jpg"
-                                        alt="icons"
-                                        className="max-w-none max-h-[500px]"
-                                    />
-                                </div>
+                            {/* Image 1 */}
+                            <div className="mt-20 flex flex-col items-center justify-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%] mb-4 md:mb-0 mx-auto">
+                                <p className="text-lg text-center font-title font-bold text-[#0091fb] mb-10">
+                                    Icons
+                                </p>
+                                <img
+                                    src="/ReputationArm/ra_icons.png"
+                                    alt="icons"
+                                    className="max-w-full max-w-xl max-h-auto"
+                                />
                             </div>
 
-                            {/* Image 2*/}
-                            <div className="mt-20">
-                                <div className="flex flex-col items-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%] mb-4 md:mb-0">
-                                    <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-10">
-                                        Responsive Dashboard View
-                                    </p>
-                                    <img
-                                        src="/tbc.jpg"
-                                        alt="Responsive Dashboard View"
-                                        className="max-w-none max-h-[500px]"
-                                    />
-                                </div>
+                            {/* Image 2 */}
+                            <div className="mt-20 flex flex-col items-center justify-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%] mb-4 md:mb-0 mx-auto">
+                                <p className="text-lg text-center font-title font-bold text-[#0091fb] mb-10">
+                                    Responsive Dashboard View
+                                </p>
+                                <img
+                                    src="/ReputationArm/ra_dashboardnpsmobile.png"
+                                    alt="Responsive Dashboard View"
+                                    className="max-w-full max-w-xl max-h-auto"
+                                />
                             </div>
                         </div>
                     )}
