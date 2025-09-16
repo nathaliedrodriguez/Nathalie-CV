@@ -216,7 +216,7 @@ export default function ReputationArm() {
                                     <img
                                     src="/ReputationArm/ra_olddashboard.png"
                                     alt="before"
-                                    className="w-full max-w-xl"
+                                    className="max-w-full max-w-xl"
                                     />
                                 </div>
                                 <div className="flex flex-col items-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%]">
@@ -226,7 +226,7 @@ export default function ReputationArm() {
                                     <img
                                     src="/ReputationArm/ra_newdashboard.png"
                                     alt="after"
-                                    className="w-full max-w-2xl"
+                                    className="max-w-full max-w-2xl"
                                     />
                                 </div>
                                 </div>

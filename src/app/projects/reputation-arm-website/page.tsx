@@ -145,7 +145,7 @@ export default function ReputationArm() {
                     {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
                     <div className="col-span-3 flex items-center gap-4 pb-5">
                         <h1 className="text-3xl font-title font-bold">
-                            Reputation <span className="text-[#0091fb]">Arm</span>
+                            <span className="text-[#0091fb]">Responsive Website</span> & SaaS Review Platform
                         </h1>
                     </div>
                 </div>
@@ -173,14 +173,16 @@ export default function ReputationArm() {
 
                 {/* Disclaimer */}
                 <div className="mt-4 text-left italic font-epilogue font-extralight text-[14px] text-[#101113]">
-                    TBU. This section showcases two different approaches for digital platforms, <span className="not-italic font-normal">illustrative purposes</span>, each tailored to unique user needs and business goals.
+                    This project was developed as part of my work at Alpha Efficiency for the client Reputation Arm. All content is protected by copyright and subject to confidentiality agreements. It is presented here for <span className="not-italic font-normal">illustrative purposes</span> only to showcase my involvement in the design process. It may not be reproduced or distributed without the express authorization of the parties involved.
                 </div>
 
                 <div className="mt-4 text-left text-[#101113] font-light text-base leading-relaxed">
-                    <span className="font-bold">TBU. Key considerations guided the design process:</span><br/>
-                    User feedback was carefully analyzed to identify pain points and opportunities for improvement.<br/>
-                    The visual hierarchy was refined to ensure clarity and ease of navigation.<br/>
-                    Collaboration with stakeholders helped align the final solution with business objectives.
+                    <span className="font-bold">Alpha Efficiency Team Members:</span><br/>
+                    UX UI Designer: Nathalie D. Rodriguez<br/>
+                    Project Manager: Lourdes Romero<br/>
+                    Developer: Federica Ulzurrum<br/>
+                    Chief Executive Officer: Brian Dordevic<br/>
+                    Client: Reputation Arm
                 </div>
 
                 {/* Spacer */}
@@ -199,16 +201,16 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
                             <p className="mb-4 leading-relaxed">
-                                TBU.
+                                As part of the Alpha Efficiency team, I led the full redesign of Reputation Arm’s website with the goal of enhancing the user experience and supporting the company’s growth.
                             </p>
                             <p className="mb-4 leading-relaxed">
-                                TBU.
+                                The previous version had a limited structure, minimal content and an unclear user journey.
                             </p>
                             <p className="mb-4 leading-relaxed">
-                                TBU.
+                                After analyzing the site, I designed a new structure with more strategically organized sections, greater content depth and a more intuitive, streamlined and conversion-oriented user path.
                             </p>
                             <p className="mb-4 leading-relaxed">
-                                TBU.
+                                The redesign includes a stronger presence of call-to-action buttons at key points in the journey, as well as newly placed contact forms that make it easier for users to reach out and generate leads. A newsletter subscription option was also implemented, providing an additional channel for direct communication with users.
                             </p>
                             {/* Image Before/After */}
                             <div className="mt-20">
@@ -218,9 +220,9 @@ export default function ReputationArm() {
                                     Before
                                     </p>
                                     <img
-                                    src="/tbc.jpg"
+                                    src="/ReputationArm-website/ra_beforedashboard.png"
                                     alt="before"
-                                    className="w-full max-w-xl max-h-[500px]"
+                                    className="max-w-full max-w-xl"
                                     />
                                 </div>
                                 <div className="flex flex-col items-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%]">
@@ -228,9 +230,9 @@ export default function ReputationArm() {
                                     After
                                     </p>
                                     <img
-                                    src="/tbc.jpg"
+                                    src="/ReputationArm-website/ra_afterdashboard.png"
                                     alt="after"
-                                    className="w-full max-w-2xl max-h-[500px]"
+                                    className="max-w-full max-w-2xl"
                                     />
                                 </div>
                                 </div>
@@ -275,11 +277,11 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
                             <p className="mb-4 leading-relaxed">
-                                TBU:
+                                From a UI perspective, I developed a renewed visual system that reinforces brand identity through readable typography, a modern and professional color palette, and reusable components that ensure consistency and scalability. The high-fidelity sections reflect clear visual hierarchies, coherent navigation, and microinteractions that elevate the overall user experience.
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm-website/ra_uidesign.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -298,53 +300,53 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
                             <p className="mb-4 leading-relaxed">
-                                TBU:
+                                I carefully shaped the interface of this site to balance clarity, flow and visual harmony. My goal was to create an experience where every element feels intentional and aligned with current design standards, so navigating becomes effortless, engaging and encourages visitors to take action with confidence:
                             </p>
                             <ul className="pl-5 space-y-2 mb-4">
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.
+                                    Clear hero headlines
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.
+                                    Prominent CTAs
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.
+                                    Clear navigation flow
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.
+                                    Service blocks with short descriptions
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.
+                                    Credibility Through Stats & Visual Proof
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.
+                                    Consistent visual design
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.
+                                    Easy-to-compare pricing layout
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.
+                                    Accessible contact form
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.
+                                    Effortless Resource Browsing
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.
+                                    TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.
                                 </li>
                             </ul>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm-website/ra_10keyuihighlights.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -363,17 +365,17 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
                             <ol className="pl-5 space-y-2 mb-4 list-decimal">
-                                <li>TBU.</li>
-                                <li>TBU.</li>
-                                <li>TBU.</li>
-                                <li>TBU.</li>
-                                <li>TBU.</li>
-                                <li>TBU.</li>
-                                <li>TBU.</li>
+                                <li>Optimize title tags with local keywords</li>
+                                <li>Unique meta descriptions for each page</li>
+                                <li>Proper H1, H2, H3 structure with relevant keywords</li>
+                                <li>Keyword-rich, clear content on all pages</li>
+                                <li>Improve site loading speed</li>
+                                <li>Ensure mobile-first responsiveness</li>
+                                <li>Internal linking between pages and blog</li>
                             </ol>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm-website/ra_SEOimprovements.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -392,7 +394,7 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
                             <p className="mb-4 leading-relaxed">
-                                TBU.
+                                The main challenge of this project was ensuring the site was fully responsive without compromising quality, while integrating creative elements that showcased and organized a large amount of information. I had to balance visual creativity with clarity, making sure every section remained engaging and easy to navigate on any device.
                             </p>
                         </div>
                     )}
@@ -411,7 +413,7 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm-website/ra_challengespcsize.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -430,7 +432,7 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/tbc.jpg" alt="TBC" className="hidden lg:block" />
+                                <img src="/ReputationArm-website/ra_challengesmobilesize.png" alt="TBC" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
