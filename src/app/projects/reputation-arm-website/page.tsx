@@ -287,10 +287,10 @@ export default function ReputationArm() {
                     )}
                 </div>
 
-                {/* 10 Key UI Highlights */}
+                {/* Key UI Highlights */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("keyHighlights")}>
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">10 Key UI Highlights</h2>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Key UI Highlights</h2>
                         <ChevronDown
                             className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.keyHighlights ? "rotate-180" : ""}`}
                         />
@@ -334,14 +334,6 @@ export default function ReputationArm() {
                                 <li className="flex items-center gap-2">
                                     <span className="text-[#25b6ce] text-lg">★</span>
                                     Accessible contact form
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span className="text-[#25b6ce] text-lg">★</span>
-                                    Effortless Resource Browsing
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span className="text-[#25b6ce] text-lg">★</span>
-                                    TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.TBU.
                                 </li>
                             </ul>
                             {/* Image */}
