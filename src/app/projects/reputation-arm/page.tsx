@@ -158,7 +158,7 @@ export default function ReputationArm() {
             <div className="container mx-auto px-4 py-6 max-w-7xl">
                 <div className="mb-4">
                     {/* Selecting buttons */}
-                    <div className="flex max-md:flex-col max-md:w-full gap-4 justify-start">
+                    <div className="flex gap-4 justify-start">
                         <div className="w-full max-w-[160px]">
                             <Button className="w-full flex items-center justify-center cursor-pointer bg-[#edf5fa] text-[#0091fb] border border-0091fb h-10 rounded-2xl text-lg font-title leading-none">
                                 SaaS
@@ -180,7 +180,7 @@ export default function ReputationArm() {
                 </div>
 
                 <div className="mt-4 text-left text-[#101113] font-light text-base leading-relaxed">
-                    <span className="font-bold">Alpha Efficiency Team Members:</span><br/>
+                    <span className="font-normal">Alpha Efficiency Team Members:</span><br/>
                     UX UI Designer: Nathalie D. Rodriguez<br/>
                     Project Manager: Lourdes Romero<br/>
                     Developer: Federica Ulzurrum<br/>
@@ -309,9 +309,9 @@ export default function ReputationArm() {
                                 I spent time thoroughly analyzing the current platform. This included:
                             </p>
                             <ul className="list-disc pl-5 space-y-2 mb-4">
-                                <li><span className="font-bold">UI Audit:</span> I reviewed all existing screens and the current information architecture to understand how content was organized.</li>
-                                <li><span className="font-bold">Mapping current user flows:</span> I tracked the steps users had to take to complete key tasks, such as checking a location’s performance or launching a campaign.</li>
-                                <li><span className="font-bold">Identifying friction points:</span> I uncovered redundant steps, duplicated information, and navigation issues — many of which stemmed from the disjointed location-related content.</li>
+                                <li><span className="font-normal">UI Audit:</span> I reviewed all existing screens and the current information architecture to understand how content was organized.</li>
+                                <li><span className="font-normal">Mapping current user flows:</span> I tracked the steps users had to take to complete key tasks, such as checking a location’s performance or launching a campaign.</li>
+                                <li><span className="font-normal">Identifying friction points:</span> I uncovered redundant steps, duplicated information, and navigation issues — many of which stemmed from the disjointed location-related content.</li>
                             </ul>
                             <p className="mb-4 leading-relaxed">
                                 This analysis was crucial to fully understand how the tool worked and identify which features needed to be improved or restructured.
@@ -362,7 +362,7 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
                             <p className="mb-4 leading-relaxed">
-                                <span className="font-bold">The redesign was driven by three major improvements that transformed the user experience:</span>
+                                <span className="font-normal">The redesign was driven by three major improvements that transformed the user experience:</span>
                             </p>
 
                             {/* Substep 3.1 */}
@@ -413,9 +413,9 @@ export default function ReputationArm() {
                             <p className="mb-4 leading-relaxed">
                                 This approach allows users to find everything they need in one place, without jumping across multiple modules or repeating tasks.
                             </p>
-                            <ul className="list-disc pl-5 space-y-2 mb-4">
-                                <li><span className="font-bold">The “Locations Hub”</span></li>
-                            </ul>
+                            <p className="mb-4 leading-relaxed">
+                                <span className="font-normal">The “Locations Hub”:</span>
+                            </p>    
                             <p className="mb-4 leading-relaxed">
                                 The most important change addressed the specific pain point raised by the client: locations and citations were scattered across the platform, with multiple access points and inconsistent organization.
                             </p>
@@ -452,10 +452,10 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
                             <ul className="list-disc pl-5 space-y-2 mb-4">
-                                <li><span className="font-bold">Simplified & User-Friendly:</span> Concise, scannable and easy to read.</li>
-                                <li><span className="font-bold">Clear Call To Actions (CTAs):</span> Encourages action with direct phrases.</li>
-                                <li><span className="font-bold">Engaging Tone:</span> More reassuring and customer-focused.</li>
-                                <li><span className="font-bold">Contact details</span> are clearly presented, making them easy for users to find while navigating the website.</li>
+                                <li><span className="font-normal">Simplified & User-Friendly:</span> Concise, scannable and easy to read.</li>
+                                <li><span className="font-normal">Clear Call To Actions (CTAs):</span> Encourages action with direct phrases.</li>
+                                <li><span className="font-normal">Engaging Tone:</span> More reassuring and customer-focused.</li>
+                                <li><span className="font-normal">Contact details</span> are clearly presented, making them easy for users to find while navigating the website.</li>
                             </ul>
                         </div>
                     )}
@@ -477,11 +477,11 @@ export default function ReputationArm() {
                                 Based on earlier findings, I designed new optimized flows that provided a more logical and simplified experience. Key improvements included:
                             </p>
                             <p className="mb-4 leading-relaxed">
-                                <span className="font-bold">From the Dashboard to Locations Hub:</span> A direct access point for users to quickly identify which locations need attention.
+                                <span className="font-normal">From the Dashboard to Locations Hub:</span> A direct access point for users to quickly identify which locations need attention.
                                 <br/>
-                                <span className="font-bold">Centralized review management by location:</span> Users can respond to, tag and analyze reviews from a single place.
+                                <span className="font-normal">Centralized review management by location:</span> Users can respond to, tag and analyze reviews from a single place.
                                 <br/>
-                                <span className="font-bold">Campaign integration:</span> Quick access to current or past campaigns related to each location.
+                                <span className="font-normal">Campaign integration:</span> Quick access to current or past campaigns related to each location.
                                 <br/>
                             </p>
                             <p className="mb-4 leading-relaxed">
@@ -516,7 +516,7 @@ export default function ReputationArm() {
                                 <li> Measure improvements in clarity, navigation, and task completion</li>
                             </ul>
                             <p className="mb-4 leading-relaxed">
-                                <span className="font-bold">The results were very positive:</span> users quickly understood the new structure, completed key tasks with fewer steps, and highlighted the clarity and usefulness of the new module.
+                                <span className="font-normal">The results were very positive:</span> users quickly understood the new structure, completed key tasks with fewer steps, and highlighted the clarity and usefulness of the new module.
                             </p>
                             <p className="mb-4 leading-relaxed">
                                 This confirmed that the redesign was both functional and effective.

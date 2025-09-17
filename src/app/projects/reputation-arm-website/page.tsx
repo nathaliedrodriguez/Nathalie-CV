@@ -155,7 +155,7 @@ export default function ReputationArm() {
             <div className="container mx-auto px-4 py-6 max-w-7xl">
                 <div className="mb-4">
                     {/* Selecting buttons */}
-                    <div className="flex max-md:flex-col max-md:w-full gap-4 justify-start">
+                    <div className="flex gap-4 justify-start">
                         <Link href="/projects/reputation-arm" className="w-full max-w-[160px]">
                             <Button
                                 variant="outline"
@@ -177,7 +177,7 @@ export default function ReputationArm() {
                 </div>
 
                 <div className="mt-4 text-left text-[#101113] font-light text-base leading-relaxed">
-                    <span className="font-bold">Alpha Efficiency Team Members:</span><br/>
+                    <span className="font-normal">Alpha Efficiency Team Members:</span><br/>
                     UX UI Designer: Nathalie D. Rodriguez<br/>
                     Project Manager: Lourdes Romero<br/>
                     Developer: Federica Ulzurrum<br/>
