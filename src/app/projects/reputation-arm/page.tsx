@@ -336,7 +336,7 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
                             <p className="mb-4 leading-relaxed">
-                                The client's most important request was to centralize all location-related information in one single section.
+                                The client&apos;s most important request was to centralize all location-related information in one single section.
                             </p>
                             <p className="mb-4 leading-relaxed">
                                 Previously, users had to navigate multiple sections to view or act on data related to a specific location. This created confusion, wasted time, and increased the chance of errors.
