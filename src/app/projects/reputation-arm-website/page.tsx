@@ -6,7 +6,6 @@ import Link from "next/link"
 import ChevronLeftRoute from "@/components/ChevronLeftRoute"
 import { Button } from "@/components/ui/button"
 import ThemeToggle from "@/components/theme-toggle"
-import EmblaLogosCarousel from '@/components/ui/embla-logos-carousel'
 import { useRouter } from "next/navigation"
 import MobileMenu from "@/components/mobile-menu"
 import MobileMenuButton from "@/components/mobile-menu-button"
