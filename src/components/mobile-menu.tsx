@@ -221,9 +221,9 @@ export default function MobileMenu() {
                   • My projects
                 </Link>
                 <Link
-                  href="/projects/ReputationArm"
+                  href="/projects/reputation-arm"
                   className={`font-epilogue font-normal text-[14px] leading-[100%] tracking-[0px] text-left block ${
-                    pathname === "/projects/ReputationArm"
+                    pathname === "/projects/reputation-arm"
                       ? "text-[#0091fb] font-bold"
                       : "text-[#101113]"
                   }`}
