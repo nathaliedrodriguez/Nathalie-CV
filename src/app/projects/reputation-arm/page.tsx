@@ -317,7 +317,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm/ra_productexploration.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm/ra_productexploration.png" alt="Product exploration" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -373,7 +373,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm/ra_reviewsdashboard.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm/ra_reviewsdashboard.png" alt="Review dashboard" className="max-w-full h-auto mx-auto" />
                             </div>
 
                             {/* Substep 3.2 */}
@@ -393,7 +393,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm/ra_dashboardnps.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm/ra_dashboardnps.png" alt="Dashboard NPS" className="max-w-full h-auto mx-auto" />
                             </div>
 
                             {/* Substep 3.3 */}
@@ -432,7 +432,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm/ra_dashboardlocations.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm/ra_dashboardlocations.png" alt="Dashboard Locations" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -488,7 +488,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm/ra_userflows.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm/ra_userflows.png" alt="User flows" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -522,7 +522,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm/ra_newtemplate.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm/ra_newtemplate.png" alt="New template" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}

@@ -280,7 +280,7 @@ export default function ReputationArm() {
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm-website/ra_uidesign.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm-website/ra_uidesign.png" alt="UI Design" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -337,7 +337,7 @@ export default function ReputationArm() {
                             </ul>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm-website/ra_10keyuihighlights.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm-website/ra_10keyuihighlights.png" alt="Key UI highlights" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -366,7 +366,7 @@ export default function ReputationArm() {
                             </ol>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm-website/ra_SEOimprovements.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm-website/ra_SEOimprovements.png" alt="SEO Improvements" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -404,7 +404,7 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm-website/ra_challengespcsize.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm-website/ra_challengespcsize.png" alt="Challenges PC Size" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
@@ -423,7 +423,7 @@ export default function ReputationArm() {
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm-website/ra_challengesmobilesize.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/ReputationArm-website/ra_challengesmobilesize.png" alt="Challenges Mobile Size" className="max-w-full h-auto mx-auto" />
                             </div>
                         </div>
                     )}
