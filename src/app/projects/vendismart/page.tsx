@@ -19,6 +19,7 @@ export default function ReputationArm() {
         mobile: true,
         programs: true,
         SEO: true,
+        results: true,
         visitWebsite2: true,
     })
 
@@ -281,6 +282,25 @@ export default function ReputationArm() {
                     )}
                 </div>          
 
+                {/* Mobile Size */}
+                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("mobile")}>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Mobile Size</h2>
+                        <ChevronDown
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.mobile ? "rotate-180" : ""}`}
+                        />
+                    </div>
+
+                    {sections.mobile && (
+                        <div className="mt-3 text-[#101113] font-light text-base">
+                            {/* Image */}
+                            <div className="mt-6">
+                                <img src="/vendismart/vendismart_Landing_page_Mobile.png" alt="Mobile Size" className="max-w-full h-auto mx-auto" />
+                            </div>
+                        </div>
+                    )}
+                </div>
+
                 {/* Programs Used */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
                     <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("programs")}>
@@ -297,6 +317,9 @@ export default function ReputationArm() {
                                     Figma
                                 </span>
                                 <span className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full">
+                                    Adobe Photoshop
+                                </span>
+                                <span className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full">
                                     Adobe Illustrator
                                 </span>
                             </div>
@@ -304,315 +327,76 @@ export default function ReputationArm() {
                     )}
                 </div>
 
-                {/* Step 1 */}
+                {/* SEO Strategy */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step1")}>
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 1: In-Depth Exploration of the Existing Product</h2>
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("SEO")}>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">SEO Strategy</h2>
                         <ChevronDown
-                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step1 ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.SEO ? "rotate-180" : ""}`}
                         />
                     </div>
 
-                    {sections.step1 && (
+                    {sections.SEO && (
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
                             <p className="mb-4 leading-relaxed">
-                                I spent time thoroughly analyzing the current platform. This included:
+                                <span className="font-normal">Keyword research</span> for terms like “smart vending machines”, “free vending machine”, “machine leasing free” and “automated sales for businesses”.
                             </p>
-                            <ul className="list-disc pl-5 space-y-2 mb-4">
-                                <li><span className="font-normal">UI Audit:</span> I reviewed all existing screens and the current information architecture to understand how content was organized.</li>
-                                <li><span className="font-normal">Mapping current user flows:</span> I tracked the steps users had to take to complete key tasks, such as checking a location’s performance or launching a campaign.</li>
-                                <li><span className="font-normal">Identifying friction points:</span> I uncovered redundant steps, duplicated information, and navigation issues — many of which stemmed from the disjointed location-related content.</li>
-                            </ul>
                             <p className="mb-4 leading-relaxed">
-                                This analysis was crucial to fully understand how the tool worked and identify which features needed to be improved or restructured.
+                                <span className="font-normal">Optimized titles</span>, meta descriptions and subheadings (h2/h3) to target relevant searches.
+                            </p>
+                            <p className="mb-4 leading-relaxed">
+                                <span className="font-normal">Clear, structured content</span> with headings and FAQs to capture informational searches and answer key user questions.
                             </p>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm/ra_productexploration.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/vendismart/vendismart_Confirmation_Modal_Window_Mobile.png" alt="Confirmation Window Mobile" className="max-w-full h-auto mx-auto" />
                             </div>
-                        </div>
+                        </div>   
                     )}
                 </div>
 
-                {/* Step 2 */}
+                {/* Results & Achievements */}
                 <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step2")}>
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 2: Understanding the Client’s Core Need</h2>
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("results")}>
+                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Results & Achievements</h2>
                         <ChevronDown
-                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step2 ? "rotate-180" : ""}`}
+                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.results ? "rotate-180" : ""}`}
                         />
                     </div>
 
-                    {sections.step2 && (
+                    {sections.results && (
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
                             <p className="mb-4 leading-relaxed">
-                                The client&apos;s most important request was to centralize all location-related information in one single section.
+                                Overall, the landing page successfully combined clear UX/UI design, HubSpot integration and SEO strategies to attract qualified leads, improve conversions and deliver measurable results, leaving the client highly satisfied.
                             </p>
-                            <p className="mb-4 leading-relaxed">
-                                Previously, users had to navigate multiple sections to view or act on data related to a specific location. This created confusion, wasted time, and increased the chance of errors.
-                            </p>
-                            <p className="mb-4 leading-relaxed">
-                                The new solution needed to simplify this process without removing essential features.
-                            </p>
-                        </div>
-                    )}
-                </div>
-
-                {/* Step 3 */}
-                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step3")}>
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 3: The Solutions</h2>
-                        <ChevronDown
-                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step3 ? "rotate-180" : ""}`}
-                        />
-                    </div>
-
-                    {sections.step3 && (
-                        <div className="mt-3 text-[#101113] font-light text-base">
-                            {/* Description */}
-                            <p className="mb-4 leading-relaxed">
-                                <span className="font-normal">The redesign was driven by three major improvements that transformed the user experience:</span>
-                            </p>
-
-                            {/* Substep 3.1 */}
-                            <p className="mb-4 leading-relaxed text-[#067bb6]">
-                                &nbsp;&nbsp;1. Reorganized and Simplified Navigation:
-                            </p>
-                            <p className="mb-4 leading-relaxed">
-                                I restructured the main navigation to make it more intuitive and task-oriented. Instead of having overlapping or unclear access points, the primary services were clearly defined: Reviews, Campaigns, Locations, Reports, Posts, Accounts, and Settings — each with their own submenus containing all relevant features and data. This change significantly reduced cognitive load and improved task efficiency.
-                            </p>
+<div className="w-full my-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 place-items-center">
+        {[
+            {
+                src: "/vendismart/vendismart_results_plus_40.png",
+                alt: "+40% Organic Traffic",
+            },
+            {
+                src: "/vendismart/vendismart_results_plus_25.png",
+                alt: "+25% Conversion Rate",
+            },
+            {
+                src: "/vendismart/vendismart_results_minus_20.png",
+                alt: "-20% Irrelevant Leads",
+            },
+        ].map(({ src, alt }) => (
+            <div key={alt} className="flex items-center justify-center max-w-full h-auto">
+                <img src={src} alt={alt} className="max-w-full max-h-full object-contain" />
+            </div>
+        ))}
+    </div>
+</div>
                             {/* Image */}
                             <div className="mt-6">
-                                <img src="/ReputationArm/ra_reviewsdashboard.png" alt="TBC" className="max-w-full h-auto mx-auto" />
+                                <img src="/vendismart/vendismart_100_satisfaction.png" alt="100% Satisfaction" className="max-w-full h-auto mx-auto" />
                             </div>
-
-                            {/* Substep 3.2 */}
-                            <p className="mb-4 leading-relaxed text-[#067bb6]">
-                                &nbsp;&nbsp;2. Dashboard Redesign:
-                            </p>
-                            <p className="mb-4 leading-relaxed">
-                                The dashboard previously displayed partial, disconnected information. I redesigned it entirely to provide a clearer, more actionable overview. It now shows:
-                            </p>
-                            <ul className="list-disc pl-5 space-y-2 mb-4">
-                                <li> Key statistics and performance metrics of active accounts</li>
-                                <li> Graphs and summaries that give users an at-a-glance understanding of what needs attention</li>
-                                <li> Clear visual prioritization to help users quickly move to high-impact tasks, such as responding to customer reviews or launching new campaigns</li>
-                            </ul>
-                            <p className="mb-4 leading-relaxed">
-                                The result is a clean, structured, and insightful entry point that aligns with users’ real needs.
-                            </p>
-                            {/* Image */}
-                            <div className="mt-6">
-                                <img src="/ReputationArm/ra_dashboardnps.png" alt="TBC" className="max-w-full h-auto mx-auto" />
-                            </div>
-
-                            {/* Substep 3.3 */}
-                            <p className="mb-4 leading-relaxed text-[#067bb6]">
-                                &nbsp;&nbsp;3. Section-Based “Hubs” for Focused Management:
-                            </p>
-                            <p className="mb-4 leading-relaxed">
-                                To make the platform easier to navigate and understand, I introduced a Hub system. Each key section now has its own dedicated space — a dashboard-like hub that centralizes everything related to that topic:
-                            </p>
-                            <ul className="list-disc pl-5 space-y-4 mb-4">
-                                <li> Reviews Hub</li>
-                                <li> Campaign Log</li>
-                                <li> Locations Hub</li>
-                                <li> Accounts Hub</li>
-                            </ul>
-                            <p className="mb-4 leading-relaxed">
-                                This approach allows users to find everything they need in one place, without jumping across multiple modules or repeating tasks.
-                            </p>
-                            <p className="mb-4 leading-relaxed">
-                                <span className="font-normal">The “Locations Hub”:</span>
-                            </p>    
-                            <p className="mb-4 leading-relaxed">
-                                The most important change addressed the specific pain point raised by the client: locations and citations were scattered across the platform, with multiple access points and inconsistent organization.
-                            </p>
-                            <p className="mb-4 leading-relaxed">
-                                The solution was the creation of the Locations Hub, a dedicated space where users can:
-                            </p>
-                            <ul className="list-disc pl-5 space-y-2 mb-4">
-                                <li> View detailed information for each location</li>
-                                <li> See all reviews grouped by location</li>
-                                <li> Access performance metrics and insights</li>
-                                <li> Manage campaigns and accounts related to a specific location</li>
-                            </ul>
-                            <p className="mb-4 leading-relaxed">
-                                This centralization transformed a fragmented experience into a coherent, efficient and intuitive one,  giving users a powerful command center for one of the platform’s most critical features.
-                            </p>
-                            {/* Image */}
-                            <div className="mt-6">
-                                <img src="/ReputationArm/ra_dashboardlocations.png" alt="TBC" className="max-w-full h-auto mx-auto" />
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-                {/* Why this version works better */}
-                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("whyThisVersion")}>
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Why this version works better</h2>
-                        <ChevronDown
-                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.whyThisVersion ? "rotate-180" : ""}`}
-                        />
-                    </div>
-
-                    {sections.whyThisVersion && (
-                        <div className="mt-3 text-[#101113] font-light text-base">
-                            {/* Description */}
-                            <ul className="list-disc pl-5 space-y-2 mb-4">
-                                <li><span className="font-normal">Simplified & User-Friendly:</span> Concise, scannable and easy to read.</li>
-                                <li><span className="font-normal">Clear Call To Actions (CTAs):</span> Encourages action with direct phrases.</li>
-                                <li><span className="font-normal">Engaging Tone:</span> More reassuring and customer-focused.</li>
-                                <li><span className="font-normal">Contact details</span> are clearly presented, making them easy for users to find while navigating the website.</li>
-                            </ul>
-                        </div>
-                    )}
-                </div>
-
-                {/* Step 4 */}
-                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step4")}>
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 4: Designing New User Flows</h2>
-                        <ChevronDown
-                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step4 ? "rotate-180" : ""}`}
-                        />
-                    </div>
-
-                    {sections.step4 && (
-                        <div className="mt-3 text-[#101113] font-light text-base">
-                            {/* Description */}
-                            <p className="mb-4 leading-relaxed">
-                                Based on earlier findings, I designed new optimized flows that provided a more logical and simplified experience. Key improvements included:
-                            </p>
-                            <p className="mb-4 leading-relaxed">
-                                <span className="font-normal">From the Dashboard to Locations Hub:</span> A direct access point for users to quickly identify which locations need attention.
-                                <br/>
-                                <span className="font-normal">Centralized review management by location:</span> Users can respond to, tag and analyze reviews from a single place.
-                                <br/>
-                                <span className="font-normal">Campaign integration:</span> Quick access to current or past campaigns related to each location.
-                                <br/>
-                            </p>
-                            <p className="mb-4 leading-relaxed">
-                                I developed these flows always prioritizing visual hierarchy, accessibility, and consistent component use.
-                            </p>
-                            {/* Image */}
-                            <div className="mt-6">
-                                <img src="/ReputationArm/ra_userflows.png" alt="TBC" className="max-w-full h-auto mx-auto" />
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-                {/* Step 5 */}
-                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step5")}>
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 5: Testing with Users</h2>
-                        <ChevronDown
-                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step5 ? "rotate-180" : ""}`}
-                        />
-                    </div>
-
-                    {sections.step5 && (
-                        <div className="mt-3 text-[#101113] font-light text-base">
-                            {/* Description */}
-                            <p className="mb-4 leading-relaxed">
-                                Once the changes were implemented, we tested the redesigned experience with 6 current customers already using the platform. This phase allowed us to:
-                            </p>
-                            <ul className="list-disc pl-5 space-y-4 mb-4">
-                                <li> Detect final tweaks before full rollout</li>
-                                <li> Collect direct feedback on the new flows and the Locations Hub</li>
-                                <li> Measure improvements in clarity, navigation, and task completion</li>
-                            </ul>
-                            <p className="mb-4 leading-relaxed">
-                                <span className="font-normal">The results were very positive:</span> users quickly understood the new structure, completed key tasks with fewer steps, and highlighted the clarity and usefulness of the new module.
-                            </p>
-                            <p className="mb-4 leading-relaxed">
-                                This confirmed that the redesign was both functional and effective.
-                            </p>
-                            {/* Image */}
-                            <div className="mt-6">
-                                <img src="/ReputationArm/ra_newtemplate.png" alt="TBC" className="max-w-full h-auto mx-auto" />
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-                {/* Step 6 */}
-                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("step6")}>
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Step 6: UI Redesign</h2>
-                        <ChevronDown
-                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.step6 ? "rotate-180" : ""}`}
-                        />
-                    </div>
-
-                    {sections.step6 && (
-                        <div className="mt-3 text-[#101113] font-light text-base">
-                            {/* Description */}
-                            <p className="mb-4 leading-relaxed">
-                                Once the flows were defined, I moved on to redesigning the platform’s visual interface. <br/>
-                                UI decisions were based on:
-                            </p>
-                            <ul className="list-disc pl-5 space-y-2 mb-4">
-                                <li> Visual simplicity with a focus on usability.</li>
-                                <li> Consistent use of colors and typography for improved readability</li>
-                                <li> Reusable components to support future product growth</li>
-                                <li> Refined tables, cards and filters to handle large volumes of data while maintaining clarity</li>
-                                <li> Designed a custom set of 50 icons to enhance navigation and reinforce the platform’s visual identity</li>
-                            </ul>
-                            <p className="mb-4 leading-relaxed">
-                                I also ensured the new design was responsive and scalable.
-                            </p>
-                            {/* Image 1 */}
-                            <div className="mt-20 flex flex-col items-center justify-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%] mb-4 md:mb-0 mx-auto">
-                                <p className="text-lg text-center font-title font-bold text-[#0091fb] mb-10">
-                                    Icons
-                                </p>
-                                <img
-                                    src="/ReputationArm/ra_icons.png"
-                                    alt="icons"
-                                    className="max-w-full max-w-xl max-h-auto"
-                                />
-                            </div>
-
-                            {/* Image 2 */}
-                            <div className="mt-20 flex flex-col items-center justify-center w-full md:w-[60%] lg:w-[65%] xl:w-[70%] mb-4 md:mb-0 mx-auto">
-                                <p className="text-lg text-center font-title font-bold text-[#0091fb] mb-10">
-                                    Responsive Dashboard View
-                                </p>
-                                <img
-                                    src="/ReputationArm/ra_dashboardnpsmobile.png"
-                                    alt="Responsive Dashboard View"
-                                    className="max-w-full max-w-xl max-h-auto"
-                                />
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-                {/* Final Results */}
-                <div className="mb-4 border-t border-[#e6e6e6] pt-4">
-                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleSection("finalResults")}>
-                        <h2 className="text-[#0679B8] text-2xl missiri font-semibold">Final Results</h2>
-                        <ChevronDown
-                            className={`text-[#0679B8] w-8 h-8 transition-transform ${sections.finalResults ? "rotate-180" : ""}`}
-                        />
-                    </div>
-
-                    {sections.finalResults && (
-                        <div className="mt-3 text-[#101113] font-light text-base">
-                            {/* Description */}
-                            <p className="mb-4 leading-relaxed">
-                                A Clearer, More Streamlined, User-Centered Experience.
-                            </p>
-                            <ul className="list-disc pl-5 space-y-4 mb-4">
-                                <li> With the new Locations Hub, users now have a centralized, intuitive view of all their locations.</li>
-                                <li> Key actions are easier to perform, and platform navigation is far more fluid and efficient.</li>
-                                <li> Testing with real users validated the improvements and confirmed that the redesign delivered real value</li>
-                            </ul>
                         </div>
                     )}
                 </div>
