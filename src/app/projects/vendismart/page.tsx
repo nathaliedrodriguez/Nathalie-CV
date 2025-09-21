@@ -24,8 +24,6 @@ export default function ReputationArm() {
         visitWebsite2: true,
     })
 
-    // Dropdown de proyectos (solo desktop)
-    
     const router = useRouter();
 
     const toggleSection = (section: string) => {
@@ -333,20 +331,10 @@ export default function ReputationArm() {
                                                 }}
                                             >
                                                 <img
-                                                    src={src}
-                                                    alt={alt}
-                                                    className={
-                                                        "object-contain" +
-                                                        " max-w-full h-auto" +
-                                                        " " +
-                                                        // On mobile, reduce size for single-column layout
-                                                        " " + (window.innerWidth < 640 ? "w-4/5" : "")
-                                                    }
-                                                    style={{
-                                                        // On mobile, shrink images if needed
-                                                        maxWidth: window.innerWidth < 640 ? "80vw" : "auto",
-                                                    }}
-                                                />
+                                                src={src}
+                                                alt={alt}
+                                                className="object-contain max-w-full h-auto w-4/5 sm:w-auto"
+                                            />
                                             </div>
                                         );
                                     })}
