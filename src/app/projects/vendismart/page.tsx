@@ -250,32 +250,18 @@ export default function ReputationArm() {
                     {sections.interface && (
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
-                            <ul className="pl-5 space-y-2 mb-4">
-                                <li className="flex gap-2 items-center">
-                                    <span className="text-purple-600 text-3xl leading-[1.1] mt-1">○</span>
-                                    <span>
-                                        <span className="font-normal">Structured layout guiding the user: </span>
-                                        value proposition first (“Zero cost …”), then step-by-step explanation, use cases, FAQs and finally a simple form to convert visitors into leads.
-                                    </span>
+                            <ul className="list-disc pl-5 space-y-2 mb-4 [&>li]:marker:text-[#6230F7] [&>li]:marker:text-2xl">
+                                <li>
+                                    <span className="font-normal">Structured layout guiding the user: </span> value proposition first (“Zero cost …”), then step-by-step explanation, use cases, FAQs and finally a simple form to convert visitors into leads.
                                 </li>
-                                <li className="flex gap-2 items-center">
-                                    <span className="text-purple-600 text-3xl leading-[1.1] mt-1">○</span>
-                                    <span>
-                                        Use of <span className="font-normal">descriptive visuals</span> and strategically placed <span className="font-normal">CTAs</span> (“Get Started”, “Claim Yours”) to drive conversions.
-                                    </span>
+                                <li>
+                                    Use of <span className="font-normal">descriptive visuals</span> and strategically placed <span className="font-normal">CTAs</span> (“Get Started”, “Claim Yours”) to drive conversions.
                                 </li>
-                                <li className="flex gap-2 items-center">
-                                    <span className="text-purple-600 text-3xl leading-[1.1] mt-1">○</span>
-                                    <span>
-                                        <span className="font-normal">Implemented SEO strategies </span>
-                                        to improve organic visibility, including keyword selection, headings and metadata optimization.
-                                    </span>
+                                <li>
+                                    <span className="font-normal">Implemented SEO strategies </span> to improve organic visibility, including keyword selection, headings and metadata optimization.
                                 </li>
-                                <li className="flex gap-2 items-center">
-                                    <span className="text-purple-600 text-3xl leading-[1.1] mt-1">○</span>
-                                    <span>
-                                        Designed <span className="font-normal">fully responsive</span> layouts that adapt seamlessly to desktop and mobile screens.
-                                    </span>
+                                <li>
+                                    Designed <span className="font-normal">fully responsive</span> layouts that adapt seamlessly to desktop and mobile screens.
                                 </li>
                             </ul>
                         </div>
@@ -371,29 +357,64 @@ export default function ReputationArm() {
                             <p className="mb-4 leading-relaxed">
                                 Overall, the landing page successfully combined clear UX/UI design, HubSpot integration and SEO strategies to attract qualified leads, improve conversions and deliver measurable results, leaving the client highly satisfied.
                             </p>
-<div className="w-full my-8">
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 place-items-center">
-        {[
-            {
-                src: "/vendismart/vendismart_results_plus_40.png",
-                alt: "+40% Organic Traffic",
-            },
-            {
-                src: "/vendismart/vendismart_results_plus_25.png",
-                alt: "+25% Conversion Rate",
-            },
-            {
-                src: "/vendismart/vendismart_results_minus_20.png",
-                alt: "-20% Irrelevant Leads",
-            },
-        ].map(({ src, alt }) => (
-            <div key={alt} className="flex items-center justify-center max-w-full h-auto">
-                <img src={src} alt={alt} className="max-w-full max-h-full object-contain" />
-            </div>
-        ))}
-    </div>
-</div>
-                            {/* Image */}
+                            {/* Images: stats */}
+                            <div className="w-full my-8">
+                                {/* Large screens: 1 row, 3 columns; Medium: 2 rows (2+1); Small: 3 rows */}
+                                <div className="
+                                    flex flex-col items-center
+                                    sm:grid sm:grid-cols-2 sm:gap-8 sm:place-items-center
+                                    lg:flex lg:flex-row lg:justify-between lg:items-center lg:gap-8
+                                ">
+                                    {[
+                                        {
+                                            src: "/vendismart/vendismart_results_plus_40.svg",
+                                            alt: "+40% Organic Traffic",
+                                        },
+                                        {
+                                            src: "/vendismart/vendismart_results_plus_25.png",
+                                            alt: "+25% Conversion Rate",
+                                        },
+                                        {
+                                            src: "/vendismart/vendismart_results_minus_20.png",
+                                            alt: "-20% Irrelevant Leads",
+                                        },
+                                    ].map(({ src, alt }, idx, arr) => {
+                                        // For sm screens, center the last image in its row
+                                        const isLast = idx === arr.length - 1;
+                                        return (
+                                            <div
+                                                key={alt}
+                                                className={
+                                                    "flex items-center justify-center my-2" +
+                                                    (isLast ? " sm:col-span-2 sm:justify-center" : "")
+                                                }
+                                                style={{
+                                                    // On mobile, shrink images to fit if needed
+                                                    width: "auto",
+                                                    maxWidth: "100%",
+                                                }}
+                                            >
+                                                <img
+                                                    src={src}
+                                                    alt={alt}
+                                                    className={
+                                                        "object-contain" +
+                                                        " max-w-full h-auto" +
+                                                        " " +
+                                                        // On mobile, reduce size for single-column layout
+                                                        " " + (window.innerWidth < 640 ? "w-4/5" : "")
+                                                    }
+                                                    style={{
+                                                        // On mobile, shrink images if needed
+                                                        maxWidth: window.innerWidth < 640 ? "80vw" : "auto",
+                                                    }}
+                                                />
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                            {/* Image: card */}
                             <div className="mt-6">
                                 <img src="/vendismart/vendismart_100_satisfaction.png" alt="100% Satisfaction" className="max-w-full h-auto mx-auto" />
                             </div>
@@ -423,12 +444,12 @@ export default function ReputationArm() {
                             <p className="mb-4 leading-relaxed">
                                 Feel free to check out{" "}
                                 <a
-                                href="https://reputationarm.com/"
+                                href="https://vendismart.com/forbusiness/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="underline"
                                 >
-                                reputationarm.com
+                                vendismart.com/forbusiness
                                 </a>
                                 .
                             </p>
