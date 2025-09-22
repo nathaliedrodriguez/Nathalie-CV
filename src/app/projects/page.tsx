@@ -44,6 +44,8 @@ export default function Portfolio() {
 
   const projects = [
     { name: "• My projects", href: "/projects" },
+    { name: "• Reputation Arm", href: "/projects/reputation-arm" },
+    { name: "• Vendismart", href: "/projects/vendismart" },
     { name: "• Camelot Insurance", href: "/projects/camelot" },
     { name: "• Board Game Friends", href: "/projects/bgf" },
     { name: "• YOPuedo app", href: "/projects/yo-puedo" },

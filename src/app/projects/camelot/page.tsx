@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import MobileMenu from "@/components/mobile-menu";
 import MobileMenuButton from "@/components/mobile-menu-button";
 import Footer from "@/components/footer";
+import ProjectsDropdown from "@/components/ProjectsDropdown"
 
 export default function BoardGameFriends() {
   const [sections, setSections] = useState({
@@ -26,138 +27,70 @@ export default function BoardGameFriends() {
     visitTheWebsite: true
   });
 
-  // Dropdown de proyectos (solo desktop)
-  const [showProjects, setShowProjects] = useState(false);
-  const projectsDropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!showProjects) return;
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        projectsDropdownRef.current &&
-        !projectsDropdownRef.current.contains(event.target as Node)
-      ) {
-        setShowProjects(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showProjects]);
-
-  const projects = [
-    { name: "• My projects", href: "/projects" },
-    { name: "• Reputation Arm", href: "/projects/reputation-arm" },
-    { name: "• Camelot Insurance", href: "/projects/camelot" },
-    { name: "• Board Game Friends", href: "/projects/bgf" },
-    { name: "• YOPuedo app", href: "/projects/yo-puedo" },
-    { name: "• NOUS Latam", href: "/projects/nous" },
-    { name: "• Sanamente", href: "/projects/sanamente" }
-  ];
-
-  const toggleSection = (section: string) => {
-    setSections((prev) => ({
-      ...prev,
-      [section]: !prev[section as keyof typeof prev]
-    }));
-  };
-
-  const { theme } = useTheme();
   const router = useRouter();
 
-  console.log(theme, "Este es el tema", typeof theme);
+    const toggleSection = (section: string) => {
+        setSections((prev) => ({
+            ...prev,
+            [section]: !prev[section as keyof typeof prev],
+        }))
+    }
 
-  return (
-    <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3 ">
-      {/* Mobile Menu Overlay */}
-      <MobileMenu />
-      {/* Header */}
-      <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4 relative">
-        {/* MobileMenuButton: top right, only on mobile/tablet */}
-        <div className="absolute right-6 top-6 lg:hidden z-50">
-          <MobileMenuButton />
-        </div>
-        <div
-          className={`grid grid-cols-3 ${
-            showProjects ? "grid-rows-2" : "grid-rows-3"
-          } min-h-32`}
-        >
-          {/* Fila 1: Enlaces de navegación alineados a la derecha */}
-          <div className="col-span-3 flex justify-between items-start gap-6">
-            <ChevronLeftRoute onClick={() => router.back()} />
-            <div className="flex gap-6 max-md:hidden px-10">
-              <Link href="/">
-                <Button
-                  variant="ghost"
-                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
-                >
-                  Home
-                </Button>
-              </Link>
-              <div className="relative">
-                <Button
-                  variant="ghost"
-                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
-                  onClick={() => setShowProjects(!showProjects)}
-                  aria-expanded={showProjects}
-                  aria-haspopup="true"
-                >
-                  UX UI Designs
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      showProjects ? "rotate-180" : ""
-                    }`}
-                  />
-                </Button>
+    return (
+        <div className="min-h-screen bg-[#ffffff] font-body md:pt-8 max-md:pt-3 md:px-8 max-md:px-3">
+            {/* Mobile Menu Overlay */}
+            <MobileMenu />
+            {/* Header */}
+            <header className="container bg-[#edf5fa] rounded-3xl mx-auto max-w-7xl py-6 px-4 relative">
+                {/* MobileMenuButton: top right, only on mobile/tablet */}
+                <div className="absolute right-6 top-6 lg:hidden z-50">
+                    <MobileMenuButton />
+                </div>
+                <div className="grid grid-cols-3 grid-rows-3 min-h-32">
+                    {/* Fila 1: Enlaces de navegación alineados a la derecha */}
+                    <div className="col-span-3 flex justify-between items-start gap-6">
+                        <ChevronLeftRoute onClick={() => router.back()} />
+                        <div className="flex gap-6 max-md:hidden px-10">
+                            <Link href="/">
+                                <Button
+                                    variant="ghost"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    Home
+                                </Button>
+                            </Link>
+                            <ProjectsDropdown />
+                            <Link href="/about-me">
+                                <Button
+                                    variant="ghost"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    About Me
+                                </Button>
+                            </Link>
+                            <Link href="/content-creator">
+                                <Button
+                                    variant="ghost"
+                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
+                                >
+                                    Content Creator
+                                </Button>
+                            </Link>
+                            <ThemeToggle />
+                        </div>
+                    </div>
 
-                {showProjects && (
-                  <div className="col-span-3">
-                    <div className="flex flex-col gap-2">
-                      {projects.map((project) => (
-                        <Link
-                          key={project.href}
-                          href={project.href}
-                          className="cursor-pointer px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
-                        >
-                          {project.name}
-                        </Link>
-                      ))}
+                    {/* Fila 2: Vacía para mantener el espacio */}
+                    <div className="col-span-3"></div>
+
+                    {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
+                    <div className="col-span-3 flex items-center gap-4 pb-5">
+                        <h1 className="text-3xl font-title font-bold">
+                        Camelot <span className="text-[#0091fb]">Insurance</span>
+                      </h1>
                     </div>
                   </div>
-                )}
-              </div>
-              <Link href="/about-me">
-                <Button
-                  variant="ghost"
-                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
-                >
-                  About Me
-                </Button>
-              </Link>
-              <Link href="/content-creator">
-                <Button
-                  variant="ghost"
-                  className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
-                >
-                  Content Creator
-                </Button>
-              </Link>
-              <ThemeToggle />
-            </div>
-          </div>
-
-          {/* Fila 2: Vacía para mantener el espacio */}
-          {!showProjects && <div className="col-span-3"></div>}
-
-          {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
-          <div className="col-span-3 flex items-center gap-4 pb-5">
-            <h1 className="text-3xl font-title font-bold">
-              Camelot <span className="text-[#0091fb]">Insurance</span>
-            </h1>
-          </div>
-        </div>
-      </header>
+                </header>
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-6 max-w-7xl">

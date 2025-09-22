@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button"
 import ThemeToggle from "@/components/theme-toggle"
 import { useRouter } from "next/navigation"
 import Footer from "@/components/footer"
+import ProjectsDropdown from "@/components/ProjectsDropdown"
 
 export default function SanaMenteProject() {
     const [sections, setSections] = useState({
@@ -22,36 +23,6 @@ export default function SanaMenteProject() {
         keyAreas: true,
         uiDesign: true,
     })
-
-    // Dropdown de proyectos (solo desktop)
-    const [showProjects, setShowProjects] = useState(false)
-    const projectsDropdownRef = useRef<HTMLDivElement>(null)
-
-    useEffect(() => {
-        if (!showProjects) return
-        function handleClickOutside(event: MouseEvent) {
-            if (
-                projectsDropdownRef.current &&
-                !projectsDropdownRef.current.contains(event.target as Node)
-            ) {
-                setShowProjects(false)
-            }
-        }
-        document.addEventListener("mousedown", handleClickOutside)
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside)
-        }
-    }, [showProjects])
-
-    const projects = [
-        { name: "• My projects", href: "/projects" },
-        { name: "• Reputation Arm", href: "/projects/reputation-arm" },
-        { name: "• Camelot Insurance", href: "/projects/camelot" },
-        { name: "• Board Game Friends", href: "/projects/bgf" },
-        { name: "• YOPuedo app", href: "/projects/yo-puedo" },
-        { name: "• NOUS Latam", href: "/projects/nous" },
-        { name: "• Sanamente", href: "/projects/sanamente" }
-    ]
 
     const router = useRouter();
 
@@ -72,7 +43,7 @@ export default function SanaMenteProject() {
                 <div className="absolute right-6 top-6 lg:hidden z-50">
                     <MobileMenuButton />
                 </div>
-                <div className={`grid grid-cols-3 ${showProjects ? 'grid-rows-2' : 'grid-rows-3'} min-h-32`}>
+                <div className="grid grid-cols-3 grid-rows-3 min-h-32">
                     {/* Fila 1: Enlaces de navegación alineados a la derecha */}
                     <div className="col-span-3 flex justify-between items-start gap-6">
                         <ChevronLeftRoute onClick={() => router.back()} />
@@ -85,38 +56,7 @@ export default function SanaMenteProject() {
                                     Home
                                 </Button>
                             </Link>
-                            <div className="relative">
-                                <Button
-                                    variant="ghost"
-                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0 flex items-center gap-2"
-                                    onClick={() => setShowProjects(!showProjects)}
-                                    aria-expanded={showProjects}
-                                    aria-haspopup="true"
-                                >
-                                    UX UI Designs
-                                    <ChevronDown
-                                        className={`w-4 h-4 transition-transform ${
-                                            showProjects ? "rotate-180" : ""
-                                        }`}
-                                    />
-                                </Button>
-
-                                {showProjects && (
-                                    <div className="col-span-3">
-                                        <div className="flex flex-col gap-2">
-                                            {projects.map((project) => (
-                                                <Link
-                                                    key={project.href}
-                                                    href={project.href}
-                                                    className="cursor-pointer px-1 py-0.5 text-[#101113] hover:text-[#0091fb] font-epilogue text-xs leading-none tracking-normal text-left transition-colors whitespace-nowrap"
-                                                >
-                                                    {project.name}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
+                            <ProjectsDropdown />
                             <Link href="/about-me">
                                 <Button
                                     variant="ghost"
@@ -138,7 +78,7 @@ export default function SanaMenteProject() {
                     </div>
 
                     {/* Fila 2: Vacía para mantener el espacio */}
-                    {!showProjects && <div className="col-span-3"></div>}
+                    <div className="col-span-3"></div>
 
                     {/* Fila 3: Foto de perfil y texto alineados a la izquierda */}
                     <div className="col-span-3 flex items-center gap-4 pb-5">
