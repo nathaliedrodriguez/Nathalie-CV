@@ -186,7 +186,7 @@ export default function ReputationArm() {
                     {sections.interface && (
                         <div className="mt-3 text-[#101113] font-light text-base">
                             {/* Description */}
-                            <ul className="list-disc pl-5 space-y-2 mb-4 [&>li]:marker:text-[#6230F7] [&>li]:marker:text-2xl">
+                            <ul className="list-disc pl-5 space-y-2 mb-4 [&>li]:marker:text-[#6230F7]">
                                 <li>
                                     <span className="font-normal">Structured layout guiding the user: </span> value proposition first (“Zero cost …”), then step-by-step explanation, use cases, FAQs and finally a simple form to convert visitors into leads.
                                 </li>
