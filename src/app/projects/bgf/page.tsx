@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState} from "react";
 import { ChevronDown } from "lucide-react";
 import MobileMenu from "@/components/mobile-menu";
 import MobileMenuButton from "@/components/mobile-menu-button";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import AdobeXDEmbed from "@/components/bgf/adobe-xd-embed";
 import ChevronLeftRoute from "@/components/ChevronLeftRoute";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 import ThemeToggle from "@/components/theme-toggle";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/footer";
@@ -27,6 +27,8 @@ export default function BoardGameFriends() {
     testing: true
   });
 
+  const { theme } = useTheme();
+  
   const router = useRouter();
 
     const toggleSection = (section: string) => {

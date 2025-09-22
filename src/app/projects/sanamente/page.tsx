@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState} from "react"
 import { ChevronDown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"

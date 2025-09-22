@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState} from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import ChevronLeftRoute from "@/components/ChevronLeftRoute";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/theme-toggle";
