@@ -331,7 +331,7 @@ export default function Portfolio() {
         {/* Portfolio Section */}
         <section className="mx-auto max-w-6xl px-4">
 
-          {/* Project 0 */}
+          {/* Project Reputation Arm */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
               <div className="order 1">
@@ -381,8 +381,74 @@ export default function Portfolio() {
             </div>
           </div>
 
+          {/* Project Comp AI */}
+          <div className="mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="order-2 lg:order-1 relative h-full">
+                <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
+                <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
+                  <div>
+                    {/* Title and description */}
+                    <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                      Comp AI
+                    </h3>
+                    <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
+                      Lighter, faster and impactful landing page redesign focused on clarity, engagement and conversion-driven flows.
+                    </p>
+                    {/* Badges */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Conversion-Focused Design
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Business-Driven UX/UI
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Visual Prioritization
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Engagement Improvement
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        SEO Strategy
+                      </Badge>
+                    </div>
+                  </div>
+                  {/* Image */}
+                  <div className="flex justify-center max-md:w-full">
+                      <Button className="font-light text-lg py-6 bg-[#0091fb] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                        Coming Soon
+                      </Button>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <img
+                  src="/HomePage/project_Comp_AI.png"
+                  alt="Board Game Friends App"
+                  className="mx-auto rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
 
-          {/* Project 1 */}
+
+          {/* Project Camelot Insurance */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="order-2 lg:order-1 relative h-full">
@@ -433,7 +499,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Project 2 */}
+          {/* Project Board Game Friends */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
               <div className="order 1">
@@ -496,7 +562,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Project 3 */}
+          {/* Project YoPuedo */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
               <div className="lg:hidden">
@@ -573,7 +639,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Project 4 */}
+          {/* Project Nous LATAM */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-1">
@@ -634,7 +700,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Project 5 */}
+          {/* Project SanaMente */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:hidden">
