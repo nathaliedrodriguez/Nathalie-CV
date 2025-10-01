@@ -463,13 +463,84 @@ export default function Portfolio() {
               <div className="order-1 lg:order-2">
                 <img
                   src="/HomePage/project_Comp_AI.png"
-                  alt="Board Game Friends App"
+                  alt="Reputation Arm"
                   className="mx-auto rounded-lg"
                 />
               </div>
             </div>
           </div>
 
+          {/* Project Vendismart */}
+          <div className="mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+              {/* Image */}
+              <div className="order 1">
+                <img
+                  src="/HomePage/project_Vendismart.png"
+                  alt="Vendismart"
+                  className="mx-auto rounded-lg"
+                />
+              </div>
+              {/* Title and description */}
+              <div className="order-1 md:order-2 relative h-full">
+                <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
+                <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
+                  <div>
+                    <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                      VendiSmart
+                    </h3>
+                    <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
+                      HubSpot landing page UX/UI redesign with a user-centered, data-driven approach focused on measurable business results.
+                    </p>
+                    {/* Badges */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Retention-Focused Design
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Mobile Optimization
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Clear CTAs
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Revenue Impact
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Conversion Funnel Design
+                      </Badge>
+                    </div>
+                  </div>
+                  {/* Button */}
+                  <div className="flex justify-center max-md:w-full">
+                    <Link
+                      href="projects/vendismart"
+                      className="cursor-pointer max-md:w-full"
+                    >
+                      <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                        Go deeper
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Project Camelot Insurance */}
           <div className="mb-16">
