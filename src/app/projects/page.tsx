@@ -264,7 +264,7 @@ export default function Portfolio() {
       <main className="mx-auto py-12 max-w-7xl px-4">
         {/* Approach Section */}
         <section className="mb-16 mx-auto py-6 max-w-7xl px-4">
-          <h2 className="text-[32px] font-title font-bold mb-8 text-[#000068]">
+          <h2 className="text-[24px] font-title font-bold mb-8 text-[#000068]">
             My Approach Across Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -323,7 +323,7 @@ export default function Portfolio() {
 
         {/* Portfolio Title */}
         <div className="px-4 max-w-7xl mx-auto">
-          <h2 className="text-[32px] font-title font-bold mb-12 text-[#000068]">
+          <h2 className="text-[24px] font-title font-bold mb-12 text-[#000068]">
             Explore my work
           </h2>
         </div>
