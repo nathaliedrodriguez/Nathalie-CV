@@ -334,6 +334,7 @@ export default function Portfolio() {
           {/* Project Reputation Arm */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+              {/* Image */}
               <div className="order 1">
                 <img
                   src="/HomePage/Reputation-Arm.png"
@@ -341,6 +342,7 @@ export default function Portfolio() {
                   className="mx-auto rounded-lg"
                 />
               </div>
+              {/* Title and description */}
               <div className="order-1 md:order-2 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
                 <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
@@ -351,21 +353,41 @@ export default function Portfolio() {
                     <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
                       A SaaS platform and responsive website for managing reviews and SEO, redesigned with clear, user-friendly UX/UI for effortless navigation.
                     </p>
+                    {/* Badges */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       <Badge
                         variant="outline"
                         className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
-                        Figma
+                        Dashboard Design
                       </Badge>
                       <Badge
                         variant="outline"
                         className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
-                        Adobe Illustrator
+                        Task Efficiency
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Multi-Location Interface
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Information Architecture
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        User Flow Optimization
                       </Badge>
                     </div>
                   </div>
+                  {/* Button */}
                   <div className="flex justify-center max-md:w-full">
                     <Link
                       href="projects/reputation-arm"
@@ -429,7 +451,7 @@ export default function Portfolio() {
                       </Badge>
                     </div>
                   </div>
-                  {/* Image */}
+                  {/* Button */}
                   <div className="flex justify-center max-md:w-full">
                       <Button className="font-light text-lg py-6 bg-[#0091fb] text-white min-w-[200px] rounded-2xl max-md:w-full">
                         Coming Soon
@@ -437,6 +459,7 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
+              {/* Image */}
               <div className="order-1 lg:order-2">
                 <img
                   src="/HomePage/project_Comp_AI.png"
@@ -453,6 +476,7 @@ export default function Portfolio() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="order-2 lg:order-1 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
+                {/* Title and description */}
                 <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
                   <div>
                     <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
@@ -462,21 +486,35 @@ export default function Portfolio() {
                       Responsive redesign of this outdated website to improve
                       usability and showcase company information effectively.
                     </p>
+                    {/* Badges */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       <Badge
                         variant="outline"
                         className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
-                        Figma
+                        Brand Modernization
                       </Badge>
                       <Badge
                         variant="outline"
                         className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
-                        Adobe Illustrator
+                        Accessibility Improvements
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Interactive Elements
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        User-Centered Design
                       </Badge>
                     </div>
                   </div>
+                  {/* Button */}
                   <div className="flex justify-center max-md:w-full">
                     <Link
                       href="/projects/camelot"
@@ -489,6 +527,7 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
+              {/* Image */}
               <div className="order-1 lg:order-2">
                 <img
                   src="/HomePage/camelot-insurance.png"
@@ -502,6 +541,7 @@ export default function Portfolio() {
           {/* Project Board Game Friends */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+              {/* Image */}
               <div className="order 1">
                 <img
                   src="/HomePage/Board-Game-Friends-App.png"
@@ -512,6 +552,7 @@ export default function Portfolio() {
               <div className="order-1 md:order-2 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
                 <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
+                  {/* Title and description */}
                   <div>
                     <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
                       Board Game Friends
@@ -520,33 +561,47 @@ export default function Portfolio() {
                       An app that offers a seamless platform to create and join
                       in-person board game meetings.
                     </p>
+                    {/* Badges */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       <Badge
                         variant="outline"
                         className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
-                        Adobe Xd
+                        Event-Driven Interaction
                       </Badge>
                       <Badge
                         variant="outline"
                         className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
-                        Adobe Photoshop
+                        Heuristic Evaluation
                       </Badge>
                       <Badge
                         variant="outline"
                         className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
-                        Whimsical
+                        Community Engagement
                       </Badge>
                       <Badge
                         variant="outline"
                         className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
-                        Optimal Workshop
+                        User Testing & Feedback
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Optimal Workshop Insights
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Whimsical Wireframing
                       </Badge>
                     </div>
                   </div>
+                  {/* Button */}
                   <div className="flex justify-center max-md:w-full">
                     <Link
                       href="projects/bgf"
@@ -572,6 +627,7 @@ export default function Portfolio() {
                 <div className="relative h-full">
                   <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
                   <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
+                    {/* Title and description */}
                     <div>
                       <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
                         YOPuedo app
@@ -581,45 +637,47 @@ export default function Portfolio() {
                         remote assistance sessions provided by volunteers in a
                         simple way.
                       </p>
+                      {/* Badges */}
                       <div className="flex flex-wrap gap-2 mb-6">
                         <Badge
                           variant="outline"
                           className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
-                          Figma
+                          Accessibility Enhancements
                         </Badge>
                         <Badge
                           variant="outline"
                           className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
-                          Adobe Illustrator
+                          Intuitive Navigation
                         </Badge>
                         <Badge
                           variant="outline"
                           className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
-                          Adobe Photoshop
+                          A/B Testing
                         </Badge>
                         <Badge
                           variant="outline"
                           className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
-                          Marvel
+                          Empathy-Driven Design
                         </Badge>
                         <Badge
                           variant="outline"
                           className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
-                          Maze
+                          Senior-Friendly UI
                         </Badge>
                         <Badge
                           variant="outline"
                           className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
-                          Optimal Workshop
+                          Remote Support
                         </Badge>
                       </div>
                     </div>
+                    {/* Button */}
                     <div className="flex justify-center max-md:w-full">
                       <Link
                         href="/projects/yo-puedo"
@@ -633,6 +691,7 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
+              {/* Image */}
               <div className="max-lg:hidden">
                 <PhoneScrollComponent />
               </div>
@@ -642,6 +701,7 @@ export default function Portfolio() {
           {/* Project Nous LATAM */}
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Image */}
               <div className="order-1">
                 <div className="max-lg:p-10 lg:pr-16 lg:py-5 ">
                   <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">
@@ -657,10 +717,11 @@ export default function Portfolio() {
                   </p>
                 </div>
               </div>
-
+              
               <div className="order-1 md:order-2 relative h-full">
                 <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
                 <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
+                  {/* Title and description */}
                   <div className="">
                     <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
                       NOUS Latam
@@ -670,21 +731,35 @@ export default function Portfolio() {
                       featuring UI enhancements, animations, icons, images and
                       more.
                     </p>
+                    {/* Badges */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       <Badge
                         variant="outline"
                         className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
-                        Figma
+                        Business Growth
                       </Badge>
                       <Badge
                         variant="outline"
                         className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                       >
-                        Adobe Illustrator
+                        User Retention
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Conversion Optimization
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Visual Hierarchy
                       </Badge>
                     </div>
                   </div>
+                  {/* Button */}
                   <div className="flex justify-center max-md:w-full">
                     <Link
                       href="/projects/nous"
@@ -704,6 +779,7 @@ export default function Portfolio() {
           <div className="mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="lg:hidden">
+                {/* Image/Video */}
                 <div className="flex items-center justify-center">
                   <div className="relative max-w-[300px]">
                     {/* Phone frame using regular img tag */}
@@ -740,6 +816,7 @@ export default function Portfolio() {
                 <div className="relative h-full">
                   <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
                   <div className="bg-[#f2f8fb] p-10 rounded-4xl lg:-mx-16 h-full flex flex-col justify-around">
+                    {/* Title and description */}
                     <div>
                       <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
                         SanaMente
@@ -749,21 +826,35 @@ export default function Portfolio() {
                         companion, a forum and relaxation tools for a calming
                         experience.
                       </p>
+                      {/* Badges */}
                       <div className="flex flex-wrap gap-2 mb-6">
                         <Badge
                           variant="outline"
                           className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
-                          Figma
+                          Neumorphism Design
                         </Badge>
                         <Badge
                           variant="outline"
                           className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                         >
-                          Adobe Photoshop
+                          AI Companion Integration
+                        </Badge>
+                        <Badge
+                          variant="outline"
+                          className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                        >
+                          Wellness-Focused UX
+                        </Badge>
+                        <Badge
+                          variant="outline"
+                          className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                        >
+                          Community Support
                         </Badge>
                       </div>
                     </div>
+                    {/* Button */}
                     <div className="flex justify-center max-md:w-full">
                       <Link
                         href="/projects/sanamente"
