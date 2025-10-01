@@ -11,6 +11,8 @@ import SimpleDialog from "@/components/simple-dialog"
 import '../styles/text-animations.css'
 import { useTheme } from "next-themes"
 import { ChevronDown } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import PhoneScrollComponent from "@/components/yo-puedo/phone-scroll-component"
 const textOptions = [
   { text: "UX strategies", color: "#000068", darkColor: "#89C3FE" },
   { text: "UI designs", color: "#0004a4", darkColor: "#0B9FF0" },
@@ -71,8 +73,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#ffffff] overflow-x-hidden">
       {/* Hero Section */}
-      <section className="bg-[#edf5fa] rounded-[40px] px-4 sm:px-8 md:px-16 lg:px-24 pt-8 max-md:pb-6 md:pb-16 lg:m-10 md:m-5 max-md:m-3 relative z-10 mx-auto max-w-[1140px] 2xl:mx-auto">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-[#edf5fa] rounded-[40px] mt-10 mb-16 mx-auto max-w-7xl relative z-10">
+        <div className="px-4 sm:px-8 md:px-12 lg:px-16 pt-8 pb-16">
           {/* Header */}
           <header className="flex justify-end mb-12">
             <div className="flex sm:flex md:flex lg:hidden w-full items-center justify-between gap-6 relative">
@@ -239,76 +241,721 @@ export default function Home() {
                   Behance
                 </a>
               </div>
-{/*               <div className="flex justify-end px-4 sm:px-8 md:px-16 lg:px-24 max-lg:hidden gap-25 mt-10">
-                <Link
-                  href="https://www.linkedin.com/in/nathaliedrodriguez/"
-                  className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
-                >
-                  LinkedIn
-                </Link>
-                <Link
-                  href="https://www.behance.net/nathaliedrodriguez"
-                  className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
-                >
-                  Behance
-                </Link>
-              </div> */}
             </div>
           </div>
         </div>
-        {(theme == "light" && isClientSide) && <img src="/HomePage/cloud.png" alt="Cloud" className="absolute z-1 left-10 right-auto -bottom-5" />}
-        {(theme == "dark" && isClientSide) && <img src="/HomePage/cloud-dark.png" alt="Cloud" className="absolute z-1 left-10 right-auto -bottom-5" />}
+          {(theme == "light" && isClientSide) && <img src="/HomePage/cloud.png" alt="Cloud" className="absolute z-1 left-10 right-auto -bottom-5" />}
+          {(theme == "dark" && isClientSide) && <img src="/HomePage/cloud-dark.png" alt="Cloud" className="absolute z-1 left-10 right-auto -bottom-5" />}
       </section>
 
-      {/* Let's Work Together Section */}
-      <section className="px-4 sm:px-8 md:px-16 lg:px-24 py-16">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 font-title text-[#0004a4]">Let&apos;s work together!</h2>
+      {/* Approach Section */}
+      <section className="mb-16 mx-auto py-6 max-w-7xl px-4">
+        <h2 className="text-[24px] font-title font-bold mb-8 text-[#000068]">
+          My Approach Across Projects
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-[#edf5fa] p-9 rounded-4xl col-span-1 md:col-span-1 lg:col-span-1">
+            <div className="flex items-center mb-4 gap-4">
+              <img
+                src="/HomePage/icons/target.png"
+                className="w-[40px] h-[40px] rounded-full flex items-center justify-center mb-4"
+                alt="targetIcon"
+              />
+              <h3 className="text-[24px] font-['El_Messiri'] font-semibold leading-[36px] tracking-[0px] align-middle mb-2">
+                UX Research
+              </h3>
+            </div>
+            <p className="font-['Epilogue'] font-[300] text-[16px] leading-[24px] tracking-[0px] text-[#101113]">
+              Understanding of user needs and behaviors, driving effective
+              solutions.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center">
-            {/* UX UI Designer Card */}
-            <div className="bg-[#edf5fa] p-8 rounded-4xl max-w-[358px] mx-auto">
-              <div className="flex items-center gap-4 mb-6">
-                <img src="/HomePage/icons/touch.png" className="w-10 rounded-lg flex items-center justify-center" alt="TouchIcon" />
-                <h3 className="font-semibold missiri text-2xl">UX UI Designer</h3>
-              </div>
+          <div className="bg-[#edf5fa] p-9 rounded-4xl col-span-1 md:col-span-1 lg:col-span-1">
+            <div className="flex items-center mb-4 gap-4">
+              <img
+                src="/HomePage/icons/cards.png"
+                className="w-[40px] h-[40px] flex items-center justify-center mb-4"
+                alt="cardsIcon"
+              />
+              <h3 className="text-[24px] font-['El_Messiri'] font-semibold leading-[36px] tracking-[0px] align-middle mb-2">
+                UX Writing
+              </h3>
+            </div>
+            <p className="font-['Epilogue'] font-[300] text-[16px] leading-[24px] tracking-[0px] text-[#101113]">
+              Creation of clear content to enhance the overall user
+              experience.
+            </p>
+          </div>
 
-              <p className="text-[#101113] font-light text-base mb-8">
-                I create functional and intuitive design solutions to enhance the user experience across platforms.
-              </p>
+          <div className="bg-[#edf5fa] p-9 rounded-4xl col-span-1 md:col-span-2 lg:col-span-1">
+            <div className="flex items-center mb-4 gap-4">
+              <img
+                src="/HomePage/icons/brush.png"
+                className="w-[40px] h-[40px] flex items-center justify-center mb-4"
+                alt="brushIcon"
+              />
+              <h3 className="text-[24px] font-['El_Messiri'] font-semibold leading-[36px] tracking-[0px] align-middle mb-2">
+                UI Design
+              </h3>
+            </div>
+            <p className="font-['Epilogue'] font-[300] text-[16px] leading-[24px] tracking-[0px] text-[#101113]">
+              Prototyping of visual interfaces that are both engaging and
+              functional.
+            </p>
+          </div>
+        </div>
+      </section>
 
-              <div className="flex justify-center w-full">
-                <Link href="/projects" className="w-full flex justify-center items-center cursor-pointer">
-                  <Button
-                    variant="outline"
-                    className="border-0091fb text-[#0091fb] hover:bg-[#0091fb]/10 rounded-2xl p-6 w-full text-xl font-normal cursor-pointer"
+      {/* Portfolio Title */}
+      <div className="px-4 max-w-7xl mx-auto">
+        <h2 className="text-[24px] font-title font-bold mb-12 text-[#000068]">
+          Explore my work
+        </h2>
+      </div>
+
+      {/* Portfolio Section */}
+      <section className="mb-16 mx-auto py-6 max-w-7xl px-4">
+
+        {/* Project Reputation Arm */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+            {/* Image */}
+            <div className="order 1">
+              <img
+                src="/HomePage/Reputation-Arm.png"
+                alt="Reputation Arm"
+                className="mx-auto rounded-lg"
+              />
+            </div>
+            {/* Title and description */}
+            <div className="order-1 md:order-2 relative h-full">
+              <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
+              <div className="bg-[#f2f8fb] p-6 sm:p-8 md:p-10 rounded-4xl h-full flex flex-col justify-around">
+                <div>
+                  <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                    Reputation Arm
+                  </h3>
+                  <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
+                    A SaaS platform and responsive website for managing reviews and SEO, redesigned with clear, user-friendly UX/UI for effortless navigation.
+                  </p>
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Dashboard Design
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Task Efficiency
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Multi-Location Interface
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Information Architecture
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      User Flow Optimization
+                    </Badge>
+                  </div>
+                </div>
+                {/* Button */}
+                <div className="flex justify-center max-md:w-full">
+                  <Link
+                    href="projects/reputation-arm"
+                    className="cursor-pointer max-md:w-full"
                   >
-                    Explore my Projects
-                  </Button>
-                </Link>
+                    <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                      Discover
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Content Creator Card */}
-            <div className="bg-[#edf5fa] p-8 rounded-4xl max-w-[358px] mx-auto">
-              <div className="flex items-center gap-4 mb-6">
-                <img src="/HomePage/icons/keyboard.svg" className="w-10 h-12 flex items-center justify-center" alt="KeyboardIcon" />
-                <h3 className="font-semibold missiri text-2xl">Content Creator</h3>
+        {/* Project Comp AI */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="order-2 lg:order-1 relative h-full">
+              <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
+              <div className="bg-[#f2f8fb] p-6 sm:p-8 md:p-10 rounded-4xl h-full flex flex-col justify-around">
+                <div>
+                  {/* Title and description */}
+                  <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                    Comp AI
+                  </h3>
+                  <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
+                    Lighter, faster and impactful landing page redesign focused on clarity, engagement and conversion-driven flows.
+                  </p>
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Conversion-Focused Design
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Business-Driven UX/UI
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Visual Prioritization
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Engagement Improvement
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      SEO Strategy
+                    </Badge>
+                  </div>
+                </div>
+                {/* Button */}
+                <div className="flex justify-center max-md:w-full">
+                    <Button className="font-light text-lg py-6 bg-[#0091fb] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                      Coming Soon
+                    </Button>
+                </div>
               </div>
+            </div>
+            {/* Image */}
+            <div className="order-1 lg:order-2">
+              <img
+                src="/HomePage/project_Comp_AI.png"
+                alt="Reputation Arm"
+                className="mx-auto rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
 
-              <p className="text-[#101113] font-light text-base mb-8">
-                I produce engaging and informative content to attract and retain targeted audiences.
-              </p>
-
-              <div className="flex justify-center w-full">
-                <Link href="/content-creator" className="w-full flex justify-center items-center cursor-pointer">
-                  <Button
-                    variant="outline"
-                    className="border-0091fb text-[#0091fb] hover:bg-[#0091fb]/10 rounded-2xl p-6 w-full text-xl font-normal cursor-pointer"
+        {/* Project Vendismart */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+            {/* Image */}
+            <div className="order 1">
+              <img
+                src="/HomePage/project_Vendismart.png"
+                alt="Vendismart"
+                className="mx-auto rounded-lg"
+              />
+            </div>
+            {/* Title and description */}
+            <div className="order-1 md:order-2 relative h-full">
+              <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
+              <div className="bg-[#f2f8fb] p-6 sm:p-8 md:p-10 rounded-4xl h-full flex flex-col justify-around">
+                <div>
+                  <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                    VendiSmart
+                  </h3>
+                  <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
+                    HubSpot landing page UX/UI redesign with a user-centered, data-driven approach focused on measurable business results.
+                  </p>
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Retention-Focused Design
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Mobile Optimization
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Clear CTAs
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Revenue Impact
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Conversion Funnel Design
+                    </Badge>
+                  </div>
+                </div>
+                {/* Button */}
+                <div className="flex justify-center max-md:w-full">
+                  <Link
+                    href="projects/vendismart"
+                    className="cursor-pointer max-md:w-full"
                   >
-                    View my Work
-                  </Button>
-                </Link>
+                    <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                      Go deeper
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Project Camelot Insurance */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="order-2 lg:order-1 relative h-full">
+              <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1]"></div>
+              {/* Title and description */}
+              <div className="bg-[#f2f8fb] p-6 sm:p-8 md:p-10 rounded-4xl h-full flex flex-col justify-around">
+                <div>
+                  <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                    Camelot Insurance
+                  </h3>
+                  <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
+                    Responsive redesign of this outdated website to improve
+                    usability and showcase company information effectively.
+                  </p>
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Brand Modernization
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Accessibility Improvements
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Interactive Elements
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      User-Centered Design
+                    </Badge>
+                  </div>
+                </div>
+                {/* Button */}
+                <div className="flex justify-center max-md:w-full">
+                  <Link
+                    href="/projects/camelot"
+                    className="cursor-pointer max-md:w-full"
+                  >
+                    <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                      Explore
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Image */}
+            <div className="order-1 lg:order-2">
+              <img
+                src="/HomePage/camelot-insurance.png"
+                alt="Board Game Friends App"
+                className="mx-auto rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Project Board Game Friends */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+            {/* Image */}
+            <div className="order 1">
+              <img
+                src="/HomePage/Board-Game-Friends-App.png"
+                alt="Board Game Friends App"
+                className="mx-auto rounded-lg"
+              />
+            </div>
+            <div className="order-1 md:order-2 relative h-full">
+              <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
+              <div className="bg-[#f2f8fb] p-6 sm:p-8 md:p-10 rounded-4xl h-full flex flex-col justify-around">
+                {/* Title and description */}
+                <div>
+                  <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                    Board Game Friends
+                  </h3>
+                  <p className="text-base font-light mb-4 text-[#101113] lg:pr-14">
+                    An app that offers a seamless platform to create and join
+                    in-person board game meetings.
+                  </p>
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Event-Driven Interaction
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Heuristic Evaluation
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Community Engagement
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      User Testing & Feedback
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Optimal Workshop Insights
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Whimsical Wireframing
+                    </Badge>
+                  </div>
+                </div>
+                {/* Button */}
+                <div className="flex justify-center max-md:w-full">
+                  <Link
+                    href="projects/bgf"
+                    className="cursor-pointer max-md:w-full"
+                  >
+                    <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                      Dive In
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Project YoPuedo */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+            <div className="lg:hidden">
+              <PhoneScrollComponent />
+            </div>
+            <div className="relative h-full">
+              <div className="relative h-full">
+                <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
+                <div className="bg-[#f2f8fb] p-6 sm:p-8 md:p-10 rounded-4xl h-full flex flex-col justify-around">
+                  {/* Title and description */}
+                  <div>
+                    <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                      YOPuedo app
+                    </h3>
+                    <p className="text-base font-light mb-4 text-[#101113]">
+                      Mobile/web design that enables the elderly to access
+                      remote assistance sessions provided by volunteers in a
+                      simple way.
+                    </p>
+                    {/* Badges */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Accessibility Enhancements
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Intuitive Navigation
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        A/B Testing
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Empathy-Driven Design
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Senior-Friendly UI
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Remote Support
+                      </Badge>
+                    </div>
+                  </div>
+                  {/* Button */}
+                  <div className="flex justify-center max-md:w-full">
+                    <Link
+                      href="/projects/yo-puedo"
+                      className="cursor-pointer max-md:w-full"
+                    >
+                      <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                        Find Out More
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Image */}
+            <div className="max-lg:hidden">
+              <PhoneScrollComponent />
+            </div>
+          </div>
+        </div>
+
+        {/* Project Nous LATAM */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div className="order-1">
+              <div className="max-lg:p-10 lg:pr-16 lg:py-5 ">
+                <p className="text-lg text-start font-title font-bold text-[#0091fb] mb-3">
+                  Current Design
+                </p>
+                <img
+                  src="/HomePage/NOUS-Latam.gif"
+                  alt="NOUS Latam"
+                  className="mx-auto rounded-lg"
+                />
+                <p className="text-lg text-end w-full font-title font-bold text-[#0091fb] mt-3">
+                  New Proposal
+                </p>
+              </div>
+            </div>
+            
+            <div className="order-1 md:order-2 relative h-full">
+              <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
+              <div className="bg-[#f2f8fb] p-6 sm:p-8 md:p-10 rounded-4xl h-full flex flex-col justify-around">
+                {/* Title and description */}
+                <div className="">
+                  <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                    NOUS Latam
+                  </h3>
+                  <p className="text-base font-light mb-4 text-[#101113]">
+                    Homepage redesign with a human-centered approach,
+                    featuring UI enhancements, animations, icons, images and
+                    more.
+                  </p>
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Business Growth
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      User Retention
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Conversion Optimization
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                    >
+                      Visual Hierarchy
+                    </Badge>
+                  </div>
+                </div>
+                {/* Button */}
+                <div className="flex justify-center max-md:w-full">
+                  <Link
+                    href="/projects/nous"
+                    className="cursor-pointer max-md:w-full"
+                  >
+                    <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                      View Insights
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Project SanaMente */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="lg:hidden">
+              {/* Image/Video */}
+              <div className="flex items-center justify-center">
+                <div className="relative max-w-[300px]">
+                  {/* Phone frame using regular img tag */}
+                  <div className="relative">
+                    <img
+                      src="/sanamente/main.png"
+                      alt="Phone mockup"
+                      className="w-full h-auto"
+                    />
+
+                    {/* Video positioned inside the phone screen */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-[92%] h-[94%] overflow-hidden rounded-[22px] mt-0">
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        >
+                          <source
+                            src="/sanamente/video-sanamente.MP4"
+                            type="video/mp4"
+                          />
+                          Tu navegador no soporta videos HTML5.
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative h-full">
+              <div className="relative h-full">
+                <div className="md:absolute md:top-0 md:bottom-0 md:left-0 md:right-[-100vw] md:bg-[#f2f8fb] md:z-[-1] "></div>
+                <div className="bg-[#f2f8fb] p-6 sm:p-8 md:p-10 rounded-4xl h-full flex flex-col justify-around">
+                  {/* Title and description */}
+                  <div>
+                    <h3 className="text-[32px] font-title font-bold text-[#0679B8] mb-3">
+                      SanaMente
+                    </h3>
+                    <p className="text-base font-light mb-4 text-[#101113]">
+                      Anxiety app with a neomorphism design, featuring an AI
+                      companion, a forum and relaxation tools for a calming
+                      experience.
+                    </p>
+                    {/* Badges */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Neumorphism Design
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        AI Companion Integration
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Wellness-Focused UX
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                      >
+                        Community Support
+                      </Badge>
+                    </div>
+                  </div>
+                  {/* Button */}
+                  <div className="flex justify-center max-md:w-full">
+                    <Link
+                      href="/projects/sanamente"
+                      className="cursor-pointer max-md:w-full"
+                    >
+                      <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                        See More
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="max-lg:hidden lg:py-5">
+              <div className="flex items-center justify-center">
+                <div className="relative max-w-[300px]">
+                  {/* Phone frame using regular img tag */}
+                  <div className="relative">
+                    <img
+                      src="/sanamente/main.png"
+                      alt="Phone mockup"
+                      className="w-full h-auto"
+                    />
+
+                    {/* Video positioned inside the phone screen */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-[92%] h-[94%] overflow-hidden rounded-[22px] mt-0">
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        >
+                          <source
+                            src="/sanamente/video-sanamente.MP4"
+                            type="video/mp4"
+                          />
+                          Your browser does not support videos HTML5.
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
