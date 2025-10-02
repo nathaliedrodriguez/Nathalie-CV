@@ -70,10 +70,15 @@ export default function Home() {
     }
   }, [isUxUiOpen])
 
+
+{/* <div className="bg-[#edf5fa] p-9 rounded-4xl col-span-1 md:col-span-1 lg:col-span-1">
+            <div className="flex items-center mb-4 gap-4"></div> */}
+
+
   return (
     <div className="min-h-screen bg-[#ffffff] overflow-x-hidden">
       {/* Hero Section */}
-      <section className="bg-[#edf5fa] rounded-[40px] mt-10 mb-16 mx-auto max-w-7xl relative z-10">
+      <section className="bg-[#edf5fa] rounded-[40px] mt-10 mb-16 mx-4 sm:mx-6 md:mx-8 lg:mx-12 xl:mx-auto max-w-7xl relative z-10">
         <div className="px-4 sm:px-8 md:px-12 lg:px-16 pt-8 pb-16">
           {/* Header */}
           <header className="flex justify-end mb-12">
@@ -98,12 +103,6 @@ export default function Home() {
                     ref={dropdownRef}
                     className="absolute left-0 mt-2 bg-[#edf5fa] rounded-2xl shadow-lg py-3 px-6 z-50 min-w-[200px] border border-[#e6e6e6]"
                   >
-                    <a
-                      href="/projects"
-                      className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
-                    >
-                      • My projects
-                    </a>
                     <a
                       href="/projects/reputation-arm"
                       className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
@@ -231,14 +230,6 @@ export default function Home() {
                   className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
                 >
                   LinkedIn
-                </a>
-                <a
-                  href="https://www.behance.net/nathaliedrodriguez"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
-                >
-                  Behance
                 </a>
               </div>
             </div>

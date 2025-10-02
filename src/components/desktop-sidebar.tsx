@@ -79,16 +79,6 @@ export default function DesktopSidebar() {
             </Link>
 
             <Link
-              href="https://www.behance.net/nathaliedrodriguez"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-[#0091fb] text-xl"
-            >
-              <img src="/HomePage/icons/behance-icon.png" className="w-6 h-6 mr-4 fill-[#0091fb] stroke-[#0091fb]" alt="BehanceIcon" />
-              Behance
-            </Link>
-
-            <Link
               href="https://www.linkedin.com/in/nathaliedrodriguez/"
               target="_blank"
               rel="noopener noreferrer"

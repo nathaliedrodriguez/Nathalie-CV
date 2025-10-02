@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 
 const projects = [
-    { name: "• My projects", href: "/projects" },
     { name: "• Reputation Arm", href: "/projects/reputation-arm" },
     { name: "• VendiSmart", href: "/projects/vendismart" },
     { name: "• Camelot Insurance", href: "/projects/camelot" },

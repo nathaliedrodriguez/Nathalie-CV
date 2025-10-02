@@ -103,7 +103,6 @@ export default function ContentCreatorPicks() {
     }, [showProjects]);
 
     const projects = [
-        { name: "• My projects", href: "/projects" },
         { name: "• Reputation Arm", href: "/projects/reputation-arm" },
         { name: "• Vendismart", href: "/projects/vendismart" },
         { name: "• Camelot Insurance", href: "/projects/camelot" },

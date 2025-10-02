@@ -1,6 +1,6 @@
 "use client";
 
-import { useState} from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import MobileMenu from "@/components/mobile-menu";
 import MobileMenuButton from "@/components/mobile-menu-button";
@@ -28,6 +28,11 @@ export default function BoardGameFriends() {
   });
 
   const { theme } = useTheme();
+  const [isClientSide, setIsClientSide] = useState(false);
+
+  useEffect(() => {
+    setIsClientSide(true);
+  }, []);
   
   const router = useRouter();
 
@@ -195,7 +200,7 @@ export default function BoardGameFriends() {
           )}
         </div>
 
-        {theme != "dark" && (
+        {isClientSide && theme !== "dark" && (
           <div className="mt-6 md:-mx-8 max-md:-mx-3">
             <img
               src="/BGF/BGF-2-Desktop.png"
@@ -214,7 +219,7 @@ export default function BoardGameFriends() {
             />
           </div>
         )}
-        {theme == "dark" && (
+        {isClientSide && theme === "dark" && (
           <div className="mt-6 md:-mx-8 max-md:-mx-3">
             <img
               src="/BGF/BGF-2-Desktop-Dark.png"
