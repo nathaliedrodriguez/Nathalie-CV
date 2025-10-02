@@ -298,20 +298,6 @@ export default function MobileMenu() {
 
           <div className="flex flex-col pt-10 gap-5">
             <Link
-              href="https://www.behance.net/nathaliedrodriguez"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-[#0091fb] text-xl"
-            >
-              <Icon
-                src="/HomePage/icons/behance-icon.png"
-                alt="BehanceIcon"
-                scale="scale-80"
-              />
-              Behance
-            </Link>
-
-            <Link
               href="https://www.linkedin.com/in/nathaliedrodriguez/"
               target="_blank"
               rel="noopener noreferrer"
