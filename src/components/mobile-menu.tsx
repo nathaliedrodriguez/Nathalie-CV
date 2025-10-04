@@ -306,21 +306,19 @@ export default function MobileMenu() {
             Content Creator
           </Link>
 
-          <div className="flex flex-col pt-10 gap-5">
-            <Link
-              href="https://www.linkedin.com/in/nathaliedrodriguez/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-[#0091fb] text-xl"
-            >
-              <Icon
-                src="/HomePage/icons/linkedin-icon.png"
-                alt="LinkedinIcon"
-                scale="scale-80"
-              />
-              Linkedin
-            </Link>
-          </div>
+          <Link
+            href="https://www.linkedin.com/in/nathaliedrodriguez/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-[#0091fb] text-xl"
+          >
+            <Icon
+              src="/HomePage/icons/linkedin-icon.png"
+              alt="LinkedinIcon"
+              scale="scale-80"
+            />
+            LinkedIn
+          </Link>
         </div>
 
         {/* Mensaje de agradecimiento */}
