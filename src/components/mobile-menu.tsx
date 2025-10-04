@@ -221,6 +221,16 @@ export default function MobileMenu() {
                   • Reputation Arm
                 </Link>
                 <Link
+                  href="/projects/compai"
+                  className={`font-epilogue font-normal text-[14px] leading-[100%] tracking-[0px] text-left block ${
+                    pathname === "/projects/compai"
+                      ? "text-[#0091fb] font-bold"
+                      : "text-[#101113]"
+                  }`}
+                >
+                  • CompAI
+                </Link>
+                <Link
                   href="/projects/vendismart"
                   className={`font-epilogue font-normal text-[14px] leading-[100%] tracking-[0px] text-left block ${
                     pathname === "/projects/vendismart"

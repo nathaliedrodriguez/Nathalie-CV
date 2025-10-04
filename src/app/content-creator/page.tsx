@@ -104,6 +104,7 @@ export default function ContentCreatorPicks() {
 
     const projects = [
         { name: "• Reputation Arm", href: "/projects/reputation-arm" },
+        { name: "• CompAI", href: "/projects/compai" },
         { name: "• Vendismart", href: "/projects/vendismart" },
         { name: "• Camelot Insurance", href: "/projects/camelot" },
         { name: "• Board Game Friends", href: "/projects/bgf" },

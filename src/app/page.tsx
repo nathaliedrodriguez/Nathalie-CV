@@ -110,6 +110,12 @@ export default function Home() {
                       • Reputation Arm
                     </a>
                     <a
+                      href="/projects/compai"
+                      className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
+                    >
+                      • CompAI
+                    </a>
+                    <a
                       href="/projects/vendismart"
                       className="block font-epilogue text-[14px] text-[#101113] hover:text-[#0091fb] py-1 transition-colors"
                     >
@@ -430,9 +436,14 @@ export default function Home() {
                 </div>
                 {/* Button */}
                 <div className="flex justify-center max-md:w-full">
-                    <Button className="font-light text-lg py-6 bg-[#0091fb] text-white min-w-[200px] rounded-2xl max-md:w-full">
-                      Coming Soon
+                  <Link
+                    href="projects/compai"
+                    className="cursor-pointer max-md:w-full"
+                  >
+                    <Button className="cursor-pointer font-light text-lg py-6 bg-[#0091fb] hover:bg-[#0679b8] text-white min-w-[200px] rounded-2xl max-md:w-full">
+                      Check it out
                     </Button>
+                  </Link>
                 </div>
               </div>
             </div>

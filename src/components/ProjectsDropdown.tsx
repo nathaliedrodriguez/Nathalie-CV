@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react"
 
 const projects = [
     { name: "• Reputation Arm", href: "/projects/reputation-arm" },
+    { name: "• CompAI", href: "/projects/compai" },
     { name: "• VendiSmart", href: "/projects/vendismart" },
     { name: "• Camelot Insurance", href: "/projects/camelot" },
     { name: "• Board Game Friends", href: "/projects/bgf" },
