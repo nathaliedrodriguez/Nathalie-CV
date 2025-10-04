@@ -94,7 +94,7 @@ export default function ReputationArm() {
                 <div className="mb-4">            
                 {/* Disclaimer */}
                 <div className="mt-4 text-left italic font-epilogue font-extralight text-[14px] text-[#101113]">
-                    This project was developed as part of my work at Alpha Efficiency for the client Reputation Arm. All content is protected by copyright and subject to confidentiality agreements. It is presented here for <span className="not-italic font-normal">illustrative purposes</span> only to showcase my involvement in the design process. It may not be reproduced or distributed without the express authorization of the parties involved.
+                    This project was developed as part of my work at Alpha Efficiency for the client VendiSmart. All content is protected by copyright and subject to confidentiality agreements. It is presented here for <span className="not-italic font-normal">illustrative purposes</span> only to showcase my involvement in the design process. It may not be reproduced or distributed without the express authorization of the parties involved.
                 </div>
 
                 <div className="mt-4 text-left italic font-epilogue font-extralight text-[14px] text-[#101113]">
