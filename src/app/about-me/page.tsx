@@ -485,7 +485,7 @@ export default function AboutMe() {
                     <h2 className="text-2xl font-semibold text-[#0004a4] missiri mb-4">Explore My Projects as</h2>
 
                     <div className="flex max-md:flex-col max-md:w-full gap-4 justify-center">
-                        <Link href="/projects">
+                        <Link href="/#explore-my-work">
                             <Button className="cursor-pointer bg-[#0091fb] hover:bg-[#0679b8] max-md:w-full text-white px-6 py-2 rounded-2xl p-6 text-lg">
                                 UX UI Designer
                             </Button>

@@ -306,7 +306,7 @@ export default function Home() {
 
       {/* Portfolio Title */}
       <div className="px-4 max-w-7xl mx-auto">
-        <h2 className="text-[24px] font-title font-bold mb-12 text-[#000068]">
+        <h2 id="explore-my-work" className="text-[24px] font-title font-bold mb-12 text-[#000068]">
           Explore my work
         </h2>
       </div>
