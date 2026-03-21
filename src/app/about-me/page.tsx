@@ -492,14 +492,6 @@ export default function AboutMe() {
                                 UX UI Designer
                             </Button>
                         </Link>
-                        <Link href="/content-creator">
-                            <Button
-                                variant="outline"
-                                className="cursor-pointer border border-0091fb text-[#0091fb] max-md:w-full hover:bg-[#e6f4ff] px-6 py-2 rounded-2xl p-6 text-lg"
-                            >
-                                Content Creator
-                            </Button>
-                        </Link>
                     </div>
                 </div>
 

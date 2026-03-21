@@ -161,12 +161,6 @@ export default function Home() {
               >
                 About me
               </Link>
-              <Link
-                href="/content-creator"
-                className="text-[#0091fb] hover:text-[#0679b8] transition-colors cursor-pointer"
-              >
-                Content Creator
-              </Link>
               <ThemeToggle />
             </div>
           </header>

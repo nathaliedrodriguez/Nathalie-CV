@@ -295,18 +295,6 @@ export default function MobileMenu() {
           </div>
 
           <Link
-            href="/content-creator"
-            className="flex items-center text-[#0091fb] font-epilogue font-normal text-[20px] leading-[1.2] tracking-[0px] align-bottom"
-          >
-            <Icon
-              src="/HomePage/icons/keyboard.svg"
-              alt="KeyboardIcon"
-              scale="scale-140"
-            />
-            Content Creator
-          </Link>
-
-          <Link
             href="https://www.linkedin.com/in/nathaliedrodriguez/"
             target="_blank"
             rel="noopener noreferrer"

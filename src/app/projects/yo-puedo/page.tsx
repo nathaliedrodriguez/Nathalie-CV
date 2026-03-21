@@ -68,14 +68,6 @@ export default function YOPuedoProject() {
                                     About Me
                                 </Button>
                             </Link>
-                            <Link href="/content-creator">
-                                <Button
-                                    variant="ghost"
-                                    className="cursor-pointer text-base font-[400] text-[#0091fb] hover:text-[#0679b8] transition-colors p-0"
-                                >
-                                    Content Creator
-                                </Button>
-                            </Link>
                             <ThemeToggle />
                         </div>
                     </div>
