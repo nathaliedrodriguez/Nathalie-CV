@@ -390,6 +390,8 @@ export default function AboutMe() {
                         {expandedSections.courses && (
                             <div className="mt-3">
                                 <ul className="list-disc pl-5 space-y-1 text-base text-[#101113]">
+                                    <li className="font-light"><span className="font-normal text-[#101113]">AI Design Systems - Bootcamp</span> | Memorisely</li>
+                                    <li className="font-light"><span className="font-normal text-[#101113]">UX Research - University Certificate Program</span> | Universidad de Belgrano</li>
                                     <li className="font-light"><span className="font-normal text-[#101113]">Advanced UX UI Design</span> | Coder House</li>
                                     <li className="font-light"><span className="font-normal text-[#101113]">Prototyping</span> | Coder House</li>
                                     <li className="font-light"><span className="font-normal text-[#101113]">User Interface Design</span> | UTN BA</li>
