@@ -323,6 +323,24 @@ export default function AboutMe() {
                                     variant="outline"
                                     className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
                                 >
+                                    Claude Code
+                                </Badge>
+                                <Badge
+                                    variant="outline"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                >
+                                    Cursor
+                                </Badge>
+                                <Badge
+                                    variant="outline"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                >
+                                    Gemini
+                                </Badge>
+                                <Badge
+                                    variant="outline"
+                                    className="bg-transparent border-1 border-0679B8 text-[#0679B8] text-xs px-3 py-1 rounded-full"
+                                >
                                     Whimsical
                                 </Badge>
                                 <Badge
